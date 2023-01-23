@@ -8,7 +8,7 @@ Easy save est un projet developpé par ProSoft, c'est un logiciel utilisant .NET
 - [ ] Conception BDD, MLD, MCD ?
 - [ ] Interactions systèmes
 
-## Documentation
+## Documentation
 
 - [ ] Guide d'installation
 - [ ] Guide utilisateur
