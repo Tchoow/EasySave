@@ -1,0 +1,13 @@
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.exe
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.deps.json
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.runtimeconfig.json
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.runtimeconfig.dev.json
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.dll
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\bin\Debug\netcoreapp3.1\EasySave.pdb
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.csprojAssemblyReference.cache
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.AssemblyInfoInputs.cache
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.AssemblyInfo.cs
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.csproj.CoreCompileInputs.cache
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.dll
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.pdb
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.genruntimeconfig.cache
