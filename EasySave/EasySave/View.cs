@@ -2,12 +2,11 @@
 
 namespace EasySave
 {
-    class Program
+    class View
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // Test
+            Console.WriteLine("Project Init !");
         }
     }
 }
