@@ -6,7 +6,8 @@ namespace EasySave
 {
     class Model
     {
-        private ViewModel viewModel;
+        private ViewModel viewModel { get; set; }
+
         public Model(ViewModel viewModel)
         {
             this.viewModel = viewModel;

@@ -7,15 +7,15 @@ namespace EasySave
 {
     class ViewModel
     {
-        private View           view;
-        private Model         model;
-        private List<Log>   lstLogs;
-        private List<Save>  lstSave;
+        private View view { get; set; }
+        private View model { get; set; }
+        private List<Save> lstSave { get; set; }
+        private List<Log> lstLogs { get; set; }
 
         public ViewModel(View view)
         {
             this.view    = view;
-            this.model   = new Model(this);
+            //5this.model   = new Model(this);
             this.lstLogs = new List<Log>();
             this.lstSave = new List<Save>();
         }
