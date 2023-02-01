@@ -23,7 +23,8 @@ namespace EasySave
 
             // If we choose "5" it breaks the loop
             } while (userInput != "5");
-
+            this.viewModel.CreateJob();
+            Console.WriteLine(this.viewModel.retrieveJob().sourceFilePath);
             Console.WriteLine("Fin de l'éxécution du programme.");
         }
     }
