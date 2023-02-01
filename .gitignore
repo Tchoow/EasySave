@@ -1,3 +1,6 @@
 .vs/
 EasySave/.vs
 EasySave/EasySave/bin/
+EasySave/EasySave/obj/
+EasySave.csproj.CoreCompileInputs.cache
+*.user
