@@ -7,10 +7,10 @@ namespace EasySave
 {
     class ViewModel
     {
-        private View           view;
-        private Model         model;
-        private List<Log>   lstLogs;
-        private List<Save>  lstSave;
+        private View view           { get; set; }
+        private Model model { get; set; }
+        private List<Save> lstSave { get; set; }
+        public List<Log> lstLogs { get; set; }
 
         public ViewModel(View view)
         {
@@ -19,6 +19,18 @@ namespace EasySave
             this.lstLogs = new List<Log>();
             this.lstSave = new List<Save>();
         }
+
+
+        public void newSave()
+        {
+
+        }
+
+
+
+
+
+
 
     }
 }

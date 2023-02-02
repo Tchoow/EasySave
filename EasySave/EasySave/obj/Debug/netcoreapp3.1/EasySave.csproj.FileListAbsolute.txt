@@ -11,3 +11,6 @@ C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreap
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.dll
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.pdb
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.genruntimeconfig.cache
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.datas.languages.English.resources
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.datas.languages.French.resources
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\EasySave\obj\Debug\netcoreapp3.1\EasySave.csproj.GenerateResource.cache
