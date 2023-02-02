@@ -6,20 +6,13 @@ namespace EasySave
 {
     class Model
     {
-        private ViewModel viewModel;
-        private Job job;
+        private ViewModel viewModel { get; set; }
+        private string    language { get; set; }
+
         public Model(ViewModel viewModel)
         {
             this.viewModel = viewModel;
-        }
-        public void setJob(Job job)
-        {
-            this.job = job;
-        }
-
-        public Job getJob()
-        {
-            return this.job;
+            this.language  = "";
         }
     }
 }

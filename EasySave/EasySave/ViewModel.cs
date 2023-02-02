@@ -7,11 +7,10 @@ namespace EasySave
 {
     class ViewModel
     {
-        private View           view;
-        private Model         model;
-        private Job job { get; set; }
-        private List<Log>   lstLogs;
-        private List<Save>  lstSave;
+        private View view           { get; set; }
+        private Model model { get; set; }
+        private List<Save> lstSave { get; set; }
+        public List<Log> lstLogs { get; set; }
 
         public ViewModel(View view)
         {
@@ -21,15 +20,17 @@ namespace EasySave
             this.lstSave = new List<Save>();
         }
 
-        public void CreateJob()
+
+        public void newSave()
         {
-            this.model.setJob(new Job("test", "/", "//", "START", 15, 1472, 12, 0));
+
         }
-        
-        public Job retrieveJob()
-        {
-            return this.model.getJob();
-        }
+
+
+
+
+
+
 
     }
 }
