@@ -59,5 +59,41 @@ namespace EasySave.datas.languages {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ok1_fr.
+        /// </summary>
+        internal static string ch1 {
+            get {
+                return ResourceManager.GetString("ch1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ok2_fr.
+        /// </summary>
+        internal static string ch2 {
+            get {
+                return ResourceManager.GetString("ch2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ok3_fr.
+        /// </summary>
+        internal static string ch3 {
+            get {
+                return ResourceManager.GetString("ch3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ok4_fr.
+        /// </summary>
+        internal static string ch4 {
+            get {
+                return ResourceManager.GetString("ch4", resourceCulture);
+            }
+        }
     }
 }
