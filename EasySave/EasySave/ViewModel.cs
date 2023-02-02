@@ -21,6 +21,11 @@ namespace EasySave
         }
 
 
+        // Traductions
+        public void setLangueIndex(int indexLang) { this.model.currenLang = indexLang; }
+        public int getLanguageIndex() { return this.model.currenLang; }
+
+
         public void newSave()
         {
 
