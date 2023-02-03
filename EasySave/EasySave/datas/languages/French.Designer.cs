@@ -59,5 +59,14 @@ namespace EasySave.datas.languages {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bonjour boezjdzdz.
+        /// </summary>
+        internal static string strHomeMessage {
+            get {
+                return ResourceManager.GetString("strHomeMessage", resourceCulture);
+            }
+        }
     }
 }

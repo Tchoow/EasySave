@@ -1,0 +1,62 @@
+[
+  {
+    "name": "a",
+    "sourceFilePath": "a",
+    "destinationFilePath": "a",
+    "state": "PAUSED",
+    "totalFileToCopy": 1,
+    "totalFileSize": 1,
+    "nbFilesLeftToDo": 1,
+    "progression": 0,
+    "created": "2023-02-03T14:47:04.7080991+01:00",
+    "uuid": "37f929ca-8a1c-4236-bad5-e06a5ce6328d"
+  },
+  {
+    "name": "a",
+    "sourceFilePath": "a",
+    "destinationFilePath": "a",
+    "state": "PAUSED",
+    "totalFileToCopy": 1,
+    "totalFileSize": 1,
+    "nbFilesLeftToDo": 1,
+    "progression": 0,
+    "created": "2023-02-03T14:56:36.2063839+01:00",
+    "uuid": "2edd7293-c732-44d0-928e-d104fc750532"
+  },
+  {
+    "name": "a",
+    "sourceFilePath": "a",
+    "destinationFilePath": "a",
+    "state": "PAUSED",
+    "totalFileToCopy": 1,
+    "totalFileSize": 1,
+    "nbFilesLeftToDo": 1,
+    "progression": 0,
+    "created": "2023-02-03T14:58:58.1181458+01:00",
+    "uuid": "5fb32e47-2556-4742-9aea-9b468f1f1dd1"
+  },
+  {
+    "name": "a",
+    "sourceFilePath": "a",
+    "destinationFilePath": "a",
+    "state": "PAUSED",
+    "totalFileToCopy": 1,
+    "totalFileSize": 1,
+    "nbFilesLeftToDo": 1,
+    "progression": 0,
+    "created": "2023-02-03T15:02:53.540042+01:00",
+    "uuid": "1e624f7a-5439-428b-ab7e-17851c11544a"
+  },
+  {
+    "name": "a",
+    "sourceFilePath": "a",
+    "destinationFilePath": "a",
+    "state": "PAUSED",
+    "totalFileToCopy": 1,
+    "totalFileSize": 1,
+    "nbFilesLeftToDo": 1,
+    "progression": 0,
+    "created": "2023-02-03T15:03:01.9905087+01:00",
+    "uuid": "2204f5b6-e163-4692-af21-addbaf03978f"
+  }
+]

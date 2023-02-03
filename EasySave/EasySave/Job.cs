@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,8 @@ namespace EasySave
         public int totalFileSize { get; set; }
         public int nbFilesLeftToDo { get; set; }
         public int progression { get; set; }
+        public DateTime created { get; set;  }
+        public string uuid { get; set; }
         
         public Job(
             string name,
@@ -34,6 +37,8 @@ namespace EasySave
             this.totalFileSize = totalFileSize;
             this.nbFilesLeftToDo = nbFilesLeftToDo;
             this.progression = progression;
+            this.created = DateTime.Now;
+            this.uuid = Guid.NewGuid().ToString();
         }
     }
 }
