@@ -12,8 +12,6 @@ namespace EasySave
         private List<Save> lstSave { get; set; }
         public List<Log> lstLogs { get; set; }
 
-        public Job job { get; set; }
-
         public ViewModel(View view)
         {
             this.view    = view;
@@ -23,11 +21,14 @@ namespace EasySave
         }
 
 
-        public void newSave(string name, string source, string destination)
+        // Traductions
+        public void setLangueIndex(int indexLang) { this.model.currenLang = indexLang; }
+        public int getLanguageIndex() { return this.model.currenLang; }
+
+
+        public void newSave()
         {
-            this.job = new Job(name, source, destination, "PAUSED", 1, 1, 1, 0);
-            this.model.setJob(job);
-            this.model.getJobs();
+
         }
 
 

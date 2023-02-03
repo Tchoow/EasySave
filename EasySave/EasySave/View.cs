@@ -5,10 +5,12 @@ namespace EasySave
     class View
     {
         private ViewModel viewModel;
+        private Translate translate;
 
         public View()
         {
             this.viewModel = new ViewModel(this);
+            this.translate = new Translate();
         }
 
         public void init()
@@ -53,15 +55,26 @@ namespace EasySave
                         break;
                     case "5":
                         Console.WriteLine("Liste des langues disponibles:");
-                        // Affiche les fichiers dans le dossier languages
+                        for (int i = 0; i < this.translate.lstLanguages.Count; i++)
+                        {
+                            Console.WriteLine("[" + i + "] : " + this.translate.lstLanguages[i]);
+                        }
+
+
                         Console.WriteLine("Quelle langue voulez vous utiliser ? :");
-                        // Selectionner le fichier de langue à utiliser
+                        string inputIndexLang = Console.ReadLine();
+                        int indexLangue       = Int16.Parse(inputIndexLang);
+
+                        // Set the lang
+                        if (indexLangue > -1 && indexLangue < this.translate.lstLanguages.Count)
+                            this.viewModel.setLangueIndex(indexLangue);
+
                         break;
                 }
 
             // If we choose "5" it breaks the loop
             } while (userInput != "6");
-            Console.WriteLine("Fin de l'éxécution du programme.");
+            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "ch1"));
         }
     }
 }

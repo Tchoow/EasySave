@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {}
+    "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
+    "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
+        "projectUniqueName": "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
         "projectName": "EasySave",
-        "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
-        "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\obj\\",
+        "projectPath": "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
+        "packagesPath": "C:\\Users\\vboxuser\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Théo LAVIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\vboxuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -37,6 +41,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
