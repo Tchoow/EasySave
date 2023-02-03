@@ -33,12 +33,12 @@ namespace EasySave
                 {
                     case "1":
                         Console.WriteLine("Nom de la sauvegarde:");
-                        string saveName   = Console.ReadLine();
+                        string saveName = Console.ReadLine();
                         Console.WriteLine("Chemin du répertoire (Source) :");
                         string sourcePath = Console.ReadLine();
-                        Console.WriteLine("Chemin du répertoire (Source) :");
+                        Console.WriteLine("Chemin du répertoire (Destination) :");
                         string targetPath = Console.ReadLine();
-                        this.viewModel.newSave();
+                        this.viewModel.newSave(saveName, sourcePath, targetPath);
                         break;
                     case "2":
                         Console.WriteLine("Voici les traveaux de sauvegardes :");

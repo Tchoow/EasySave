@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mAB5LwqzlzXgebrNzQCWlV8vVC1h9bknyVXrQ50H53WnSvWr2u+MMS2/f0/jkN8fIkYFYoUcxjcMHJpuhFf06g==",
+  "dgSpecHash": "xw3WVtXgORajOcGjWOYv7lM/LJH6FDNdHu1xwU9ELSJReKx+29U/EHv9rCbCSfMp9LMmFK6anjZMgK+hpFQQzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\vboxuser\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vboxuser\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
