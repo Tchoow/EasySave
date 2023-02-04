@@ -10,11 +10,13 @@ namespace EasySave
     {
         private string jobFile = @"../../../datas/saves/jobs.json";
         private ViewModel viewModel { get; set; }
-        private string    language { get; set; }
+        public int currenLang { get; set; }
+
         public Model(ViewModel viewModel)
         {
-            this.viewModel = viewModel;
-            this.language  = "";
+            this.viewModel  = viewModel;
+            // default lang is french
+            this.currenLang = 1;
         }
 
         public void setJob(Job job)

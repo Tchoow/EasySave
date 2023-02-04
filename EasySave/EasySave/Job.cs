@@ -10,6 +10,7 @@ namespace EasySave
         public string name { get; set; }
         public string sourceFilePath { get; set; }
         public string destinationFilePath { get; set; }
+        public int saveType { get; set; }
         public string state {get; set; }
         public int totalFileToCopy { get; set; }
         public int totalFileSize { get; set; }
@@ -39,6 +40,32 @@ namespace EasySave
             this.progression = progression;
             this.created = DateTime.Now;
             this.uuid = Guid.NewGuid().ToString();
+        }
+
+        // Théo --
+        public Job(
+            string name,
+            string sourceFilePath,
+            string destinationFilePath,
+            int    saveType
+            )
+        {
+            this.name = name;
+            this.sourceFilePath = sourceFilePath;
+            this.destinationFilePath = destinationFilePath;
+            this.saveType = saveType;
+
+        }
+
+        public String toString()
+        {
+            String sRet = "";
+
+            sRet += "> ";
+
+            sRet += this.name;
+
+            return sRet;
         }
     }
 }

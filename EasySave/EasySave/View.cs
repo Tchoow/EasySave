@@ -15,11 +15,21 @@ namespace EasySave
 
         public void init()
         {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("`........                                 `.. ..                                 ");
+            Console.WriteLine("`..                                     `..    `..                               ");
+            Console.WriteLine("`..         `..     `.... `..   `..      `..         `..    `..     `..   `..    ");
+            Console.WriteLine("`......   `..  `.. `..     `.. `..         `..     `..  `..  `..   `..  `.   `.. ");
+            Console.WriteLine("`..      `..   `..   `...    `...             `.. `..   `..   `.. `..  `..... `..");
+            Console.WriteLine("`..      `..   `..     `..    `..       `..    `..`..   `..    `.`..   `.        ");
+            Console.WriteLine("`........  `.. `...`.. `..   `..          `.. ..    `.. `...    `..      `....   ");
+            Console.ForegroundColor = ConsoleColor.White;
+
             string userInput;
             do
             {
                 Console.WriteLine("Faites un choix  (entre 1 et 5) :");
-                Console.WriteLine("[1] Nouvelle sauvegarde");
+                Console.WriteLine("[1] Créer un traveaux de sauvegardes");
                 Console.WriteLine("[2] Afficher les traveaux de sauvegardes.");
                 Console.WriteLine("[3] Executer une ou plusieurs sauvegarde.");
                 Console.WriteLine("[4] Afficher les logs journalières");
@@ -32,16 +42,38 @@ namespace EasySave
                 switch(userInput)
                 {
                     case "1":
-                        Console.WriteLine("Nom de la sauvegarde:");
-                        string saveName = Console.ReadLine();
+                        /* Jobs verifications */
+                        if ( 1 == 1)
+                        {
+
+                        }
+                        /* Jobs verifications */
+
+                        /* User Inputs */
+                        Console.WriteLine("Nom du travail de sauvegarde:");
+                        string jobName = Console.ReadLine();
                         Console.WriteLine("Chemin du répertoire (Source) :");
                         string sourcePath = Console.ReadLine();
                         Console.WriteLine("Chemin du répertoire (Destination) :");
                         string targetPath = Console.ReadLine();
-                        this.viewModel.newSave(saveName, sourcePath, targetPath);
+                        Console.WriteLine("Type de la sauvegarde :");
+                        Console.WriteLine("[1] - Complète");
+                        Console.WriteLine("[2] - Différentielle");
+                        string inputSaveType = Console.ReadLine();
+                        int    saveType      = Int16.Parse(inputSaveType);
+                        /* User Inputs */
+
+                        /* Job Creation */
+                        this.viewModel.addNewJob(new Job(jobName, sourcePath, targetPath, saveType));
+                        /* Job Creation */
+
                         break;
                     case "2":
                         Console.WriteLine("Voici les traveaux de sauvegardes :");
+                        foreach (Job job in this.viewModel.getJobsList())
+                        {
+                            Console.WriteLine(job.toString());
+                        }
                         break;
                     case "3":
                         Console.WriteLine("3...");
@@ -60,14 +92,16 @@ namespace EasySave
                             Console.WriteLine("[" + i + "] : " + this.translate.lstLanguages[i]);
                         }
 
-
+                        /* User inputs */
                         Console.WriteLine("Quelle langue voulez vous utiliser ? :");
                         string inputIndexLang = Console.ReadLine();
                         int indexLangue       = Int16.Parse(inputIndexLang);
+                        /* User inputs */
 
-                        // Set the lang
+                        /* Set the language */
                         if (indexLangue > -1 && indexLangue < this.translate.lstLanguages.Count)
                             this.viewModel.setLangueIndex(indexLangue);
+                        /* Set the language */
 
                         break;
                 }

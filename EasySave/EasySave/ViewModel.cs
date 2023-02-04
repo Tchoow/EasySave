@@ -26,9 +26,12 @@ namespace EasySave
         public int getLanguageIndex() { return this.model.currenLang; }
 
 
-        public void newSave()
-        {
+        // Jobs
+        public void addNewJob(Job newJob) { this.model.setJob(newJob);  }
 
+        public List<Job> getJobsList()
+        {
+            return this.model.getJobs();
         }
 
 
