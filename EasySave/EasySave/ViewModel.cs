@@ -27,18 +27,10 @@ namespace EasySave
 
 
         // Jobs
-        public void addNewJob(Job newJob) { this.model.setJob(newJob);  }
+        public bool addNewJob(Job newJob) { return this.model.setJob(newJob);  }
 
-        public List<Job> getJobsList()
-        {
-            return this.model.getJobs();
-        }
+        public List<Job> getJobsList()    {return this.model.getJobs(); }
 
-
-
-
-
-
-
+        public bool deleteJobWithIndex(int jobIndex) { return this.model.deleteJob(jobIndex); }
     }
 }

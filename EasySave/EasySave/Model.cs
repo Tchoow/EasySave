@@ -19,13 +19,23 @@ namespace EasySave
             this.currenLang = 1;
         }
 
-        public void setJob(Job job)
+        public bool setJob(Job job)
         {
-            Console.WriteLine(JsonConvert.DeserializeObject(File.ReadAllText(this.jobFile)));
-            List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
-            if (jsonObj == null) jsonObj = new List<Job>(); 
-            jsonObj.Add(job);
-            JsonFileUtils.SimpleWrite(jsonObj, this.jobFile);
+            try
+            {
+                List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
+                if (jsonObj == null) jsonObj = new List<Job>();
+                jsonObj.Add(job);
+                JsonFileUtils.SimpleWrite(jsonObj, this.jobFile);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+          
         }
 
         public List<Job> getJobs()
@@ -33,6 +43,24 @@ namespace EasySave
             List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
             if (jsonObj == null) jsonObj = new List<Job>();
             return jsonObj;
+        }
+
+        public bool deleteJob(int jobIndex)
+        {
+            try
+            {
+                // load all jobs
+                List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
+                if (jsonObj == null) jsonObj = new List<Job>();
+                // remove job index
+                jsonObj.RemoveAt(jobIndex - 1);
+                JsonFileUtils.SimpleWrite(jsonObj, this.jobFile);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static class JsonFileUtils

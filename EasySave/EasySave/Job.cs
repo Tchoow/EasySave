@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace EasySave
 {
@@ -18,7 +19,8 @@ namespace EasySave
         public int progression { get; set; }
         public DateTime created { get; set;  }
         public string uuid { get; set; }
-        
+
+        [JsonConstructor]
         public Job(
             string name,
             string sourceFilePath,
@@ -43,6 +45,7 @@ namespace EasySave
         }
 
         // Théo --
+        
         public Job(
             string name,
             string sourceFilePath,
@@ -50,14 +53,18 @@ namespace EasySave
             int    saveType
             )
         {
+            // User inputs
             this.name = name;
             this.sourceFilePath = sourceFilePath;
             this.destinationFilePath = destinationFilePath;
             this.saveType = saveType;
 
+            // Auto
+            this.created = DateTime.Now;
+            this.uuid = Guid.NewGuid().ToString();
         }
 
-        public String toString()
+        public String ToString()
         {
             String sRet = "";
 
