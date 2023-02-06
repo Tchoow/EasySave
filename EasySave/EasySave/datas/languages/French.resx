@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="5save" xml:space="preserve">
+    <value>Il existe déjà 5 traveaux de sauvegarde.</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Veuillez choisir une action :</value>
+  </data>
   <data name="ch1" xml:space="preserve">
     <value>ok1_fr</value>
   </data>
@@ -128,5 +134,95 @@
   </data>
   <data name="ch4" xml:space="preserve">
     <value>ok4_fr</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Veuillez choisir le numéro de sauvegarde que vous voulez supprimer.</value>
+  </data>
+  <data name="chooselanguage" xml:space="preserve">
+    <value>Quelle langue voulez vous utiliser ? :</value>
+  </data>
+  <data name="createfail" xml:space="preserve">
+    <value>Création du traveaux echouée.</value>
+  </data>
+  <data name="createsuccess" xml:space="preserve">
+    <value>Création du traveaux effectuée.</value>
+  </data>
+  <data name="daylog" xml:space="preserve">
+    <value>Logs journaliers.</value>
+  </data>
+  <data name="deletefail" xml:space="preserve">
+    <value>Suppression echouée.</value>
+  </data>
+  <data name="deletesucces" xml:space="preserve">
+    <value>Suppression effectuée.</value>
+  </data>
+  <data name="destinationdirectory" xml:space="preserve">
+    <value>Chemin du répertoire (Destination) :</value>
+  </data>
+  <data name="differential" xml:space="preserve">
+    <value>Différentielle.</value>
+  </data>
+  <data name="execsave" xml:space="preserve">
+    <value>Executer un traveaux de sauvegarde.</value>
+  </data>
+  <data name="full" xml:space="preserve">
+    <value>Complète.</value>
+  </data>
+  <data name="incorectwrite" xml:space="preserve">
+    <value>Saisi incorrecte.</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Liste des langues disponibles:</value>
+  </data>
+  <data name="listlog" xml:space="preserve">
+    <value>Liste des logs stockées sur le serveur:</value>
+  </data>
+  <data name="listsave" xml:space="preserve">
+    <value>Liste des travaux de sauvegarde.</value>
+  </data>
+  <data name="menu_0" xml:space="preserve">
+    <value>Liste des actions  (entre 1 et 7) :</value>
+  </data>
+  <data name="menu_1" xml:space="preserve">
+    <value>Créer un traveaux de sauvegardes.</value>
+  </data>
+  <data name="menu_2" xml:space="preserve">
+    <value>Afficher les traveaux de sauvegardes.</value>
+  </data>
+  <data name="menu_3" xml:space="preserve">
+    <value>Supprimer un traveaux de sauvegardes.</value>
+  </data>
+  <data name="menu_4" xml:space="preserve">
+    <value>Executer une ou plusieurs sauvegarde.</value>
+  </data>
+  <data name="menu_5" xml:space="preserve">
+    <value>Afficher les logs journaliers.</value>
+  </data>
+  <data name="menu_6" xml:space="preserve">
+    <value>Changer la langue.</value>
+  </data>
+  <data name="menu_7" xml:space="preserve">
+    <value>Quitter le programme.</value>
+  </data>
+  <data name="pleasedelete" xml:space="preserve">
+    <value>Merci d'en supprimer pour pouvoir en créer de nouveaux.</value>
+  </data>
+  <data name="readwhat" xml:space="preserve">
+    <value>Quel fichier voulez vous lire ? :</value>
+  </data>
+  <data name="savename" xml:space="preserve">
+    <value>Nom du travail de sauvegarde:</value>
+  </data>
+  <data name="savenum" xml:space="preserve">
+    <value>Traveaux n°:</value>
+  </data>
+  <data name="savetype" xml:space="preserve">
+    <value>Type de la sauvegarde :</value>
+  </data>
+  <data name="showsave" xml:space="preserve">
+    <value>Voici les traveaux de sauvegardes :</value>
+  </data>
+  <data name="sourcedirectory" xml:space="preserve">
+    <value>Chemin du répertoire (Source) :</value>
   </data>
 </root>

@@ -45,16 +45,16 @@ namespace EasySave
             do
             {
                 Console.WriteLine("+-------------------------------------------------------+");
-                Console.WriteLine("| Liste des actions  (entre 1 et 5) :                   |");
-                Console.WriteLine("| [1] Créer un traveaux de sauvegardes                  |");
-                Console.WriteLine("| [2] Afficher les traveaux de sauvegardes.             |");
-                Console.WriteLine("| [3] Supprimer un traveaux de sauvegardes.             |");
-                Console.WriteLine("| [4] Executer une ou plusieurs sauvegarde.             |");
-                Console.WriteLine("| [5] Afficher les logs journalières                    |");
-                Console.WriteLine("| [6] Changer la langue.                                |");
-                Console.WriteLine("| [7] Quitter le programme.                             |");
+                Console.WriteLine("| "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_0"))+"|") ;
+                Console.WriteLine("| [1] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_1"))+"|");
+                Console.WriteLine("| [2] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_2"))+"|");
+                Console.WriteLine("| [3] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_3"))+"|");
+                Console.WriteLine("| [4] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_4"))+"|");
+                Console.WriteLine("| [5] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_5"))+"|");
+                Console.WriteLine("| [6] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_6"))+"|");
+                Console.WriteLine("| [7] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_7"))+"|");
                 Console.WriteLine("+-------------------------------------------------------+");
-                Console.Write    ("> Veuillez choisir une action :"                          );
+                Console.Write("> "+ (this.translate.getTraduction(this.viewModel.getLanguageIndex(), "action")));
 
                 // User Input
                 userInput = Console.ReadLine();
@@ -67,15 +67,15 @@ namespace EasySave
                         {
 
                             /* User Inputs */
-                            Console.WriteLine("Nom du travail de sauvegarde:");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "savename"));
                             string jobName = Console.ReadLine();
-                            Console.WriteLine("Chemin du répertoire (Source) :");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "sourcedirectory"));
                             string sourcePath = Console.ReadLine();
-                            Console.WriteLine("Chemin du répertoire (Destination) :");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "destinationdirectory"));
                             string targetPath = Console.ReadLine();
-                            Console.WriteLine("Type de la sauvegarde :");
-                            Console.WriteLine("[1] - Complète");
-                            Console.WriteLine("[2] - Différentielle");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "savetype"));
+                            Console.WriteLine("[1] - "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "full")));
+                            Console.WriteLine("[2] - "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "differential")));
                             string inputSaveType = Console.ReadLine();
                             try
                             {
@@ -85,13 +85,13 @@ namespace EasySave
                                 {
                                     // Success
                                     Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Création du traveaux effectuée.");
+                                    Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "createsuccess"));
                                 }
                                 else
                                 {
                                     // Error
                                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("Création du traveaux echouée.");
+                                    Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "createfail"));
                                 }
                                 Console.ForegroundColor = ConsoleColor.White;
                                 /* Job Creation */
@@ -100,7 +100,7 @@ namespace EasySave
                             {
 
                                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                                Console.WriteLine("Saisi incorrecte.");
+                                Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "incorectwrite"));
                                 Console.ForegroundColor = ConsoleColor.White;
                                 break;
 
@@ -113,22 +113,22 @@ namespace EasySave
                         {
                             // Limit Error
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Il existe déjà 5 traveaux de sauvegarde.");
-                            Console.WriteLine("Merci d'en supprimer pour pouvoir en créer de nouveaux");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "5save"));
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "pleasedelete"));
                             Console.ForegroundColor = ConsoleColor.White;
                         }
                         /* Jobs verifications */
 
                         break;
                     case "2":
-                        Console.WriteLine("Voici les traveaux de sauvegardes :");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "choose"));
                         printJobInfos();
                         break;
                     case "3":
-                        Console.WriteLine("Voici les traveaux de sauvegardes :");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "choose"));
                         printJobInfos();
-                        Console.WriteLine("Veuillez choisir le numéro de sauvegarde que vous voulez supprimer.");
-                        Console.Write("Traveaux n°:");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "choose"));
+                        Console.Write(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "savenum"));
                         string inputIndexJob = Console.ReadLine();
                         int indexJob = Int16.Parse(inputIndexJob);
 
@@ -136,36 +136,36 @@ namespace EasySave
                         {
                             // Success
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Suppression effectuée.");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "deletesucces"));
                         }
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.WriteLine("Suppression echouée.");
+                            Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "deletefail"));
                         }
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
 
                     case "4":
-                        Console.WriteLine("Executer un traveaux de sauvegarde");
-                        Console.WriteLine("Liste des travaux de sauvegarde...");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "execsave"));
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "listsave"));
                         break;
                     case "5":
-                        Console.WriteLine("Logs journalières.");
-                        Console.WriteLine("Liste des logs stockées sur le serveur:");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "daylog"));
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "listlog"));
                         // Affiche l'ensemble des fichiers présent dans le serveur
-                        Console.WriteLine("Quel fichier voulez vous lire ? :");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "readwhat"));
                         // Affiche le contenu du fichier selectionné.
                         break;
                     case "6":
-                        Console.WriteLine("Liste des langues disponibles:");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "language"));
                         for (int i = 0; i < this.translate.lstLanguages.Count; i++)
                         {
                             Console.WriteLine("[" + i + "] : " + this.translate.lstLanguages[i]);
                         }
 
                         /* User inputs */
-                        Console.WriteLine("Quelle langue voulez vous utiliser ? :");
+                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "chooselanguage"));
                         string inputIndexLang = Console.ReadLine();
                         int indexLangue       = Int16.Parse(inputIndexLang);
                         /* User inputs */

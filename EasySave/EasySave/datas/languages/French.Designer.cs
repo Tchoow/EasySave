@@ -61,6 +61,24 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Il existe déjà 5 traveaux de sauvegarde..
+        /// </summary>
+        internal static string _5save {
+            get {
+                return ResourceManager.GetString("5save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez choisir une action :.
+        /// </summary>
+        internal static string action {
+            get {
+                return ResourceManager.GetString("action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ok1_fr.
         /// </summary>
         internal static string ch1 {
@@ -93,6 +111,276 @@ namespace EasySave.datas.languages {
         internal static string ch4 {
             get {
                 return ResourceManager.GetString("ch4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez choisir le numéro de sauvegarde que vous voulez supprimer..
+        /// </summary>
+        internal static string choose {
+            get {
+                return ResourceManager.GetString("choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Quelle langue voulez vous utiliser ? :.
+        /// </summary>
+        internal static string chooselanguage {
+            get {
+                return ResourceManager.GetString("chooselanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création du traveaux echouée..
+        /// </summary>
+        internal static string createfail {
+            get {
+                return ResourceManager.GetString("createfail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Création du traveaux effectuée..
+        /// </summary>
+        internal static string createsuccess {
+            get {
+                return ResourceManager.GetString("createsuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Logs journaliers..
+        /// </summary>
+        internal static string daylog {
+            get {
+                return ResourceManager.GetString("daylog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression echouée..
+        /// </summary>
+        internal static string deletefail {
+            get {
+                return ResourceManager.GetString("deletefail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression effectuée..
+        /// </summary>
+        internal static string deletesucces {
+            get {
+                return ResourceManager.GetString("deletesucces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Chemin du répertoire (Destination) :.
+        /// </summary>
+        internal static string destinationdirectory {
+            get {
+                return ResourceManager.GetString("destinationdirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Différentielle..
+        /// </summary>
+        internal static string differential {
+            get {
+                return ResourceManager.GetString("differential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Executer un traveaux de sauvegarde..
+        /// </summary>
+        internal static string execsave {
+            get {
+                return ResourceManager.GetString("execsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Complète..
+        /// </summary>
+        internal static string full {
+            get {
+                return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Saisi incorrecte..
+        /// </summary>
+        internal static string incorectwrite {
+            get {
+                return ResourceManager.GetString("incorectwrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des langues disponibles:.
+        /// </summary>
+        internal static string language {
+            get {
+                return ResourceManager.GetString("language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des logs stockées sur le serveur:.
+        /// </summary>
+        internal static string listlog {
+            get {
+                return ResourceManager.GetString("listlog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des travaux de sauvegarde..
+        /// </summary>
+        internal static string listsave {
+            get {
+                return ResourceManager.GetString("listsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Liste des actions  (entre 1 et 7) :.
+        /// </summary>
+        internal static string menu_0 {
+            get {
+                return ResourceManager.GetString("menu_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Créer un traveaux de sauvegardes..
+        /// </summary>
+        internal static string menu_1 {
+            get {
+                return ResourceManager.GetString("menu_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Afficher les traveaux de sauvegardes..
+        /// </summary>
+        internal static string menu_2 {
+            get {
+                return ResourceManager.GetString("menu_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Supprimer un traveaux de sauvegardes..
+        /// </summary>
+        internal static string menu_3 {
+            get {
+                return ResourceManager.GetString("menu_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Executer une ou plusieurs sauvegarde..
+        /// </summary>
+        internal static string menu_4 {
+            get {
+                return ResourceManager.GetString("menu_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Afficher les logs journaliers..
+        /// </summary>
+        internal static string menu_5 {
+            get {
+                return ResourceManager.GetString("menu_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Changer la langue..
+        /// </summary>
+        internal static string menu_6 {
+            get {
+                return ResourceManager.GetString("menu_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Quitter le programme..
+        /// </summary>
+        internal static string menu_7 {
+            get {
+                return ResourceManager.GetString("menu_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Merci d&apos;en supprimer pour pouvoir en créer de nouveaux..
+        /// </summary>
+        internal static string pleasedelete {
+            get {
+                return ResourceManager.GetString("pleasedelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Quel fichier voulez vous lire ? :.
+        /// </summary>
+        internal static string readwhat {
+            get {
+                return ResourceManager.GetString("readwhat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom du travail de sauvegarde:.
+        /// </summary>
+        internal static string savename {
+            get {
+                return ResourceManager.GetString("savename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Traveaux n°:.
+        /// </summary>
+        internal static string savenum {
+            get {
+                return ResourceManager.GetString("savenum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type de la sauvegarde :.
+        /// </summary>
+        internal static string savetype {
+            get {
+                return ResourceManager.GetString("savetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voici les traveaux de sauvegardes :.
+        /// </summary>
+        internal static string showsave {
+            get {
+                return ResourceManager.GetString("showsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Chemin du répertoire (Source) :.
+        /// </summary>
+        internal static string sourcedirectory {
+            get {
+                return ResourceManager.GetString("sourcedirectory", resourceCulture);
             }
         }
     }

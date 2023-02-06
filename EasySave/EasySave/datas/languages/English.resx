@@ -117,16 +117,112 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="5save" xml:space="preserve">
+    <value>There is already 5 savefiles.</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Choose an action:</value>
+  </data>
   <data name="ch1" xml:space="preserve">
-    <value>ok1_fr</value>
+    <value>ok1_en</value>
   </data>
   <data name="ch2" xml:space="preserve">
-    <value>ok2_fr</value>
+    <value>ok2_en</value>
   </data>
   <data name="ch3" xml:space="preserve">
-    <value>ok3_fr</value>
+    <value>ok3_en</value>
   </data>
   <data name="ch4" xml:space="preserve">
-    <value>ok4_fr</value>
+    <value>ok4_en</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Choose wich save number shall be deleted.</value>
+  </data>
+  <data name="chooselanguage" xml:space="preserve">
+    <value>Select language:</value>
+  </data>
+  <data name="createfail" xml:space="preserve">
+    <value>Creation of savefile failed.</value>
+  </data>
+  <data name="createsuccess" xml:space="preserve">
+    <value>Creation savefile successful.</value>
+  </data>
+  <data name="daylog" xml:space="preserve">
+    <value>Dayly logs.</value>
+  </data>
+  <data name="deletefail" xml:space="preserve">
+    <value>Remove failed.</value>
+  </data>
+  <data name="deletesucces" xml:space="preserve">
+    <value>Deleted.</value>
+  </data>
+  <data name="destinationdirectory" xml:space="preserve">
+    <value>Directory path (To) :</value>
+  </data>
+  <data name="differential" xml:space="preserve">
+    <value>Differential.</value>
+  </data>
+  <data name="execsave" xml:space="preserve">
+    <value>Execute Savefile.</value>
+  </data>
+  <data name="full" xml:space="preserve">
+    <value>Complete.</value>
+  </data>
+  <data name="incorectwrite" xml:space="preserve">
+    <value>Incorect input.</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language available.</value>
+  </data>
+  <data name="listlog" xml:space="preserve">
+    <value>Logs.</value>
+  </data>
+  <data name="listsave" xml:space="preserve">
+    <value>Saves.</value>
+  </data>
+  <data name="menu_0" xml:space="preserve">
+    <value>Choose an option (between 1-7):</value>
+  </data>
+  <data name="menu_1" xml:space="preserve">
+    <value>Create save.</value>
+  </data>
+  <data name="menu_2" xml:space="preserve">
+    <value>Display saves.</value>
+  </data>
+  <data name="menu_3" xml:space="preserve">
+    <value>Delete save.</value>
+  </data>
+  <data name="menu_4" xml:space="preserve">
+    <value>Execute one or more saves.</value>
+  </data>
+  <data name="menu_5" xml:space="preserve">
+    <value>Display daily logs.</value>
+  </data>
+  <data name="menu_6" xml:space="preserve">
+    <value>Change language.</value>
+  </data>
+  <data name="menu_7" xml:space="preserve">
+    <value>Close program.</value>
+  </data>
+  <data name="pleasedelete" xml:space="preserve">
+    <value>Please delete save file.</value>
+  </data>
+  <data name="readwhat" xml:space="preserve">
+    <value>What do you want to read?</value>
+  </data>
+  <data name="savename" xml:space="preserve">
+    <value>Save name.</value>
+  </data>
+  <data name="savenum" xml:space="preserve">
+    <value>Save n°:</value>
+  </data>
+  <data name="savetype" xml:space="preserve">
+    <value>Save type:</value>
+  </data>
+  <data name="showsave" xml:space="preserve">
+    <value>Here the saves.</value>
+  </data>
+  <data name="sourcedirectory" xml:space="preserve">
+    <value>Directory folder (From) :</value>
   </data>
 </root>
