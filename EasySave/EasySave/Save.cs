@@ -9,7 +9,6 @@ namespace EasySave
         private string        name;
         private DateTime timeStamp;
 
-
         public Save(string name)
         {
             this.name = name;
