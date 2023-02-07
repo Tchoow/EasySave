@@ -9,24 +9,24 @@ using Newtonsoft.Json;
 
 namespace EasySave
 {
-    class Log
+    class Log : Element
     {
-        public DateTime time { get; set; }
-        public string name { get; set; }
-        public string fileSource { get; set; }
-        public string fileTarget { get; set; }
-        public string destPath { get; set; }
-        public int fileSize { get; set; }
-        public int fileTransferTime { get; set; }
+        private DateTime time { get; set; }
+        private string name { get; set; }
+        private string fileSource { get; set; }
+        private string fileTarget { get; set; }
+        private string destPath { get; set; }
+        private long fileSize { get; set; }
+        private long fileTransferTime { get; set; }
 
         public Log(
                    string name,
                    string fileSource,
                    string fileTarget,
                    string destPath,
-                   int fileSize,
-                   int fileTransferTime
-             )
+                   long fileSize,
+                   long fileTransferTime
+             ) : base ( name, fileSource, fileTarget)
         {
             this.time = DateTime.Now;
             this.name = name;
@@ -58,7 +58,14 @@ namespace EasySave
 
             jsonObj.Add(this);
             File.WriteAllText(logsFilePath, JsonConvert.SerializeObject(jsonObj, Formatting.Indented));
-
         }
+
+        public DateTime Time { get => time; set => time = value; }
+        public string Name { get => name; set => name = value; }
+        public string FileSource { get => fileSource; set => fileSource = value; }
+        public string FileTarget { get => fileTarget; set => fileTarget = value; }
+        public string DestPath { get => destPath; set => destPath = value; }
+        public long FileSize { get => fileSize; set => fileSize = value; }
+        public long FileTransferTime { get => fileTransferTime; set => fileTransferTime = value; }
     }
 }
