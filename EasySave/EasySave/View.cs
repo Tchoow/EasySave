@@ -1,15 +1,44 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace EasySave
 {
     class View
     {
+        private bool success = false;
         private ViewModel viewModel;
         private Translate translate;
         public View()
         {
             this.viewModel = new ViewModel(this);
             this.translate = new Translate();
+        }
+
+        public void executeJobs(List<Job> jobs)
+        {
+            for (int i = 0; i < jobs.Count; i++)
+            {
+                Console.WriteLine(jobs[i].name);
+                FileAttributes attrDest = File.GetAttributes(jobs[i].destinationFilePath);
+                FileAttributes attrSrc = File.GetAttributes(jobs[i].sourceFilePath);
+                if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory && (attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    string[] files = Directory.GetFiles(jobs[i].sourceFilePath);
+                    for(int j = 0; j < files.Length; j++)
+                    {
+                        string fileName = Path.GetFileName(files[j]);
+                        var myFile = File.Create(jobs[i].destinationFilePath+"\\"+fileName);
+                        myFile.Close();
+                        viewModel.saveFile(files[j], jobs[i].destinationFilePath+"\\"+fileName);
+                    }
+                    Console.WriteLine("Sauvegarde complète");
+                }
+                else
+                {
+                    Console.WriteLine("La source ou la destination n'est pas un dossier");
+                }
+            }
         }
 
 
@@ -148,7 +177,18 @@ namespace EasySave
 
                     case "4":
                         Console.WriteLine("Executer un traveaux de sauvegarde");
-                        Console.WriteLine("Liste des travaux de sauvegarde...");
+                        printJobInfos();
+                        Console.WriteLine("Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)");
+                        string userExecutionChoice = Console.ReadLine();
+                        switch(userExecutionChoice)
+                        {
+                            case "0":
+                                executeJobs(viewModel.getJobsList());
+                                break;
+                            default:
+                                executeJobs(new List<Job>(1) { viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] });
+                                break;
+                        }
                         break;
                     case "5":
                         Console.WriteLine("Logs journalières.");

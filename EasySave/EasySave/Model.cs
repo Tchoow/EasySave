@@ -38,6 +38,21 @@ namespace EasySave
           
         }
 
+        public bool setSave(string source, string destination)
+        {
+            try
+            {
+                File.Copy(source, destination, true);
+                return true;
+            }
+            catch(IOException err)
+            {
+                Console.WriteLine(err);
+                return false;
+            }
+
+        }
+
         public List<Job> getJobs()
         {
             List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));

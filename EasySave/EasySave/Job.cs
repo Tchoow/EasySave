@@ -63,16 +63,5 @@ namespace EasySave
             this.created = DateTime.Now;
             this.uuid = Guid.NewGuid().ToString();
         }
-
-        public String ToString()
-        {
-            String sRet = "";
-
-            sRet += "> ";
-
-            sRet += this.name;
-
-            return sRet;
-        }
     }
 }
