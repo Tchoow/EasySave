@@ -34,8 +34,6 @@ namespace EasySave
             {
                 return false;
             }
-
-          
         }
 
         public List<Job> getJobs()
@@ -43,6 +41,26 @@ namespace EasySave
             List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
             if (jsonObj == null) jsonObj = new List<Job>();
             return jsonObj;
+        }
+
+        public List<string> getLogs()
+        {
+            string folderPath    = "../../../datas/logs/";
+            string[] files       = Directory.GetFiles(folderPath);
+            List<string> lstLogs = new List<string>();
+
+            foreach (string file in files)
+            {
+                if (file.EndsWith(".json"))
+                {
+                    String fileEdit = new string(file);
+                    fileEdit = fileEdit.Replace("../../../datas/logs/", "");
+                    fileEdit = fileEdit.Replace(".json", "");
+                    lstLogs.Add(fileEdit);
+                }
+            }
+
+            return lstLogs;
         }
 
         public bool deleteJob(int jobIndex)
