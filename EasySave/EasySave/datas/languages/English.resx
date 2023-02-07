@@ -123,11 +123,14 @@
   <data name="askdel" xml:space="preserve">
     <value>Please delete save file.</value>
   </data>
+  <data name="creadate" xml:space="preserve">
+    <value>Creation date :</value>
+  </data>
   <data name="createfail" xml:space="preserve">
-    <value>Creation of savefile failed.</value>
+    <value>Creation of save job failed.</value>
   </data>
   <data name="createsuccess" xml:space="preserve">
-    <value>Creation of savefile successful.</value>
+    <value>Creation of save job successful.</value>
   </data>
   <data name="daylog" xml:space="preserve">
     <value>Daily logs.</value>
@@ -136,22 +139,25 @@
     <value>Remove failed.</value>
   </data>
   <data name="deletesave" xml:space="preserve">
-    <value>Choose wich save configuration shall be deleted :</value>
+    <value>Choose wich save number shall be deleted :</value>
   </data>
   <data name="deletesucces" xml:space="preserve">
     <value>Deleted.</value>
   </data>
-  <data name="differential" xml:space="preserve">
+  <data name="diff" xml:space="preserve">
     <value>Differential.</value>
   </data>
   <data name="exesave" xml:space="preserve">
-    <value>Execute Savefile.</value>
+    <value>Launch save job</value>
   </data>
   <data name="fromdir" xml:space="preserve">
-    <value>Directory folder (From) :</value>
+    <value>Directory path (From) :</value>
   </data>
   <data name="full" xml:space="preserve">
     <value>Complete.</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Job N° :</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>Available language :</value>
@@ -160,25 +166,25 @@
     <value>Logs.</value>
   </data>
   <data name="listsave" xml:space="preserve">
-    <value>Saves.</value>
+    <value>List of save job :</value>
   </data>
   <data name="maxsave" xml:space="preserve">
-    <value>There is already 5 save configuration.</value>
+    <value>There is already 5 save job :</value>
   </data>
   <data name="menu_0" xml:space="preserve">
     <value>Choose an option (between 1-7):</value>
   </data>
   <data name="menu_1" xml:space="preserve">
-    <value>Create save.</value>
+    <value>Create save job.</value>
   </data>
   <data name="menu_2" xml:space="preserve">
-    <value>Display saves.</value>
+    <value>Display saves job.</value>
   </data>
   <data name="menu_3" xml:space="preserve">
-    <value>Delete save.</value>
+    <value>Delete save job.</value>
   </data>
   <data name="menu_4" xml:space="preserve">
-    <value>Start one or more saves.</value>
+    <value>Start one or more saves job.</value>
   </data>
   <data name="menu_5" xml:space="preserve">
     <value>Display daily logs.</value>
@@ -189,14 +195,17 @@
   <data name="menu_7" xml:space="preserve">
     <value>Close program.</value>
   </data>
+  <data name="name" xml:space="preserve">
+    <value>Name :</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Select file to read :</value>
   </data>
   <data name="savename" xml:space="preserve">
-    <value>Save name :</value>
+    <value>Save job name :</value>
   </data>
   <data name="savenum" xml:space="preserve">
-    <value>Save n° :</value>
+    <value>job n° :</value>
   </data>
   <data name="savetype" xml:space="preserve">
     <value>Save type :</value>
@@ -205,7 +214,10 @@
     <value>Select language :</value>
   </data>
   <data name="showsave" xml:space="preserve">
-    <value>List of saves :</value>
+    <value>List of saves job :</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>State :</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Directory path (To) :</value>

@@ -79,6 +79,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de creation :.
+        /// </summary>
+        internal static string creadate {
+            get {
+                return ResourceManager.GetString("creadate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Création du travaux echouée..
         /// </summary>
         internal static string creatfail {
@@ -165,6 +174,15 @@ namespace EasySave.datas.languages {
         internal static string full {
             get {
                 return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Travaux N° :.
+        /// </summary>
+        internal static string job {
+            get {
+                return ResourceManager.GetString("job", resourceCulture);
             }
         }
         
@@ -277,6 +295,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom :.
+        /// </summary>
+        internal static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Selectionnez fichier à lire :.
         /// </summary>
         internal static string readwhat {
@@ -327,6 +354,15 @@ namespace EasySave.datas.languages {
         internal static string showsave {
             get {
                 return ResourceManager.GetString("showsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etat :.
+        /// </summary>
+        internal static string state {
+            get {
+                return ResourceManager.GetString("state", resourceCulture);
             }
         }
         

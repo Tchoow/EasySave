@@ -123,6 +123,9 @@
   <data name="askdel" xml:space="preserve">
     <value>Merci d'en supprimer pour pouvoir en créer de nouveaux.</value>
   </data>
+  <data name="creadate" xml:space="preserve">
+    <value>Date de creation :</value>
+  </data>
   <data name="creatfail" xml:space="preserve">
     <value>Création du travaux echouée.</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="full" xml:space="preserve">
     <value>Complète.</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Travaux N° :</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>Liste des langues disponibles :</value>
@@ -189,6 +195,9 @@
   <data name="menu_7" xml:space="preserve">
     <value>Quitter le programme.</value>
   </data>
+  <data name="name" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Selectionnez fichier à lire :</value>
   </data>
@@ -206,6 +215,9 @@
   </data>
   <data name="showsave" xml:space="preserve">
     <value>Liste des travaux de sauvegardes :</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>Etat :</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Chemin du répertoire (Destination) :</value>

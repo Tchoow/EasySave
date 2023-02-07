@@ -79,7 +79,16 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Creation of savefile failed..
+        ///   Recherche une chaîne localisée semblable à Creation date :.
+        /// </summary>
+        internal static string creadate {
+            get {
+                return ResourceManager.GetString("creadate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Creation of save job failed..
         /// </summary>
         internal static string createfail {
             get {
@@ -88,7 +97,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Creation of savefile successful..
+        ///   Recherche une chaîne localisée semblable à Creation of save job successful..
         /// </summary>
         internal static string createsuccess {
             get {
@@ -115,7 +124,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Choose wich save configuration shall be deleted :.
+        ///   Recherche une chaîne localisée semblable à Choose wich save number shall be deleted :.
         /// </summary>
         internal static string deletesave {
             get {
@@ -135,14 +144,14 @@ namespace EasySave.datas.languages {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Differential..
         /// </summary>
-        internal static string differential {
+        internal static string diff {
             get {
-                return ResourceManager.GetString("differential", resourceCulture);
+                return ResourceManager.GetString("diff", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Execute Savefile..
+        ///   Recherche une chaîne localisée semblable à Launch save job.
         /// </summary>
         internal static string exesave {
             get {
@@ -151,7 +160,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Directory folder (From) :.
+        ///   Recherche une chaîne localisée semblable à Directory path (From) :.
         /// </summary>
         internal static string fromdir {
             get {
@@ -165,6 +174,15 @@ namespace EasySave.datas.languages {
         internal static string full {
             get {
                 return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job N° :.
+        /// </summary>
+        internal static string job {
+            get {
+                return ResourceManager.GetString("job", resourceCulture);
             }
         }
         
@@ -187,7 +205,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Saves..
+        ///   Recherche une chaîne localisée semblable à List of save job :.
         /// </summary>
         internal static string listsave {
             get {
@@ -196,7 +214,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à There is already 5 save configuration..
+        ///   Recherche une chaîne localisée semblable à There is already 5 save job :.
         /// </summary>
         internal static string maxsave {
             get {
@@ -214,7 +232,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Create save..
+        ///   Recherche une chaîne localisée semblable à Create save job..
         /// </summary>
         internal static string menu_1 {
             get {
@@ -223,7 +241,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Display saves..
+        ///   Recherche une chaîne localisée semblable à Display saves job..
         /// </summary>
         internal static string menu_2 {
             get {
@@ -232,7 +250,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Delete save..
+        ///   Recherche une chaîne localisée semblable à Delete save job..
         /// </summary>
         internal static string menu_3 {
             get {
@@ -241,7 +259,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Start one or more saves..
+        ///   Recherche une chaîne localisée semblable à Start one or more saves job..
         /// </summary>
         internal static string menu_4 {
             get {
@@ -277,6 +295,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Name :.
+        /// </summary>
+        internal static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Select file to read :.
         /// </summary>
         internal static string readwhat {
@@ -286,7 +313,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save name :.
+        ///   Recherche une chaîne localisée semblable à Save job name :.
         /// </summary>
         internal static string savename {
             get {
@@ -295,7 +322,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save n° :.
+        ///   Recherche une chaîne localisée semblable à job n° :.
         /// </summary>
         internal static string savenum {
             get {
@@ -322,11 +349,20 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of saves :.
+        ///   Recherche une chaîne localisée semblable à List of saves job :.
         /// </summary>
         internal static string showsave {
             get {
                 return ResourceManager.GetString("showsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à State :.
+        /// </summary>
+        internal static string state {
+            get {
+                return ResourceManager.GetString("state", resourceCulture);
             }
         }
         
