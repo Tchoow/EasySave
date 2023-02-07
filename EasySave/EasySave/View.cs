@@ -12,19 +12,19 @@ namespace EasySave
             this.translate = new Translate();
         }
 
-
         public void printJobInfos()
         {
             for(int i=0; i < this.viewModel.getJobsList().Count; i++)
             {
-                Console.WriteLine("+---------+"+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "job"))+ + (i+1) + " +---------+");
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "name")) + this.viewModel.getJobsList()[i].name);
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "fromdir")) + this.viewModel.getJobsList()[i].sourceFilePath);
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "todir")) + this.viewModel.getJobsList()[i].destinationFilePath);
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "savetype")) + this.viewModel.getJobsList()[i].saveType);
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "state")) + this.viewModel.getJobsList()[i].state);
-                Console.WriteLine((this.translate.getTraduction(this.viewModel.getLanguageIndex(), "creadate")) + this.viewModel.getJobsList()[i].created);
-                Console.WriteLine("+---------------------------------------------+");
+                Console.WriteLine("+---------------------------+");
+                Console.WriteLine(String.Format("| {0, -25} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "job") + (i + 1)));
+                Console.WriteLine("+---------------------------+---------------------------+-------------------------------------------------------+");
+                Console.WriteLine(String.Format("| {0, -109} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "name") + " : " + this.viewModel.getJobsList()[i].name));
+                Console.WriteLine(String.Format("| {0, -109} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "fromdir") + " : " + this.viewModel.getJobsList()[i].sourceFilePath));
+                Console.WriteLine(String.Format("| {0, -109} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "todir") + " : " + this.viewModel.getJobsList()[i].destinationFilePath));
+                Console.WriteLine(String.Format("| {0, -109} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "savetype") + " : " + this.viewModel.getJobsList()[i].saveType));
+                Console.WriteLine(String.Format("| {0, -109} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "state") + " : " + this.viewModel.getJobsList()[i].state));
+                Console.WriteLine("+-------------------------------------------------------+-------------------------------------------------------+");
             }
         }
 
@@ -45,14 +45,14 @@ namespace EasySave
             do
             {
                 Console.WriteLine("+-------------------------------------------------------+");
-                Console.WriteLine("| "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_0"))+"|") ;
-                Console.WriteLine("| [1] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_1"))+"|");
-                Console.WriteLine("| [2] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_2"))+"|");
-                Console.WriteLine("| [3] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_3"))+"|");
-                Console.WriteLine("| [4] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_4"))+"|");
-                Console.WriteLine("| [5] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_5"))+"|");
-                Console.WriteLine("| [6] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_6"))+"|");
-                Console.WriteLine("| [7] "+(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_7"))+"|");
+                Console.WriteLine(String.Format("| {0, -53} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(),     "menu_0")));
+                Console.WriteLine(String.Format("| [1] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_1")));
+                Console.WriteLine(String.Format("| [2] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_2")));
+                Console.WriteLine(String.Format("| [3] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_3")));
+                Console.WriteLine(String.Format("| [4] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_4")));
+                Console.WriteLine(String.Format("| [5] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_5")));
+                Console.WriteLine(String.Format("| [6] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_6")));
+                Console.WriteLine(String.Format("| [7] {0, -49} |", this.translate.getTraduction(this.viewModel.getLanguageIndex(), "menu_7")));
                 Console.WriteLine("+-------------------------------------------------------+");
                 Console.Write("> "+ (this.translate.getTraduction(this.viewModel.getLanguageIndex(), "action")));
 
@@ -106,8 +106,6 @@ namespace EasySave
 
                             }
                             /* User Inputs */
-
-
                         }
                         else
                         {
@@ -149,12 +147,18 @@ namespace EasySave
                     case "4":
                         Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "exesave"));
                         Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "listsave"));
+
                         break;
                     case "5":
                         Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "daylog"));
                         Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "listlog"));
+                        for (int i = 0; i < this.viewModel.getLogs().Count; i++)
+                        {
+                            Console.WriteLine("[" + (i + 1) + "] - logs du:" + this.viewModel.getLogs()[i]);
+                        }
+                        
                         // Affiche l'ensemble des fichiers présent dans le serveur
-                        Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "readwhat"));
+                        // Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "readwhat"));
                         // Affiche le contenu du fichier selectionné.
                         break;
                     case "6":
@@ -167,17 +171,33 @@ namespace EasySave
                         /* User inputs */
                         Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "selectlanguage"));
                         string inputIndexLang = Console.ReadLine();
-                        int indexLangue       = Int16.Parse(inputIndexLang);
-                        /* User inputs */
-
-                        /* Set the language */
-                        if (indexLangue > -1 && indexLangue < this.translate.lstLanguages.Count)
-                            this.viewModel.setLangueIndex(indexLangue);
-                        /* Set the language */
-
+                        try
+                        {
+                            int indexLangue = Int16.Parse(inputIndexLang);
+                            /* User inputs */
+                            /* Set the language */
+                            if (indexLangue > -1 && indexLangue < this.translate.lstLanguages.Count)
+                            {
+                                this.viewModel.setLangueIndex(indexLangue);
+                                /* Set the language */
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("Ok !");
+                            }
+                            else
+                            {
+                                /* Set the language */
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Langue non trouvée");
+                            }
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Error !");
+                        }
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                 }
-
                 // If we choose "7" it breaks the loop
             } while (userInput != "7");
             Console.WriteLine(this.translate.getTraduction(this.viewModel.getLanguageIndex(), "ch1"));
