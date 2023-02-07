@@ -8,8 +8,8 @@ namespace EasySave
     class ViewModel
     {
         private View view           { get; set; }
-        private Model model { get; set; }
-        public List<Log> lstLogs { get; set; }
+        private Model model         { get; set; }
+        public List<Log> lstLogs    { get; set; }
 
         public ViewModel(View view)
         {
@@ -18,14 +18,11 @@ namespace EasySave
             this.lstLogs = new List<Log>();
         }
 
-
         // Traductions
-        public void setLangueIndex(int indexLang) { this.model.currenLang = indexLang; }
-        public bool saveFile(string source, string destination)
-        {
-            return model.setSave(source, destination);
-        }
-        public int getLanguageIndex() { return this.model.currenLang; }
+        public void setLangueIndex(int indexLang) { this.model.setLanguageIndex(indexLang); }
+        public int  getLanguageIndex() { return this.model.getLanguageIndex(); }
+        public string getTraduction(string key) { return this.model.getTraduction(key);  }
+        public List<string> getLstLanguages() { return this.model.getLstLanguages();  }
 
         // Jobs
         public bool addNewJob(Job newJob) { return this.model.setJob(newJob);  }
@@ -35,10 +32,9 @@ namespace EasySave
 
         public List<string> getLogs() { return this.model.getLogs(); }
 
-        public bool execJobs(int[] idsOfJobs)
-        {
-            return true;
-        }
+        // Save
+        public bool executeJobs(List<Job> jobs) {return this.model.executeJobs(jobs); }
+        public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
 
 
 

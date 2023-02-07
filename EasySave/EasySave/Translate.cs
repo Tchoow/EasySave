@@ -10,7 +10,7 @@ namespace EasySave
 {
     class Translate
     {
-        public List<string> lstLanguages { get; set; }
+        private List<string> lstLanguages { get; set; }
         public Translate()
         {
             string folderPath = "../../../datas/languages/";
@@ -28,6 +28,8 @@ namespace EasySave
                 }
             }
         }
+
+        public List<string> getLstLanguages() { return this.lstLanguages; }
 
         public string getTraduction(int indexLang, string tradKey)
         {

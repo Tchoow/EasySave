@@ -1,0 +1,119 @@
+[
+  {
+    "name": "test",
+    "time": "2023-02-07T21:41:21.9249227+01:00",
+    "fileSource": "test1",
+    "fileTarget": "test3",
+    "destPath": "test4",
+    "fileSize": 5,
+    "fileTransferTime": 50
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T22:21:03.8200909+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repB\\test1.txt",
+    "fileTarget": "test",
+    "destPath": "test4",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T22:21:03.8604426+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repB\\test2.txt",
+    "fileTarget": "test",
+    "destPath": "test4",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T22:21:03.8690731+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repB\\test3.txt",
+    "fileTarget": "test",
+    "destPath": "test4",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T22:21:03.8753373+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repB\\test4.txt",
+    "fileTarget": "test",
+    "destPath": "test4",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test",
+    "time": "2023-02-07T23:05:50.1335232+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test1.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test1.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test",
+    "time": "2023-02-07T23:05:50.1463295+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test2.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test2.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test",
+    "time": "2023-02-07T23:05:50.1525052+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test3.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test3.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test",
+    "time": "2023-02-07T23:05:50.158685+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test4.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\\\test4.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T23:05:50.1651042+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test1.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test1.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T23:05:50.1710685+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test2.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test2.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T23:05:50.1816564+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test3.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test3.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  },
+  {
+    "name": "copy - test2",
+    "time": "2023-02-07T23:05:50.1853562+01:00",
+    "fileSource": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test4.txt",
+    "fileTarget": "C:\\Users\\Théo LAVIE\\Desktop\\repA\\test4.txt",
+    "destPath": "",
+    "fileSize": 0,
+    "fileTransferTime": 0
+  }
+]
