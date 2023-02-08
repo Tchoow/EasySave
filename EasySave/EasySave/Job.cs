@@ -44,13 +44,12 @@ namespace EasySave
             this.uuid = Guid.NewGuid().ToString();
         }
 
-        // Théo --
-
         public Job(
             string name,
             string sourceFilePath,
             string destinationFilePath,
-            int saveType
+            int saveType,
+            string state
             ) : base(name, sourceFilePath, destinationFilePath)
         {
             // User inputs
@@ -58,6 +57,7 @@ namespace EasySave
             this.sourceFilePath = sourceFilePath;
             this.destinationFilePath = destinationFilePath;
             this.saveType = saveType;
+            this.state = state;
 
             // Auto
             this.created = DateTime.Now;

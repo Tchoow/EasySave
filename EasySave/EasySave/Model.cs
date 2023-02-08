@@ -30,14 +30,38 @@ namespace EasySave
                 // The creation of the job works
                 List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
                 if (jsonObj == null) jsonObj = new List<Job>();
+                int size = 0;
+                FileInfo[] infos = new DirectoryInfo(job.SourceFilePath).GetFiles();
+                job.TotalFileToCopy = infos.Length;
+                foreach(FileInfo info in infos)
+                {
+                    size += (int)info.Length;
+                }
+                job.TotalFileSize = size;
+                job.State = "Paused";
                 jsonObj.Add(job);
-                JsonFileUtils.SimpleWrite(jsonObj, this.jobFile);
+                SimpleWrite(jsonObj, this.jobFile);
 
                 return true;
             }
             catch
             {
                 // Error in the process
+                return false;
+            }
+        }
+
+        public bool setJobByIndex(Job job, int index)
+        {
+            try
+            {
+                List<Job> currentJobs = this.getJobs();
+                currentJobs[index] = job;
+                SimpleWrite(currentJobs, jobFile);
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }
@@ -97,7 +121,7 @@ namespace EasySave
                 if (jsonObj == null) jsonObj = new List<Job>();
                 // remove job index
                 jsonObj.RemoveAt(jobIndex - 1);
-                JsonFileUtils.SimpleWrite(jsonObj, this.jobFile);
+                SimpleWrite(jsonObj, this.jobFile);
                 return true;
             }
             catch
@@ -105,15 +129,11 @@ namespace EasySave
                 return false;
             }
         }
-
-        public static class JsonFileUtils
+        private static readonly JsonSerializerSettings _options = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented };
+        public static void SimpleWrite(object obj, string fileName)
         {
-            private static readonly JsonSerializerSettings _options = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, Formatting = Formatting.Indented };
-            public static void SimpleWrite(object obj, string fileName)
-            {
-                var jsonString = JsonConvert.SerializeObject(obj, _options);
-                File.WriteAllText(fileName, jsonString);
-            }
+            var jsonString = JsonConvert.SerializeObject(obj, _options);
+            File.WriteAllText(fileName, jsonString);
         }
 
 
@@ -124,8 +144,29 @@ namespace EasySave
                 // The execution of the job works
                 for (int i = 0; i < jobs.Count; i++)
                 {
+                    Job newJob = jobs[i];
                     FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
                     FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
+                    string source;
+                    if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                    {
+                        source = jobs[i].SourceFilePath;
+                    }
+                    else
+                    {
+                        source = Path.GetDirectoryName(jobs[i].SourceFilePath);
+                    }
+                    FileInfo[] dinfos = new DirectoryInfo(source).GetFiles();
+                    newJob.NbFilesLeftToDo = 0;
+                    newJob.Progression = 0;
+                    newJob.TotalFileToCopy = dinfos.Length;
+                    newJob.State = "Running";
+                    int size = 0;
+                    foreach (FileInfo dinfo in dinfos)
+                    {
+                        size += (int)dinfo.Length;
+                    }
+                    newJob.TotalFileSize = size;
                     if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                     {
                         string[] files; 
@@ -154,14 +195,18 @@ namespace EasySave
 
                             FileInfo fileInfos = new FileInfo(jobs[i].DestinationFilePath + "\\" + fileName);
                             filesSize += fileInfos.Length;
-
+                            newJob.NbFilesLeftToDo++;
+                            newJob.Progression = newJob.NbFilesLeftToDo / newJob.TotalFileToCopy * 100;
                         }
                         DateTime endTime = DateTime.Now;
                         TimeSpan execTime = endTime - startTime;
-
                         // Logs
                         Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].SourceFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds);
                         log.saveLogInFile();
+                        List<Job> currentJobs = this.getJobs();
+                        int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));
+                        if (i == jobs.Count - 1) newJob.State = "Ended";
+                        this.setJobByIndex(newJob, index);
                     }
                     else
                     {
