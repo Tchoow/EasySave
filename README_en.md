@@ -25,7 +25,7 @@
 
 ### Use case diagram :
 This diagram show interactions between user and system.
-![image](/assets/usecase.png)
+![image](/assets/usecase.jpg)
 
 ### Sequence diagram :
 It show the order of the interactionsbetween objects in time.
