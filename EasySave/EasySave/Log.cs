@@ -40,11 +40,12 @@ namespace EasySave
 
         public void saveLogInFile()
         {
+            // path creation
             DateTime currentDate = DateTime.Now;
             string namefile = currentDate.ToString("MM-dd-yyyy") + ".json";
             string projectPath = Path.GetFullPath(@"../../../");
             string logsFilePath = Path.Combine(projectPath, @"datas/logs/", namefile);
-
+            // test if daily file exist, if not create it
             if (!File.Exists(logsFilePath))
             {
                 using (FileStream fs = File.Create(logsFilePath))
@@ -53,10 +54,13 @@ namespace EasySave
 
                 }
             }
+            // create new list of Log object with json data
             List<Log> jsonObj = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(logsFilePath));
+            // if jsonobj file is empty create new list of log (to have valid format json)
             if (jsonObj == null) jsonObj = new List<Log>();
-
+            // add currently data log to list
             jsonObj.Add(this);
+            //serialize and write file with the list of logs
             File.WriteAllText(logsFilePath, JsonConvert.SerializeObject(jsonObj, Formatting.Indented));
         }
 
