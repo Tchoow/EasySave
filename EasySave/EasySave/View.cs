@@ -79,7 +79,7 @@ namespace EasySave
                             {
                                 int saveType = Int16.Parse(inputSaveType);
                                 /* Job Creation */
-                                if (this.viewModel.addNewJob(new Job(jobName, sourcePath, targetPath, saveType)))
+                                if (this.viewModel.addNewJob(new Job(jobName, sourcePath, targetPath, saveType)) && saveType > 0 && saveType < 1)
                                 {
                                     // Success
                                     Console.ForegroundColor = ConsoleColor.Green;
