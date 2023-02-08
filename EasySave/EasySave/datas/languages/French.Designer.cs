@@ -259,7 +259,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Executer une ou plusieurs sauvegarde..
+        ///   Recherche une chaîne localisée semblable à Executer une ou plusieurs travaux..
         /// </summary>
         internal static string menu_4 {
             get {
@@ -322,7 +322,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Traveaux n° :.
+        ///   Recherche une chaîne localisée semblable à Travaux n° :.
         /// </summary>
         internal static string savenum {
             get {

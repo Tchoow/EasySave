@@ -88,7 +88,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Creation of save job failed..
+        ///   Recherche une chaîne localisée semblable à Creation of job failed..
         /// </summary>
         internal static string createfail {
             get {
@@ -97,7 +97,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Creation of save job successful..
+        ///   Recherche une chaîne localisée semblable à Creation of job successful..
         /// </summary>
         internal static string createsuccess {
             get {
@@ -151,7 +151,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Launch save job.
+        ///   Recherche une chaîne localisée semblable à Launch job.
         /// </summary>
         internal static string exesave {
             get {
@@ -205,7 +205,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of save job :.
+        ///   Recherche une chaîne localisée semblable à List of job :.
         /// </summary>
         internal static string listsave {
             get {
@@ -232,7 +232,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Create save job..
+        ///   Recherche une chaîne localisée semblable à Create job..
         /// </summary>
         internal static string menu_1 {
             get {
@@ -241,7 +241,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Display saves job..
+        ///   Recherche une chaîne localisée semblable à Display job..
         /// </summary>
         internal static string menu_2 {
             get {
@@ -250,7 +250,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Delete save job..
+        ///   Recherche une chaîne localisée semblable à Delete job..
         /// </summary>
         internal static string menu_3 {
             get {
@@ -259,7 +259,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Start one or more saves job..
+        ///   Recherche une chaîne localisée semblable à Start one or more job..
         /// </summary>
         internal static string menu_4 {
             get {
@@ -313,7 +313,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save job name :.
+        ///   Recherche une chaîne localisée semblable à Job name :.
         /// </summary>
         internal static string savename {
             get {
@@ -322,7 +322,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à job n° :.
+        ///   Recherche une chaîne localisée semblable à Job n° :.
         /// </summary>
         internal static string savenum {
             get {
@@ -349,7 +349,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of saves job :.
+        ///   Recherche une chaîne localisée semblable à List of jobs :.
         /// </summary>
         internal static string showsave {
             get {

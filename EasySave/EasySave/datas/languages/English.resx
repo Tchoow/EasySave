@@ -127,10 +127,10 @@
     <value>Creation date :</value>
   </data>
   <data name="createfail" xml:space="preserve">
-    <value>Creation of save job failed.</value>
+    <value>Creation of job failed.</value>
   </data>
   <data name="createsuccess" xml:space="preserve">
-    <value>Creation of save job successful.</value>
+    <value>Creation of job successful.</value>
   </data>
   <data name="daylog" xml:space="preserve">
     <value>Daily logs.</value>
@@ -148,7 +148,7 @@
     <value>Differential.</value>
   </data>
   <data name="exesave" xml:space="preserve">
-    <value>Launch save job</value>
+    <value>Launch job</value>
   </data>
   <data name="fromdir" xml:space="preserve">
     <value>Directory path (From) :</value>
@@ -166,7 +166,7 @@
     <value>Logs.</value>
   </data>
   <data name="listsave" xml:space="preserve">
-    <value>List of save job :</value>
+    <value>List of job :</value>
   </data>
   <data name="maxsave" xml:space="preserve">
     <value>There is already 5 save job :</value>
@@ -175,16 +175,16 @@
     <value>Choose an option (between 1-7):</value>
   </data>
   <data name="menu_1" xml:space="preserve">
-    <value>Create save job.</value>
+    <value>Create job.</value>
   </data>
   <data name="menu_2" xml:space="preserve">
-    <value>Display saves job.</value>
+    <value>Display job.</value>
   </data>
   <data name="menu_3" xml:space="preserve">
-    <value>Delete save job.</value>
+    <value>Delete job.</value>
   </data>
   <data name="menu_4" xml:space="preserve">
-    <value>Start one or more saves job.</value>
+    <value>Start one or more job.</value>
   </data>
   <data name="menu_5" xml:space="preserve">
     <value>Display daily logs.</value>
@@ -202,10 +202,10 @@
     <value>Select file to read :</value>
   </data>
   <data name="savename" xml:space="preserve">
-    <value>Save job name :</value>
+    <value>Job name :</value>
   </data>
   <data name="savenum" xml:space="preserve">
-    <value>job n° :</value>
+    <value>Job n° :</value>
   </data>
   <data name="savetype" xml:space="preserve">
     <value>Save type :</value>
@@ -214,7 +214,7 @@
     <value>Select language :</value>
   </data>
   <data name="showsave" xml:space="preserve">
-    <value>List of saves job :</value>
+    <value>List of jobs :</value>
   </data>
   <data name="state" xml:space="preserve">
     <value>State :</value>
