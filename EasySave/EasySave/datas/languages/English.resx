@@ -150,6 +150,9 @@
   <data name="exesave" xml:space="preserve">
     <value>Launch job</value>
   </data>
+  <data name="faillang" xml:space="preserve">
+    <value>Language unknow.</value>
+  </data>
   <data name="fromdir" xml:space="preserve">
     <value>Directory path (From) :</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="job" xml:space="preserve">
     <value>Job N° :</value>
+  </data>
+  <data name="jobtittle" xml:space="preserve">
+    <value>Starting  job.</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>Available language :</value>
@@ -206,6 +212,12 @@
   </data>
   <data name="savenum" xml:space="preserve">
     <value>Job n° :</value>
+  </data>
+  <data name="saverror" xml:space="preserve">
+    <value>Error during the job process...</value>
+  </data>
+  <data name="savesucc" xml:space="preserve">
+    <value>Save successfull.</value>
   </data>
   <data name="savetype" xml:space="preserve">
     <value>Save type :</value>
