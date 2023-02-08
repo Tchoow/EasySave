@@ -127,11 +127,18 @@ namespace EasySave
                 {
                     FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
                     FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
-                    if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory && (attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                    if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                     {
-                        string[] files = Directory.GetFiles(jobs[i].SourceFilePath);
+                        string[] files;
+                        if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                        {
+                            files = Directory.GetFiles(jobs[i].SourceFilePath);
+                        }
+                        else
+                        {
+                            files = new string[] { jobs[i].SourceFilePath }; 
+                        }
                         var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-
                         for (int j = 0; j < files.Length; j++)
                         {
                             string fileName = Path.GetFileName(files[j]);
