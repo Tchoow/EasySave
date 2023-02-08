@@ -141,41 +141,57 @@ namespace EasySave
                         break;
 
                     case "4":
-                        Console.WriteLine("Executer un traveaux de sauvegarde");
+                        Console.WriteLine(this.viewModel.getTraduction("jobtittle"));
                         printJobInfos();
-                        Console.WriteLine("Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)");
+                        Console.WriteLine(this.viewModel.getTraduction("execsave"));
                         string userExecutionChoice = Console.ReadLine();
                         switch(userExecutionChoice)
                         {
-                            case "0":
-                                if (this.viewModel.executeJobs(this.viewModel.getJobsList()))
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Sauvegarde(s) effectuée(s) avec succès.");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("Erreur lors du processus de sauvegarde...");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                break;
-                            default:
-                                if (this.viewModel.executeJobs(new List<Job>(1){viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }))
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Sauvegarde effectuée avec succès.");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("Erreur lors du processus de sauvegarde...");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                break;
+                            int jobExecutionIndex = Int16.Parse(userExecutionChoice);
+                            switch (jobExecutionIndex)
+                            {
+                                case 0: // All jobs executed
+                                    if (this.viewModel.executeJobs(this.viewModel.getJobsList()))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(this.viewModel.getTraduction("savesucc"));
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                                        Console.WriteLine(this.viewModel.getTraduction("saverror"));
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                    break;
+                                default: // Single job executed
+                                    if (this.viewModel.getJobsList().Count > 0 && jobExecutionIndex <= this.viewModel.getJobsList().Count)
+                                    {
+                                        if (this.viewModel.executeJobs(new List<Job>(1) { viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }))
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.WriteLine(this.viewModel.getTraduction("savesucc"));
+                                        }
+                                        else
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                                            Console.WriteLine(this.viewModel.getTraduction("saverror"));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                                        Console.WriteLine(this.viewModel.getTraduction("wronginput"));
+                                    }
+                                    break;
+                            }
                         }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine(this.viewModel.getTraduction("wronginput"));
+                        }
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                     case "5":
                         Console.WriteLine(this.viewModel.getTraduction("daylog"));
@@ -215,7 +231,7 @@ namespace EasySave
                             {
                                 /* Set the language */
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("Langue non trouvée");
+                                Console.WriteLine(this.viewModel.getTraduction("faillang"));
                             }
                         }
                         catch
