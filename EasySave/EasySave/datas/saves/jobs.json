@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "test",
+    "SourceFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repA",
+    "DestinationFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repB",
+    "SaveType": 1,
+    "State": "Ended",
+    "TotalFileToCopy": 6,
+    "TotalFileSize": -1464200650,
+    "NbFilesLeftToDo": 6,
+    "Progression": 100,
+    "Created": "2023-02-08T16:50:10.1546037+01:00"
+  }
+]

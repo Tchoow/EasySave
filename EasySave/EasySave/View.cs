@@ -127,7 +127,7 @@ namespace EasySave
 
                         break;
                     case "2":
-                        Console.WriteLine(this.viewModel.getTraduction("deletesave"));
+                        Console.WriteLine(this.viewModel.getTraduction("listsave"));
                         printJobInfos();
                         break;
                     case "3":
@@ -218,7 +218,7 @@ namespace EasySave
                         Console.WriteLine(this.viewModel.getTraduction("listlog"));
                         for (int i = 0; i < this.viewModel.getLogs().Count; i++)
                         {
-                            Console.WriteLine("[" + (i + 1) + "] - logs du:" + this.viewModel.getLogs()[i]);
+                            Console.WriteLine("[" + (i + 1) + "] - log:" + this.viewModel.getLogs()[i]);
                         }
 
                         // Affiche l'ensemble des fichiers présent dans le serveur
