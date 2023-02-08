@@ -63,14 +63,26 @@ namespace EasySave
                         /* Jobs verifications */
                         if (this.viewModel.getJobsList().Count < 5)
                         {
-
                             /* User Inputs */
                             Console.Write(this.viewModel.getTraduction("savename"));
                             string jobName = Console.ReadLine();
+
                             Console.Write(this.viewModel.getTraduction("fromdir"));
                             string sourcePath = Console.ReadLine();
+
                             Console.Write(this.viewModel.getTraduction("todir"));
                             string targetPath = Console.ReadLine();
+
+                            // UNC structure
+                            if (!sourcePath.Contains("\\") || !targetPath.Contains("\\"))
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                Console.WriteLine(this.viewModel.getTraduction("errorpath"));
+                                Console.ForegroundColor = ConsoleColor.White;
+                                break;
+                            }
+
+
                             Console.WriteLine(this.viewModel.getTraduction("savetype"));
                             Console.WriteLine("[1] - " + (this.viewModel.getTraduction("full")));
                             Console.WriteLine("[2] - " + (this.viewModel.getTraduction("diff")));
@@ -79,7 +91,7 @@ namespace EasySave
                             {
                                 int saveType = Int16.Parse(inputSaveType);
                                 /* Job Creation */
-                                if (this.viewModel.addNewJob(new Job(jobName, sourcePath, targetPath, saveType)) && saveType > 0 && saveType < 1)
+                                if (this.viewModel.addNewJob(new Job(jobName, sourcePath, targetPath, saveType)) || (saveType > 0 && saveType < 1))
                                 {
                                     // Success
                                     Console.ForegroundColor = ConsoleColor.Green;
