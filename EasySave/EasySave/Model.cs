@@ -125,7 +125,6 @@ namespace EasySave
                 // The execution of the job works
                 for (int i = 0; i < jobs.Count; i++)
                 {
-                    Console.WriteLine(jobs[i].Name);
                     FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
                     FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
                     if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory && (attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
@@ -136,14 +135,19 @@ namespace EasySave
                         for (int j = 0; j < files.Length; j++)
                         {
                             string fileName = Path.GetFileName(files[j]);
-                            var myFile = File.Create(jobs[i].DestinationFilePath + "\\" + fileName);
+                            string currentFile = jobs[i].DestinationFilePath + "\\" + fileName;
+                            if(jobs[i].SaveType == 1)
+                            {
+                                File.Delete(currentFile);
+                            }
+                            var myFile = File.Create(currentFile);
                             long fileSize = myFile.Length;
                             myFile.Close();
-                            viewModel.saveFile(files[j], jobs[i].DestinationFilePath + "\\" + fileName);
+                            viewModel.saveFile(files[j], currentFile);
 
                             // Logs
                             var TimestampEnd   = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-                            Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\" + fileName, jobs[i].SourceFilePath + "\\" + fileName, "", fileSize, TimestampEnd - TimestampStart);
+                            Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\" + fileName, currentFile, "", fileSize, TimestampEnd - TimestampStart);
                             log.saveLogInFile();
                         }
                     }
