@@ -135,19 +135,27 @@ namespace EasySave
                         printJobInfos();
                         Console.WriteLine(this.viewModel.getTraduction("deletesave"));
                         Console.Write(this.viewModel.getTraduction("savenum"));
-                        string inputIndexJob = Console.ReadLine();
-                        int indexJob = Int16.Parse(inputIndexJob);
 
-                        if (this.viewModel.deleteJobWithIndex(indexJob))
+                        try
                         {
-                            // Success
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine(this.viewModel.getTraduction("deletesucces"));
+                            string inputIndexJob = Console.ReadLine();
+                            int indexJob = Int16.Parse(inputIndexJob);
+                            if (this.viewModel.deleteJobWithIndex(indexJob))
+                            {
+                                // Success
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine(this.viewModel.getTraduction("deletesucces"));
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                Console.WriteLine(this.viewModel.getTraduction("deletefail"));
+                            }
                         }
-                        else
+                        catch
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.WriteLine(this.viewModel.getTraduction("deletefail"));
+                            Console.WriteLine(this.viewModel.getTraduction("wronginput"));
                         }
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
