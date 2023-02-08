@@ -32,7 +32,7 @@ L'application "EasySave" est un logiciel de sauvegarde. Il permet de sauvegarder
 
 ### Diagramme d'activité :
 
-![image](/assets/activity.png)
+![image](/assets/activity.jpg)
 
 ### Diagramme de classe :
 
