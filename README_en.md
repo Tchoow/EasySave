@@ -24,20 +24,20 @@
 ## UML diagrams
 
 ### Use case diagram :
-
+This diagram show interactions between user and system.
 ![image](/assets/usecase.png)
 
 ### Sequence diagram :
-
+It show the order of the interactionsbetween objects in time.
 ![image](/assets/sequence.png)
 
 ### Activity diagram :
-
-![image](/assets/activity.png)
+System activity and process are shown by this diagram 
+![image](/assets/activity.jpg)
 
 ### Class diagram :
-
-![image](/assets/class.png)
+Diagram that show classes, their attributs, methods and relation between them
+![image](/assets/class.jpg)
 
 
 
