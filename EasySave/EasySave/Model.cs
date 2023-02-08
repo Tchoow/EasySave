@@ -33,13 +33,13 @@ namespace EasySave
                 int size = 0;
                 FileInfo[] infos = new DirectoryInfo(job.SourceFilePath).GetFiles();
                 job.TotalFileToCopy = infos.Length;
-                foreach(FileInfo info in infos)
+                foreach(FileInfo info in infos) //We sum up the size of all files in the folder
                 {
                     size += (int)info.Length;
                 }
                 job.TotalFileSize = size;
                 job.State = "Paused";
-                jsonObj.Add(job);
+                jsonObj.Add(job); //We add a job to the list that will be written in the json file
                 SimpleWrite(jsonObj, this.jobFile);
 
                 return true;
@@ -51,7 +51,7 @@ namespace EasySave
             }
         }
 
-        public bool setJobByIndex(Job job, int index)
+        public bool setJobByIndex(Job job, int index) //set a job in the file at a specified index 
         {
             try
             {
@@ -103,7 +103,7 @@ namespace EasySave
                 if (file.EndsWith(".json"))
                 {
                     String fileEdit = new string(file);
-                    fileEdit = fileEdit.Replace("../../../datas/logs/", "");
+                    fileEdit = fileEdit.Replace("../../../datas/logs/", ""); //as the .exe is in the bin file we have to "climb up" the path
                     fileEdit = fileEdit.Replace(".json", "");
                     lstLogs.Add(fileEdit);
                 }
@@ -144,11 +144,12 @@ namespace EasySave
                 // The execution of the job works
                 for (int i = 0; i < jobs.Count; i++)
                 {
-                    Job newJob = jobs[i];
-                    FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
+                    Job newJob = jobs[i]; //This will be used for rewriting the jobs file
+                    //We get the type of file of the destination and the source of the job
+                    FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath); 
                     FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
                     string source;
-                    if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                    if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We handle the case where the source is a single file
                     {
                         source = jobs[i].SourceFilePath;
                     }
@@ -170,7 +171,7 @@ namespace EasySave
                     if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                     {
                         string[] files; 
-                        if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                        if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We get all files in the path
                         {
                             files = Directory.GetFiles(jobs[i].SourceFilePath);
                         }
@@ -185,18 +186,19 @@ namespace EasySave
                         for (int j = 0; j < files.Length; j++)
                         {
                             string fileName = Path.GetFileName(files[j]);
-                            if(File.Exists(jobs[i].DestinationFilePath + "\\" + fileName) && jobs[i].SaveType == 1) 
+                            string currentFile = jobs[i].DestinationFilePath + "\\" + fileName;
+                            if (File.Exists(currentFile) && jobs[i].SaveType == 1) 
                             {
-                                File.Delete(jobs[i].DestinationFilePath + "\\" + fileName);
+                                File.Delete(currentFile);
                             }
-                            var myFile = File.Create(jobs[i].DestinationFilePath + "\\" + fileName);
+                            var myFile = File.Create(currentFile);
                             myFile.Close();
-                            viewModel.saveFile(files[j], jobs[i].DestinationFilePath + "\\" + fileName);
+                            viewModel.saveFile(files[j], currentFile);
 
-                            FileInfo fileInfos = new FileInfo(jobs[i].DestinationFilePath + "\\" + fileName);
+                            FileInfo fileInfos = new FileInfo(currentFile);
                             filesSize += fileInfos.Length;
                             newJob.NbFilesLeftToDo++;
-                            newJob.Progression = newJob.NbFilesLeftToDo / newJob.TotalFileToCopy * 100;
+                            newJob.Progression = newJob.NbFilesLeftToDo / newJob.TotalFileToCopy * 100; //We update the progression
                         }
                         DateTime endTime = DateTime.Now;
                         TimeSpan execTime = endTime - startTime;
