@@ -147,6 +147,9 @@
   <data name="diff" xml:space="preserve">
     <value>Différentielle.</value>
   </data>
+  <data name="errorpath" xml:space="preserve">
+    <value>Erreur dans la saisie des chemins.</value>
+  </data>
   <data name="execsave" xml:space="preserve">
     <value>Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)</value>
   </data>

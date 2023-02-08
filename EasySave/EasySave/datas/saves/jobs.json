@@ -1,50 +1,46 @@
 [
   {
-    "Name": "a",
-    "SourceFilePath": "a",
-    "DestinationFilePath": "a",
-    "SaveType": 0,
-    "State": "PAUSED",
-    "TotalFileToCopy": 1,
-    "TotalFileSize": 1,
-    "NbFilesLeftToDo": 1,
+    "Name": "test",
+    "SourceFilePath": "\\\\Users\\Théo LAVIE\\Desktop\\repA",
+    "DestinationFilePath": "\\\\Users\\Théo LAVIE\\Desktop\\repB",
+    "SaveType": 1,
+    "TotalFileToCopy": 0,
+    "TotalFileSize": 0,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-03T14:47:04.7080991+01:00"
+    "Created": "2023-02-08T15:29:41.9383511+01:00"
   },
   {
-    "Name": "a",
-    "SourceFilePath": "a",
-    "DestinationFilePath": "a",
-    "SaveType": 0,
-    "State": "PAUSED",
-    "TotalFileToCopy": 1,
-    "TotalFileSize": 1,
-    "NbFilesLeftToDo": 1,
+    "Name": "dzz",
+    "SourceFilePath": "dzdz",
+    "DestinationFilePath": "dz",
+    "SaveType": 1,
+    "TotalFileToCopy": 0,
+    "TotalFileSize": 0,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-03T14:56:36.2063839+01:00"
+    "Created": "2023-02-08T15:35:51.7832604+01:00"
   },
   {
-    "Name": "a",
-    "SourceFilePath": "a",
-    "DestinationFilePath": "a",
-    "SaveType": 0,
-    "State": "PAUSED",
-    "TotalFileToCopy": 1,
-    "TotalFileSize": 1,
-    "NbFilesLeftToDo": 1,
+    "Name": "dz",
+    "SourceFilePath": "dzd",
+    "DestinationFilePath": "dz",
+    "SaveType": 1,
+    "TotalFileToCopy": 0,
+    "TotalFileSize": 0,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-03T14:58:58.1181458+01:00"
+    "Created": "2023-02-08T15:40:28.9150921+01:00"
   },
   {
-    "Name": "a",
-    "SourceFilePath": "a",
-    "DestinationFilePath": "a",
-    "SaveType": 0,
-    "State": "PAUSED",
-    "TotalFileToCopy": 1,
-    "TotalFileSize": 1,
-    "NbFilesLeftToDo": 1,
+    "Name": "C:\\Users\\Théo LAVIE\\Desktop\\repA",
+    "SourceFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repB",
+    "DestinationFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repA",
+    "SaveType": 1,
+    "TotalFileToCopy": 0,
+    "TotalFileSize": 0,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-03T15:02:53.540042+01:00"
+    "Created": "2023-02-08T15:41:35.1836368+01:00"
   }
 ]
