@@ -13,10 +13,11 @@ namespace EasySave
         private List<string> lstLanguages { get; set; }
         public Translate()
         {
+            //get files of language ressources 
             string folderPath = "../../../datas/languages/";
             string[] files    = Directory.GetFiles(folderPath);
             this.lstLanguages = new List<string>();
-
+            // get list of language in languages folder
             foreach (string file in files)
             {
                 if (file.EndsWith(".resx"))
@@ -35,7 +36,7 @@ namespace EasySave
         {
             // get lang from index
             string selectedLang = this.lstLanguages[indexLang];
-
+            //set language file to the selected language
             ResourceManager rm = new ResourceManager("EasySave.datas.languages." + selectedLang, typeof(Translate).Assembly);
             IDictionaryEnumerator enumerator = rm.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, true, true).GetEnumerator();
             while (enumerator.MoveNext())
