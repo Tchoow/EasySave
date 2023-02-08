@@ -147,6 +147,9 @@
   <data name="diff" xml:space="preserve">
     <value>Differential.</value>
   </data>
+  <data name="errorpath" xml:space="preserve">
+    <value>Error in path.</value>
+  </data>
   <data name="exesave" xml:space="preserve">
     <value>Launch job</value>
   </data>

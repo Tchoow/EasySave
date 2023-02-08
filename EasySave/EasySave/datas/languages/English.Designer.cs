@@ -151,6 +151,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Error in path..
+        /// </summary>
+        internal static string errorpath {
+            get {
+                return ResourceManager.GetString("errorpath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Launch job.
         /// </summary>
         internal static string exesave {
