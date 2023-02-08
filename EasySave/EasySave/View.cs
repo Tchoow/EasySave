@@ -13,16 +13,16 @@ namespace EasySave
         }
         public void printJobInfos()
         {
-            for(int i=0; i < this.viewModel.getJobsList().Count; i++)
+            for (int i = 0; i < this.viewModel.getJobsList().Count; i++)
             {
                 Console.WriteLine("+---------------------------+");
                 Console.WriteLine(String.Format("| {0, -25} |", this.viewModel.getTraduction("job") + (i + 1)));
                 Console.WriteLine("+---------------------------+---------------------------+-------------------------------------------------------+");
-                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("name") + " : " + this.viewModel.getJobsList()[i].Name));
-                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("fromdir") + " : " + this.viewModel.getJobsList()[i].SourceFilePath));
-                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("todir") + " : " + this.viewModel.getJobsList()[i].DestinationFilePath));
-                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("savetype") + " : " + this.viewModel.getJobsList()[i].SaveType));
-                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("state") + " : " + this.viewModel.getJobsList()[i].State));
+                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("name") + this.viewModel.getJobsList()[i].Name));
+                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("fromdir") + this.viewModel.getJobsList()[i].SourceFilePath));
+                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("todir") + this.viewModel.getJobsList()[i].DestinationFilePath));
+                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("savetype") + this.viewModel.getJobsList()[i].SaveType));
+                Console.WriteLine(String.Format("| {0, -109} |", this.viewModel.getTraduction("state") + this.viewModel.getJobsList()[i].State));
                 Console.WriteLine("+-------------------------------------------------------+-------------------------------------------------------+");
             }
         }
@@ -43,7 +43,7 @@ namespace EasySave
             do
             {
                 Console.WriteLine("+-------------------------------------------------------+");
-                Console.WriteLine(String.Format("| {0, -53} |", this.viewModel.getTraduction(    "menu_0")));
+                Console.WriteLine(String.Format("| {0, -53} |", this.viewModel.getTraduction("menu_0")));
                 Console.WriteLine(String.Format("| [1] {0, -49} |", this.viewModel.getTraduction("menu_1")));
                 Console.WriteLine(String.Format("| [2] {0, -49} |", this.viewModel.getTraduction("menu_2")));
                 Console.WriteLine(String.Format("| [3] {0, -49} |", this.viewModel.getTraduction("menu_3")));
@@ -52,12 +52,12 @@ namespace EasySave
                 Console.WriteLine(String.Format("| [6] {0, -49} |", this.viewModel.getTraduction("menu_6")));
                 Console.WriteLine(String.Format("| [7] {0, -49} |", this.viewModel.getTraduction("menu_7")));
                 Console.WriteLine("+-------------------------------------------------------+");
-                Console.Write("> "+ (this.viewModel.getTraduction("action")));
+                Console.Write("> " + (this.viewModel.getTraduction("action")));
 
                 // User Input
                 userInput = Console.ReadLine();
 
-                switch(userInput)
+                switch (userInput)
                 {
                     case "1":
                         /* Jobs verifications */
@@ -72,8 +72,8 @@ namespace EasySave
                             Console.Write(this.viewModel.getTraduction("todir"));
                             string targetPath = Console.ReadLine();
                             Console.WriteLine(this.viewModel.getTraduction("savetype"));
-                            Console.WriteLine("[1] - "+(this.viewModel.getTraduction("full")));
-                            Console.WriteLine("[2] - "+(this.viewModel.getTraduction("diff")));
+                            Console.WriteLine("[1] - " + (this.viewModel.getTraduction("full")));
+                            Console.WriteLine("[2] - " + (this.viewModel.getTraduction("diff")));
                             string inputSaveType = Console.ReadLine();
                             try
                             {
@@ -145,37 +145,53 @@ namespace EasySave
                         printJobInfos();
                         Console.WriteLine("Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)");
                         string userExecutionChoice = Console.ReadLine();
-                        switch(userExecutionChoice)
+                        try
                         {
-                            case "0":
-                                if (this.viewModel.executeJobs(this.viewModel.getJobsList()))
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Sauvegarde(s) effectuée(s) avec succès.");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("Erreur lors du processus de sauvegarde...");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                break;
-                            default:
-                                if (this.viewModel.executeJobs(new List<Job>(1){viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }))
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Sauvegarde effectuée avec succès.");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("Erreur lors du processus de sauvegarde...");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
-                                break;
+                            int jobExecutionIndex = Int16.Parse(userExecutionChoice);
+                            switch (jobExecutionIndex)
+                            {
+                                case 0: // All jobs executed
+                                    if (this.viewModel.executeJobs(this.viewModel.getJobsList()))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("Sauvegarde(s) effectuée(s) avec succès.");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                                        Console.WriteLine("Erreur lors du processus de sauvegarde...");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                    break;
+                                default: // Single job executed
+                                    if (this.viewModel.getJobsList().Count > 0 && jobExecutionIndex <= this.viewModel.getJobsList().Count)
+                                    {
+                                        if (this.viewModel.executeJobs(new List<Job>(1) { viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }))
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.WriteLine("Sauvegarde effectuée avec succès.");
+                                        }
+                                        else
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                                            Console.WriteLine("Erreur lors du processus de sauvegarde...");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                                        Console.WriteLine("Saisi incorrecte.");
+                                    }
+                                    break;
+                            }
                         }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("Saisi incorrecte.");
+                        }
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                     case "5":
                         Console.WriteLine(this.viewModel.getTraduction("daylog"));
@@ -184,7 +200,7 @@ namespace EasySave
                         {
                             Console.WriteLine("[" + (i + 1) + "] - logs du:" + this.viewModel.getLogs()[i]);
                         }
-                        
+
                         // Affiche l'ensemble des fichiers présent dans le serveur
                         // Console.WriteLine(this.viewModel.getTraduction("readwhat"));
                         // Affiche le contenu du fichier selectionné.
@@ -226,7 +242,7 @@ namespace EasySave
                         Console.ForegroundColor = ConsoleColor.White;
                         break;
                 }
-              // If we choose "7" it breaks the loop
+                // If we choose "7" it breaks the loop
             } while (userInput != "7");
         }
     }

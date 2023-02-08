@@ -1,10 +1,10 @@
 # EasySave
 
-Easy save est un projet developpé par ProSoft, c'est un logiciel utilisant .NET et C#. 
+L'application "EasySave" est un logiciel de sauvegarde. Il permet de sauvegarder des données (fichiers, dossiers, etc.) en les enregistrant sur un autre support (disque dur externe, cloud, etc.). Le but est de protéger les données en cas de perte ou de détérioration du support d'origine. L'utilisateur peut choisir les données à sauvegarder et le type de la sauvegarde. 
 
 ## Conception
 
-- [ ] Diagrammes UML
+- [x] Diagrammes UML
 - [ ] Conception BDD, MLD, MCD ?
 - [ ] Interactions systèmes
 
@@ -19,3 +19,26 @@ Easy save est un projet developpé par ProSoft, c'est un logiciel utilisant .NET
  - Théo
  - Bastien
  - Tristan
+
+## Diagrammes UML 
+
+### Diagramme de cas d'utilisation :
+
+![image](/assets/usecase.png)
+
+### Diagramme de séquence :
+
+![image](/assets/sequence.png)
+
+### Diagramme d'activité :
+
+![image](/assets/activity.png)
+
+### Diagramme de classe :
+
+![image](/assets/class.png)
+
+
+
+
+

@@ -15,11 +15,10 @@ namespace EasySave
 
         public Model(ViewModel viewModel)
         {
-            
-            this.viewModel  = viewModel;
 
+            this.viewModel = viewModel;
             // default lang is french
-            this.translate  = new Translate();
+            this.translate = new Translate();
             this.currentLang = 1;
         }
 
@@ -27,7 +26,7 @@ namespace EasySave
         public bool setJob(Job job)
         {
             try
-            {   
+            {
                 // The creation of the job works
                 List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
                 if (jsonObj == null) jsonObj = new List<Job>();
@@ -55,13 +54,13 @@ namespace EasySave
                 File.Copy(source, destination, true);
                 return true;
             }
-            catch(IOException err)
+            catch (IOException err)
             {
                 Console.WriteLine(err);
                 return false;
             }
         }
-        
+
         public List<Job> getJobs()
         {
             List<Job> jsonObj = JsonConvert.DeserializeObject<List<Job>>(File.ReadAllText(this.jobFile));
@@ -71,8 +70,8 @@ namespace EasySave
 
         public List<string> getLogs()
         {
-            string folderPath    = "../../../datas/logs/";
-            string[] files       = Directory.GetFiles(folderPath);
+            string folderPath = "../../../datas/logs/";
+            string[] files = Directory.GetFiles(folderPath);
             List<string> lstLogs = new List<string>();
 
             foreach (string file in files)
@@ -132,20 +131,26 @@ namespace EasySave
                     {
                         string[] files = Directory.GetFiles(jobs[i].SourceFilePath);
                         var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+                        long filesSize = 0;
+                        DateTime startTime = DateTime.Now;
 
                         for (int j = 0; j < files.Length; j++)
                         {
                             string fileName = Path.GetFileName(files[j]);
                             var myFile = File.Create(jobs[i].DestinationFilePath + "\\" + fileName);
-                            long fileSize = myFile.Length;
                             myFile.Close();
                             viewModel.saveFile(files[j], jobs[i].DestinationFilePath + "\\" + fileName);
 
-                            // Logs
-                            var TimestampEnd   = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-                            Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\" + fileName, jobs[i].SourceFilePath + "\\" + fileName, "", fileSize, TimestampEnd - TimestampStart);
-                            log.saveLogInFile();
+                            FileInfo fileInfos = new FileInfo(jobs[i].DestinationFilePath + "\\" + fileName);
+                            filesSize += fileInfos.Length;
+
                         }
+                        DateTime endTime = DateTime.Now;
+                        TimeSpan execTime = endTime - startTime;
+
+                        // Logs
+                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].SourceFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds);
+                        log.saveLogInFile();
                     }
                     else
                     {
@@ -156,7 +161,7 @@ namespace EasySave
                 }
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 // Error in the process
