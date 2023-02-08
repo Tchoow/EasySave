@@ -136,6 +136,26 @@ namespace EasySave
             File.WriteAllText(fileName, jsonString);
         }
 
+        public void updateProgressBar(int progress)
+        {
+            Console.Clear();
+            Console.Write("[ ");
+            int space = 100 - progress; 
+           
+            Console.ForegroundColor = ConsoleColor.Green;
+            for (int i = 0; i < progress; i++)
+            {
+                Console.Write("#");
+            }
+            for (int i = 0; i < space; i++)
+            {
+                Console.Write(" ");
+            }
+            Console.Write(" ] ");
+            Console.Write(progress + " %");
+            Console.WriteLine();
+        }
+
 
         public bool executeJobs(List<Job> jobs)
         {
@@ -163,6 +183,8 @@ namespace EasySave
                     newJob.TotalFileToCopy = dinfos.Length;
                     newJob.State = "Running";
                     int size = 0;
+
+
                     foreach (FileInfo dinfo in dinfos)
                     {
                         size += (int)dinfo.Length;
@@ -198,7 +220,9 @@ namespace EasySave
                             FileInfo fileInfos = new FileInfo(currentFile);
                             filesSize += fileInfos.Length;
                             newJob.NbFilesLeftToDo++;
-                            newJob.Progression = newJob.NbFilesLeftToDo / newJob.TotalFileToCopy * 100; //We update the progression
+                            newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
+                            updateProgressBar(newJob.Progression);
+
                         }
                         DateTime endTime = DateTime.Now;
                         TimeSpan execTime = endTime - startTime;
