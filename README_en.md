@@ -2,17 +2,7 @@
 
  EasySave is a backup software. It allows to save data (files, folders, etc.) by storing it on another support (external hard drive, cloud, etc.). The purpose is to protect the data in case of loss or damage to the original support. The user can choose the data to be saved and the type of backup.
 
-## Design
 
-- [x] Diagrammes UML
-- [ ] Conception BDD, MLD, MCD ?
-- [ ] Interactions systèmes
-
-## Documentation
-
-- [ ] Guide d'installation
-- [ ] Guide utilisateur
-- [ ] Spécifications techniques
 
 (Fictitious project designed as part of the CESI teaching, by group number 7 of CPIA3 - FISA Informatics 2022-2023 composed of:
 
