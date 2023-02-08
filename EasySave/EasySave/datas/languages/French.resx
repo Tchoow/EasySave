@@ -123,6 +123,9 @@
   <data name="askdel" xml:space="preserve">
     <value>Merci d'en supprimer pour pouvoir en créer de nouveaux.</value>
   </data>
+  <data name="creadate" xml:space="preserve">
+    <value>Date de creation :</value>
+  </data>
   <data name="creatfail" xml:space="preserve">
     <value>Création du travaux echouée.</value>
   </data>
@@ -153,6 +156,9 @@
   <data name="full" xml:space="preserve">
     <value>Complète.</value>
   </data>
+  <data name="job" xml:space="preserve">
+    <value>Travaux N° :</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Liste des langues disponibles :</value>
   </data>
@@ -178,7 +184,7 @@
     <value>Supprimer un travaux de sauvegarde.</value>
   </data>
   <data name="menu_4" xml:space="preserve">
-    <value>Executer une ou plusieurs sauvegarde.</value>
+    <value>Executer une ou plusieurs travaux.</value>
   </data>
   <data name="menu_5" xml:space="preserve">
     <value>Afficher les logs journaliers.</value>
@@ -189,6 +195,9 @@
   <data name="menu_7" xml:space="preserve">
     <value>Quitter le programme.</value>
   </data>
+  <data name="name" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Selectionnez fichier à lire :</value>
   </data>
@@ -196,7 +205,7 @@
     <value>Nom du travail de sauvegarde :</value>
   </data>
   <data name="savenum" xml:space="preserve">
-    <value>Traveaux n° :</value>
+    <value>Travaux n° :</value>
   </data>
   <data name="savetype" xml:space="preserve">
     <value>Type de la sauvegarde :</value>
@@ -206,6 +215,9 @@
   </data>
   <data name="showsave" xml:space="preserve">
     <value>Liste des travaux de sauvegardes :</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>Etat :</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Chemin du répertoire (Destination) :</value>
