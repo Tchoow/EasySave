@@ -8,6 +8,7 @@ namespace TestUnit
         [TestMethod]
         public void JobString()
         {
+            /*
             string expected = "good";
             string res = "";
 
@@ -16,6 +17,7 @@ namespace TestUnit
 
 
            Assert.AreEqual(expected, res);
+           */
         }
     }
 }

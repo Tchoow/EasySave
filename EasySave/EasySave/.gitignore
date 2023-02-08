@@ -2,3 +2,5 @@ obj/
 bin/
 *.user
 .vs/
+datas/logs/
+datas/saves/

@@ -151,11 +151,29 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Error in path..
+        /// </summary>
+        internal static string errorpath {
+            get {
+                return ResourceManager.GetString("errorpath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Launch job.
         /// </summary>
         internal static string exesave {
             get {
                 return ResourceManager.GetString("exesave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Language unknow..
+        /// </summary>
+        internal static string faillang {
+            get {
+                return ResourceManager.GetString("faillang", resourceCulture);
             }
         }
         
@@ -183,6 +201,15 @@ namespace EasySave.datas.languages {
         internal static string job {
             get {
                 return ResourceManager.GetString("job", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Starting  job..
+        /// </summary>
+        internal static string jobtittle {
+            get {
+                return ResourceManager.GetString("jobtittle", resourceCulture);
             }
         }
         
@@ -327,6 +354,24 @@ namespace EasySave.datas.languages {
         internal static string savenum {
             get {
                 return ResourceManager.GetString("savenum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Error during the job process....
+        /// </summary>
+        internal static string saverror {
+            get {
+                return ResourceManager.GetString("saverror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Save successfull..
+        /// </summary>
+        internal static string savesucc {
+            get {
+                return ResourceManager.GetString("savesucc", resourceCulture);
             }
         }
         

@@ -23,20 +23,20 @@ L'application "EasySave" est un logiciel de sauvegarde. Il permet de sauvegarder
 ## Diagrammes UML 
 
 ### Diagramme de cas d'utilisation :
-
+Ce diagramme représente les interactions entre l'utilisateur et le système.
 ![image](/assets/usecase.png)
 
 ### Diagramme de séquence :
-
+Il montre l'ordre et la séquence des interactions entre les objets dans le temps.
 ![image](/assets/sequence.png)
 
 ### Diagramme d'activité :
-
-![image](/assets/activity.png)
+Les activités et les processus d'un système sont représentés par ce diagramme.
+![image](/assets/activity.jpg)
 
 ### Diagramme de classe :
-
-![image](/assets/class.png)
+Diagramme qui montre les classes, leurs attributs et méthodes, ainsi que les relations entre les classes.
+![image](/assets/class.jpg)
 
 
 
