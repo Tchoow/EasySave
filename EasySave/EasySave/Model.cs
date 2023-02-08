@@ -124,12 +124,19 @@ namespace EasySave
                 // The execution of the job works
                 for (int i = 0; i < jobs.Count; i++)
                 {
-                    Console.WriteLine(jobs[i].Name);
                     FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
                     FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
-                    if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory && (attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                    if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                     {
-                        string[] files = Directory.GetFiles(jobs[i].SourceFilePath);
+                        string[] files; 
+                        if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory)
+                        {
+                            files = Directory.GetFiles(jobs[i].SourceFilePath);
+                        }
+                        else
+                        {
+                            files = new string[] { jobs[i].SourceFilePath };
+                        }
                         var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
                         long filesSize = 0;
                         DateTime startTime = DateTime.Now;
@@ -137,6 +144,10 @@ namespace EasySave
                         for (int j = 0; j < files.Length; j++)
                         {
                             string fileName = Path.GetFileName(files[j]);
+                            if(File.Exists(jobs[i].DestinationFilePath + "\\" + fileName) && jobs[i].SaveType == 1) 
+                            {
+                                File.Delete(jobs[i].DestinationFilePath + "\\" + fileName);
+                            }
                             var myFile = File.Create(jobs[i].DestinationFilePath + "\\" + fileName);
                             myFile.Close();
                             viewModel.saveFile(files[j], jobs[i].DestinationFilePath + "\\" + fileName);
