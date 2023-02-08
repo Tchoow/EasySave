@@ -151,11 +151,20 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Executer un travaux de sauvegarde..
+        ///   Recherche une chaîne localisée semblable à Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer).
         /// </summary>
-        internal static string exesave {
+        internal static string execsave {
             get {
-                return ResourceManager.GetString("exesave", resourceCulture);
+                return ResourceManager.GetString("execsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langue non trouvée.
+        /// </summary>
+        internal static string faillang {
+            get {
+                return ResourceManager.GetString("faillang", resourceCulture);
             }
         }
         
@@ -183,6 +192,15 @@ namespace EasySave.datas.languages {
         internal static string job {
             get {
                 return ResourceManager.GetString("job", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Executer un travaux de sauvegarde..
+        /// </summary>
+        internal static string jobtittle {
+            get {
+                return ResourceManager.GetString("jobtittle", resourceCulture);
             }
         }
         
@@ -259,7 +277,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Executer une ou plusieurs travaux..
+        ///   Recherche une chaîne localisée semblable à Executer un ou plusieurs travaux..
         /// </summary>
         internal static string menu_4 {
             get {
@@ -327,6 +345,24 @@ namespace EasySave.datas.languages {
         internal static string savenum {
             get {
                 return ResourceManager.GetString("savenum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur lors du processus de sauvegarde....
+        /// </summary>
+        internal static string saverror {
+            get {
+                return ResourceManager.GetString("saverror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegarde(s) effectuée(s) avec succès..
+        /// </summary>
+        internal static string savesucc {
+            get {
+                return ResourceManager.GetString("savesucc", resourceCulture);
             }
         }
         

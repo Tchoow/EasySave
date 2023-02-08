@@ -147,8 +147,11 @@
   <data name="diff" xml:space="preserve">
     <value>Différentielle.</value>
   </data>
-  <data name="exesave" xml:space="preserve">
-    <value>Executer un travaux de sauvegarde.</value>
+  <data name="execsave" xml:space="preserve">
+    <value>Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)</value>
+  </data>
+  <data name="faillang" xml:space="preserve">
+    <value>Langue non trouvée</value>
   </data>
   <data name="fromdir" xml:space="preserve">
     <value>Chemin du répertoire (Source) :</value>
@@ -158,6 +161,9 @@
   </data>
   <data name="job" xml:space="preserve">
     <value>Travaux N° :</value>
+  </data>
+  <data name="jobtittle" xml:space="preserve">
+    <value>Executer un travaux de sauvegarde.</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>Liste des langues disponibles :</value>
@@ -184,7 +190,7 @@
     <value>Supprimer un travaux de sauvegarde.</value>
   </data>
   <data name="menu_4" xml:space="preserve">
-    <value>Executer une ou plusieurs travaux.</value>
+    <value>Executer un ou plusieurs travaux.</value>
   </data>
   <data name="menu_5" xml:space="preserve">
     <value>Afficher les logs journaliers.</value>
@@ -206,6 +212,12 @@
   </data>
   <data name="savenum" xml:space="preserve">
     <value>Travaux n° :</value>
+  </data>
+  <data name="saverror" xml:space="preserve">
+    <value>Erreur lors du processus de sauvegarde...</value>
+  </data>
+  <data name="savesucc" xml:space="preserve">
+    <value>Sauvegarde(s) effectuée(s) avec succès.</value>
   </data>
   <data name="savetype" xml:space="preserve">
     <value>Type de la sauvegarde :</value>
