@@ -1,3 +1,5 @@
+⚠️ Check the manual before using the application.
+
 # EasySave
 
  EasySave is a backup software. It allows to save data (files, folders, etc.) by storing it on another support (external hard drive, cloud, etc.). The purpose is to protect the data in case of loss or damage to the original support. The user can choose the data to be saved and the type of backup.
