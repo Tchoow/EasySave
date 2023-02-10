@@ -214,16 +214,26 @@ namespace EasySave
                         {
 
                             string fileName = files[j].Replace(jobs[i].SourceFilePath, "");//Path.GetFileName(files[j]);
-                            string currentFile = jobs[i].DestinationFilePath + "\\" + fileName; // plus les files que je recup moins la source.
+                            string currentFile = jobs[i].DestinationFilePath + fileName; 
                             string dipath = Path.GetDirectoryName(currentFile);
                             Directory.CreateDirectory(dipath);
-                            
-                            if (File.Exists(currentFile) && jobs[i].SaveType == 1) 
+                            int newmodif = 0;
+                            if (File.Exists(currentFile) && jobs[i].SaveType == 1) // determine the save type
+                            {
+                                File.Delete(currentFile);
+                            }
+                            if (File.Exists(currentFile) && jobs[i].SaveType == 2)
+                            {
+                                DateTime modificationFileSrc = File.GetLastWriteTime(files[j]);
+                                DateTime modificationFileDest = File.GetLastWriteTime(currentFile);
+                                newmodif = DateTime.Compare(modificationFileSrc,modificationFileDest);
+                            }
+                            if(newmodif > 1)
                             {
                                 File.Delete(currentFile);
                             }
                             //var myfile = Directory.CreateDirectory(currentFile);
-                            var myFile = File.Create(currentFile);
+                                var myFile = File.Create(currentFile);
                             myFile.Close();
                             viewModel.saveFile(files[j], currentFile);
 
