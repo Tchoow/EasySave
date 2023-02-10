@@ -192,10 +192,13 @@ namespace EasySave
                     newJob.TotalFileSize = size;
                     if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                     {
-                        string[] files; 
+                        string[] files;
+                        
                         if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We get all files in the path
                         {
-                            files = Directory.GetFiles(jobs[i].SourceFilePath);
+
+                            files = Directory.GetFiles(jobs[i].SourceFilePath, "*", SearchOption.AllDirectories);
+                            
                         }
                         else
                         {
@@ -205,14 +208,21 @@ namespace EasySave
                         long filesSize = 0;
                         DateTime startTime = DateTime.Now;
 
+                        
+                        
                         for (int j = 0; j < files.Length; j++)
                         {
-                            string fileName = Path.GetFileName(files[j]);
-                            string currentFile = jobs[i].DestinationFilePath + "\\" + fileName;
+
+                            string fileName = files[j].Replace(jobs[i].SourceFilePath, "");//Path.GetFileName(files[j]);
+                            string currentFile = jobs[i].DestinationFilePath + "\\" + fileName; // plus les files que je recup moins la source.
+                            string dipath = Path.GetDirectoryName(currentFile);
+                            Directory.CreateDirectory(dipath);
+                            
                             if (File.Exists(currentFile) && jobs[i].SaveType == 1) 
                             {
                                 File.Delete(currentFile);
                             }
+                            //var myfile = Directory.CreateDirectory(currentFile);
                             var myFile = File.Create(currentFile);
                             myFile.Close();
                             viewModel.saveFile(files[j], currentFile);
@@ -220,8 +230,8 @@ namespace EasySave
                             FileInfo fileInfos = new FileInfo(currentFile);
                             filesSize += fileInfos.Length;
                             newJob.NbFilesLeftToDo++;
-                            newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
-                            updateProgressBar(newJob.Progression);
+                           // newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
+                            //updateProgressBar(newJob.Progression);
 
                         }
                         DateTime endTime = DateTime.Now;
