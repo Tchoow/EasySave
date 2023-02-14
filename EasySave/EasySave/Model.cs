@@ -215,13 +215,13 @@ namespace EasySave
 
                         Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
                         {
-                            Console.WriteLine(fileInfo + " Started");
+                            Console.WriteLine("Crypting on " + fileInfo + " Started");
                             Process p = new Process();
                             Console.WriteLine(Directory.GetCurrentDirectory());
                             p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
                             p.StartInfo.Arguments = fileInfo + " " + fileInfo;
                             p.Start();
-                            Console.WriteLine(fileInfo + " Ended");
+                            Console.WriteLine("Crypting on "+ fileInfo + " Ended");
                         });
 
                         for (int j = 0; j < files.Length; j++)
@@ -247,7 +247,7 @@ namespace EasySave
                                 File.Delete(currentFile);
                             }
                             //var myfile = Directory.CreateDirectory(currentFile);
-                                var myFile = File.Create(currentFile);
+                            var myFile = File.Create(currentFile);
                             myFile.Close();
                             viewModel.saveFile(files[j], currentFile);
 
