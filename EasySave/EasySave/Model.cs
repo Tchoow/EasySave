@@ -1,8 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace EasySave
 {
@@ -208,8 +212,18 @@ namespace EasySave
                         long filesSize = 0;
                         DateTime startTime = DateTime.Now;
 
-                        
-                        
+
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        {
+                            Console.WriteLine(fileInfo + " Started");
+                            Process p = new Process();
+                            Console.WriteLine(Directory.GetCurrentDirectory());
+                            p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
+                            p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                            p.Start();
+                            Console.WriteLine(fileInfo + " Ended");
+                        });
+
                         for (int j = 0; j < files.Length; j++)
                         {
 
