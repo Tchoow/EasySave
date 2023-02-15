@@ -222,7 +222,7 @@ namespace EasySave
                                 Process p = new Process();
                                 p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
-                                p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
                                 p.Start();
                                 p.WaitForExit();
