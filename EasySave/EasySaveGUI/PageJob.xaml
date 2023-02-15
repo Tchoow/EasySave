@@ -14,8 +14,8 @@
                 <RowDefinition Height="250" />
                 <RowDefinition Height="250" />
             </Grid.RowDefinitions>
-            <ScrollViewer Background="red" Height="150">
-                <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" Height="300" BorderThickness=".2" >
+            <ScrollViewer  Height="150" Margin="50,50,33,50">
+                <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" Height="150" BorderThickness=".2" Width="700" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*" />
                         <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
@@ -44,22 +44,43 @@
                     <ColumnDefinition Width="49*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Text="Name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0" Grid.Row="1" Text="Source Path" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Source Path" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0"  Grid.Row="2" Text="Destination Pah" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0"  Grid.Row="2" Text="Destination Pah" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0" Grid.Row="3"  Text="Save Type" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="3"  Text="Save Type" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0" Grid.Row="4" Text="Date of creation" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="Date of creation" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346" IsEnabled="False"/>
-                <TextBlock Grid.Column="0"  Grid.Row="5" Text="Date of modification" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0"  Grid.Row="5" Text="Date of modification" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"  IsEnabled="False"/>
-
             </Grid>
-
-
+            <Button Content="New Job" HorizontalAlignment="Left" Height="25" Margin="597,220,0,0" VerticalAlignment="Top" Width="98" Foreground="White" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
+                        <GradientStop Color="#FF29B43F"/>
+                        <GradientStop Color="#FF16D418" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Delete selected job" HorizontalAlignment="Left" Height="25" Margin="432,220,0,0" VerticalAlignment="Top" Width="125" Foreground="White" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
+                        <GradientStop Color="#FFAB2525"/>
+                        <GradientStop Color="#FFD41616" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Save Job Modifications" HorizontalAlignment="Left" Height="25" Margin="261,220,0,0" VerticalAlignment="Top" Width="139" Foreground="White" BorderBrush="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
+                        <GradientStop Color="#FF39A7C8"/>
+                        <GradientStop Color="#FF16A8D4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
     </Grid>
 </Page>

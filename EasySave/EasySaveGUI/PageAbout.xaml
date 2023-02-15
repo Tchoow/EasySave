@@ -9,7 +9,6 @@
       Title="PageAbout">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Center" Margin="0,204,0,0" Text="Page About" TextWrapping="Wrap" VerticalAlignment="Top"/>
-
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

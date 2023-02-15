@@ -9,7 +9,20 @@
       Title="PageHelp">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="358,0,0,0" Text="Page Help" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Text="Need Help ?" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="122" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" Text="Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;" Background="#FFF1F1F1" Margin="27,43,0,0">
+
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Text="Documentation" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,185,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="80" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" Text="Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;" Background="#FFF1F1F1" Margin="27,225,0,0"/>
+        <Button Content="Ouvrir la documentation" HorizontalAlignment="Left" Height="31" Margin="27,319,0,0" VerticalAlignment="Top" Width="460" Foreground="White" BorderBrush="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
+                    <GradientStop Color="#FF24A9F9" Offset="0.99"/>
+                    <GradientStop Color="#FF1A6DA0" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

@@ -9,10 +9,16 @@
       Title="PageExec">
 
     <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <TextBox HorizontalAlignment="Left" Margin="10,16,0,0" Text="List of jobs" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  BorderBrush="Transparent"/>
-        <Button Content="Exec selected jobs" Margin="516,17,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn"/>
-        <Button Content="Exec all jobs"  Margin="649,16,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111"/>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="10,60,10,10">
+        <Button Content="Exec selected jobs" Margin="373,16,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.487,0.406"/>
+        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal">
+
+        </Button>
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,208,200">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding Id}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Names" Binding="{Binding Name}" Width="*" />
@@ -28,5 +34,10 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <ScrollViewer Margin="28,62,190,200"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="216,317,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"><Run Language="fr-fr" Text="Extentions de fichier à prendre en compte (* pour tous)"/></TextBlock>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13"/>
     </Grid>
 </Page>
