@@ -10,9 +10,9 @@ using System.Diagnostics;
 
 namespace EasySave
 {
-    class Model
+    public class Model
     {
-        private string jobFile = @"../../../datas/saves/jobs.json";
+        private string jobFile = @"../../../EasySave/datas/saves/jobs.json";
         private ViewModel viewModel { get; set; }
         private int currentLang { get; set; }
         private Translate translate;

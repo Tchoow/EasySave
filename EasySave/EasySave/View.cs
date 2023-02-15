@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace EasySave
 {
-    class View
+   public class View
     {
         private ViewModel viewModel;
         public View()
