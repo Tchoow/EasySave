@@ -27,6 +27,7 @@ namespace EasySaveGUI
         {
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
+            this.ContentFrame.Content = new PageHome();
 
         }
 
