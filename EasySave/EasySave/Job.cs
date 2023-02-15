@@ -20,6 +20,7 @@ namespace EasySave
         private DateTime created { get; set; }
         private string uuid { get; set; }
 
+
         [JsonConstructor]
         public Job(
             string name,
