@@ -7,11 +7,11 @@ namespace EasySave
 {
     public class ViewModel
     {
-        private View view           { get; set; }
+        private dynamic view           { get; set; }
         private Model model         { get; set; }
         public List<Log> lstLogs    { get; set; }
 
-        public ViewModel(View view)
+        public ViewModel(dynamic view)
         {
             this.view    = view;
             this.model   = new Model(this);

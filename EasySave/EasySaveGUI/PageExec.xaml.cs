@@ -22,39 +22,59 @@ namespace EasySaveGUI
     /// </summary>
     public partial class PageExec : Page
     {
-        List<MyData> datas = new List<MyData>
-            {
-                new MyData { Id = 1, Name = "John", SourcePath = "C:\\Documents\\source1", DesPath = "C:\\Documents\\destination1", Type = "OK", IsSelect= false },
-                new MyData { Id = 2, Name = "Jane", SourcePath = "C:\\Documents\\source2", DesPath = "C:\\Documents\\destination2", Type = "Error", IsSelect = false },
-                new MyData { Id = 3, Name = "Bob", SourcePath = "C:\\Documents\\source3", DesPath = "C:\\Documents\\destination3", Type = "OK", IsSelect = false },
-                new MyData { Id = 4, Name = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", Type = "Error", IsSelect = false }
-            };
-        public PageExec()
+        private List<Job> jobs;
+        private List<Job> jobSelected;
+        private ViewModel viewModel;
+        bool wantCrypt;
+        public PageExec(ViewModel viewModel)
         {
             InitializeComponent();
-            jobdatagrid.ItemsSource = datas;
+            this.viewModel = viewModel;
+            jobs = viewModel.getJobsList();
+            jobdatagrid.ItemsSource = viewModel.getJobsList();
 
         }
 
         private void exec_selectedJobs_btn(object sender, RoutedEventArgs e)
         {
-            foreach (var item in datas)
+            jobSelected = new List<Job>();
+            foreach (Job item in jobdatagrid.Items)
             {
                 if (item.IsSelect == true)
                 {
-                    Trace.WriteLine(item.Name);
+                    item.IsSelect = false;
+                    jobSelected.Add(item);
                 }
-
             }
+            if(wantCrypt == true)
+            {
+                string[] extensions = extension_text.Text.Split(",");
+                Trace.WriteLine(extensions);
+               viewModel.executeJobs(jobSelected, extensions);
+            }
+            viewModel.executeJobs(jobSelected, new string[] {" "});
+
         }
-    }
-    public class MyData
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string SourcePath { get; set; }
-        public string DesPath { get; set; }
-        public string Type { get; set; }
-        public bool IsSelect { get; set; }
+
+        private void chiffrement_Checked(object sender, RoutedEventArgs e)
+        {
+            if(chiff_check.IsChecked == true)
+            {
+                wantCrypt = true;
+                extension_text.IsEnabled = true;
+            }
+            else
+            {
+                wantCrypt = false;
+                extension_text.IsEnabled = false;
+                this.extension_text.Text = "";
+            }
+            
+        }
+
+        private void execAll_btn(object sender, RoutedEventArgs e)
+        {
+            viewModel.executeJobs(jobs, new string[] {" "});
+        }
     }
 }

@@ -1,26 +1,28 @@
 [
   {
     "Name": "test",
-    "SourceFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repA",
-    "DestinationFilePath": "C:\\Users\\Théo LAVIE\\Desktop\\repB",
+    "SourceFilePath": "D:\\test",
+    "DestinationFilePath": "D:\\dest\\dest2",
     "SaveType": 1,
-    "State": "Ended",
-    "TotalFileToCopy": 6,
-    "TotalFileSize": -1464200627,
-    "NbFilesLeftToDo": 9,
+    "State": "Running",
+    "TotalFileToCopy": 3,
+    "TotalFileSize": 41706,
+    "NbFilesLeftToDo": 5,
     "Progression": 0,
-    "Created": "2023-02-15T13:26:11.0019483+01:00"
+    "Created": "2023-02-15T13:26:11.0019483+01:00",
+    "IsSelect": false
   },
   {
-    "Name": "test",
-    "SourceFilePath": "C:\\\\Users\\\\Théo LAVIE\\\\Desktop\\\\repA",
-    "DestinationFilePath": "C:\\\\Users\\\\Théo LAVIE\\\\Desktop\\\\repB",
+    "Name": "save test to dest",
+    "SourceFilePath": "D:\\test",
+    "DestinationFilePath": "D:\\dest",
     "SaveType": 1,
-    "State": "Paused",
-    "TotalFileToCopy": 6,
-    "TotalFileSize": -1464200627,
-    "NbFilesLeftToDo": 0,
+    "State": "Ended",
+    "TotalFileToCopy": 3,
+    "TotalFileSize": 41706,
+    "NbFilesLeftToDo": 5,
     "Progression": 0,
-    "Created": "2023-02-15T15:19:30.1368814+01:00"
+    "Created": "2023-02-15T15:19:30.1368814+01:00",
+    "IsSelect": false
   }
 ]

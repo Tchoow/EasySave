@@ -15,16 +15,21 @@
         </Grid.ColumnDefinitions>
         <TextBox HorizontalAlignment="Left" Margin="10,16,0,0" Text="List of jobs" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  BorderBrush="Transparent"/>
         <Button Content="Exec selected jobs" Margin="373,16,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.487,0.406"/>
-        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal">
+        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal" Click="execAll_btn">
 
         </Button>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,208,200">
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200">
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding Id}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Names" Binding="{Binding Name}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="DesPath" Binding="{Binding DesPath}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Type" Binding="{Binding Type}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="DestinationFilePath" Binding="{Binding DestinationFilePath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SaveType" Binding="{Binding SaveType}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="State" Binding="{Binding State}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="TotalFileToCopy" Binding="{Binding TotalFileToCopy}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="TotalFileSize" Binding="{Binding TotalFileSize}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="NbFilesLeftToDo" Binding="{Binding NbFilesLeftToDo}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Progression" Binding="{Binding Progression}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
                 <DataGridTemplateColumn Header="Select">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -34,10 +39,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <ScrollViewer Margin="28,62,190,200"/>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="216,317,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"><Run Language="fr-fr" Text="Extentions de fichier à prendre en compte (* pour tous)"/></TextBlock>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
+        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="282,316,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Height="57" Margin="28,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
+        <CheckBox x:Name="chiff_check" Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked"/>
     </Grid>
 </Page>
