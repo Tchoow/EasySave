@@ -13,7 +13,7 @@ namespace EasySave
 {
     public class Model
     {
-        private string jobFile = @"../../../EasySave/datas/saves/jobs.json";
+        private string jobFile = @"../../../../EasySave/datas/saves/jobs.json";
         private ViewModel viewModel { get; set; }
         private int currentLang { get; set; }
         private Translate translate;
@@ -99,7 +99,7 @@ namespace EasySave
 
         public List<string> getLogs()
         {
-            string folderPath = "../../../datas/logs/";
+            string folderPath = "../../../../EasySave/datas/logs/";
             string[] files = Directory.GetFiles(folderPath);
             List<string> lstLogs = new List<string>();
 
@@ -108,7 +108,7 @@ namespace EasySave
                 if (file.EndsWith(".json"))
                 {
                     String fileEdit = new string(file);
-                    fileEdit = fileEdit.Replace("../../../datas/logs/", ""); //as the .exe is in the bin file we have to "climb up" the path
+                    fileEdit = fileEdit.Replace("../../../../EasySave/datas/logs/", ""); //as the .exe is in the bin file we have to "climb up" the path
                     fileEdit = fileEdit.Replace(".json", "");
                     lstLogs.Add(fileEdit);
                 }
@@ -220,7 +220,7 @@ namespace EasySave
                         if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
                             {
                                 Process p = new Process();
-                                p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
+                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
                                 p.StartInfo.Arguments = fileInfo + " " + fileInfo;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
@@ -269,7 +269,7 @@ namespace EasySave
                             if (!extensions.Contains(Path.GetExtension(fileInfo)))
                             {
                                 Process p = new Process();
-                                p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
+                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
                                 p.StartInfo.Arguments = fileInfo + " " + fileInfo;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);

@@ -46,7 +46,7 @@ namespace EasySave
             // path creation
             DateTime currentDate = DateTime.Now;
             string namefile = currentDate.ToString("MM-dd-yyyy") + ".json";
-            string projectPath = Path.GetFullPath(@"../../../");
+            string projectPath = Path.GetFullPath(@"../../../../EasySave");
             string logsFilePath = Path.Combine(projectPath, @"datas/logs/", namefile);
             // test if daily file exist, if not create it
             if (!File.Exists(logsFilePath))
