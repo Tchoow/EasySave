@@ -13,18 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using EasySave;
 
 namespace EasySaveGUI
 {
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         private Frame ContentFrame;
-
+        private ViewModel viewModel;
         public MainWindow()
         {
+            viewModel = new ViewModel(this);
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
@@ -33,7 +37,7 @@ namespace EasySaveGUI
 
         private void btnJob(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageJob();
+            this.ContentFrame.Content = new PageJob(viewModel);
         }
 
         private void btnLang(object sender, RoutedEventArgs e)
