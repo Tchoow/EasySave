@@ -9,12 +9,19 @@
       Title="PageHome">
 
     <Grid Background="White">
-        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="135" Margin="77,225,0,0" VerticalAlignment="Top" Width="135"/>
-        <Border BorderThickness="1" Background="#f39c12" CornerRadius="10" HorizontalAlignment="Left" Height="135" Margin="241,225,0,0" VerticalAlignment="Top" Width="136"/>
-        <Border BorderThickness="1" Background="#8e44ad" CornerRadius="10" HorizontalAlignment="Left" Height="135" Margin="400,225,0,0" VerticalAlignment="Top" Width="136"/>
-        <Border BorderThickness="1" Background="#2980b9" CornerRadius="10" HorizontalAlignment="Left" Height="135" Margin="552,225,0,0" VerticalAlignment="Top" Width="136"/>
-        <Label Content="Welcome on Easy Save" FontSize="30" HorizontalAlignment="Left" Margin="222,75,0,0" VerticalAlignment="Top"/>
-        <Label Content="Made by Cesi_" FontSize="30" HorizontalAlignment="Left" Margin="277,130,0,0" VerticalAlignment="Top"/>
+        <Border BorderThickness="1" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="23,184,0,0" VerticalAlignment="Top" Width="111">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF6602"/>
+                    <GradientStop Color="#FFFF4949" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label Content="Welcome on Easy Save" FontSize="30" HorizontalAlignment="Left" Margin="144,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="Made by Cesi_" FontSize="30" HorizontalAlignment="Left" Margin="199,101,0,0" VerticalAlignment="Top"/>
+        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="160,184,0,0" VerticalAlignment="Top" Width="111"/>
+        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="289,184,0,0" VerticalAlignment="Top" Width="111"/>
+        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="425,184,0,0" VerticalAlignment="Top" Width="111"/>
 
     </Grid>
 </Page>
