@@ -33,7 +33,7 @@ namespace EasySave
         public List<string> getLogs() { return this.model.getLogs(); }
 
         // Save
-        public bool executeJobs(List<Job> jobs) {return this.model.executeJobs(jobs); }
+        public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }
         public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
 
 

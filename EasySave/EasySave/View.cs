@@ -165,13 +165,15 @@ namespace EasySave
                         printJobInfos();
                         Console.WriteLine(this.viewModel.getTraduction("execsave"));
                         string userExecutionChoice = Console.ReadLine();
+                        Console.WriteLine(this.viewModel.getTraduction("setextension"));
+                        string[] extensions = Console.ReadLine().Split(" ");
                         try
                         {
                             int jobExecutionIndex = Int16.Parse(userExecutionChoice);
                             switch (jobExecutionIndex)
                             {
                                 case 0: // All jobs executed
-                                    if (this.viewModel.executeJobs(this.viewModel.getJobsList()))
+                                    if (this.viewModel.executeJobs(this.viewModel.getJobsList(), extensions))
                                     {
                                         Console.ForegroundColor = ConsoleColor.Green;
                                         Console.WriteLine(this.viewModel.getTraduction("savesucc"));
@@ -187,7 +189,7 @@ namespace EasySave
                                 default: // Single job executed
                                     if (this.viewModel.getJobsList().Count > 0 && jobExecutionIndex <= this.viewModel.getJobsList().Count)
                                     {
-                                        if (this.viewModel.executeJobs(new List<Job>(1) { viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }))
+                                        if (this.viewModel.executeJobs(new List<Job>(1) { viewModel.getJobsList()[Convert.ToInt32(userExecutionChoice) - 1] }, extensions))
                                         {
                                             Console.ForegroundColor = ConsoleColor.Green;
                                             Console.WriteLine(this.viewModel.getTraduction("savesucc"));

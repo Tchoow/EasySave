@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Text;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Threading;
 
 namespace EasySave
 {
@@ -161,7 +162,7 @@ namespace EasySave
         }
 
 
-        public bool executeJobs(List<Job> jobs)
+        public bool executeJobs(List<Job> jobs, string[] extensions)
         {
             try
             {
@@ -212,17 +213,22 @@ namespace EasySave
                         long filesSize = 0;
                         DateTime startTime = DateTime.Now;
 
+                        int EncryptionTime = 0;
 
                         Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
                         {
-                            Console.WriteLine("Crypting on " + fileInfo + " Started");
-                            Process p = new Process();
-                            Console.WriteLine(Directory.GetCurrentDirectory());
-                            p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
-                            p.StartInfo.Arguments = fileInfo + " " + fileInfo;
-                            p.Start();
-                            Console.WriteLine("Crypting on "+ fileInfo + " Ended");
+                        if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                            {
+                                Process p = new Process();
+                                p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
+                                p.EnableRaisingEvents = true;
+                                p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                p.Start();
+                                p.WaitForExit();
+                            }
                         });
+                        Console.WriteLine(EncryptionTime);
 
                         for (int j = 0; j < files.Length; j++)
                         {
@@ -258,10 +264,23 @@ namespace EasySave
                             //updateProgressBar(newJob.Progression);
 
                         }
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        {
+                            if (!extensions.Contains(Path.GetExtension(fileInfo)))
+                            {
+                                Process p = new Process();
+                                p.StartInfo.FileName = "../../../CryptoSoft/CryptoSoft.exe";
+                                p.EnableRaisingEvents = true;
+                                p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                p.Start();
+                                p.WaitForExit();
+                            }
+                        });
                         DateTime endTime = DateTime.Now;
                         TimeSpan execTime = endTime - startTime;
                         // Logs
-                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].SourceFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds);
+                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
                         log.saveLogInFile();
                         List<Job> currentJobs = this.getJobs();
                         int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));

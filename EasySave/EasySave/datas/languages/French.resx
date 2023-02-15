@@ -228,6 +228,9 @@
   <data name="selectlanguage" xml:space="preserve">
     <value>Selection language :</value>
   </data>
+  <data name="setextension" xml:space="preserve">
+    <value>Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou laissez vide pour tout chiffrer)</value>
+  </data>
   <data name="showsave" xml:space="preserve">
     <value>Liste des travaux de sauvegardes :</value>
   </data>
@@ -238,6 +241,6 @@
     <value>Chemin du répertoire (Destination) :</value>
   </data>
   <data name="wronginput" xml:space="preserve">
-    <value>Saisi incorrecte.</value>
+    <value>Saisie incorrecte.</value>
   </data>
 </root>

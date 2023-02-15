@@ -228,6 +228,9 @@
   <data name="selectlanguage" xml:space="preserve">
     <value>Select language :</value>
   </data>
+  <data name="setextension" xml:space="preserve">
+    <value>Set extensions you want to encrypt (put them separated by a space or leave it empty to encrypt every file)</value>
+  </data>
   <data name="showsave" xml:space="preserve">
     <value>List of jobs :</value>
   </data>

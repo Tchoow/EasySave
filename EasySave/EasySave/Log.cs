@@ -18,6 +18,7 @@ namespace EasySave
         private string destPath { get; set; }
         private long fileSize { get; set; }
         private long fileTransferTime { get; set; }
+        public int encrpytionTime;
 
         public Log(
                    string name,
@@ -25,8 +26,9 @@ namespace EasySave
                    string fileTarget,
                    string destPath,
                    long fileSize,
-                   long fileTransferTime
-             ) : base ( name, fileSource, fileTarget)
+                   long fileTransferTime,
+                   int encrpytionTime
+            ) : base ( name, fileSource, fileTarget)
         {
             this.time = DateTime.Now;
             this.name = name;
@@ -35,6 +37,7 @@ namespace EasySave
             this.destPath = destPath;
             this.fileSize = fileSize;
             this.fileTransferTime = fileTransferTime;
+            this.encrpytionTime = encrpytionTime;
         }
 
 
