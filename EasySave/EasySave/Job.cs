@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace EasySave
 {
-    class Job : Element
+    public class Job : Element
     {
         private string name { get; set; }
         private string sourceFilePath { get; set; }

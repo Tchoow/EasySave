@@ -14,7 +14,7 @@ namespace EasySave
         public Translate()
         {
             //get files of language ressources 
-            string folderPath = "../../../datas/languages/";
+            string folderPath = "../../../../EasySave/datas/languages/";
             string[] files    = Directory.GetFiles(folderPath);
             this.lstLanguages = new List<string>();
             // get list of language in languages folder

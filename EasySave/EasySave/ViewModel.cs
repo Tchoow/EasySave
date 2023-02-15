@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace EasySave
 {
-    class ViewModel
+    public class ViewModel
     {
         private View view           { get; set; }
         private Model model         { get; set; }

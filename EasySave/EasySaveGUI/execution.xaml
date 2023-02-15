@@ -1,0 +1,32 @@
+﻿<Page x:Class="EasySaveGUI.execution"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EasySaveGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="execution">
+
+    <Grid Background="White">
+        <TextBox HorizontalAlignment="Left" Margin="10,16,0,0" Text="List of jobs" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  BorderBrush="Transparent"/>
+        <Button Content="Exec selected jobs" Margin="516,17,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn"/>
+        <Button Content="Exec all jobs"  Margin="649,16,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111"/>
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="10,60,10,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding Id}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Names" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="DesPath" Binding="{Binding DesPath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Type" Binding="{Binding Type}" Width="*" />
+                <DataGridTemplateColumn Header="Select">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelect, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

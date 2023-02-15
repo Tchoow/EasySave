@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace EasySave
 {
-    class Log : Element
+    public class Log : Element
     {
         private DateTime time { get; set; }
         private string name { get; set; }

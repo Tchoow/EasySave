@@ -32,7 +32,7 @@ namespace EasySaveGUI
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new Page1();
+            this.ContentFrame.Content = new execution();
         }
 
 
