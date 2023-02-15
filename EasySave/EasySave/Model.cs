@@ -97,6 +97,13 @@ namespace EasySave
             return jsonObj;
         }
 
+        public List<Log> getLogsList()
+        {
+            string folderPath = "../../../../EasySave/datas/logs/02-07-2023.json";
+            List<Log> jsonObj = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(folderPath));
+            if (jsonObj == null) jsonObj = new List<Log>();
+            return jsonObj;
+        }
         public List<string> getLogs()
         {
             string folderPath = "../../../../EasySave/datas/logs/";

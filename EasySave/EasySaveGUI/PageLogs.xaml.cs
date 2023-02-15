@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EasySave;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,12 @@ namespace EasySaveGUI
     /// </summary>
     public partial class PageLogs : Page
     {
-        public PageLogs()
+        public PageLogs(ViewModel viewmodel)
         {
             InitializeComponent();
+            List<Log> datas = viewmodel.getLogsList();
+            Trace.WriteLine(datas);
+            this.logdatagrid.ItemsSource = datas;
         }
     }
 }

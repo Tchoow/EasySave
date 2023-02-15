@@ -7,11 +7,11 @@ namespace EasySave
 {
     public class ViewModel
     {
-        private View view           { get; set; }
+        private dynamic view           { get; set; }
         private Model model         { get; set; }
         public List<Log> lstLogs    { get; set; }
 
-        public ViewModel(View view)
+        public ViewModel(dynamic view)
         {
             this.view    = view;
             this.model   = new Model(this);
@@ -31,6 +31,8 @@ namespace EasySave
         public bool deleteJobWithIndex(int jobIndex) { return this.model.deleteJob(jobIndex); }
 
         public List<string> getLogs() { return this.model.getLogs(); }
+        public List<Log> getLogsList() { return this.model.getLogsList(); }
+       
 
         // Save
         public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }

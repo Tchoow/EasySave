@@ -9,7 +9,16 @@
       Title="PageLogs">
 
     <Grid Background="White">
-        <Label Content="Page Logs" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Width="103"/>
-
+        <DataGrid x:Name="logdatagrid" AutoGenerateColumns="False" Margin="10,60,10,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding name}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Names" Binding="{Binding fileSource}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SourcePath" Binding="{Binding fileTarget}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="destPath" Binding="{Binding destPath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="fileSize" Binding="{Binding fileSize}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="fileTransferTime" Binding="{Binding fileTransferTime}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="History of executions (daily logs)" HorizontalAlignment="Left" Height="45" Margin="10,10,0,0" VerticalAlignment="Top" Width="197"/>
     </Grid>
 </Page>
