@@ -27,14 +27,38 @@ namespace EasySaveGUI
         {
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
+            this.ContentFrame.Content = new PageHome();
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnJob(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new Page1();
+            this.ContentFrame.Content = new PageJob();
         }
 
+        private void btnLang(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageLang();
+        }
 
+        private void btnAbout(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageAbout();
+        }
+
+        private void btnHelp(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageHelp();
+        }
+
+        private void btnLogs(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageLogs();
+        }
+
+        private void btnExec(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageExec();
+        }
     }
 }

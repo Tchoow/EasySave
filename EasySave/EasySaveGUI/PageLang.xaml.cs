@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace EasySaveGUI
 {
     /// <summary>
-    /// Logique d'interaction pour Page1.xaml
+    /// Logique d'interaction pour PageLang.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class PageLang : Page
     {
-        public Page1()
+        public PageLang()
         {
             InitializeComponent();
         }
