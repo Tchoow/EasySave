@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EasySave;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,36 +19,59 @@ namespace EasySaveGUI
 {
     public partial class PageJob : Page
     {
-        public PageJob()
+        List<Job> jobs;
+        ViewModel viewModel;
+        int index = 0;
+        public PageJob(ViewModel viewModel)
         {
+            this.viewModel = viewModel;
             InitializeComponent();
-
-            List<MyDatas> datas = new List<MyDatas>
-            {
-                new MyDatas { Id = 1, Names = "John", SourcePath = "C:\\Documents\\source1", DesPath = "C:\\Documents\\destination1", State = "OK" },
-                new MyDatas { Id = 2, Names = "Jane", SourcePath = "C:\\Documents\\source2", DesPath = "C:\\Documents\\destination2", State = "Error" },
-                new MyDatas { Id = 3, Names = "Bob", SourcePath = "C:\\Documents\\source3", DesPath = "C:\\Documents\\destination3", State = "OK" },
-                new MyDatas { Id = 4, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-                new MyDatas { Id = 5, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-                new MyDatas { Id = 6, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-                new MyDatas { Id = 7, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-                new MyDatas { Id = 8, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-                new MyDatas { Id = 9, Names = "Alice", SourcePath = "C:\\Documents\\source4", DesPath = "C:\\Documents\\destination4", State = "Error" },
-
-            };
-            myDataGrid.ItemsSource = datas;
-
+            reloadGrid();
         }
-    }
 
+        public void reloadGrid()
+        {
+            this.jobs = viewModel.getJobsList();
+            myDataGrid.ItemsSource = jobs;
+            index = -1;
+        }
 
+        private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(myDataGrid.SelectedIndex != -1)
+            {
+                int index = myDataGrid.SelectedIndex;
+                this.index = index;
+                NameTB.Text = jobs[index].Name;
+                SourcePathTB.Text = jobs[index].SourceFilePath;
+                DestinationPathTB.Text = jobs[index].DestinationFilePath;
+                SaveTypeTB.SelectedIndex = jobs[index].SaveType - 1;
+            }
+        }
 
-    public class MyDatas
-    {
-        public int Id { get; set; }
-        public string Names { get; set; }
-        public string SourcePath { get; set; }
-        public string DesPath { get; set; }
-        public string State { get; set; }
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(myDataGrid.SelectedIndex != - 1)
+            {
+                this.viewModel.deleteJobWithIndex(index + 1);
+                reloadGrid();
+            }
+        }
+
+        private void newJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+            this.viewModel.addNewJob(job);
+            reloadGrid();
+        }
+
+        private void updateJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(index == -1]) return;
+            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+            this.viewModel.updateJob(job, index);
+            this.jobs = this.viewModel.getJobsList();
+            reloadGrid();
+        }
     }
 }

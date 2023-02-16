@@ -17,16 +17,18 @@ using EasySave;
 
 namespace EasySaveGUI
 {
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         private Frame ContentFrame;
-        public ViewModel viewModel;
-        public View view;
+        private ViewModel viewModel;
         public MainWindow()
         {
+            viewModel = new ViewModel(this);
             InitializeComponent();
             viewModel = new ViewModel(view);
             this.ContentFrame = (Frame)FindName("CFrame");
@@ -36,7 +38,7 @@ namespace EasySaveGUI
 
         private void btnJob(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageJob();
+            this.ContentFrame.Content = new PageJob(viewModel);
         }
 
         private void btnLang(object sender, RoutedEventArgs e)

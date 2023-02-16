@@ -1,28 +1,38 @@
 [
   {
-    "Name": "test",
-    "SourceFilePath": "D:\\test",
-    "DestinationFilePath": "D:\\dest\\dest2",
+    "Name": "test3",
+    "SourceFilePath": "C:\\xampp\\php",
+    "DestinationFilePath": "C:\\xampp\\php",
     "SaveType": 1,
-    "State": "Running",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 5,
+    "State": "Paused",
+    "TotalFileToCopy": 46,
+    "TotalFileSize": 55217865,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-15T13:26:11.0019483+01:00",
-    "IsSelect": false
+    "Created": "2023-02-16T02:38:08.4543118+01:00"
   },
   {
-    "Name": "save test to dest",
-    "SourceFilePath": "D:\\test",
-    "DestinationFilePath": "D:\\dest",
-    "SaveType": 1,
-    "State": "Ended",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 5,
+    "Name": "test6",
+    "SourceFilePath": "C:\\xampp\\php",
+    "DestinationFilePath": "C:\\xampp\\php",
+    "SaveType": 2,
+    "State": "Paused",
+    "TotalFileToCopy": 0,
+    "TotalFileSize": 0,
+    "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-15T15:19:30.1368814+01:00",
-    "IsSelect": false
+    "Created": "2023-02-16T02:35:56.1908005+01:00"
+  },
+  {
+    "Name": "test11",
+    "SourceFilePath": "C:\\xampp\\php",
+    "DestinationFilePath": "C:\\xampp\\php",
+    "SaveType": 2,
+    "State": "Paused",
+    "TotalFileToCopy": 46,
+    "TotalFileSize": 55217865,
+    "NbFilesLeftToDo": 0,
+    "Progression": 0,
+    "Created": "2023-02-16T02:37:32.9380934+01:00"
   }
 ]
