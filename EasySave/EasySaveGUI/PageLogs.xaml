@@ -9,7 +9,30 @@
       Title="PageLogs">
 
     <Grid Background="White">
-        <Label Content="Page Logs" HorizontalAlignment="Center" Margin="0,208,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Content="Page Logs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103"/>
+        <ScrollViewer  Width="500" Margin="0,270,160,20">
+            <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
+                    <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
+                    <DataGridTextColumn Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
+                    <DataGridTextColumn Header="DesPath" Binding="{Binding DesPath}" Width="*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <ScrollViewer Margin="47,41,215,245" Width="500">
+            <DataGrid  Width="500" Name="LogsGridFiles" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
+                    <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <Button Content="Preview" HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74" Background="White" Click="btnPreview"/>
+        <Button Content="XML" HorizontalAlignment="Left" Height="28" Margin="412,225,0,0" VerticalAlignment="Top" Width="74" Background="#FFD72C2C" Click="btnXML"/>
+        <Button Content="JSON" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74" Background="#FFDF4949" Click="btnJSON" FontWeight="Normal"/>
 
     </Grid>
 </Page>

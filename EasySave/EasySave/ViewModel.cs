@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
+using System.IO;
 
 namespace EasySave
 {
@@ -37,6 +38,9 @@ namespace EasySave
         public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }
         public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
 
+
+        public List<Log> getLogsLst(string fileName) { return this.model.getLogsLst(fileName);  } 
+        public FileInfo[] getLogsFiles() { return this.model.getLogsFiles();  }
 
 
     }

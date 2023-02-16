@@ -15,14 +15,25 @@ using System.Windows.Shapes;
 
 namespace EasySaveGUI
 {
-    /// <summary>
-    /// Logique d'interaction pour PageHelp.xaml
-    /// </summary>
     public partial class PageHelp : Page
     {
         public PageHelp()
         {
             InitializeComponent();
+        }
+        public void btnPreview()
+        {
+
+        }
+
+        public void btnJSON()
+        {
+
+        }
+
+        public void btnXML()
+        {
+
         }
     }
 }

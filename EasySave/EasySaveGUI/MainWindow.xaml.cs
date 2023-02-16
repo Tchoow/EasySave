@@ -15,24 +15,23 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using EasySave;
 
+using EasySave;
+
 namespace EasySaveGUI
 {
 
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
+
         public MainWindow()
         {
             viewModel = new ViewModel(this);
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
-
+            this.viewModel = new ViewModel(this);
         }
 
         private void btnJob(object sender, RoutedEventArgs e)
@@ -57,7 +56,7 @@ namespace EasySaveGUI
 
         private void btnLogs(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageLogs();
+            this.ContentFrame.Content = new PageLogs(this.viewModel);
         }
 
         private void btnExec(object sender, RoutedEventArgs e)
