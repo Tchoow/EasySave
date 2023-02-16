@@ -61,6 +61,14 @@ namespace EasySave
             try
             {
                 List<Job> currentJobs = this.getJobs();
+                int size = 0;
+                FileInfo[] infos = new DirectoryInfo(job.SourceFilePath).GetFiles();
+                job.TotalFileToCopy = infos.Length;
+                foreach (FileInfo info in infos) //We sum up the size of all files in the folder
+                {
+                    size += (int)info.Length;
+                }
+                job.TotalFileSize = size;
                 currentJobs[index] = job;
                 SimpleWrite(currentJobs, jobFile);
                 return true;

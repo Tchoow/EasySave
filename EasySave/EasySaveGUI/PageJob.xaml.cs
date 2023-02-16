@@ -1,6 +1,7 @@
 ﻿using EasySave;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,14 @@ namespace EasySaveGUI
         {
             this.viewModel = viewModel;
             InitializeComponent();
+            reloadGrid();
+        }
+
+        public void reloadGrid()
+        {
             this.jobs = viewModel.getJobsList();
             myDataGrid.ItemsSource = jobs;
-
+            index = -1;
         }
 
         private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,20 +53,25 @@ namespace EasySaveGUI
         {
             if(myDataGrid.SelectedIndex != - 1)
             {
-                this.viewModel.deleteJobWithIndex(index);
+                this.viewModel.deleteJobWithIndex(index + 1);
+                reloadGrid();
             }
         }
 
         private void newJobButton_Click(object sender, RoutedEventArgs e)
         {
-            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "PAUSED");
-            viewModel.addNewJob(job);
+            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+            this.viewModel.addNewJob(job);
+            reloadGrid();
         }
 
         private void updateJobButton_Click(object sender, RoutedEventArgs e)
         {
-            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "PAUSED");
-            viewModel.updateJob(job, index);
+            if(index == -1]) return;
+            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+            this.viewModel.updateJob(job, index);
+            this.jobs = this.viewModel.getJobsList();
+            reloadGrid();
         }
     }
 }
