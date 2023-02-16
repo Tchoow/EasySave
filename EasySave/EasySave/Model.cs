@@ -231,6 +231,7 @@ namespace EasySave
                                 p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
                                 p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
                                 p.Start();
                                 p.WaitForExit();
@@ -274,12 +275,13 @@ namespace EasySave
                         }
                         Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
                         {
-                            if (!extensions.Contains(Path.GetExtension(fileInfo)))
+                            if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
                             {
                                 Process p = new Process();
                                 p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
-                                p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
                                 p.Start();
                                 p.WaitForExit();

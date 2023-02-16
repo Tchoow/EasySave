@@ -124,5 +124,7 @@ namespace EasySave
             get { return this.created; }
             set { this.created = value; }
         }
+
+        public bool IsSelect { get; set; }
     }
 }

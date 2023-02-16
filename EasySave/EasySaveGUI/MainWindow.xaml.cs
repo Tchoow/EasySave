@@ -62,7 +62,7 @@ namespace EasySaveGUI
 
         private void btnExec(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageExec();
+            this.ContentFrame.Content = new PageExec(viewModel);
         }
     }
 }
