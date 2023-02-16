@@ -1,14 +1,19 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Threading;
 
 namespace EasySave
 {
-    class Model
+    public class Model
     {
-        private string jobFile = @"../../../datas/saves/jobs.json";
+        private string jobFile = @"../../../../EasySave/datas/saves/jobs.json";
         private ViewModel viewModel { get; set; }
         private int currentLang { get; set; }
         private Translate translate;
@@ -56,6 +61,14 @@ namespace EasySave
             try
             {
                 List<Job> currentJobs = this.getJobs();
+                int size = 0;
+                FileInfo[] infos = new DirectoryInfo(job.SourceFilePath).GetFiles();
+                job.TotalFileToCopy = infos.Length;
+                foreach (FileInfo info in infos) //We sum up the size of all files in the folder
+                {
+                    size += (int)info.Length;
+                }
+                job.TotalFileSize = size;
                 currentJobs[index] = job;
                 SimpleWrite(currentJobs, jobFile);
                 return true;
@@ -70,6 +83,8 @@ namespace EasySave
         public void setLanguageIndex(int indexLang) { this.currentLang = indexLang; }
         public string getTraduction(string key) { return this.translate.getTraduction(this.currentLang, key); }
         public List<string> getLstLanguages() { return this.translate.getLstLanguages(); }
+
+        
 
         public bool setSave(string source, string destination)
         {
@@ -94,7 +109,7 @@ namespace EasySave
 
         public List<string> getLogs()
         {
-            string folderPath = "../../../datas/logs/";
+            string folderPath = "../../../../EasySave/datas/logs/";
             string[] files = Directory.GetFiles(folderPath);
             List<string> lstLogs = new List<string>();
 
@@ -103,11 +118,29 @@ namespace EasySave
                 if (file.EndsWith(".json"))
                 {
                     String fileEdit = new string(file);
-                    fileEdit = fileEdit.Replace("../../../datas/logs/", ""); //as the .exe is in the bin file we have to "climb up" the path
+                    fileEdit = fileEdit.Replace("../../../../EasySave/datas/logs/", ""); //as the .exe is in the bin file we have to "climb up" the path
                     fileEdit = fileEdit.Replace(".json", "");
                     lstLogs.Add(fileEdit);
                 }
             }
+
+            return lstLogs;
+        }
+
+
+        public FileInfo[] getLogsFiles()
+        {
+            List<string> lstLogsFiles = new List<string>();
+            string folderPath         = "../../../../EasySave/datas/logs/";
+            FileInfo[] dinfos         = new DirectoryInfo(folderPath).GetFiles();
+            return dinfos;
+        }
+
+        public List<Log> getLogsLst(string fileName)
+        {
+            string folderPath = "../../../../EasySave/datas/logs/";
+            List<Log> lstLogs = new List<Log>();
+            lstLogs = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(folderPath + fileName));
 
             return lstLogs;
         }
@@ -157,7 +190,7 @@ namespace EasySave
         }
 
 
-        public bool executeJobs(List<Job> jobs)
+        public bool executeJobs(List<Job> jobs, string[] extensions)
         {
             try
             {
@@ -208,8 +241,24 @@ namespace EasySave
                         long filesSize = 0;
                         DateTime startTime = DateTime.Now;
 
-                        
-                        
+                        int EncryptionTime = 0;
+
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        {
+                        if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                            {
+                                Process p = new Process();
+                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                p.EnableRaisingEvents = true;
+                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
+                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                p.Start();
+                                p.WaitForExit();
+                            }
+                        });
+                        Console.WriteLine(EncryptionTime);
+
                         for (int j = 0; j < files.Length; j++)
                         {
 
@@ -233,7 +282,7 @@ namespace EasySave
                                 File.Delete(currentFile);
                             }
                             //var myfile = Directory.CreateDirectory(currentFile);
-                                var myFile = File.Create(currentFile);
+                            var myFile = File.Create(currentFile);
                             myFile.Close();
                             viewModel.saveFile(files[j], currentFile);
 
@@ -244,10 +293,24 @@ namespace EasySave
                             //updateProgressBar(newJob.Progression);
 
                         }
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        {
+                            if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                            {
+                                Process p = new Process();
+                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                p.EnableRaisingEvents = true;
+                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
+                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                p.Start();
+                                p.WaitForExit();
+                            }
+                        });
                         DateTime endTime = DateTime.Now;
                         TimeSpan execTime = endTime - startTime;
                         // Logs
-                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].SourceFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds);
+                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
                         log.saveLogInFile();
                         List<Job> currentJobs = this.getJobs();
                         int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));

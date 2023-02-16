@@ -1,0 +1,40 @@
+﻿<Page x:Class="EasySaveGUI.PageExec"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EasySaveGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageExec">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Margin="10,16,0,0" Text="List of jobs" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  BorderBrush="Transparent"/>
+        <Button Content="Exec selected jobs" Margin="373,16,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.487,0.406"/>
+        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal" Click="execAll_btn">
+
+        </Button>
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" SelectionChanged="jobdatagrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="DestinationFilePath" Binding="{Binding DestinationFilePath}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="SaveType" Binding="{Binding SaveType}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="State" Binding="{Binding State}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="TotalFileToCopy" Binding="{Binding TotalFileToCopy}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="TotalFileSize" Binding="{Binding TotalFileSize}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="NbFilesLeftToDo" Binding="{Binding NbFilesLeftToDo}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Progression" Binding="{Binding Progression}" Width="*" />
+                <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
+        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="282,316,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Height="57" Margin="28,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
+        <CheckBox x:Name="chiff_check" Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked"/>
+    </Grid>
+</Page>

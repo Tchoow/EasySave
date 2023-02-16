@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
+using System.IO;
 
 namespace EasySave
 {
-    class ViewModel
+    public class ViewModel
     {
-        private View view           { get; set; }
+        private dynamic view           { get; set; }
         private Model model         { get; set; }
         public List<Log> lstLogs    { get; set; }
 
-        public ViewModel(View view)
+        public ViewModel(dynamic view)
         {
             this.view    = view;
             this.model   = new Model(this);
@@ -29,13 +30,17 @@ namespace EasySave
         public List<Job> getJobsList()    {return this.model.getJobs(); }
 
         public bool deleteJobWithIndex(int jobIndex) { return this.model.deleteJob(jobIndex); }
+        public void updateJob(Job job,int index) { this.model.setJobByIndex(job, index); }
 
         public List<string> getLogs() { return this.model.getLogs(); }
 
         // Save
-        public bool executeJobs(List<Job> jobs) {return this.model.executeJobs(jobs); }
+        public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }
         public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
 
+
+        public List<Log> getLogsLst(string fileName) { return this.model.getLogsLst(fileName);  } 
+        public FileInfo[] getLogsFiles() { return this.model.getLogsFiles();  }
 
 
     }

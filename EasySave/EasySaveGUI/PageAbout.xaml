@@ -1,4 +1,4 @@
-﻿<Page x:Class="EasySaveGUI.Page1"
+﻿<Page x:Class="EasySaveGUI.PageAbout"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,13 +6,9 @@
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page1">
+      Title="PageAbout">
 
     <Grid Background="White">
-        <Label Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="103" Width="271"/>
-        <ScrollViewer>
-            <ProgressBar Height="10" Width="100"/>
-        </ScrollViewer>
-
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

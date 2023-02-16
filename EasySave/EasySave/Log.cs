@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace EasySave
 {
-    class Log : Element
+    public class Log : Element
     {
         private DateTime time { get; set; }
         private string name { get; set; }
@@ -18,15 +18,19 @@ namespace EasySave
         private string destPath { get; set; }
         private long fileSize { get; set; }
         private long fileTransferTime { get; set; }
+        public int encrpytionTime;
 
+
+        [JsonConstructor]
         public Log(
                    string name,
                    string fileSource,
                    string fileTarget,
                    string destPath,
                    long fileSize,
-                   long fileTransferTime
-             ) : base ( name, fileSource, fileTarget)
+                   long fileTransferTime,
+                   int encrpytionTime
+            ) : base ( name, fileSource, fileTarget)
         {
             this.time = DateTime.Now;
             this.name = name;
@@ -35,7 +39,10 @@ namespace EasySave
             this.destPath = destPath;
             this.fileSize = fileSize;
             this.fileTransferTime = fileTransferTime;
+            this.encrpytionTime = encrpytionTime;
         }
+
+
 
 
         public void saveLogInFile()
@@ -43,7 +50,7 @@ namespace EasySave
             // path creation
             DateTime currentDate = DateTime.Now;
             string namefile = currentDate.ToString("MM-dd-yyyy") + ".json";
-            string projectPath = Path.GetFullPath(@"../../../");
+            string projectPath = Path.GetFullPath(@"../../../../EasySave");
             string logsFilePath = Path.Combine(projectPath, @"datas/logs/", namefile);
             // test if daily file exist, if not create it
             if (!File.Exists(logsFilePath))

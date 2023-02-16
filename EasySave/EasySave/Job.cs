@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace EasySave
 {
-    class Job : Element
+    public class Job : Element
     {
         private string name { get; set; }
         private string sourceFilePath { get; set; }
@@ -19,6 +19,7 @@ namespace EasySave
         private int progression { get; set; }
         private DateTime created { get; set; }
         private string uuid { get; set; }
+
 
         [JsonConstructor]
         public Job(
@@ -123,5 +124,7 @@ namespace EasySave
             get { return this.created; }
             set { this.created = value; }
         }
+
+        public bool IsSelect { get; set; }
     }
 }

@@ -13,28 +13,53 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using EasySave;
 
 namespace EasySaveGUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         private Frame ContentFrame;
+        private ViewModel viewModel;
 
         public MainWindow()
         {
+            viewModel = new ViewModel(this);
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
-
+            this.ContentFrame.Content = new PageHome();
+            this.viewModel = new ViewModel(this);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnJob(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new Page1();
+            this.ContentFrame.Content = new PageJob(viewModel);
         }
 
+        private void btnLang(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageLang();
+        }
 
+        private void btnAbout(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageAbout();
+        }
+
+        private void btnHelp(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageHelp();
+        }
+
+        private void btnLogs(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageLogs(this.viewModel);
+        }
+
+        private void btnExec(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageExec(viewModel);
+        }
     }
 }

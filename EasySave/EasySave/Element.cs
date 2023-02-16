@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EasySave
 {
-    abstract class Element
+    public abstract class Element
     {
         private string name;
         private string sourcePath;
