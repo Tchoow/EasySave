@@ -30,6 +30,7 @@ namespace EasySave
         public List<Job> getJobsList()    {return this.model.getJobs(); }
 
         public bool deleteJobWithIndex(int jobIndex) { return this.model.deleteJob(jobIndex); }
+        public void updateJob(Job job,int index) { this.model.setJobByIndex(job, index); }
 
         public List<string> getLogs() { return this.model.getLogs(); }
 

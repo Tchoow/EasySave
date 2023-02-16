@@ -61,6 +61,14 @@ namespace EasySave
             try
             {
                 List<Job> currentJobs = this.getJobs();
+                int size = 0;
+                FileInfo[] infos = new DirectoryInfo(job.SourceFilePath).GetFiles();
+                job.TotalFileToCopy = infos.Length;
+                foreach (FileInfo info in infos) //We sum up the size of all files in the folder
+                {
+                    size += (int)info.Length;
+                }
+                job.TotalFileSize = size;
                 currentJobs[index] = job;
                 SimpleWrite(currentJobs, jobFile);
                 return true;
@@ -243,6 +251,7 @@ namespace EasySave
                                 p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
                                 p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
                                 p.Start();
                                 p.WaitForExit();
@@ -286,12 +295,13 @@ namespace EasySave
                         }
                         Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
                         {
-                            if (!extensions.Contains(Path.GetExtension(fileInfo)))
+                            if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
                             {
                                 Process p = new Process();
                                 p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
                                 p.EnableRaisingEvents = true;
-                                p.StartInfo.Arguments = fileInfo + " " + fileInfo;
+                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                p.StartInfo.CreateNoWindow = true;
                                 p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
                                 p.Start();
                                 p.WaitForExit();
