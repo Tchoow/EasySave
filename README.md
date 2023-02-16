@@ -17,20 +17,23 @@
 
 ### Use case diagram :
 This diagram show interactions between user and system.
-![image](/assets/usecase.jpg)
+![image](/Assets/Usecase.png)
 
 ### Sequence diagram :
 It show the order of the interactionsbetween objects in time.
-![image](/assets/sequence.png)
+![image](/Assets/sequence.png)
 
 ### Activity diagram :
 System activity and process are shown by this diagram 
-![image](/assets/activity.jpg)
+![image](/Assets/Activity.png)
 
 ### Class diagram :
 Diagram that show classes, their attributs, methods and relation between them
-![image](/assets/class.jpg)
+![image](/Assets/class.jpg)
 
+### Components diagram :
+The component diagram is used to show the differents components of the system.
+![image](/Assets/components.png)
 
 
 
