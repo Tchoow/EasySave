@@ -15,8 +15,6 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using EasySave;
 
-using EasySave;
-
 namespace EasySaveGUI
 {
 

@@ -10,7 +10,10 @@
 
     <Grid Background="White">
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Page Settings" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Grid HorizontalAlignment="Center" Height="144" Margin="0,53,0,0" VerticalAlignment="Top" Width="596" Background="#FFF1F1F1"/>
+        <Grid HorizontalAlignment="Center" Height="144" Margin="0,53,0,0" VerticalAlignment="Top" Width="596" Background="#FFF1F1F1">
+            <RadioButton Content="XML" GroupName="logsFormat" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="JSON" GroupName="logsFormat" HorizontalAlignment="Left" Margin="135,28,0,0" VerticalAlignment="Top"/>
+        </Grid>
         <Grid HorizontalAlignment="Left" Height="141" Margin="102,249,0,0" VerticalAlignment="Top" Width="582" Background="#FFF1F1F1" Grid.RowSpan="4" Grid.ColumnSpan="2">
             <TextBox HorizontalAlignment="Left" Height="31" Margin="380,10,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.562,-0.56" Width="192"/>
             <TextBlock HorizontalAlignment="Left" Height="28" Text="A remplir" TextWrapping="Wrap" VerticalAlignment="Top" Margin="29,13,0,0" Width="155" Grid.RowSpan="1"/>
