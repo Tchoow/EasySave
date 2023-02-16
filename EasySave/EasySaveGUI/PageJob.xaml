@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="660"
       Title="Page1">
 
     <Grid Background="White">
@@ -15,14 +15,8 @@
                 <RowDefinition Height="250" />
             </Grid.RowDefinitions>
             <ScrollViewer  Height="150" Margin="50,50,33,50">
-                <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" Height="150" BorderThickness=".2" Width="700" >
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*" />
-                        <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
-                        <DataGridTextColumn Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
-                        <DataGridTextColumn Header="DesPath" Binding="{Binding DesPath}" Width="*" />
-                        <DataGridTextColumn Header="State" Binding="{Binding State}" Width="*" />
-                    </DataGrid.Columns>
+                <DataGrid x:Name="myDataGrid" AutoGenerateColumns="True" Height="150" BorderThickness=".2" Width="577" SelectionChanged="myDataGrid_SelectionChanged" >
+
                 </DataGrid>
             </ScrollViewer>
 
@@ -36,8 +30,6 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*"/>
@@ -45,19 +37,18 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="Name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
+                <TextBox x:Name="NameTB" Grid.Column="1" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Source Path" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0"  Grid.Row="2" Text="Destination Pah" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
+                <TextBox x:Name="SourcePathTB" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
+                <TextBlock Grid.Column="0"  Grid.Row="2" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"><Run Text="Destination Pa"/><Run Language="fr-fr" Text="t"/><Run Text="h"/></TextBlock>
+                <TextBox x:Name="DestinationPathTB" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
                 <TextBlock Grid.Column="0" Grid.Row="3"  Text="Save Type" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"/>
-                <TextBlock Grid.Column="0" Grid.Row="4" Text="Date of creation" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346" IsEnabled="False"/>
-                <TextBlock Grid.Column="0"  Grid.Row="5" Text="Date of modification" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
-                <TextBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="16" Width="346"  IsEnabled="False"/>
+                <ComboBox x:Name="SaveTypeTB" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" VerticalAlignment="Center" Height="22" Width="320">
+                    <ListBoxItem Content="Full" FontSize="10"/>
+                    <ListBoxItem Content="Diff" FontSize="10"/>
+                </ComboBox>
             </Grid>
-            <Button Content="New Job" HorizontalAlignment="Left" Height="25" Margin="597,220,0,0" VerticalAlignment="Top" Width="98" Foreground="White" BorderBrush="White">
+            <Button x:Name="newJobButton" Content="New Job" HorizontalAlignment="Left" Height="25" Margin="514,220,0,0" VerticalAlignment="Top" Width="98" Foreground="White" BorderBrush="White" Click="newJobButton_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
                         <GradientStop Color="#FF29B43F"/>
@@ -65,7 +56,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Delete selected job" HorizontalAlignment="Left" Height="25" Margin="432,220,0,0" VerticalAlignment="Top" Width="125" Foreground="White" BorderBrush="White">
+            <Button x:Name="deleteButton" Content="Delete selected job" HorizontalAlignment="Left" Height="25" Margin="358,220,0,0" VerticalAlignment="Top" Width="125" Foreground="White" BorderBrush="White" Click="deleteButton_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
                         <GradientStop Color="#FFAB2525"/>
@@ -73,7 +64,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Save Job Modifications" HorizontalAlignment="Left" Height="25" Margin="261,220,0,0" VerticalAlignment="Top" Width="139" Foreground="White" BorderBrush="White">
+            <Button x:Name="updateJobButton" Content="Save Job Modifications" HorizontalAlignment="Left" Height="25" Margin="200,220,0,0" VerticalAlignment="Top" Width="138" Foreground="White" BorderBrush="White" Click="updateJobButton_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
                         <GradientStop Color="#FF39A7C8"/>
@@ -81,6 +72,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <TextBlock x:Name="ErrorMessage" HorizontalAlignment="Left" Margin="538,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFE81212"/>
         </Grid>
     </Grid>
 </Page>
