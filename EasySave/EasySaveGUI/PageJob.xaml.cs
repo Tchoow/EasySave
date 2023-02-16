@@ -67,7 +67,7 @@ namespace EasySaveGUI
 
         private void updateJobButton_Click(object sender, RoutedEventArgs e)
         {
-            if(index == -1]) return;
+            if(index == -1) return;
             Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
             this.viewModel.updateJob(job, index);
             this.jobs = this.viewModel.getJobsList();

@@ -30,7 +30,6 @@ namespace EasySaveGUI
         {
             viewModel = new ViewModel(this);
             InitializeComponent();
-            viewModel = new ViewModel(view);
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
 

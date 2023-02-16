@@ -18,7 +18,7 @@
         <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal" Click="execAll_btn">
 
         </Button>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200">
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" SelectionChanged="jobdatagrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
@@ -30,13 +30,6 @@
                 <DataGridTextColumn IsReadOnly="True" Header="NbFilesLeftToDo" Binding="{Binding NbFilesLeftToDo}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Progression" Binding="{Binding Progression}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
-                <DataGridTemplateColumn Header="Select">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding IsSelect, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>

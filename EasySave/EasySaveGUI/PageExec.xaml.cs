@@ -34,26 +34,37 @@ namespace EasySaveGUI
             jobdatagrid.ItemsSource = viewModel.getJobsList();
 
         }
-
-        private void exec_selectedJobs_btn(object sender, RoutedEventArgs e)
+        private void runJobs(List<Job> jobs)
         {
-            jobSelected = new List<Job>();
-            foreach (Job item in jobdatagrid.Items)
+            string[] extensions;
+            if (jobs != null)
             {
-                if (item.IsSelect == true)
+                if (wantCrypt == true)
                 {
-                    item.IsSelect = false;
-                    jobSelected.Add(item);
+                    if (extension_text.Text != "")
+                    {
+                        Trace.WriteLine("chiffre extens");
+                        extensions = extension_text.Text.Split(",");
+                        viewModel.executeJobs(jobs, extensions);
+                    }
+                    else
+                    {
+                        Trace.WriteLine("chiffre tout");
+                        viewModel.executeJobs(jobs, new string[] { "" });
+                    }
+
+                }
+                else
+                {
+                    Trace.WriteLine("no chiff");
+                    extensions = new string[] { ".psdfg" };
+                    viewModel.executeJobs(jobs, extensions);
                 }
             }
-            if(wantCrypt == true)
-            {
-                string[] extensions = extension_text.Text.Split(",");
-                Trace.WriteLine(extensions);
-               viewModel.executeJobs(jobSelected, extensions);
-            }
-            viewModel.executeJobs(jobSelected, new string[] {" "});
-
+        }
+        private void exec_selectedJobs_btn(object sender, RoutedEventArgs e)
+        {
+            runJobs(jobSelected);
         }
 
         private void chiffrement_Checked(object sender, RoutedEventArgs e)
@@ -74,7 +85,16 @@ namespace EasySaveGUI
 
         private void execAll_btn(object sender, RoutedEventArgs e)
         {
-            viewModel.executeJobs(jobs, new string[] {" "});
+            runJobs(jobs);
+        }
+
+        private void jobdatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            jobSelected = new List<Job>();
+            foreach (Job item in jobdatagrid.SelectedItems)
+            {
+                jobSelected.Add(item);
+            }
         }
     }
 }
