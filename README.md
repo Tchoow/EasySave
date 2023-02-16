@@ -29,11 +29,11 @@ System activity and process are shown by this diagram
 
 ### Class diagram :
 Diagram that show classes, their attributs, methods and relation between them
-![image](/Assets/Class.jpg)
+![image](/Assets/Class.png)
 
 ### Components diagram :
 The component diagram is used to show the differents components of the system.
-![image](/Assets/components.png)
+![image](/Assets/Component.png)
 
 
 
