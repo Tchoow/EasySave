@@ -1,7 +1,9 @@
 ﻿using EasySave;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace EasySaveGUI
 {
@@ -36,6 +39,14 @@ namespace EasySaveGUI
             index = -1;
         }
 
+        public void clearGrid()
+        {
+            NameTB.Text = "";
+            DestinationPathTB.Text = "";
+            SourcePathTB.Text = "";
+            SaveTypeTB.SelectedIndex = -1;
+        }
+
         private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(myDataGrid.SelectedIndex != -1)
@@ -51,11 +62,21 @@ namespace EasySaveGUI
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if(myDataGrid.SelectedIndex != - 1)
+            if (myDataGrid.SelectedIndex != - 1)
             {
                 this.viewModel.deleteJobWithIndex(index + 1);
                 reloadGrid();
+                clearGrid();
             }
+        }
+
+        private void clearInputsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.index = -1;
+            SaveTypeTB.SelectedIndex = -1;
+            NameTB.Text = "";
+            SourcePathTB.Text = "";
+            DestinationPathTB.Text = "";
         }
 
         private void newJobButton_Click(object sender, RoutedEventArgs e)
@@ -72,6 +93,28 @@ namespace EasySaveGUI
             this.viewModel.updateJob(job, index);
             this.jobs = this.viewModel.getJobsList();
             reloadGrid();
+        }
+
+        private void OpenFileDialog_Source(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = SourcePathTB.Text != "" ? SourcePathTB.Text : "C:\\";
+            bool? result = openFileDialog.ShowDialog();
+            if(result == true)
+            {
+                SourcePathTB.Text = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+            }
+        }
+
+        private void OpenFileDialog_Dest(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = DestinationPathTB.Text != "" ? DestinationPathTB.Text : "C:\\";
+            bool? result = openFileDialog.ShowDialog();
+            if (result == true)
+            {
+                DestinationPathTB.Text = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+            }
         }
     }
 }
