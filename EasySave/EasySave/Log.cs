@@ -20,6 +20,8 @@ namespace EasySave
         private long fileTransferTime { get; set; }
         public int encrpytionTime;
 
+
+        [JsonConstructor]
         public Log(
                    string name,
                    string fileSource,
@@ -39,6 +41,8 @@ namespace EasySave
             this.fileTransferTime = fileTransferTime;
             this.encrpytionTime = encrpytionTime;
         }
+
+
 
 
         public void saveLogInFile()

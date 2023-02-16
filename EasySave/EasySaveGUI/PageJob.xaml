@@ -17,7 +17,6 @@
             <ScrollViewer  Height="150" Margin="50,50,33,50">
                 <DataGrid x:Name="myDataGrid" AutoGenerateColumns="False" Height="150" BorderThickness=".2" Width="700" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*" />
                         <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
                         <DataGridTextColumn Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
                         <DataGridTextColumn Header="DesPath" Binding="{Binding DesPath}" Width="*" />

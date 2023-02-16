@@ -35,13 +35,10 @@ namespace EasySaveGUI
 
             };
             myDataGrid.ItemsSource = datas;
-
         }
     }
 
-
-
-    public class MyDatas
+    class MyDatas
     {
         public int Id { get; set; }
         public string Names { get; set; }

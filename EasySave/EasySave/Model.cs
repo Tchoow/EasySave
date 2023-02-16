@@ -76,6 +76,8 @@ namespace EasySave
         public string getTraduction(string key) { return this.translate.getTraduction(this.currentLang, key); }
         public List<string> getLstLanguages() { return this.translate.getLstLanguages(); }
 
+        
+
         public bool setSave(string source, string destination)
         {
             try
@@ -113,6 +115,24 @@ namespace EasySave
                     lstLogs.Add(fileEdit);
                 }
             }
+
+            return lstLogs;
+        }
+
+
+        public FileInfo[] getLogsFiles()
+        {
+            List<string> lstLogsFiles = new List<string>();
+            string folderPath         = "../../../../EasySave/datas/logs/";
+            FileInfo[] dinfos         = new DirectoryInfo(folderPath).GetFiles();
+            return dinfos;
+        }
+
+        public List<Log> getLogsLst(string fileName)
+        {
+            string folderPath = "../../../../EasySave/datas/logs/";
+            List<Log> lstLogs = new List<Log>();
+            lstLogs = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(folderPath + fileName));
 
             return lstLogs;
         }

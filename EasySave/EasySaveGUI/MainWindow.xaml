@@ -21,6 +21,8 @@
             <Border BorderThickness="1" BorderBrush="Black" Background="#333333"  Height="50" VerticalAlignment="Top" Width="auto">
                 <TextBlock  Text="EasySave" HorizontalAlignment="Left" FontSize="25" FontWeight="ExtraLight"  VerticalAlignment="Center" Margin="5, 0, 0, 0" TextWrapping="Wrap" Foreground="White"/>
             </Border>
+            <Rectangle  VerticalAlignment="Bottom" Fill="Yellow"  Width="auto" Height="5" />
+
             <DockPanel Name="DFrame" LastChildFill="False" Grid.Row="1">
                 <DockPanel  LastChildFill="False" Width="140" Background="#EDEDED">
                     <Button DockPanel.Dock="Top"  Content="Job" Margin="0,10,0,0" Height="40" Grid.RowSpan="2"  Click="btnJob" />
