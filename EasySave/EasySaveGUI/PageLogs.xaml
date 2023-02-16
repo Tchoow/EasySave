@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageLogs">
 
     <Grid Background="White">
-        <Label Content="Page Logs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="103"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Logs" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <ScrollViewer  Width="500" Margin="0,270,160,20">
-            <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged">
+            <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged"  BorderBrush="White" Background="White" Opacity="0.81">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
                     <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
@@ -21,8 +21,8 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <ScrollViewer Margin="47,41,215,245" Width="500">
-            <DataGrid  Width="500" Name="LogsGridFiles" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged">
+        <ScrollViewer Margin="47,41,215,245" Width="550" Opacity="0.8">
+            <DataGrid   Name="LogsGridFiles" Width="auto" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged" BorderBrush="White" Background="White">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
                     <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
@@ -30,9 +30,27 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <Button Content="Preview" HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74" Background="White" Click="btnPreview"/>
-        <Button Content="XML" HorizontalAlignment="Left" Height="28" Margin="412,225,0,0" VerticalAlignment="Top" Width="74" Background="#FFD72C2C" Click="btnXML"/>
-        <Button Content="JSON" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74" Background="#FFDF4949" Click="btnJSON" FontWeight="Normal"/>
+        <Button Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="XML" Foreground="#fff" BorderThickness="0" Height="28" HorizontalAlignment="Left" Margin="412,225,0,0" VerticalAlignment="Top" Width="74" Background="#a29bfe" Click="btnXML">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="JSON" Background="#0984e3" Foreground="#fff" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnJSON" FontWeight="Normal">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Page>

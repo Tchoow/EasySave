@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageAbout">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

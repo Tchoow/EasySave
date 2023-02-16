@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageLang">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Page Settings" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Settings" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Center" Height="144" Margin="0,53,0,0" VerticalAlignment="Top" Width="596" Background="#FFF1F1F1">
             <RadioButton Content="XML" GroupName="logsFormat" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top"/>
             <RadioButton Content="JSON" GroupName="logsFormat" HorizontalAlignment="Left" Margin="135,28,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="141" Margin="102,249,0,0" VerticalAlignment="Top" Width="582" Background="#FFF1F1F1" Grid.RowSpan="4" Grid.ColumnSpan="2">
+        <Grid HorizontalAlignment="Left" Height="141" Margin="46,257,0,0" VerticalAlignment="Top" Width="582" Background="#FFF1F1F1">
             <TextBox HorizontalAlignment="Left" Height="31" Margin="380,10,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.562,-0.56" Width="192"/>
             <TextBlock HorizontalAlignment="Left" Height="28" Text="A remplir" TextWrapping="Wrap" VerticalAlignment="Top" Margin="29,13,0,0" Width="155" Grid.RowSpan="1"/>
             <TextBlock HorizontalAlignment="Left" Height="29" Text="A remplir" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Margin="29,46,0,0"/>
