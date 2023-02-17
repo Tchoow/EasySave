@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using EasySave;
+using System.Threading;
 
 namespace EasySaveGUI
 {
@@ -25,6 +26,14 @@ namespace EasySaveGUI
 
         public MainWindow()
         {
+            Mutex myMutex;
+            bool aIsNewInstance = false;
+            myMutex = new Mutex(true, "MyWPFApplication", out aIsNewInstance);
+            if (!aIsNewInstance)
+            {
+                MessageBox.Show("Already an instance is running...");
+                App.Current.Shutdown();
+            }
             viewModel = new ViewModel(this);
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
