@@ -29,6 +29,11 @@
             </Button.Resources>
         </Button>
         <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White" Foreground="#74b9ff" FontFamily="Verdana" Opacity="0.8">
+            <DataGrid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
@@ -42,9 +47,29 @@
                 <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
-        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="282,316,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Height="57" Margin="28,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
-        <CheckBox x:Name="chiff_check" Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="50,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
+        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="29,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" IsEnabled="False">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="28,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="572"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
+        <CheckBox x:Name="chiff_check" Content="CheckBox" Background="#f1f1f1" Foreground="#74b9ff"  HorizontalAlignment="Left" Height="16" Margin="28,300,0,0" BorderBrush="#74b9ff"   VerticalAlignment="Top" Width="17" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked" >
+            <CheckBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </CheckBox.Resources>
+        </CheckBox>
+        <ProgressBar Name="jobProgressBar" HorizontalAlignment="Left" Height="17" Margin="28,424,0,0" VerticalAlignment="Top" Foreground="#74b9ff"  Width="570" Value="20">
+            <ProgressBar.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="1"></Setter>
+                </Style>
+            </ProgressBar.Resources>
+        </ProgressBar>
+        <TextBlock HorizontalAlignment="Left" Margin="26,403,0,0" Text="Statut de la sauvegarde: [A modifier]" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -7,7 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\img\ES.png" />
+    <None Remove="assets\img\ES_Header_Logo.png" />
+    <None Remove="assets\img\ES_Main_Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EasySave\EasySave.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\img\ES.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\img\ES_Header_Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\img\ES_Main_Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

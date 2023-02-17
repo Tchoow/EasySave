@@ -19,9 +19,12 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Border BorderThickness="1" BorderBrush="Black" Background="#333333"  Height="50" VerticalAlignment="Top" Width="auto">
-                <TextBlock  Text="EasySave" HorizontalAlignment="Left" FontSize="25" FontWeight="ExtraLight"  VerticalAlignment="Center" Margin="5, 0, 0, 0" TextWrapping="Wrap" Foreground="White"/>
+            <Border BorderThickness="1" BorderBrush="Black" Background="#333333" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="auto">
+                <Button Click="btnHome" Background="Transparent" BorderThickness="0">
+                    <Image Source="assets/img/ES_Header_Logo.png" />
+                </Button>
             </Border>
+
             <Rectangle  VerticalAlignment="Bottom" Fill="#74b9ff"  Width="auto" Height="5" />
 
             <DockPanel Name="DFrame" LastChildFill="False" Grid.Row="1">

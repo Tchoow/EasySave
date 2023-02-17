@@ -37,6 +37,11 @@ namespace EasySaveGUI
             this.ContentFrame.Content = new PageJob(viewModel);
         }
 
+        private void btnHome(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageHome();
+        }
+
         private void btnLang(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageLang();

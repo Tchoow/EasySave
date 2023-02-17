@@ -13,20 +13,20 @@
         <ScrollViewer  Width="500" Margin="0,270,160,20">
             <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged"  BorderBrush="White" Background="White" Opacity="0.81">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
-                    <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
-                    <DataGridTextColumn Header="SourcePath" Binding="{Binding SourcePath}" Width="*" />
-                    <DataGridTextColumn Header="DesPath" Binding="{Binding DesPath}" Width="*" />
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  />
+                    <DataGridTextColumn Header="ID" Width="*"  />
+                    <DataGridTextColumn Header="Names" Width="*" />
+                    <DataGridTextColumn Header="SourcePath" Width="*" />
+                    <DataGridTextColumn Header="DesPath" Width="*" />
+                    <DataGridTextColumn Header="Date" Width="*"  />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
         <ScrollViewer Margin="47,41,215,245" Width="550" Opacity="0.8">
             <DataGrid   Name="LogsGridFiles" Width="auto" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged" BorderBrush="White" Background="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"  />
-                    <DataGridTextColumn Header="Names" Binding="{Binding Names}" Width="*" />
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="*"  />
+                    <DataGridTextColumn Header="ID" Width="*"  />
+                    <DataGridTextColumn Header="Names" Width="*" />
+                    <DataGridTextColumn Header="Date" Width="*"  />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

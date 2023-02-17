@@ -17,9 +17,6 @@ using EasySave;
 
 namespace EasySaveGUI
 {
-    /// <summary>
-    /// Logique d'interaction pour PageExec.xaml
-    /// </summary>
     public partial class PageExec : Page
     {
         private List<Job> jobs;
