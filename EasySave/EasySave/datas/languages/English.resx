@@ -126,6 +126,9 @@
   <data name="askdel" xml:space="preserve">
     <value>Please delete save file.</value>
   </data>
+  <data name="clearinputsjob" xml:space="preserve">
+    <value>Clear inputs</value>
+  </data>
   <data name="creadate" xml:space="preserve">
     <value>Creation date :</value>
   </data>
@@ -141,6 +144,9 @@
   <data name="deletefail" xml:space="preserve">
     <value>Remove failed.</value>
   </data>
+  <data name="deletejob" xml:space="preserve">
+    <value>Delete selected job</value>
+  </data>
   <data name="deletesave" xml:space="preserve">
     <value>Choose wich save number shall be deleted :</value>
   </data>
@@ -148,7 +154,7 @@
     <value>Deleted.</value>
   </data>
   <data name="diff" xml:space="preserve">
-    <value>Differential.</value>
+    <value>Differential</value>
   </data>
   <data name="errorpath" xml:space="preserve">
     <value>Error in path.</value>
@@ -166,7 +172,7 @@
     <value>Directory path (From) :</value>
   </data>
   <data name="full" xml:space="preserve">
-    <value>Complete.</value>
+    <value>Complete</value>
   </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Help</value>
@@ -225,8 +231,17 @@
   <data name="name" xml:space="preserve">
     <value>Name :</value>
   </data>
+  <data name="newjob" xml:space="preserve">
+    <value>New job</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Select file to read :</value>
+  </data>
+  <data name="savejob" xml:space="preserve">
+    <value>Save Job Modifications</value>
   </data>
   <data name="savename" xml:space="preserve">
     <value>Job name :</value>

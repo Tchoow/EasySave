@@ -23,14 +23,26 @@ namespace EasySaveGUI
     {
         List<Job> jobs;
         ViewModel viewModel;
+        
         int index = 0;
+        
         public PageJob(ViewModel viewModel)
         {
             this.viewModel = viewModel;
             InitializeComponent();
             reloadGrid();
+            UpdateTrad();
         }
-
+        public void UpdateTrad()
+        {
+            clearInputs.Content = viewModel.getTraduction("clearinputsjob");
+            updateJobButton.Content = viewModel.getTraduction("savejob");
+            deleteButton.Content = viewModel.getTraduction("deletejob");
+            newJobButton.Content = viewModel.getTraduction("newjob");
+            openDest.Content = viewModel.getTraduction("open");
+            openSrc.Content = viewModel.getTraduction("open");
+            
+        }
         public void reloadGrid()
         {
             this.jobs = viewModel.getJobsList();

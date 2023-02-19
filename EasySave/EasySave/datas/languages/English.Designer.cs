@@ -88,6 +88,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Clear inputs.
+        /// </summary>
+        internal static string clearinputsjob {
+            get {
+                return ResourceManager.GetString("clearinputsjob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Creation date :.
         /// </summary>
         internal static string creadate {
@@ -133,6 +142,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Delete selected job.
+        /// </summary>
+        internal static string deletejob {
+            get {
+                return ResourceManager.GetString("deletejob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Choose wich save number shall be deleted :.
         /// </summary>
         internal static string deletesave {
@@ -151,7 +169,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Differential..
+        ///   Recherche une chaîne localisée semblable à Differential.
         /// </summary>
         internal static string diff {
             get {
@@ -205,7 +223,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Complete..
+        ///   Recherche une chaîne localisée semblable à Complete.
         /// </summary>
         internal static string full {
             get {
@@ -385,11 +403,38 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à New job.
+        /// </summary>
+        internal static string newjob {
+            get {
+                return ResourceManager.GetString("newjob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Open.
+        /// </summary>
+        internal static string open {
+            get {
+                return ResourceManager.GetString("open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Select file to read :.
         /// </summary>
         internal static string readwhat {
             get {
                 return ResourceManager.GetString("readwhat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Save Job Modifications.
+        /// </summary>
+        internal static string savejob {
+            get {
+                return ResourceManager.GetString("savejob", resourceCulture);
             }
         }
         
