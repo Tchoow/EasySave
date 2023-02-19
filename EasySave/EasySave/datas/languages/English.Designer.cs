@@ -124,6 +124,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enable encryption.
+        /// </summary>
+        internal static string cryptactive {
+            get {
+                return ResourceManager.GetString("cryptactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Daily logs..
         /// </summary>
         internal static string daylog {
@@ -187,6 +196,24 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Exec all.
+        /// </summary>
+        internal static string execalljob {
+            get {
+                return ResourceManager.GetString("execalljob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Exec Selected Jobs.
+        /// </summary>
+        internal static string execselectedjob {
+            get {
+                return ResourceManager.GetString("execselectedjob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Executions.
         /// </summary>
         internal static string ExecutionMainWindow {
@@ -201,6 +228,15 @@ namespace EasySave.datas.languages {
         internal static string exesave {
             get {
                 return ResourceManager.GetString("exesave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à File extensions to consider, each extension must be separated by a comma (leave blank for all).
+        /// </summary>
+        internal static string extensionscrypt {
+            get {
+                return ResourceManager.GetString("extensionscrypt", resourceCulture);
             }
         }
         
@@ -516,6 +552,15 @@ namespace EasySave.datas.languages {
         internal static string state {
             get {
                 return ResourceManager.GetString("state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Status of the backup.
+        /// </summary>
+        internal static string statesave {
+            get {
+                return ResourceManager.GetString("statesave", resourceCulture);
             }
         }
         

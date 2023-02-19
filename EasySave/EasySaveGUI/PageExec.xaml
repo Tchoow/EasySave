@@ -14,14 +14,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Executions" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Exec selected jobs" Margin="373,16,0,0" VerticalAlignment="Top" Background="#74b9ff" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="27">
+        <Button x:Name="execselectedjob" Content="Exec selected jobs" Margin="248,16,0,0" VerticalAlignment="Top" Background="#74b9ff" HorizontalAlignment="Left" Width="181" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="27">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#0984e3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
+        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="434,15,0,0" VerticalAlignment="Top" Background="#0984e3" HorizontalAlignment="Left" Width="166" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
@@ -47,7 +47,7 @@
                 <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Height="17" Margin="50,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
+        <TextBlock x:Name="cryptbtn" HorizontalAlignment="Left" Height="17" Margin="50,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="" Text="Activer le chiffrement"/></TextBlock>
         <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="29,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" IsEnabled="False">
             <TextBox.Resources>
                 <Style TargetType="Border">
@@ -55,7 +55,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="28,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="572"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
+        <TextBlock x:Name="extensionslabel" HorizontalAlignment="Left" Height="20" Margin="28,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="572"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
         <CheckBox x:Name="chiff_check" Content="CheckBox" Background="#f1f1f1" Foreground="#74b9ff"  HorizontalAlignment="Left" Height="16" Margin="28,300,0,0" BorderBrush="#74b9ff"   VerticalAlignment="Top" Width="17" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked" >
             <CheckBox.Resources>
                 <Style TargetType="Border">
@@ -70,6 +70,6 @@
                 </Style>
             </ProgressBar.Resources>
         </ProgressBar>
-        <TextBlock HorizontalAlignment="Left" Margin="26,403,0,0" Text="Statut de la sauvegarde: [A modifier]" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="statesave" HorizontalAlignment="Left" Margin="26,403,0,0" Text="Statut de la sauvegarde: [A modifier]" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -138,6 +138,9 @@
   <data name="createsuccess" xml:space="preserve">
     <value>Creation of job successful.</value>
   </data>
+  <data name="cryptactive" xml:space="preserve">
+    <value>Enable encryption</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Daily logs.</value>
   </data>
@@ -159,11 +162,20 @@
   <data name="errorpath" xml:space="preserve">
     <value>Error in path.</value>
   </data>
+  <data name="execalljob" xml:space="preserve">
+    <value>Exec all</value>
+  </data>
+  <data name="execselectedjob" xml:space="preserve">
+    <value>Exec Selected Jobs</value>
+  </data>
   <data name="ExecutionMainWindow" xml:space="preserve">
     <value>Executions</value>
   </data>
   <data name="exesave" xml:space="preserve">
     <value>Launch job</value>
+  </data>
+  <data name="extensionscrypt" xml:space="preserve">
+    <value>File extensions to consider, each extension must be separated by a comma (leave blank for all)</value>
   </data>
   <data name="faillang" xml:space="preserve">
     <value>Language unknow.</value>
@@ -269,6 +281,9 @@
   </data>
   <data name="state" xml:space="preserve">
     <value>State :</value>
+  </data>
+  <data name="statesave" xml:space="preserve">
+    <value>Status of the backup</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Directory path (To) :</value>

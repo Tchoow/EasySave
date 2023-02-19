@@ -138,6 +138,9 @@
   <data name="creatsucc" xml:space="preserve">
     <value>Création du travaux effectuée.</value>
   </data>
+  <data name="cryptactive" xml:space="preserve">
+    <value>Activer le chiffrement</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Logs journaliers.</value>
   </data>
@@ -159,11 +162,20 @@
   <data name="errorpath" xml:space="preserve">
     <value>Erreur dans la saisie des chemins.</value>
   </data>
+  <data name="execalljob" xml:space="preserve">
+    <value>Lancer tous les travaux</value>
+  </data>
   <data name="execsave" xml:space="preserve">
     <value>Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)</value>
   </data>
+  <data name="execselectedjob" xml:space="preserve">
+    <value>Lancer les travaux sélectionnés</value>
+  </data>
   <data name="ExecutionMainWindow" xml:space="preserve">
     <value>Executions</value>
+  </data>
+  <data name="extensionscrypt" xml:space="preserve">
+    <value>Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (laisser vide pour tous)</value>
   </data>
   <data name="faillang" xml:space="preserve">
     <value>Langue non trouvée</value>
@@ -269,6 +281,9 @@
   </data>
   <data name="state" xml:space="preserve">
     <value>Etat :</value>
+  </data>
+  <data name="statesave" xml:space="preserve">
+    <value>Statut de la sauvegarde</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Chemin du répertoire (Destination) :</value>

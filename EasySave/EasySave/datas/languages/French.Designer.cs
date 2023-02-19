@@ -124,6 +124,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Activer le chiffrement.
+        /// </summary>
+        internal static string cryptactive {
+            get {
+                return ResourceManager.GetString("cryptactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Logs journaliers..
         /// </summary>
         internal static string daylog {
@@ -187,6 +196,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lancer tous les travaux.
+        /// </summary>
+        internal static string execalljob {
+            get {
+                return ResourceManager.GetString("execalljob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer).
         /// </summary>
         internal static string execsave {
@@ -196,11 +214,29 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lancer les travaux sélectionnés.
+        /// </summary>
+        internal static string execselectedjob {
+            get {
+                return ResourceManager.GetString("execselectedjob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Executions.
         /// </summary>
         internal static string ExecutionMainWindow {
             get {
                 return ResourceManager.GetString("ExecutionMainWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (laisser vide pour tous).
+        /// </summary>
+        internal static string extensionscrypt {
+            get {
+                return ResourceManager.GetString("extensionscrypt", resourceCulture);
             }
         }
         
@@ -516,6 +552,15 @@ namespace EasySave.datas.languages {
         internal static string state {
             get {
                 return ResourceManager.GetString("state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Statut de la sauvegarde.
+        /// </summary>
+        internal static string statesave {
+            get {
+                return ResourceManager.GetString("statesave", resourceCulture);
             }
         }
         
