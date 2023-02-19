@@ -39,8 +39,19 @@ namespace EasySaveGUI
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
             this.viewModel = new ViewModel(this);
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            this.UpdateTrad();
+            
         }
-
+        private void UpdateTrad()
+        {
+            JobBtn.Content = viewModel.getTraduction("JobMainWindow");
+            ExecBtn.Content = viewModel.getTraduction("ExecutionMainWindow");
+            LogBtn.Content = viewModel.getTraduction("LogsMainWindow");
+            LangBtn.Content = viewModel.getTraduction("LanguagesMainWindow");
+            HelpBtn.Content = viewModel.getTraduction("HelpMainWindow");
+            Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
+        }
         private void btnJob(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageJob(viewModel);
@@ -74,6 +85,12 @@ namespace EasySaveGUI
         private void btnExec(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageExec(viewModel);
+        }
+
+        private void comboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            UpdateTrad();
         }
     }
 }
