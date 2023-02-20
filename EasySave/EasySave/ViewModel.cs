@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 using System.IO;
+using System.Diagnostics;
 
 namespace EasySave
 {
@@ -28,6 +29,10 @@ namespace EasySave
         // Jobs
         public bool addNewJob(Job newJob) { return this.model.setJob(newJob);  }
         public List<Job> getJobsList()    {return this.model.getJobs(); }
+
+        public string getLogsXML(Log log, string path) { return log.getFormattedXMLLogs(path); }
+        public string getLogsJSON(Log log, string path) { Trace.WriteLine(path);  return log.getFormattedJSONLogs(path); }
+
 
         public bool deleteJobWithIndex(int jobIndex) { return this.model.deleteJob(jobIndex); }
         public void updateJob(Job job,int index) { this.model.setJobByIndex(job, index); }

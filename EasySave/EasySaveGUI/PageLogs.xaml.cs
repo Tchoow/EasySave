@@ -28,6 +28,7 @@ namespace EasySaveGUI
         public PageLogs(ViewModel viewModel)
         {
             InitializeComponent();
+            JSON_XML_TB.Visibility = Visibility.Collapsed;
             this.viewModel = viewModel;
             this.logIndex  = 0;
 
@@ -44,6 +45,9 @@ namespace EasySaveGUI
  
         public void btnPreview(object sender, RoutedEventArgs e)
         {
+            JSON_XML_TB.Visibility = Visibility.Collapsed;
+            LogsGridContent.Visibility = Visibility.Visible;
+
             // Get log file info with log file in parameter
             this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
             List<LogsDataContent> datas = new List<LogsDataContent>();
@@ -57,11 +61,23 @@ namespace EasySaveGUI
 
         public void btnXML(object sender, RoutedEventArgs e)
         {
-            Trace.WriteLine(this.logsFileInfos[this.logIndex].Name);
+            JSON_XML_TB.Visibility = Visibility.Visible;
+            LogsGridContent.Visibility = Visibility.Collapsed;
+            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
+            string filePath = logsFileInfos[logIndex].FullName;
+            string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+            string dName = System.IO.Path.GetDirectoryName(filePath);
+            string formattedXML = this.viewModel.getLogsXML(this.lstLogs[logIndex], dName+"\\"+fileName+".xml");
+            JSON_XML_TB.Text = formattedXML;
         }
         public void btnJSON(object sender, RoutedEventArgs e)
         {
+            JSON_XML_TB.Visibility = Visibility.Visible;
+            LogsGridContent.Visibility = Visibility.Collapsed;
+            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
+            string formattedJSON = this.viewModel.getLogsJSON(this.lstLogs[logIndex], logsFileInfos[logIndex].FullName);
             Trace.WriteLine(this.logsFileInfos[this.logIndex].Name);
+            JSON_XML_TB.Text = formattedJSON;
         }
 
         private void LogsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

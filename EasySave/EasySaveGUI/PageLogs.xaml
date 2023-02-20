@@ -21,6 +21,9 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
+        <ScrollViewer  Width="500" Margin="0,270,160,20">
+
+        </ScrollViewer>
         <ScrollViewer Margin="47,41,215,245" Width="550" Opacity="0.8">
             <DataGrid   Name="LogsGridFiles" Width="auto" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged" BorderBrush="White" Background="White">
                 <DataGrid.Columns>
@@ -30,6 +33,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
+        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="0,270,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="486" Height="215" IsReadOnly="True"/>
         <Button Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -44,13 +48,12 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="JSON" Background="#0984e3" Foreground="#fff" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnJSON" FontWeight="Normal">
+        <Button x:Name="JSONBtn" Content="JSON" Background="#0984e3" Foreground="#fff" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnJSON" FontWeight="Normal">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-
     </Grid>
 </Page>
