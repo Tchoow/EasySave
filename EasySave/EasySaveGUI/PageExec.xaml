@@ -14,21 +14,35 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Executions" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="execselectedjob" Content="Exec selected jobs" Margin="248,16,0,0" VerticalAlignment="Top" Background="#74b9ff" HorizontalAlignment="Left" Width="181" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="27">
+        <Button x:Name="execselectedjob" Content="Start" Margin="301,16,0,0" VerticalAlignment="Top" Background="#27ae60" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="434,15,0,0" VerticalAlignment="Top" Background="#0984e3" HorizontalAlignment="Left" Width="166" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
+        <Button x:Name="pauseselectedjob" Content="Pause" Margin="362,16,0,0" VerticalAlignment="Top" Background="#d35400" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White" Foreground="#74b9ff" FontFamily="Verdana" Opacity="0.8">
+        <Button x:Name="stopselectedjob" Content="Stop" Margin="421,16,0,0" VerticalAlignment="Top" Background="#c0392b" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="479,15,0,0" VerticalAlignment="Top" Background="#0984e3" HorizontalAlignment="Left" Width="121" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White" Foreground="#74b9ff" AlternatingRowBackground="#EFEFEF" RowBackground="#E4F3FF" FontFamily="Verdana" Opacity="0.8">
             <DataGrid.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>
@@ -38,13 +52,18 @@
                 <DataGridTextColumn IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="DestinationFilePath" Binding="{Binding DestinationFilePath}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="SaveType" Binding="{Binding SaveType}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="State" Binding="{Binding State}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="TotalFileToCopy" Binding="{Binding TotalFileToCopy}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="TotalFileSize" Binding="{Binding TotalFileSize}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="NbFilesLeftToDo" Binding="{Binding NbFilesLeftToDo}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Progression" Binding="{Binding Progression}" Width="*" />
                 <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
+                <DataGridTemplateColumn Header="Progress">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar Value="{Binding Progression}" Maximum="100" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Pourcentage" Binding="{Binding Progression}" Width="*"/>
+
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="cryptbtn" HorizontalAlignment="Left" Height="17" Margin="50,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="" Text="Activer le chiffrement"/></TextBlock>
@@ -63,13 +82,5 @@
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <ProgressBar Name="jobProgressBar" HorizontalAlignment="Left" Height="17" Margin="28,424,0,0" VerticalAlignment="Top" Foreground="#74b9ff"  Width="570" Value="20">
-            <ProgressBar.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="1"></Setter>
-                </Style>
-            </ProgressBar.Resources>
-        </ProgressBar>
-        <TextBlock x:Name="statesave" HorizontalAlignment="Left" Margin="26,403,0,0" Text="Statut de la sauvegarde: [A modifier]" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>
