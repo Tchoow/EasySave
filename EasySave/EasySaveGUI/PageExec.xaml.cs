@@ -28,6 +28,7 @@ namespace EasySaveGUI
             InitializeComponent();
             this.viewModel = viewModel;
             jobs = viewModel.getJobsList();
+            Trace.WriteLine(jobs);
             jobdatagrid.ItemsSource = viewModel.getJobsList();
             UpdateTrad();
 
@@ -38,7 +39,7 @@ namespace EasySaveGUI
             execselectedjob.Content = viewModel.getTraduction("execselectedjob");
             cryptbtn.Text = viewModel.getTraduction("cryptactive");
            extensionslabel.Text = viewModel.getTraduction("extensionscrypt");
-            statesave.Text = viewModel.getTraduction("statesave");
+
         }
         private void runJobs(List<Job> jobs)
         {

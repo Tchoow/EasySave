@@ -16,6 +16,7 @@
                     <GradientStop Color="#3498db" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Image Source="assets/img/fast.png"/>
 
         </Border>
         <Image Source="assets/img/ES_Main_Logo.png" Height="150" VerticalAlignment="Top" />
@@ -27,6 +28,7 @@
                     <GradientStop Color="#3498db" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Image Source="assets/img/security.png" />
         </Border>
         <Border BorderThickness="1"  CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="355,184,0,0" VerticalAlignment="Top" Width="111">
             <Border.Background>
@@ -35,6 +37,7 @@
                     <GradientStop Color="#3498db" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Image Source="assets/img/improvable.png" />
         </Border>
         <Border BorderThickness="1"  CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="504,184,0,0" VerticalAlignment="Top" Width="111">
             <Border.Background>
@@ -43,6 +46,7 @@
                     <GradientStop Color="#3498db" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Image Source="assets/img/community.png" />
         </Border>
 
     </Grid>

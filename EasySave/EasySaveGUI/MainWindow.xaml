@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Easy Save" Height="550" Width="800"
         ResizeMode="NoResize"
-        Background="#333333">
+        Background="#333333"
+        >
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -50,7 +52,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button x:Name="LangBtn" DockPanel.Dock="Top"  Content="Languages"  BorderThickness="0"  Margin="5,10,5,0" Height="40" Grid.RowSpan="2"  Click="btnLang">
+                    <Button x:Name="LangBtn" DockPanel.Dock="Top"  Content="Settings"  BorderThickness="0"  Margin="5,10,5,0" Height="40" Grid.RowSpan="2"  Click="btnLang">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="4"></Setter>
@@ -78,7 +80,7 @@
 
 
             </DockPanel>
-            <ComboBox x:Name="comboLanguage" HorizontalAlignment="Left" Height="23" Margin="728,10,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="comboLanguage_SelectionChanged">
+            <ComboBox x:Name="comboLanguage"  HorizontalAlignment="Left" Height="23" BorderThickness="0" Foreground="#333333"  Margin="728,10,0,0" VerticalAlignment="Top" Width="48" SelectionChanged="comboLanguage_SelectionChanged">
                 <ComboBoxItem Content="EN" IsSelected="True"/>
                 <ComboBoxItem Content="FR"/>
             </ComboBox>
