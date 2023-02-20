@@ -79,14 +79,14 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="updateJobButton" Content="Save Job Modifications" HorizontalAlignment="Left" Height="25" Margin="200,220,0,0" VerticalAlignment="Top" Width="138" Foreground="White" Background="#74b9ff" BorderThickness="0" Click="updateJobButton_Click">
+            <Button x:Name="updateJobButton" Content="Save Job Modifications" HorizontalAlignment="Left" Height="25" Margin="170,220,0,0" VerticalAlignment="Top" Width="168" Foreground="White" Background="#74b9ff" BorderThickness="0" Click="updateJobButton_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="clearInputs" Content="Clear Inputs" HorizontalAlignment="Left" Height="25" Margin="38,220,0,0" VerticalAlignment="Top" Width="138" Foreground="White" Background="#74b9ff" BorderThickness="0" Click="clearInputsButton_Click">
+            <Button x:Name="clearInputs" Content="Clear Inputs" HorizontalAlignment="Left" Height="25" Margin="38,220,0,0" VerticalAlignment="Top" Width="114" Foreground="White" Background="#74b9ff" BorderThickness="0" Click="clearInputsButton_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -94,14 +94,14 @@
                 </Button.Resources>
             </Button>
             <TextBlock x:Name="ErrorMessage" HorizontalAlignment="Left" Margin="538,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
-            <Button Content="Open" Margin="592,59,17,170" Grid.Row="1" BorderThickness="0" Background="#74b9ff" Foreground="#fff" Click="OpenFileDialog_Source">
+            <Button x:Name="openSrc" Content="Open" Margin="592,59,17,170" Grid.Row="1" BorderThickness="0" Background="#74b9ff" Foreground="#fff" Click="OpenFileDialog_Source">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button Content="Open" Margin="592,100,17,130" Grid.Row="1" BorderThickness="0" Background="#74b9ff" Foreground="#fff" Click="OpenFileDialog_Dest">
+            <Button x:Name="openDest" Content="Open" Margin="592,100,17,130" Grid.Row="1" BorderThickness="0" Background="#74b9ff" Foreground="#fff" Click="OpenFileDialog_Dest">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>

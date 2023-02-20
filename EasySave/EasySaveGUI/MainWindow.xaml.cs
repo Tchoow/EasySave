@@ -23,6 +23,7 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
+        private string frameName;
 
         public MainWindow()
         {
@@ -39,11 +40,23 @@ namespace EasySaveGUI
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
             this.viewModel = new ViewModel(this);
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            this.UpdateTrad();
+            
         }
-
+        private void UpdateTrad()
+        {
+            JobBtn.Content = viewModel.getTraduction("JobMainWindow");
+            ExecBtn.Content = viewModel.getTraduction("ExecutionMainWindow");
+            LogBtn.Content = viewModel.getTraduction("LogsMainWindow");
+            LangBtn.Content = viewModel.getTraduction("LanguagesMainWindow");
+            HelpBtn.Content = viewModel.getTraduction("HelpMainWindow");
+            Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
+        }
         private void btnJob(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageJob(viewModel);
+            frameName = "Job";
         }
 
         private void btnHome(object sender, RoutedEventArgs e)
@@ -54,26 +67,63 @@ namespace EasySaveGUI
         private void btnLang(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageLang();
+            frameName = "Lang";
         }
 
         private void btnAbout(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageAbout();
+            frameName = "about";
         }
 
         private void btnHelp(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageHelp();
+            frameName = "help";
         }
 
         private void btnLogs(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageLogs(this.viewModel);
+            frameName = "log";
         }
 
         private void btnExec(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageExec(viewModel);
+            frameName = "exec";
+        }
+
+        private void comboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            UpdateTrad();
+            if (this.ContentFrame != null)
+            {
+                switch (frameName)
+                {
+                    case "Job":
+                        this.ContentFrame.Content = new PageJob(viewModel);
+                        break;
+                    case "Lang":
+                        this.ContentFrame.Content = new PageLang();
+                        break;
+                    case "about":
+                        this.ContentFrame.Content = new PageAbout();
+                        break;
+                    case "help":
+                        this.ContentFrame.Content = new PageHelp();
+                        break;
+                    case "log":
+                        this.ContentFrame.Content = new PageLogs(this.viewModel);
+                        break;
+                    case "exec":
+                        this.ContentFrame.Content = new PageExec(viewModel);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

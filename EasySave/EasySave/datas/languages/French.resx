@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutMainWindow" xml:space="preserve">
+    <value>A propos</value>
+  </data>
   <data name="action" xml:space="preserve">
     <value>Veuillez choisir une action :</value>
   </data>
   <data name="askdel" xml:space="preserve">
     <value>Merci d'en supprimer pour pouvoir en créer de nouveaux.</value>
+  </data>
+  <data name="clearinputsjob" xml:space="preserve">
+    <value>Réinitialiser</value>
   </data>
   <data name="creadate" xml:space="preserve">
     <value>Date de creation :</value>
@@ -132,11 +138,17 @@
   <data name="creatsucc" xml:space="preserve">
     <value>Création du travaux effectuée.</value>
   </data>
+  <data name="cryptactive" xml:space="preserve">
+    <value>Activer le chiffrement</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Logs journaliers.</value>
   </data>
   <data name="deletefail" xml:space="preserve">
     <value>Suppression echouée.</value>
+  </data>
+  <data name="deletejob" xml:space="preserve">
+    <value>Supprimer le travail</value>
   </data>
   <data name="deletesave" xml:space="preserve">
     <value>Veuillez choisir le numéro de la sauvegarde que vous voulez supprimer.</value>
@@ -150,8 +162,20 @@
   <data name="errorpath" xml:space="preserve">
     <value>Erreur dans la saisie des chemins.</value>
   </data>
+  <data name="execalljob" xml:space="preserve">
+    <value>Lancer tous les travaux</value>
+  </data>
   <data name="execsave" xml:space="preserve">
     <value>Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)</value>
+  </data>
+  <data name="execselectedjob" xml:space="preserve">
+    <value>Lancer les travaux sélectionnés</value>
+  </data>
+  <data name="ExecutionMainWindow" xml:space="preserve">
+    <value>Executions</value>
+  </data>
+  <data name="extensionscrypt" xml:space="preserve">
+    <value>Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (laisser vide pour tous)</value>
   </data>
   <data name="faillang" xml:space="preserve">
     <value>Langue non trouvée</value>
@@ -162,8 +186,14 @@
   <data name="full" xml:space="preserve">
     <value>Complète.</value>
   </data>
+  <data name="HelpMainWindow" xml:space="preserve">
+    <value>Aide</value>
+  </data>
   <data name="job" xml:space="preserve">
     <value>Travaux N° :</value>
+  </data>
+  <data name="JobMainWindow" xml:space="preserve">
+    <value>Travaux</value>
   </data>
   <data name="jobtittle" xml:space="preserve">
     <value>Executer un travaux de sauvegarde.</value>
@@ -171,11 +201,17 @@
   <data name="language" xml:space="preserve">
     <value>Liste des langues disponibles :</value>
   </data>
+  <data name="LanguagesMainWindow" xml:space="preserve">
+    <value>Langages</value>
+  </data>
   <data name="listlog" xml:space="preserve">
     <value>Liste des logs stockées sur le serveur:</value>
   </data>
   <data name="listsave" xml:space="preserve">
     <value>Liste des travaux de sauvegarde.</value>
+  </data>
+  <data name="LogsMainWindow" xml:space="preserve">
+    <value>Historique</value>
   </data>
   <data name="maxsave" xml:space="preserve">
     <value>Il existe déjà 5 travaux de sauvegarde.</value>
@@ -207,8 +243,17 @@
   <data name="name" xml:space="preserve">
     <value>Nom :</value>
   </data>
+  <data name="newjob" xml:space="preserve">
+    <value>Nouveau travail</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>Ouvrir</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Selectionnez fichier à lire :</value>
+  </data>
+  <data name="savejob" xml:space="preserve">
+    <value>Sauvegarder les modifications</value>
   </data>
   <data name="savename" xml:space="preserve">
     <value>Nom du travail de sauvegarde :</value>
@@ -236,6 +281,9 @@
   </data>
   <data name="state" xml:space="preserve">
     <value>Etat :</value>
+  </data>
+  <data name="statesave" xml:space="preserve">
+    <value>Statut de la sauvegarde</value>
   </data>
   <data name="todir" xml:space="preserve">
     <value>Chemin du répertoire (Destination) :</value>
