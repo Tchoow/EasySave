@@ -63,6 +63,7 @@
                 <ComboBox x:Name="SaveTypeTB" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" VerticalAlignment="Center" Height="22" Width="313">
                     <ListBoxItem Content="Full" FontSize="10"/>
                     <ListBoxItem Content="Diff" FontSize="10"/>
+                    <ListBox/>
                 </ComboBox>
             </Grid>
             <Button x:Name="newJobButton" Background="#74b9ff" Content="New Job" HorizontalAlignment="Left" Height="25" Margin="514,220,0,0" VerticalAlignment="Top" Width="98" Foreground="White" BorderThickness="0" Click="newJobButton_Click">
