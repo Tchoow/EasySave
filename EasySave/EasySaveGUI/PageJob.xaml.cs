@@ -41,7 +41,14 @@ namespace EasySaveGUI
             newJobButton.Content = viewModel.getTraduction("newjob");
             openDest.Content = viewModel.getTraduction("open");
             openSrc.Content = viewModel.getTraduction("open");
-            
+            full.Content = viewModel.getTraduction("full");
+            diff.Content = viewModel.getTraduction("diff");
+            job.Text = viewModel.getTraduction("JobMainWindow");
+            lblName.Text = viewModel.getTraduction("name");
+            SrcPath.Text = viewModel.getTraduction("fromdir");
+            DestPath.Text = viewModel.getTraduction("todir");
+            SavTyp.Text = viewModel.getTraduction("savetype");
+
         }
         public void reloadGrid()
         {

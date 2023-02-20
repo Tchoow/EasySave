@@ -20,7 +20,7 @@
                 </DataGrid>
             </ScrollViewer>
 
-            <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Jobs" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock x:Name="job" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Jobs" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
             <Grid VerticalAlignment="Top" Background="#f1f1f1" Margin="0,10,0,0"  Grid.Row="1" Height="191">
                 <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="49*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
+                <TextBlock Grid.Column="0" x:Name="lblName" Text="Name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox x:Name="NameTB"  Grid.Column="1" HorizontalAlignment="Left"  BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="253">
                     <TextBox.Resources>
                         <Style TargetType="Border">
@@ -43,7 +43,7 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBlock Grid.Column="0" Grid.Row="1" Text="Source Path" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Name="SrcPath" Text="Source Path" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <TextBox x:Name="SourcePathTB" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="253">
                     <TextBox.Resources>
                         <Style TargetType="Border">
@@ -51,7 +51,7 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBlock Grid.Column="0"  Grid.Row="2" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"><Run Text="Destination Pa"/><Run Language="fr-fr" Text="t"/><Run Text="h"/></TextBlock>
+                <TextBlock x:Name="DestPath" Grid.Column="0"  Grid.Row="2" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"><Run Text="Destination Pa"/><Run Language="fr-fr" Text="t"/><Run Text="h"/></TextBlock>
                 <TextBox x:Name="DestinationPathTB" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" BorderThickness=".5" TextWrapping="Wrap" VerticalAlignment="Center" Height="20" Width="253">
                     <TextBox.Resources>
                         <Style TargetType="Border">
@@ -59,10 +59,10 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBlock Grid.Column="0" Grid.Row="3"  Text="Save Type" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Name="SavTyp" Text="Save Type" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
                 <ComboBox x:Name="SaveTypeTB" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Text="xxxxxxxxxxxxx" BorderThickness=".5" VerticalAlignment="Center" Height="22" Width="313">
-                    <ListBoxItem Content="Full" FontSize="10"/>
-                    <ListBoxItem Content="Diff" FontSize="10"/>
+                    <ListBoxItem x:Name="full" Content="Full" FontSize="10"/>
+                    <ListBoxItem x:Name="diff" Content="Diff" FontSize="10"/>
                 </ComboBox>
             </Grid>
             <Button x:Name="newJobButton" Background="#74b9ff" Content="New Job" HorizontalAlignment="Left" Height="25" Margin="514,220,0,0" VerticalAlignment="Top" Width="98" Foreground="White" BorderThickness="0" Click="newJobButton_Click">

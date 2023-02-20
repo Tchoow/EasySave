@@ -9,6 +9,6 @@
       Title="PageAbout">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="about" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>
