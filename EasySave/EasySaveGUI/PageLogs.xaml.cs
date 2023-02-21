@@ -51,6 +51,7 @@ namespace EasySaveGUI
             // Get log file info with log file in parameter
             this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
             List<LogsDataContent> datas = new List<LogsDataContent>();
+            if (lstLogs == null || lstLogs.Count == 0) return;
             for (int i = 0; i < this.lstLogs.Count; i++)
             {
                 datas.Add(new LogsDataContent { Id = i, Names = this.lstLogs[i].Name, SourcePath = this.lstLogs[i].FileSource, DesPath = this.lstLogs[i].DestPath, Date = this.lstLogs[i].Time.ToString() }) ;
@@ -61,9 +62,10 @@ namespace EasySaveGUI
 
         public void btnXML(object sender, RoutedEventArgs e)
         {
+            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
+            if (lstLogs == null || lstLogs.Count == 0) return;
             JSON_XML_TB.Visibility = Visibility.Visible;
             LogsGridContent.Visibility = Visibility.Collapsed;
-            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
             string filePath = logsFileInfos[logIndex].FullName;
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             string dName = System.IO.Path.GetDirectoryName(filePath);
@@ -72,9 +74,10 @@ namespace EasySaveGUI
         }
         public void btnJSON(object sender, RoutedEventArgs e)
         {
+            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
+            if (lstLogs == null || lstLogs.Count == 0) return;
             JSON_XML_TB.Visibility = Visibility.Visible;
             LogsGridContent.Visibility = Visibility.Collapsed;
-            this.lstLogs = this.viewModel.getLogsLst(this.logsFileInfos[this.logIndex].Name);
             string formattedJSON = this.viewModel.getLogsJSON(this.lstLogs[logIndex], logsFileInfos[logIndex].FullName);
             Trace.WriteLine(this.logsFileInfos[this.logIndex].Name);
             JSON_XML_TB.Text = formattedJSON;
