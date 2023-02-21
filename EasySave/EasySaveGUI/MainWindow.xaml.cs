@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Diagnostics;
 using EasySave;
 using System.Threading;
+using System.Net.Sockets;
 
 namespace EasySaveGUI
 {
@@ -23,6 +24,9 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
+        private Server serv;
+        Thread serverThread;
+
 
         public MainWindow()
         {
@@ -39,6 +43,21 @@ namespace EasySaveGUI
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
             this.viewModel = new ViewModel(this);
+            serv = new Server();
+
+            this.serverThread = new Thread(() => { 
+                while (true)
+                {
+                    Socket servsocket = serv.Initialize();
+                    Socket accepted = serv.AcceptConnexion(servsocket);
+                    serv.ListenNetwork(accepted,viewModel.getJobsList());
+                    serv.CloseSocket(servsocket);
+                    serv.CloseSocket(accepted);
+                }
+                
+            });
+            serverThread.IsBackground = true;
+            serverThread.Start();
         }
 
         private void btnJob(object sender, RoutedEventArgs e)
