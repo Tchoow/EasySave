@@ -38,8 +38,18 @@ namespace EasySaveGUI
             execalljob.Content = viewModel.getTraduction("execalljob");
             execselectedjob.Content = viewModel.getTraduction("execselectedjob");
             cryptbtn.Text = viewModel.getTraduction("cryptactive");
-           extensionslabel.Text = viewModel.getTraduction("extensionscrypt");
-
+            extensionslabel.Text = viewModel.getTraduction("extensionscrypt");
+            statesave.Text = viewModel.getTraduction("statesave");
+            name.Header = viewModel.getTraduction("name");
+            srcfile.Header = viewModel.getTraduction("fromdir");
+            destfile.Header = viewModel.getTraduction("todir");
+            savetype.Header = viewModel.getTraduction("savetype");
+            state.Header = viewModel.getTraduction("state");
+            ttlfilecop.Header = viewModel.getTraduction("ttlfilcop");
+            ttlfilesiz.Header = viewModel.getTraduction("ttlfilsiz");
+            filesleft.Header = viewModel.getTraduction("filleft");
+            Progr.Header = viewModel.getTraduction("progr");
+            created.Header = viewModel.getTraduction("creadate");
         }
         private void runJobs(List<Job> jobs)
         {

@@ -9,7 +9,7 @@
       Title="PageLogs">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Logs" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="log" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Logs" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <ScrollViewer  Width="500" Margin="0,270,160,20">
             <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged"  BorderBrush="White" Background="White" Opacity="0.81">
                 <DataGrid.Columns>
@@ -30,7 +30,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <Button Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
+        <Button x:Name="Prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>

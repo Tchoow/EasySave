@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="AboutMainWindow" xml:space="preserve">
     <value>About us</value>
   </data>
@@ -159,14 +162,17 @@
   <data name="diff" xml:space="preserve">
     <value>Differential</value>
   </data>
+  <data name="docu" xml:space="preserve">
+    <value>Click here to open documentation</value>
+  </data>
   <data name="errorpath" xml:space="preserve">
     <value>Error in path.</value>
   </data>
   <data name="execalljob" xml:space="preserve">
-    <value>Exec all</value>
+    <value>Execute all</value>
   </data>
   <data name="execselectedjob" xml:space="preserve">
-    <value>Exec Selected Jobs</value>
+    <value>Execute Selected Jobs</value>
   </data>
   <data name="ExecutionMainWindow" xml:space="preserve">
     <value>Executions</value>
@@ -180,11 +186,17 @@
   <data name="faillang" xml:space="preserve">
     <value>Language unknow.</value>
   </data>
+  <data name="filleft" xml:space="preserve">
+    <value>Files left to copy</value>
+  </data>
   <data name="fromdir" xml:space="preserve">
     <value>Directory path (From) :</value>
   </data>
   <data name="full" xml:space="preserve">
     <value>Complete</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Help</value>
@@ -209,6 +221,9 @@
   </data>
   <data name="listsave" xml:space="preserve">
     <value>List of job :</value>
+  </data>
+  <data name="log" xml:space="preserve">
+    <value>log</value>
   </data>
   <data name="LogsMainWindow" xml:space="preserve">
     <value>Logs</value>
@@ -249,6 +264,12 @@
   <data name="open" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="progr" xml:space="preserve">
+    <value>progress</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Select file to read :</value>
   </data>
@@ -287,6 +308,12 @@
   </data>
   <data name="todir" xml:space="preserve">
     <value>Directory path (To) :</value>
+  </data>
+  <data name="ttlfilcop" xml:space="preserve">
+    <value>Number of copied files</value>
+  </data>
+  <data name="ttlfilsiz" xml:space="preserve">
+    <value>Total size of copied files</value>
   </data>
   <data name="wronginput" xml:space="preserve">
     <value>Incorect input.</value>

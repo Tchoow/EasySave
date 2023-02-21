@@ -61,7 +61,16 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à A propos.
+        ///   Recherche une chaîne localisée semblable à À propos.
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à À propos.
         /// </summary>
         internal static string AboutMainWindow {
             get {
@@ -187,6 +196,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cliquez ici pour ouvrir la documentation.
+        /// </summary>
+        internal static string docu {
+            get {
+                return ResourceManager.GetString("docu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur dans la saisie des chemins..
         /// </summary>
         internal static string errorpath {
@@ -250,6 +268,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à FIchier restant.
+        /// </summary>
+        internal static string filleft {
+            get {
+                return ResourceManager.GetString("filleft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Chemin du répertoire (Source) :.
         /// </summary>
         internal static string fromdir {
@@ -264,6 +291,15 @@ namespace EasySave.datas.languages {
         internal static string full {
             get {
                 return ResourceManager.GetString("full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aide.
+        /// </summary>
+        internal static string help {
+            get {
+                return ResourceManager.GetString("help", resourceCulture);
             }
         }
         
@@ -336,6 +372,15 @@ namespace EasySave.datas.languages {
         internal static string listsave {
             get {
                 return ResourceManager.GetString("listsave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Historique.
+        /// </summary>
+        internal static string log {
+            get {
+                return ResourceManager.GetString("log", resourceCulture);
             }
         }
         
@@ -457,6 +502,24 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aperçu.
+        /// </summary>
+        internal static string preview {
+            get {
+                return ResourceManager.GetString("preview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Progres .
+        /// </summary>
+        internal static string progr {
+            get {
+                return ResourceManager.GetString("progr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Selectionnez fichier à lire :.
         /// </summary>
         internal static string readwhat {
@@ -570,6 +633,24 @@ namespace EasySave.datas.languages {
         internal static string todir {
             get {
                 return ResourceManager.GetString("todir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nombre total de fichers.
+        /// </summary>
+        internal static string ttlfilcop {
+            get {
+                return ResourceManager.GetString("ttlfilcop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Taille totale des fichiers.
+        /// </summary>
+        internal static string ttlfilsiz {
+            get {
+                return ResourceManager.GetString("ttlfilsiz", resourceCulture);
             }
         }
         

@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>À propos</value>
+  </data>
   <data name="AboutMainWindow" xml:space="preserve">
-    <value>A propos</value>
+    <value>À propos</value>
   </data>
   <data name="action" xml:space="preserve">
     <value>Veuillez choisir une action :</value>
@@ -159,6 +162,9 @@
   <data name="diff" xml:space="preserve">
     <value>Différentielle.</value>
   </data>
+  <data name="docu" xml:space="preserve">
+    <value>Cliquez ici pour ouvrir la documentation</value>
+  </data>
   <data name="errorpath" xml:space="preserve">
     <value>Erreur dans la saisie des chemins.</value>
   </data>
@@ -180,11 +186,17 @@
   <data name="faillang" xml:space="preserve">
     <value>Langue non trouvée</value>
   </data>
+  <data name="filleft" xml:space="preserve">
+    <value>FIchier restant</value>
+  </data>
   <data name="fromdir" xml:space="preserve">
     <value>Chemin du répertoire (Source) :</value>
   </data>
   <data name="full" xml:space="preserve">
     <value>Complète.</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Aide</value>
   </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Aide</value>
@@ -209,6 +221,9 @@
   </data>
   <data name="listsave" xml:space="preserve">
     <value>Liste des travaux de sauvegarde.</value>
+  </data>
+  <data name="log" xml:space="preserve">
+    <value>Historique</value>
   </data>
   <data name="LogsMainWindow" xml:space="preserve">
     <value>Historique</value>
@@ -249,6 +264,12 @@
   <data name="open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
+  <data name="preview" xml:space="preserve">
+    <value>Aperçu</value>
+  </data>
+  <data name="progr" xml:space="preserve">
+    <value>Progres </value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Selectionnez fichier à lire :</value>
   </data>
@@ -287,6 +308,12 @@
   </data>
   <data name="todir" xml:space="preserve">
     <value>Chemin du répertoire (Destination) :</value>
+  </data>
+  <data name="ttlfilcop" xml:space="preserve">
+    <value>Nombre total de fichers</value>
+  </data>
+  <data name="ttlfilsiz" xml:space="preserve">
+    <value>Taille totale des fichiers</value>
   </data>
   <data name="wronginput" xml:space="preserve">
     <value>Saisie incorrecte.</value>
