@@ -45,7 +45,7 @@ namespace EasySaveGUI
 
         public void UpdateTrad()
         {
-           Prev.Content = viewModel.getTraduction("preview");
+           //Prev.Content = viewModel.getTraduction("preview");
             log.Text = viewModel.getTraduction("log");
         }
 
