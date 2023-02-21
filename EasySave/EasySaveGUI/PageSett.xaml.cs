@@ -18,9 +18,9 @@ namespace EasySaveGUI
     /// <summary>
     /// Logique d'interaction pour PageLang.xaml
     /// </summary>
-    public partial class PageLang : Page
+    public partial class PageSett : Page
     {
-        public PageLang()
+        public PageSett()
         {
             InitializeComponent();
         }

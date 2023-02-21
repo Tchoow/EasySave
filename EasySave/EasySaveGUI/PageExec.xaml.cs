@@ -28,6 +28,7 @@ namespace EasySaveGUI
             InitializeComponent();
             this.viewModel = viewModel;
             jobs = viewModel.getJobsList();
+            Trace.WriteLine(jobs);
             jobdatagrid.ItemsSource = viewModel.getJobsList();
             UpdateTrad();
 

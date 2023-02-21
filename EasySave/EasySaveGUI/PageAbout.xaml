@@ -10,5 +10,10 @@
 
     <Grid Background="White">
         <TextBlock x:Name="about" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
+            <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">
+               Lorem Impsium Lorem Impsium Lorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem Impsium
+            </TextBlock>
+        </Grid>
     </Grid>
 </Page>

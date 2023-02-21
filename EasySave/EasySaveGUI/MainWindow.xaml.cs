@@ -46,17 +46,17 @@ namespace EasySaveGUI
         }
         private void UpdateTrad()
         {
-            JobBtn.Content = viewModel.getTraduction("JobMainWindow");
-            ExecBtn.Content = viewModel.getTraduction("ExecutionMainWindow");
-            LogBtn.Content = viewModel.getTraduction("LogsMainWindow");
-            LangBtn.Content = viewModel.getTraduction("LanguagesMainWindow");
-            HelpBtn.Content = viewModel.getTraduction("HelpMainWindow");
+            JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
+            ExecBtn.Content  = viewModel.getTraduction("ExecutionMainWindow");
+            LogBtn.Content   = viewModel.getTraduction("LogsMainWindow");
+            LangBtn.Content  = viewModel.getTraduction("LanguagesMainWindow");
+            HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
         private void btnJob(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageJob(viewModel);
-            frameName = "Job";
+            frameName = "Jobs";
         }
 
         private void btnHome(object sender, RoutedEventArgs e)
@@ -66,32 +66,32 @@ namespace EasySaveGUI
 
         private void btnLang(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageLang();
-            frameName = "Lang";
+            this.ContentFrame.Content = new PageSett();
+            frameName = "Sett";
         }
 
         private void btnAbout(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageAbout(this.viewModel);
-            frameName = "about";
+            this.ContentFrame.Content = new PageAbout();
+            frameName = "About";
         }
 
         private void btnHelp(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageHelp(this.viewModel);
-            frameName = "help";
+            this.ContentFrame.Content = new PageHelp();
+            frameName = "Help";
         }
 
         private void btnLogs(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageLogs(this.viewModel);
-            frameName = "log";
+            frameName = "Logs";
         }
 
         private void btnExec(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageExec(viewModel);
-            frameName = "exec";
+            frameName = "Exec";
         }
 
         private void comboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -102,22 +102,22 @@ namespace EasySaveGUI
             {
                 switch (frameName)
                 {
-                    case "Job":
+                    case "Jobs":
                         this.ContentFrame.Content = new PageJob(viewModel);
                         break;
-                    case "Lang":
-                        this.ContentFrame.Content = new PageLang();
+                    case "Sett":
+                        this.ContentFrame.Content = new PageSett();
                         break;
-                    case "about":
-                        this.ContentFrame.Content = new PageAbout(this.viewModel);
+                    case "About":
+                        this.ContentFrame.Content = new PageAbout();
                         break;
-                    case "help":
-                        this.ContentFrame.Content = new PageHelp(this.viewModel);
+                    case "Help":
+                        this.ContentFrame.Content = new PageHelp();
                         break;
-                    case "log":
+                    case "Logs":
                         this.ContentFrame.Content = new PageLogs(this.viewModel);
                         break;
-                    case "exec":
+                    case "Exec":
                         this.ContentFrame.Content = new PageExec(viewModel);
                         break;
                     default:
