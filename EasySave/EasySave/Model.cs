@@ -18,15 +18,53 @@ namespace EasySave
         private int currentLang { get; set; }
         private Translate translate;
 
+        private List<string> lstPriorities;
+        private List<string> lstBusinessSoft;
+
         public Model(ViewModel viewModel)
         {
-
+            // VM
             this.viewModel = viewModel;
+
             // default lang is french
-            this.translate = new Translate();
-            this.currentLang = 1;
+            this.translate       = new Translate();
+            this.currentLang     = 1;
+
+            // Configs
+            this.lstPriorities   = new List<string>();
+            this.lstBusinessSoft = new List<string>();
         }
 
+        private bool businessSoftIsRunning()
+        {
+            // Parcourt la liste des programmes d'entreprise
+            foreach (string businessSoftName in this.lstBusinessSoft)
+            {
+                // Recherche un processus avec un nom similaire
+                string softName = Path.GetFileNameWithoutExtension(businessSoftName);
+                Process[] processes = Process.GetProcessesByName(softName);
+                if (processes.Length > 0)
+                {
+                    // Le processus a été trouvé
+                    return true;
+                }
+            }
+            // Aucun processus trouvé pour les programmes d'entreprise
+            return false;
+        }
+
+        // Config
+        public List<string> LstPriorities
+        {
+            get { return this.lstPriorities;  }
+            set { this.lstPriorities = value; }
+        }
+
+        public List<string> LstBusinessSoft
+        {
+            get { return this.lstBusinessSoft;  }
+            set { this.lstBusinessSoft = value; }
+        }
 
         public bool setJob(Job job)
         {
@@ -193,151 +231,161 @@ namespace EasySave
 
         public bool executeJobs(List<Job> jobs, string[] extensions)
         {
-            try
+
+            if ( !businessSoftIsRunning() )
             {
-                // The execution of the job works
-                for (int i = 0; i < jobs.Count; i++)
+
+                try
                 {
-                    Job newJob = jobs[i]; //This will be used for rewriting the jobs file
-                    //We get the type of file of the destination and the source of the job
-                    FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath); 
-                    FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
-                    string source;
-                    if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We handle the case where the source is a single file
+                    // The execution of the job works
+                    for (int i = 0; i < jobs.Count; i++)
                     {
-                        source = jobs[i].SourceFilePath;
-                    }
-                    else
-                    {
-                        source = Path.GetDirectoryName(jobs[i].SourceFilePath);
-                    }
-                    FileInfo[] dinfos = new DirectoryInfo(source).GetFiles();
-                    newJob.NbFilesLeftToDo = 0;
-                    newJob.Progression = 0;
-                    newJob.TotalFileToCopy = dinfos.Length;
-                    newJob.State = "Running";
-                    int size = 0;
-
-
-                    foreach (FileInfo dinfo in dinfos)
-                    {
-                        size += (int)dinfo.Length;
-                    }
-                    newJob.TotalFileSize = size;
-                    if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
-                    {
-                        string[] files;
-                        
-                        if((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We get all files in the path
+                        Job newJob = jobs[i]; //This will be used for rewriting the jobs file
+                                              //We get the type of file of the destination and the source of the job
+                        FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
+                        FileAttributes attrSrc = File.GetAttributes(jobs[i].SourceFilePath);
+                        string source;
+                        if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We handle the case where the source is a single file
                         {
-
-                            files = Directory.GetFiles(jobs[i].SourceFilePath, "*", SearchOption.AllDirectories);
-                            
+                            source = jobs[i].SourceFilePath;
                         }
                         else
                         {
-                            files = new string[] { jobs[i].SourceFilePath };
+                            source = Path.GetDirectoryName(jobs[i].SourceFilePath);
                         }
-                        var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-                        long filesSize = 0;
-                        DateTime startTime = DateTime.Now;
+                        FileInfo[] dinfos = new DirectoryInfo(source).GetFiles();
+                        newJob.NbFilesLeftToDo = 0;
+                        newJob.Progression = 0;
+                        newJob.TotalFileToCopy = dinfos.Length;
+                        newJob.State = "Running";
+                        int size = 0;
 
-                        int EncryptionTime = 0;
 
-                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        foreach (FileInfo dinfo in dinfos)
                         {
-                        if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
-                            {
-                                Process p = new Process();
-                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
-                                p.EnableRaisingEvents = true;
-                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
-                                p.StartInfo.CreateNoWindow = true;
-                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
-                                p.Start();
-                                p.WaitForExit();
-                            }
-                        });
-                        Console.WriteLine(EncryptionTime);
-
-                        for (int j = 0; j < files.Length; j++)
-                        {
-
-                            string fileName = files[j].Replace(jobs[i].SourceFilePath, "");//Path.GetFileName(files[j]);
-                            string currentFile = jobs[i].DestinationFilePath + fileName; 
-                            string dipath = Path.GetDirectoryName(currentFile);
-                            Directory.CreateDirectory(dipath);
-                            int newmodif = 0;
-                            if (File.Exists(currentFile) && jobs[i].SaveType == 1) // determine the save type
-                            {
-                                File.Delete(currentFile);
-                            }
-                            if (File.Exists(currentFile) && jobs[i].SaveType == 2)
-                            {
-                                DateTime modificationFileSrc = File.GetLastWriteTime(files[j]);
-                                DateTime modificationFileDest = File.GetLastWriteTime(currentFile);
-                                newmodif = DateTime.Compare(modificationFileSrc,modificationFileDest);
-                            }
-                            if(newmodif > 1)
-                            {
-                                File.Delete(currentFile);
-                            }
-                            //var myfile = Directory.CreateDirectory(currentFile);
-                            var myFile = File.Create(currentFile);
-                            myFile.Close();
-                            viewModel.saveFile(files[j], currentFile);
-
-                            FileInfo fileInfos = new FileInfo(currentFile);
-                            filesSize += fileInfos.Length;
-                            newJob.NbFilesLeftToDo++;
-                           // newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
-                            //updateProgressBar(newJob.Progression);
-
+                            size += (int)dinfo.Length;
                         }
-                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                        newJob.TotalFileSize = size;
+                        if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
                         {
-                            if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                            string[] files;
+
+                            if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We get all files in the path
                             {
-                                Process p = new Process();
-                                p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
-                                p.EnableRaisingEvents = true;
-                                p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
-                                p.StartInfo.CreateNoWindow = true;
-                                p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
-                                p.Start();
-                                p.WaitForExit();
+
+                                files = Directory.GetFiles(jobs[i].SourceFilePath, "*", SearchOption.AllDirectories);
+
                             }
-                        });
-                        DateTime endTime = DateTime.Now;
-                        TimeSpan execTime = endTime - startTime;
-                        // Logs
-                        Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
-                        log.saveLogInFile();
-                        try
-                        {
-                            List<Job> currentJobs = this.getJobs();
-                            int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));
-                            if (i == jobs.Count - 1) newJob.State = "Ended";
-                            this.setJobByIndex(newJob, index);
+                            else
+                            {
+                                files = new string[] { jobs[i].SourceFilePath };
+                            }
+                            var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+                            long filesSize = 0;
+                            DateTime startTime = DateTime.Now;
+
+                            int EncryptionTime = 0;
+
+                            Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                            {
+                                if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                                {
+                                    Process p = new Process();
+                                    p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                    p.EnableRaisingEvents = true;
+                                    p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                    p.StartInfo.CreateNoWindow = true;
+                                    p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                    p.Start();
+                                    p.WaitForExit();
+                                }
+                            });
+                            Console.WriteLine(EncryptionTime);
+
+                            for (int j = 0; j < files.Length; j++)
+                            {
+
+                                string fileName = files[j].Replace(jobs[i].SourceFilePath, "");//Path.GetFileName(files[j]);
+                                string currentFile = jobs[i].DestinationFilePath + fileName;
+                                string dipath = Path.GetDirectoryName(currentFile);
+                                Directory.CreateDirectory(dipath);
+                                int newmodif = 0;
+                                if (File.Exists(currentFile) && jobs[i].SaveType == 1) // determine the save type
+                                {
+                                    File.Delete(currentFile);
+                                }
+                                if (File.Exists(currentFile) && jobs[i].SaveType == 2)
+                                {
+                                    DateTime modificationFileSrc = File.GetLastWriteTime(files[j]);
+                                    DateTime modificationFileDest = File.GetLastWriteTime(currentFile);
+                                    newmodif = DateTime.Compare(modificationFileSrc, modificationFileDest);
+                                }
+                                if (newmodif > 1)
+                                {
+                                    File.Delete(currentFile);
+                                }
+                                //var myfile = Directory.CreateDirectory(currentFile);
+                                var myFile = File.Create(currentFile);
+                                myFile.Close();
+                                viewModel.saveFile(files[j], currentFile);
+
+                                FileInfo fileInfos = new FileInfo(currentFile);
+                                filesSize += fileInfos.Length;
+                                newJob.NbFilesLeftToDo++;
+                                // newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
+                                //updateProgressBar(newJob.Progression);
+
+                            }
+                            Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+                            {
+                                if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
+                                {
+                                    Process p = new Process();
+                                    p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                    p.EnableRaisingEvents = true;
+                                    p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                                    p.StartInfo.CreateNoWindow = true;
+                                    p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                                    p.Start();
+                                    p.WaitForExit();
+                                }
+                            });
+                            DateTime endTime = DateTime.Now;
+                            TimeSpan execTime = endTime - startTime;
+                            // Logs
+                            Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
+                            log.saveLogInFile();
+                            try
+                            {
+                                List<Job> currentJobs = this.getJobs();
+                                int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));
+                                if (i == jobs.Count - 1) newJob.State = "Ended";
+                                this.setJobByIndex(newJob, index);
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e);
+                            }
                         }
-                        catch(Exception e)
+                        else
                         {
-                            Console.WriteLine(e);
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("La source ou la destination n'est pas un dossier");
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine("La source ou la destination n'est pas un dossier");
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
+                    
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    // Error in the process
+                    return false;
                 }
                 return true;
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e);
-                // Error in the process
                 return false;
             }
         }

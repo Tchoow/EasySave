@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "27wS5hJJeGqq/n/sJvcW91W1yrSLvnh5EpftOZvfFTNCrh23eVMW4haq/TZPT9Weqdcw3bst7r6jz3KwcpH9fA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\remote_interface\\remote_interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\theo\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
