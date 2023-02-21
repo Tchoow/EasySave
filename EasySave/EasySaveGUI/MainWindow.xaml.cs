@@ -87,7 +87,7 @@ namespace EasySaveGUI
 
         private void btnLang(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageSett();
+            this.ContentFrame.Content = new PageSett(this.viewModel);
             frameName = "Sett";
         }
 
@@ -127,7 +127,7 @@ namespace EasySaveGUI
                         this.ContentFrame.Content = new PageJob(viewModel);
                         break;
                     case "Sett":
-                        this.ContentFrame.Content = new PageSett();
+                        this.ContentFrame.Content = new PageSett(this.viewModel);
                         break;
                     case "About":
                         this.ContentFrame.Content = new PageAbout(this.viewModel);

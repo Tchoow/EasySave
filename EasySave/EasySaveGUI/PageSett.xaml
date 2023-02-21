@@ -39,28 +39,28 @@
         </Grid>
         <Grid HorizontalAlignment="Center" Height="70" VerticalAlignment="Center" Width="584" Background="#FFF1F1F1">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Priority ?" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="10,31,0,0" Height="18" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+            <TextBox HorizontalAlignment="Left" Margin="10,34,0,0" Height="24" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Name="txtBoxPriority">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="3"></Setter>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,37,0,0" VerticalAlignment="Top" Height="18" Width="60"  Click="addPriority">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <ListBox  Width="200" Height="18" Background="white" Margin="302,31,82,21">
-                <ListBox.Resources>
+            <ComboBox  Width="200" Background="white" Margin="302,34,82,12" Name="cbPriority">
+                <ComboBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
-                </ListBox.Resources>
-            </ListBox>
-            <Button Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+                </ComboBox.Resources>
+            </ComboBox>
+            <Button Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,36,0,0" VerticalAlignment="Top" Height="18" Width="60" Click="removePriority">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -71,28 +71,28 @@
 
         <Grid HorizontalAlignment="Center" Height="70" Margin="0,299,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Business Software ?" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="10,31,0,0" Height="18" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+            <TextBox HorizontalAlignment="Left" Margin="10,34,0,0" Height="22" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Name="txtBoxBusinessProgram">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="3"></Setter>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,36,0,0" VerticalAlignment="Top" Height="18" Width="60" Click="addBusinessSoft">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <ListBox  Width="200" Height="18" Background="white" Margin="302,31,82,21">
-                <ListBox.Resources>
+            <ComboBox  Width="200"  Background="white" Margin="302,34,82,13" Name="cbBusinessProgram">
+                <ComboBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
-                </ListBox.Resources>
-            </ListBox>
-            <Button Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+                </ComboBox.Resources>
+            </ComboBox>
+            <Button Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,36,0,0" VerticalAlignment="Top" Height="18" Width="60" Click="removeBusinessSoft">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
