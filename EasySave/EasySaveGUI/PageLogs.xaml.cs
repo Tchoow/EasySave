@@ -33,14 +33,8 @@ namespace EasySaveGUI
             this.logIndex  = 0;
             UpdateTrad();
 
-            List<LogsDataFiles> datas   = new List<LogsDataFiles>();
             this.logsFileInfos = this.viewModel.getLogsFiles();
-
-            for(int i = 0; i < this.logsFileInfos.Length; i++)
-            {
-                datas.Add(new LogsDataFiles { Id = i, Names = this.logsFileInfos[i].Name, Date = this.logsFileInfos[i].CreationTime.ToString() });
-            }
-            LogsGridFiles.ItemsSource = datas;
+            LogsGridFiles.ItemsSource = this.logsFileInfos;
         }
 
         public void UpdateTrad()
@@ -107,10 +101,4 @@ namespace EasySaveGUI
         public string Date { get; set; }
     }
 
-    class LogsDataFiles
-    {
-        public int Id { get; set; }
-        public string Names { get; set; }
-        public string Date { get; set; }
-    }
 }

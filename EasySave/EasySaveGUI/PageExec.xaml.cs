@@ -23,6 +23,7 @@ namespace EasySaveGUI
         private List<Job> jobSelected;
         private ViewModel viewModel;
         bool wantCrypt;
+
         public PageExec(ViewModel viewModel)
         {
             InitializeComponent();
