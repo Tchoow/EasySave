@@ -12,14 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasySave;
 
 namespace EasySaveGUI
 {
+
     public partial class PageHelp : Page
     {
-        public PageHelp()
+        ViewModel viewModel;
+
+
+        public PageHelp(ViewModel viewModel)
         {
             InitializeComponent();
+            this.viewModel = viewModel;
+            UpdateTrad();
+        }
+
+        public void UpdateTrad()
+        {
+            doc.Content = viewModel.getTraduction("docu");
+            help.Text = viewModel.getTraduction("help");
         }
         public void btnPreview()
         {

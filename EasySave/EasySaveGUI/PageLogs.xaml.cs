@@ -31,7 +31,7 @@ namespace EasySaveGUI
             JSON_XML_TB.Visibility = Visibility.Collapsed;
             this.viewModel = viewModel;
             this.logIndex  = 0;
-
+            UpdateTrad();
 
             List<LogsDataFiles> datas   = new List<LogsDataFiles>();
             this.logsFileInfos = this.viewModel.getLogsFiles();
@@ -42,7 +42,13 @@ namespace EasySaveGUI
             }
             LogsGridFiles.ItemsSource = datas;
         }
- 
+
+        public void UpdateTrad()
+        {
+           Prev.Content = viewModel.getTraduction("preview");
+            log.Text = viewModel.getTraduction("log");
+        }
+
         public void btnPreview(object sender, RoutedEventArgs e)
         {
             JSON_XML_TB.Visibility = Visibility.Collapsed;
