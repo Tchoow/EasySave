@@ -47,7 +47,21 @@ namespace EasySaveGUI
             this.viewModel = new ViewModel(this);
             viewModel.setLangueIndex(comboLanguage.SelectedIndex);
             this.UpdateTrad();
-            
+            serv = new Server();
+
+            this.serverThread = new Thread(() => {
+                while (true)
+                {
+                    Socket servsocket = serv.Initialize();
+                    Socket accepted = serv.AcceptConnexion(servsocket);
+                    serv.ListenNetwork(accepted, viewModel.getJobsList());
+                    serv.CloseSocket(servsocket);
+                    serv.CloseSocket(accepted);
+                }
+
+            });
+            serverThread.IsBackground = true;
+            serverThread.Start();
         }
         private void UpdateTrad()
         {
@@ -58,22 +72,7 @@ namespace EasySaveGUI
             HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
-            serv = new Server();
-
-            this.serverThread = new Thread(() => { 
-                while (true)
-                {
-                    Socket servsocket = serv.Initialize();
-                    Socket accepted = serv.AcceptConnexion(servsocket);
-                    serv.ListenNetwork(accepted,viewModel.getJobsList());
-                    serv.CloseSocket(servsocket);
-                    serv.CloseSocket(accepted);
-                }
-                
-            });
-            serverThread.IsBackground = true;
-            serverThread.Start();
-        }
+           
 
         private void btnJob(object sender, RoutedEventArgs e)
         {
