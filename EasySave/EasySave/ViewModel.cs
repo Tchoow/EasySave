@@ -39,6 +39,14 @@ namespace EasySave
 
         public List<string> getLogs() { return this.model.getLogs(); }
 
+
+        // Configs
+        public void updateLstPriorities(List<string> lstPriorities) { this.model.LstPriorities = lstPriorities; }
+        public void updateLstBusinessSoft(List<string> lstBusinessSoft) { this.model.LstBusinessSoft = lstBusinessSoft; }
+        public List<string> getLstPriorities() { return this.model.LstPriorities; }
+        public List<string> getLstBusinessSoft() { return this.model.LstBusinessSoft; }
+
+
         // Save
         public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }
         public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
