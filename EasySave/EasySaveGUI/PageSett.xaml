@@ -28,7 +28,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="save" Content="Save" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="18" Width="565">
+            <Button x:Name="savecrypto" Content="Save" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="18" Width="565">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -46,7 +46,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button x:Name="add" Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button x:Name="addprio" Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -60,7 +60,7 @@
                     </Style>
                 </ListBox.Resources>
             </ListBox>
-            <Button x:Name="delete" Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button x:Name="deleteprio" Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -78,7 +78,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button x:Name="addsoft" Content="Add"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -92,7 +92,7 @@
                     </Style>
                 </ListBox.Resources>
             </ListBox>
-            <Button Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button x:Name="deletesoft" Content="Delete"  Background="#e74c3c" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="507,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -110,7 +110,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button Content="Save"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button x:Name="sav" Content="Save"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>

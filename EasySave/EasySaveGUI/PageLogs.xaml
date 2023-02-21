@@ -10,45 +10,61 @@
 
     <Grid Background="White">
         <TextBlock x:Name="log" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Logs" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ScrollViewer  Width="500" Margin="0,270,160,20">
-            <DataGrid  Width="500" Name="LogsGridContent" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged"  BorderBrush="White" Background="White" Opacity="0.81">
+        <ScrollViewer  Width="550" Margin="30,270,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="165">
+            <DataGrid  Width="550" Name="LogsGridContent" IsReadOnly="True" AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged"  BorderBrush="White" Background="White" Opacity="0.81">
+                <DataGrid.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Width="*"  />
-                    <DataGridTextColumn Header="Names" Width="*" />
-                    <DataGridTextColumn Header="SourcePath" Width="*" />
-                    <DataGridTextColumn Header="DesPath" Width="*" />
-                    <DataGridTextColumn Header="Date" Width="*"  />
+                    <DataGridTextColumn  IsReadOnly="True" Header="Id"        Binding="{Binding Id}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" Header="Name"        Binding="{Binding Names}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" Header="Source Path" Binding="{Binding SourcePath}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" Header="Dest Path" Binding="{Binding DesPath}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" Header="Date" Binding="{Binding Date}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <ScrollViewer  Width="500" Margin="0,270,160,20">
+        <ScrollViewer  Width="550" Margin="30,270,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="170">
 
         </ScrollViewer>
-        <ScrollViewer Margin="47,41,215,245" Width="550" Opacity="0.8">
-            <DataGrid   Name="LogsGridFiles" Width="auto" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged" BorderBrush="White" Background="White">
+        <ScrollViewer Margin="30,50,0,0" Width="550" Height="165" Opacity="0.8" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <DataGrid   Name="LogsGridFiles" Width="550" AutoGenerateColumns="False" IsReadOnly="True" CanUserDeleteRows="False" CanUserReorderColumns="False" SelectionChanged="LogsGrid_SelectionChanged" BorderBrush="White" Background="White">
+                <DataGrid.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"></Setter>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="id" Header="ID" Width="*"  />
-                    <DataGridTextColumn x:Name="name" Header="Names" Width="*" />
-                    <DataGridTextColumn x:Name="date" Header="Date" Width="*"  />
+                    <DataGridTextColumn x:Name="name" IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
+                    <DataGridTextColumn x:Name="lastmod" IsReadOnly="True" Header="Last modification"   Binding="{Binding LastWriteTime}" Width="*" />
+                    <DataGridTextColumn x:Name="dir" IsReadOnly="True" Header="Directory"   Binding="{Binding Directory}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="0,270,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="486" Height="215" IsReadOnly="True"/>
-            <Button x:Name="prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
-                <Button.Resources>
+        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="30,270,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="550" Height="165" IsReadOnly="True" TextChanged="JSON_XML_TB_TextChanged">
+            <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="4"></Setter>
+                    <Setter Property="CornerRadius" Value="5"></Setter>
                 </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="XML" Foreground="#fff" BorderThickness="0" Height="28" HorizontalAlignment="Left" Margin="412,225,0,0" VerticalAlignment="Top" Width="74" Background="#a29bfe" Click="btnXML">
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="348,0,0,0" VerticalAlignment="Center" Width="74"  Click="btnPreview">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="JSONBtn" Content="JSON" Background="#0984e3" Foreground="#fff" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="333,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnJSON" FontWeight="Normal">
+        <Button Content="XML" Foreground="#fff" BorderThickness="0" Height="28" HorizontalAlignment="Left" Margin="506,0,0,0" VerticalAlignment="Center" Width="74" Background="#a29bfe" Click="btnXML">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="JSONBtn" Content="JSON" Background="#0984e3" Foreground="#fff" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="427,0,0,0" VerticalAlignment="Center" Width="74"  Click="btnJSON" FontWeight="Normal">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>

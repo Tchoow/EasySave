@@ -33,23 +33,17 @@ namespace EasySaveGUI
             this.logIndex  = 0;
             UpdateTrad();
 
-            List<LogsDataFiles> datas   = new List<LogsDataFiles>();
             this.logsFileInfos = this.viewModel.getLogsFiles();
-
-            for(int i = 0; i < this.logsFileInfos.Length; i++)
-            {
-                datas.Add(new LogsDataFiles { Id = i, Names = this.logsFileInfos[i].Name, Date = this.logsFileInfos[i].CreationTime.ToString() });
-            }
-            LogsGridFiles.ItemsSource = datas;
+            LogsGridFiles.ItemsSource = this.logsFileInfos;
         }
 
         public void UpdateTrad()
         {
             prev.Content = viewModel.getTraduction("preview");
-            log.Text = viewModel.getTraduction("log");
-            id.Header = viewModel.getTraduction("id");
+            log.Text = viewModel.getTraduction("LogsMainWindow");
             name.Header = viewModel.getTraduction("name");
-            date.Header = viewModel.getTraduction("date");
+            lastmod.Header = viewModel.getTraduction("lastmod");
+            dir.Header = viewModel.getTraduction("dir");
         }
 
         public void btnPreview(object sender, RoutedEventArgs e)
@@ -100,6 +94,11 @@ namespace EasySaveGUI
                 this.logIndex     = index;
             }
         }
+
+        private void JSON_XML_TB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
     class LogsDataContent
     {
@@ -110,10 +109,4 @@ namespace EasySaveGUI
         public string Date { get; set; }
     }
 
-    class LogsDataFiles
-    {
-        public int Id { get; set; }
-        public string Names { get; set; }
-        public string Date { get; set; }
-    }
 }

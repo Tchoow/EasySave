@@ -174,6 +174,9 @@
   <data name="diff" xml:space="preserve">
     <value>Différentielle.</value>
   </data>
+  <data name="dir" xml:space="preserve">
+    <value>Repertoire</value>
+  </data>
   <data name="docu" xml:space="preserve">
     <value>Cliquez ici pour ouvrir la documentation</value>
   </data>
@@ -228,6 +231,9 @@
   <data name="language" xml:space="preserve">
     <value>Liste des langues disponibles </value>
   </data>
+  <data name="lastmod" xml:space="preserve">
+    <value>Dernieres modification</value>
+  </data>
   <data name="listlog" xml:space="preserve">
     <value>Liste des logs stockées sur le serveur:</value>
   </data>
@@ -241,7 +247,7 @@
     <value>Historique</value>
   </data>
   <data name="maxfilsiz" xml:space="preserve">
-    <value />
+    <value>Taille maximale des fichiers qui peuvent etre sauvegarder simultanement en kO (0 pour aucune limite)</value>
   </data>
   <data name="maxsave" xml:space="preserve">
     <value>Il existe déjà 5 travaux de sauvegarde.</value>
@@ -278,6 +284,9 @@
   </data>
   <data name="open" xml:space="preserve">
     <value>Ouvrir</value>
+  </data>
+  <data name="opendoc" xml:space="preserve">
+    <value>Ouvrir la documentation</value>
   </data>
   <data name="preview" xml:space="preserve">
     <value>Aperçu</value>

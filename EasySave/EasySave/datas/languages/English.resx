@@ -174,6 +174,9 @@
   <data name="diff" xml:space="preserve">
     <value>Differential</value>
   </data>
+  <data name="dir" xml:space="preserve">
+    <value>Directory</value>
+  </data>
   <data name="docu" xml:space="preserve">
     <value>Click here to open documentation</value>
   </data>
@@ -225,6 +228,9 @@
   <data name="language" xml:space="preserve">
     <value>Available language</value>
   </data>
+  <data name="lastmod" xml:space="preserve">
+    <value>Last modification</value>
+  </data>
   <data name="listlog" xml:space="preserve">
     <value>Logs.</value>
   </data>
@@ -238,7 +244,7 @@
     <value>Logs</value>
   </data>
   <data name="maxfilsiz" xml:space="preserve">
-    <value>Maximum Files Size that can be save simulatenously in ko (0 to none):</value>
+    <value>Maximum Files Size that can be save simulatenously in kO (0 to none):</value>
   </data>
   <data name="maxsave" xml:space="preserve">
     <value>There is already 5 save job</value>
@@ -268,13 +274,16 @@
     <value>Close program.</value>
   </data>
   <data name="name" xml:space="preserve">
-    <value>Name :</value>
+    <value>Name</value>
   </data>
   <data name="newjob" xml:space="preserve">
     <value>New job</value>
   </data>
   <data name="open" xml:space="preserve">
     <value>Open</value>
+  </data>
+  <data name="opendoc" xml:space="preserve">
+    <value>Open documentation</value>
   </data>
   <data name="preview" xml:space="preserve">
     <value>Preview</value>
@@ -307,7 +316,7 @@
     <value>Save successfull.</value>
   </data>
   <data name="savetype" xml:space="preserve">
-    <value>Save type :</value>
+    <value>Save type</value>
   </data>
   <data name="selectlanguage" xml:space="preserve">
     <value>Select language</value>

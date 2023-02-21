@@ -232,6 +232,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Repertoire.
+        /// </summary>
+        internal static string dir {
+            get {
+                return ResourceManager.GetString("dir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cliquez ici pour ouvrir la documentation.
         /// </summary>
         internal static string docu {
@@ -394,6 +403,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dernieres modification.
+        /// </summary>
+        internal static string lastmod {
+            get {
+                return ResourceManager.GetString("lastmod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Liste des logs stockées sur le serveur:.
         /// </summary>
         internal static string listlog {
@@ -430,7 +448,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
+        ///   Recherche une chaîne localisée semblable à Taille maximale des fichiers qui peuvent etre sauvegarder simultanement en kO (0 pour aucune limite).
         /// </summary>
         internal static string maxfilsiz {
             get {
@@ -543,6 +561,15 @@ namespace EasySave.datas.languages {
         internal static string open {
             get {
                 return ResourceManager.GetString("open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ouvrir la documentation.
+        /// </summary>
+        internal static string opendoc {
+            get {
+                return ResourceManager.GetString("opendoc", resourceCulture);
             }
         }
         

@@ -232,6 +232,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Directory.
+        /// </summary>
+        internal static string dir {
+            get {
+                return ResourceManager.GetString("dir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Click here to open documentation.
         /// </summary>
         internal static string docu {
@@ -385,6 +394,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Last modification.
+        /// </summary>
+        internal static string lastmod {
+            get {
+                return ResourceManager.GetString("lastmod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Logs..
         /// </summary>
         internal static string listlog {
@@ -421,7 +439,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Maximum Files Size that can be save simulatenously in ko (0 to none):.
+        ///   Recherche une chaîne localisée semblable à Maximum Files Size that can be save simulatenously in kO (0 to none):.
         /// </summary>
         internal static string maxfilsiz {
             get {
@@ -511,7 +529,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Name :.
+        ///   Recherche une chaîne localisée semblable à Name.
         /// </summary>
         internal static string name {
             get {
@@ -534,6 +552,15 @@ namespace EasySave.datas.languages {
         internal static string open {
             get {
                 return ResourceManager.GetString("open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Open documentation.
+        /// </summary>
+        internal static string opendoc {
+            get {
+                return ResourceManager.GetString("opendoc", resourceCulture);
             }
         }
         
@@ -628,7 +655,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Save type :.
+        ///   Recherche une chaîne localisée semblable à Save type.
         /// </summary>
         internal static string savetype {
             get {
