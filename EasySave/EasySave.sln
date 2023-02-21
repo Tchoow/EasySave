@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUnit", "TestUnit\TestUn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaveGUI", "EasySaveGUI\EasySaveGUI.csproj", "{B8E135CD-911C-429C-BDE7-C6FD74FB244F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "remote_interface", "remote_interface\remote_interface.csproj", "{8413A7B9-FECD-46AD-BDE8-276717DB3F7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Remote_interface", "remote_interface\Remote_interface.csproj", "{8413A7B9-FECD-46AD-BDE8-276717DB3F7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

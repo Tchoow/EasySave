@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj": {}
+    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj": {}
   },
   "projects": {
     "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
@@ -68,12 +68,12 @@
         }
       }
     },
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj": {
+    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
-        "projectName": "remote_interface",
-        "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
+        "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
+        "projectName": "Remote_interface",
+        "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
         "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\obj\\",
         "projectStyle": "PackageReference",
