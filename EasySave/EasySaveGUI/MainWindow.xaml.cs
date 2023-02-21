@@ -49,7 +49,7 @@ namespace EasySaveGUI
             JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
             ExecBtn.Content  = viewModel.getTraduction("ExecutionMainWindow");
             LogBtn.Content   = viewModel.getTraduction("LogsMainWindow");
-            LangBtn.Content  = viewModel.getTraduction("LanguagesMainWindow");
+            SettBtn.Content  = viewModel.getTraduction("SettingsMainWindow");
             HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
@@ -64,9 +64,9 @@ namespace EasySaveGUI
             this.ContentFrame.Content = new PageHome();
         }
 
-        private void btnLang(object sender, RoutedEventArgs e)
+        private void btnSett(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageSett();
+            this.ContentFrame.Content = new PageSett(this.viewModel);
             frameName = "Sett";
         }
 
@@ -106,7 +106,7 @@ namespace EasySaveGUI
                         this.ContentFrame.Content = new PageJob(viewModel);
                         break;
                     case "Sett":
-                        this.ContentFrame.Content = new PageSett();
+                        this.ContentFrame.Content = new PageSett(this.viewModel);
                         break;
                     case "About":
                         this.ContentFrame.Content = new PageAbout(this.viewModel);

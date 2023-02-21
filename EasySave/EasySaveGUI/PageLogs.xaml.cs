@@ -45,8 +45,11 @@ namespace EasySaveGUI
 
         public void UpdateTrad()
         {
-           //Prev.Content = viewModel.getTraduction("preview");
+            prev.Content = viewModel.getTraduction("preview");
             log.Text = viewModel.getTraduction("log");
+            id.Header = viewModel.getTraduction("id");
+            name.Header = viewModel.getTraduction("name");
+            date.Header = viewModel.getTraduction("date");
         }
 
         public void btnPreview(object sender, RoutedEventArgs e)

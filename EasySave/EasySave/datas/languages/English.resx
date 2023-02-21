@@ -124,16 +124,22 @@
     <value>About us</value>
   </data>
   <data name="action" xml:space="preserve">
-    <value>Choose an option:</value>
+    <value>Choose an option</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="askdel" xml:space="preserve">
     <value>Please delete save file.</value>
+  </data>
+  <data name="busisoft" xml:space="preserve">
+    <value>Business software</value>
   </data>
   <data name="clearinputsjob" xml:space="preserve">
     <value>Clear inputs</value>
   </data>
   <data name="creadate" xml:space="preserve">
-    <value>Creation date :</value>
+    <value>Creation date</value>
   </data>
   <data name="createfail" xml:space="preserve">
     <value>Creation of job failed.</value>
@@ -144,8 +150,14 @@
   <data name="cryptactive" xml:space="preserve">
     <value>Enable encryption</value>
   </data>
+  <data name="cryptopath" xml:space="preserve">
+    <value>Cryptosoft path</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Daily logs.</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="deletefail" xml:space="preserve">
     <value>Remove failed.</value>
@@ -154,7 +166,7 @@
     <value>Delete selected job</value>
   </data>
   <data name="deletesave" xml:space="preserve">
-    <value>Choose wich save number shall be deleted :</value>
+    <value>Choose wich save number shall be deleted</value>
   </data>
   <data name="deletesucces" xml:space="preserve">
     <value>Deleted.</value>
@@ -172,7 +184,7 @@
     <value>Execute all</value>
   </data>
   <data name="execselectedjob" xml:space="preserve">
-    <value>Execute Selected Jobs</value>
+    <value>Execute</value>
   </data>
   <data name="ExecutionMainWindow" xml:space="preserve">
     <value>Executions</value>
@@ -190,7 +202,7 @@
     <value>Files left to copy</value>
   </data>
   <data name="fromdir" xml:space="preserve">
-    <value>Directory path (From) :</value>
+    <value>Directory path (From)</value>
   </data>
   <data name="full" xml:space="preserve">
     <value>Complete</value>
@@ -202,7 +214,7 @@
     <value>Help</value>
   </data>
   <data name="job" xml:space="preserve">
-    <value>Job N° :</value>
+    <value>Job N°</value>
   </data>
   <data name="JobMainWindow" xml:space="preserve">
     <value>Job</value>
@@ -211,16 +223,13 @@
     <value>Starting  job.</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Available language :</value>
-  </data>
-  <data name="LanguagesMainWindow" xml:space="preserve">
-    <value>Languages</value>
+    <value>Available language</value>
   </data>
   <data name="listlog" xml:space="preserve">
     <value>Logs.</value>
   </data>
   <data name="listsave" xml:space="preserve">
-    <value>List of job :</value>
+    <value>List of job</value>
   </data>
   <data name="log" xml:space="preserve">
     <value>log</value>
@@ -228,11 +237,14 @@
   <data name="LogsMainWindow" xml:space="preserve">
     <value>Logs</value>
   </data>
+  <data name="maxfilsiz" xml:space="preserve">
+    <value>Maximum Files Size that can be save simulatenously in ko (0 to none):</value>
+  </data>
   <data name="maxsave" xml:space="preserve">
-    <value>There is already 5 save job :</value>
+    <value>There is already 5 save job</value>
   </data>
   <data name="menu_0" xml:space="preserve">
-    <value>Choose an option (between 1-7):</value>
+    <value>Choose an option (between 1-7)</value>
   </data>
   <data name="menu_1" xml:space="preserve">
     <value>Create job.</value>
@@ -267,20 +279,26 @@
   <data name="preview" xml:space="preserve">
     <value>Preview</value>
   </data>
+  <data name="prio" xml:space="preserve">
+    <value>Priority</value>
+  </data>
   <data name="progr" xml:space="preserve">
     <value>progress</value>
   </data>
   <data name="readwhat" xml:space="preserve">
-    <value>Select file to read :</value>
+    <value>Select file to read</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="savejob" xml:space="preserve">
     <value>Save Job Modifications</value>
   </data>
   <data name="savename" xml:space="preserve">
-    <value>Job name :</value>
+    <value>Job name</value>
   </data>
   <data name="savenum" xml:space="preserve">
-    <value>Job n° :</value>
+    <value>Job n°</value>
   </data>
   <data name="saverror" xml:space="preserve">
     <value>Error during the job process...</value>
@@ -292,22 +310,28 @@
     <value>Save type :</value>
   </data>
   <data name="selectlanguage" xml:space="preserve">
-    <value>Select language :</value>
+    <value>Select language</value>
   </data>
   <data name="setextension" xml:space="preserve">
     <value>Set extensions you want to encrypt (put them separated by a space or leave it empty to encrypt every file)</value>
   </data>
+  <data name="SettingsMainWindow" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="showsave" xml:space="preserve">
-    <value>List of jobs :</value>
+    <value>List of jobs</value>
   </data>
   <data name="state" xml:space="preserve">
-    <value>State :</value>
+    <value>State</value>
   </data>
   <data name="statesave" xml:space="preserve">
     <value>Status of the backup</value>
   </data>
+  <data name="stopjob" xml:space="preserve">
+    <value>Stop</value>
+  </data>
   <data name="todir" xml:space="preserve">
-    <value>Directory path (To) :</value>
+    <value>Directory path (To)</value>
   </data>
   <data name="ttlfilcop" xml:space="preserve">
     <value>Number of copied files</value>
