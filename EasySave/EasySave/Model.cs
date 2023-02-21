@@ -132,7 +132,7 @@ namespace EasySave
         {
             List<string> lstLogsFiles = new List<string>();
             string folderPath         = "../../../../EasySave/datas/logs/";
-            FileInfo[] dinfos         = new DirectoryInfo(folderPath).GetFiles();
+            FileInfo[] dinfos         = new DirectoryInfo(folderPath).GetFiles().Where(file => !file.Name.EndsWith(".xml")).ToArray();
             return dinfos;
         }
 
@@ -140,6 +140,7 @@ namespace EasySave
         {
             string folderPath = "../../../../EasySave/datas/logs/";
             List<Log> lstLogs = new List<Log>();
+            if (Path.GetExtension(fileName) == ".xaml") return new List<Log>();
             lstLogs = JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(folderPath + fileName));
 
             return lstLogs;
@@ -312,10 +313,17 @@ namespace EasySave
                         // Logs
                         Log log = new Log("copy - " + jobs[i].Name, jobs[i].SourceFilePath + "\\", jobs[i].DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
                         log.saveLogInFile();
-                        List<Job> currentJobs = this.getJobs();
-                        int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));
-                        if (i == jobs.Count - 1) newJob.State = "Ended";
-                        this.setJobByIndex(newJob, index);
+                        try
+                        {
+                            List<Job> currentJobs = this.getJobs();
+                            int index = currentJobs.IndexOf(currentJobs.Find(e => e.Name == newJob.Name));
+                            if (i == jobs.Count - 1) newJob.State = "Ended";
+                            this.setJobByIndex(newJob, index);
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
                     }
                     else
                     {

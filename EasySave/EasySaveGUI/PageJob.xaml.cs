@@ -23,18 +23,37 @@ namespace EasySaveGUI
     {
         List<Job> jobs;
         ViewModel viewModel;
+        
         int index = 0;
+        
         public PageJob(ViewModel viewModel)
         {
             this.viewModel = viewModel;
             InitializeComponent();
             reloadGrid();
+            UpdateTrad();
         }
+        public void UpdateTrad()
+        {
+            clearInputs.Content = viewModel.getTraduction("clearinputsjob");
+            updateJobButton.Content = viewModel.getTraduction("savejob");
+            deleteButton.Content = viewModel.getTraduction("deletejob");
+            newJobButton.Content = viewModel.getTraduction("newjob");
+            openDest.Content = viewModel.getTraduction("open");
+            openSrc.Content = viewModel.getTraduction("open");
+            full.Content = viewModel.getTraduction("full");
+            diff.Content = viewModel.getTraduction("diff");
+            job.Text = viewModel.getTraduction("JobMainWindow");
+            lblName.Text = viewModel.getTraduction("name");
+            SrcPath.Text = viewModel.getTraduction("fromdir");
+            DestPath.Text = viewModel.getTraduction("todir");
+            SavTyp.Text = viewModel.getTraduction("savetype");
 
+        }
         public void reloadGrid()
         {
             this.jobs = viewModel.getJobsList();
-            myDataGrid.ItemsSource = jobs;
+            jobGrid.ItemsSource = jobs;
             index = -1;
         }
 
@@ -48,9 +67,9 @@ namespace EasySaveGUI
 
         private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(myDataGrid.SelectedIndex != -1)
+            if(jobGrid.SelectedIndex != -1)
             {
-                int index = myDataGrid.SelectedIndex;
+                int index = jobGrid.SelectedIndex;
                 this.index = index;
                 NameTB.Text = jobs[index].Name;
                 SourcePathTB.Text = jobs[index].SourceFilePath;
@@ -61,7 +80,7 @@ namespace EasySaveGUI
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (myDataGrid.SelectedIndex != - 1)
+            if (jobGrid.SelectedIndex != - 1)
             {
                 this.viewModel.deleteJobWithIndex(index + 1);
                 reloadGrid();

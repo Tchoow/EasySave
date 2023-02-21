@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasySave;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
+
+
 namespace EasySaveGUI
 {
+
     /// <summary>
     /// Logique d'interaction pour PageAbout.xaml
     /// </summary>
     public partial class PageAbout : Page
     {
-        public PageAbout()
+        
+        ViewModel viewModel;
+
+        public PageAbout(ViewModel viewModel)
         {
             InitializeComponent();
+
+            this.viewModel = viewModel;
+            UpdateTrad();
+
+        }
+        public void UpdateTrad()
+        {
+            about.Text = viewModel.getTraduction("about");
         }
     }
 }

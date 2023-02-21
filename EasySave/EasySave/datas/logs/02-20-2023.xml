@@ -1,0 +1,6 @@
+<data>
+  <item Time="20/02/2023 11:23:00" Name="copy - bob2" FileSource="C:\Users\vboxuser\Documents\test1\" FileTarget="C:\Users\vboxuser\Documents\test1\" DestPath="" FileSize="0" FileTransferTime="67" />
+  <item Time="20/02/2023 12:58:37" Name="copy - test" FileSource="C:\Users\vboxuser\source\repos\ConsoleApp2\" FileTarget="C:\Users\vboxuser\source\repos\ConsoleApp1\" DestPath="" FileSize="811282" FileTransferTime="826" />
+  <item Time="20/02/2023 13:41:51" Name="copy - test" FileSource="C:\Users\vboxuser\source\repos\ConsoleApp2\" FileTarget="C:\Users\vboxuser\source\repos\ConsoleApp1\" DestPath="" FileSize="811282" FileTransferTime="12404" />
+  <item Time="20/02/2023 14:02:16" Name="copy - test" FileSource="C:\Users\vboxuser\source\repos\ConsoleApp2\" FileTarget="C:\Users\vboxuser\source\repos\ConsoleApp1\" DestPath="" FileSize="811282" FileTransferTime="14204" />
+</data>

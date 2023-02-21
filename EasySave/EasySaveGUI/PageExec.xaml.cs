@@ -24,13 +24,29 @@ namespace EasySaveGUI
         private List<Job> jobSelected;
         private ViewModel viewModel;
         bool wantCrypt;
+
         public PageExec(ViewModel viewModel)
         {
             InitializeComponent();
             this.viewModel = viewModel;
             jobs = viewModel.getJobsList();
+            Trace.WriteLine(jobs);
             jobdatagrid.ItemsSource = viewModel.getJobsList();
+            UpdateTrad();
 
+        }
+        private void UpdateTrad()
+        {
+            execalljob.Content = viewModel.getTraduction("execalljob");
+            execselectedjob.Content = viewModel.getTraduction("execselectedjob");
+            cryptbtn.Text = viewModel.getTraduction("cryptactive");
+            extensionslabel.Text = viewModel.getTraduction("extensionscrypt");
+            name.Header = viewModel.getTraduction("name");
+            srcfile.Header = viewModel.getTraduction("fromdir");
+            destfile.Header = viewModel.getTraduction("todir");
+            state.Header = viewModel.getTraduction("state");
+            ttlfilecop.Header = viewModel.getTraduction("ttlfilcop");
+            Progr.Header = viewModel.getTraduction("progr");
         }
         private void runJobs(List<Job> jobs)
         {

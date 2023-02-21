@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutMainWindow" xml:space="preserve">
+    <value>About us</value>
+  </data>
   <data name="action" xml:space="preserve">
     <value>Choose an option:</value>
   </data>
   <data name="askdel" xml:space="preserve">
     <value>Please delete save file.</value>
+  </data>
+  <data name="clearinputsjob" xml:space="preserve">
+    <value>Clear inputs</value>
   </data>
   <data name="creadate" xml:space="preserve">
     <value>Creation date :</value>
@@ -132,11 +141,17 @@
   <data name="createsuccess" xml:space="preserve">
     <value>Creation of job successful.</value>
   </data>
+  <data name="cryptactive" xml:space="preserve">
+    <value>Enable encryption</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Daily logs.</value>
   </data>
   <data name="deletefail" xml:space="preserve">
     <value>Remove failed.</value>
+  </data>
+  <data name="deletejob" xml:space="preserve">
+    <value>Delete selected job</value>
   </data>
   <data name="deletesave" xml:space="preserve">
     <value>Choose wich save number shall be deleted :</value>
@@ -145,25 +160,52 @@
     <value>Deleted.</value>
   </data>
   <data name="diff" xml:space="preserve">
-    <value>Differential.</value>
+    <value>Differential</value>
+  </data>
+  <data name="docu" xml:space="preserve">
+    <value>Click here to open documentation</value>
   </data>
   <data name="errorpath" xml:space="preserve">
     <value>Error in path.</value>
   </data>
+  <data name="execalljob" xml:space="preserve">
+    <value>Execute all</value>
+  </data>
+  <data name="execselectedjob" xml:space="preserve">
+    <value>Execute Selected Jobs</value>
+  </data>
+  <data name="ExecutionMainWindow" xml:space="preserve">
+    <value>Executions</value>
+  </data>
   <data name="exesave" xml:space="preserve">
     <value>Launch job</value>
   </data>
+  <data name="extensionscrypt" xml:space="preserve">
+    <value>File extensions to consider, each extension must be separated by a comma (leave blank for all)</value>
+  </data>
   <data name="faillang" xml:space="preserve">
     <value>Language unknow.</value>
+  </data>
+  <data name="filleft" xml:space="preserve">
+    <value>Files left to copy</value>
   </data>
   <data name="fromdir" xml:space="preserve">
     <value>Directory path (From) :</value>
   </data>
   <data name="full" xml:space="preserve">
-    <value>Complete.</value>
+    <value>Complete</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="HelpMainWindow" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="job" xml:space="preserve">
     <value>Job N° :</value>
+  </data>
+  <data name="JobMainWindow" xml:space="preserve">
+    <value>Job</value>
   </data>
   <data name="jobtittle" xml:space="preserve">
     <value>Starting  job.</value>
@@ -171,11 +213,20 @@
   <data name="language" xml:space="preserve">
     <value>Available language :</value>
   </data>
+  <data name="LanguagesMainWindow" xml:space="preserve">
+    <value>Languages</value>
+  </data>
   <data name="listlog" xml:space="preserve">
     <value>Logs.</value>
   </data>
   <data name="listsave" xml:space="preserve">
     <value>List of job :</value>
+  </data>
+  <data name="log" xml:space="preserve">
+    <value>log</value>
+  </data>
+  <data name="LogsMainWindow" xml:space="preserve">
+    <value>Logs</value>
   </data>
   <data name="maxsave" xml:space="preserve">
     <value>There is already 5 save job :</value>
@@ -207,8 +258,23 @@
   <data name="name" xml:space="preserve">
     <value>Name :</value>
   </data>
+  <data name="newjob" xml:space="preserve">
+    <value>New job</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="progr" xml:space="preserve">
+    <value>progress</value>
+  </data>
   <data name="readwhat" xml:space="preserve">
     <value>Select file to read :</value>
+  </data>
+  <data name="savejob" xml:space="preserve">
+    <value>Save Job Modifications</value>
   </data>
   <data name="savename" xml:space="preserve">
     <value>Job name :</value>
@@ -237,8 +303,17 @@
   <data name="state" xml:space="preserve">
     <value>State :</value>
   </data>
+  <data name="statesave" xml:space="preserve">
+    <value>Status of the backup</value>
+  </data>
   <data name="todir" xml:space="preserve">
     <value>Directory path (To) :</value>
+  </data>
+  <data name="ttlfilcop" xml:space="preserve">
+    <value>Number of copied files</value>
+  </data>
+  <data name="ttlfilsiz" xml:space="preserve">
+    <value>Total size of copied files</value>
   </data>
   <data name="wronginput" xml:space="preserve">
     <value>Incorect input.</value>
