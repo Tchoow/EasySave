@@ -30,13 +30,13 @@ namespace EasySaveGUI
             InitializeComponent();
             JSON_XML_TB.Visibility = Visibility.Collapsed;
             this.viewModel = viewModel;
-            this.logIndex  = 0;
+            this.logIndex = 0;
             UpdateTrad();
 
-            List<LogsDataFiles> datas   = new List<LogsDataFiles>();
+            List<LogsDataFiles> datas = new List<LogsDataFiles>();
             this.logsFileInfos = this.viewModel.getLogsFiles();
 
-            for(int i = 0; i < this.logsFileInfos.Length; i++)
+            for (int i = 0; i < this.logsFileInfos.Length; i++)
             {
                 datas.Add(new LogsDataFiles { Id = i, Names = this.logsFileInfos[i].Name, Date = this.logsFileInfos[i].CreationTime.ToString() });
             }
@@ -45,7 +45,7 @@ namespace EasySaveGUI
 
         public void UpdateTrad()
         {
-           Prev.Content = viewModel.getTraduction("preview");
+            //Prev.Content = viewModel.getTraduction("preview");
             log.Text = viewModel.getTraduction("log");
         }
 
@@ -60,7 +60,7 @@ namespace EasySaveGUI
             if (lstLogs == null || lstLogs.Count == 0) return;
             for (int i = 0; i < this.lstLogs.Count; i++)
             {
-                datas.Add(new LogsDataContent { Id = i, Names = this.lstLogs[i].Name, SourcePath = this.lstLogs[i].FileSource, DesPath = this.lstLogs[i].DestPath, Date = this.lstLogs[i].Time.ToString() }) ;
+                datas.Add(new LogsDataContent { Id = i, Names = this.lstLogs[i].Name, SourcePath = this.lstLogs[i].FileSource, DesPath = this.lstLogs[i].DestPath, Date = this.lstLogs[i].Time.ToString() });
             }
 
             LogsGridContent.ItemsSource = datas;
@@ -75,7 +75,7 @@ namespace EasySaveGUI
             string filePath = logsFileInfos[logIndex].FullName;
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             string dName = System.IO.Path.GetDirectoryName(filePath);
-            string formattedXML = this.viewModel.getLogsXML(this.lstLogs[logIndex], dName+"\\"+fileName+".xml");
+            string formattedXML = this.viewModel.getLogsXML(this.lstLogs[logIndex], dName + "\\" + fileName + ".xml");
             JSON_XML_TB.Text = formattedXML;
         }
         public void btnJSON(object sender, RoutedEventArgs e)
@@ -93,8 +93,8 @@ namespace EasySaveGUI
         {
             if (LogsGridFiles.SelectedItem != null)
             {
-                int index         = LogsGridFiles.SelectedIndex;
-                this.logIndex     = index;
+                int index = LogsGridFiles.SelectedIndex;
+                this.logIndex = index;
             }
         }
     }
