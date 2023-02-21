@@ -45,6 +45,10 @@ namespace EasySave
         public void updateLstBusinessSoft(List<string> lstBusinessSoft) { this.model.LstBusinessSoft = lstBusinessSoft; }
         public List<string> getLstPriorities() { return this.model.LstPriorities; }
         public List<string> getLstBusinessSoft() { return this.model.LstBusinessSoft; }
+        public void updateCryptoSoftPath(string path) { this.model.CryptoSoftPath = path; }
+        public string getCryptoSoftPath() { return this.model.CryptoSoftPath; }
+        public void updateMaxFileSizeSim(int   fileSize) { this.model.MaxFileSizeSim = fileSize;   }
+        public int getMaxFileSizeSim() { return this.model.MaxFileSizeSim; }
 
 
         // Save
