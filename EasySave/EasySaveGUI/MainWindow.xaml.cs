@@ -72,13 +72,13 @@ namespace EasySaveGUI
 
         private void btnAbout(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageAbout();
+            this.ContentFrame.Content = new PageAbout(this.viewModel);
             frameName = "About";
         }
 
         private void btnHelp(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageHelp();
+            this.ContentFrame.Content = new PageHelp(this.viewModel);
             frameName = "Help";
         }
 
@@ -109,10 +109,10 @@ namespace EasySaveGUI
                         this.ContentFrame.Content = new PageSett();
                         break;
                     case "About":
-                        this.ContentFrame.Content = new PageAbout();
+                        this.ContentFrame.Content = new PageAbout(this.viewModel);
                         break;
                     case "Help":
-                        this.ContentFrame.Content = new PageHelp();
+                        this.ContentFrame.Content = new PageHelp(this.viewModel);
                         break;
                     case "Logs":
                         this.ContentFrame.Content = new PageLogs(this.viewModel);
