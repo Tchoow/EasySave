@@ -39,8 +39,11 @@ namespace EasySaveGUI
 
         public void UpdateTrad()
         {
-           //Prev.Content = viewModel.getTraduction("preview");
-            log.Text = viewModel.getTraduction("log");
+            prev.Content = viewModel.getTraduction("preview");
+            log.Text = viewModel.getTraduction("LogsMainWindow");
+            name.Header = viewModel.getTraduction("name");
+            lastmod.Header = viewModel.getTraduction("lastmod");
+            dir.Header = viewModel.getTraduction("dir");
         }
 
         public void btnPreview(object sender, RoutedEventArgs e)
@@ -90,6 +93,11 @@ namespace EasySaveGUI
                 int index         = LogsGridFiles.SelectedIndex;
                 this.logIndex     = index;
             }
+        }
+
+        private void JSON_XML_TB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
     class LogsDataContent

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:remote_interface"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="playbtn" Content="Play" Margin="249,0,0,10" Background="#FF83FF55" HorizontalAlignment="Left" Width="77" Height="52" VerticalAlignment="Bottom" Click="Button_Click_play">

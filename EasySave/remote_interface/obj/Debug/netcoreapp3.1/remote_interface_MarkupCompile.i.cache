@@ -1,20 +1,20 @@
-﻿remote_interface
+﻿Remote_interface
 1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\theo\Documents\projetEasySave\EasySave\remote_interface\obj\Debug\netcoreapp3.1\
-remote_interface
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\obj\Debug\netcoreapp3.1\
+Remote_interface
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\theo\Documents\projetEasySave\EasySave\remote_interface\App.xaml
+C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\App.xaml
 11407045341
 
-6-1960323368
-1941898263840
+61314994837
+1941602283608
 MainWindow.xaml;
 
-True
+False
 

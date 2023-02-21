@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "remote_interface/1.0.0": {
+      "Remote_interface/1.0.0": {
         "dependencies": {
           "EasySave": "1.0.0",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
-          "remote_interface.dll": {}
+          "Remote_interface.dll": {}
         }
       },
       "Newtonsoft.Json/13.0.2": {
@@ -34,7 +34,7 @@
     }
   },
   "libraries": {
-    "remote_interface/1.0.0": {
+    "Remote_interface/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

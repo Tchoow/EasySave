@@ -47,6 +47,8 @@ namespace EasySaveGUI
             state.Header = viewModel.getTraduction("state");
             ttlfilecop.Header = viewModel.getTraduction("ttlfilcop");
             Progr.Header = viewModel.getTraduction("progr");
+            created.Header = viewModel.getTraduction("creadate");
+            stopselectedjob.Content = viewModel.getTraduction("stopjob");
         }
         private void runJobs(List<Job> jobs)
         {

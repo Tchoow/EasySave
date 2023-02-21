@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("remote_interface")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Remote_interface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("remote_interface")]
-[assembly: System.Reflection.AssemblyTitleAttribute("remote_interface")]
+[assembly: System.Reflection.AssemblyProductAttribute("Remote_interface")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Remote_interface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

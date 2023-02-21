@@ -124,16 +124,22 @@
     <value>À propos</value>
   </data>
   <data name="action" xml:space="preserve">
-    <value>Veuillez choisir une action :</value>
+    <value>Veuillez choisir une action</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Ajouter</value>
   </data>
   <data name="askdel" xml:space="preserve">
     <value>Merci d'en supprimer pour pouvoir en créer de nouveaux.</value>
+  </data>
+  <data name="busisoft" xml:space="preserve">
+    <value>Logiciel metier</value>
   </data>
   <data name="clearinputsjob" xml:space="preserve">
     <value>Réinitialiser</value>
   </data>
   <data name="creadate" xml:space="preserve">
-    <value>Date de creation :</value>
+    <value>Date de creation</value>
   </data>
   <data name="creatfail" xml:space="preserve">
     <value>Création du travaux echouée.</value>
@@ -144,8 +150,14 @@
   <data name="cryptactive" xml:space="preserve">
     <value>Activer le chiffrement</value>
   </data>
+  <data name="cryptopath" xml:space="preserve">
+    <value>Chemin pour Cryptosoft</value>
+  </data>
   <data name="daylog" xml:space="preserve">
     <value>Logs journaliers.</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
   <data name="deletefail" xml:space="preserve">
     <value>Suppression echouée.</value>
@@ -162,6 +174,9 @@
   <data name="diff" xml:space="preserve">
     <value>Différentielle.</value>
   </data>
+  <data name="dir" xml:space="preserve">
+    <value>Repertoire</value>
+  </data>
   <data name="docu" xml:space="preserve">
     <value>Cliquez ici pour ouvrir la documentation</value>
   </data>
@@ -175,7 +190,7 @@
     <value>Choisissez le numéro job à executer. (Entrez 0 pour tous les lancer)</value>
   </data>
   <data name="execselectedjob" xml:space="preserve">
-    <value>Lancer les travaux sélectionnés</value>
+    <value>Lancer </value>
   </data>
   <data name="ExecutionMainWindow" xml:space="preserve">
     <value>Executions</value>
@@ -201,8 +216,11 @@
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Aide</value>
   </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
   <data name="job" xml:space="preserve">
-    <value>Travaux N° :</value>
+    <value>Travaux N° </value>
   </data>
   <data name="JobMainWindow" xml:space="preserve">
     <value>Travaux</value>
@@ -211,10 +229,10 @@
     <value>Executer un travaux de sauvegarde.</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Liste des langues disponibles :</value>
+    <value>Liste des langues disponibles </value>
   </data>
-  <data name="LanguagesMainWindow" xml:space="preserve">
-    <value>Langages</value>
+  <data name="lastmod" xml:space="preserve">
+    <value>Dernieres modification</value>
   </data>
   <data name="listlog" xml:space="preserve">
     <value>Liste des logs stockées sur le serveur:</value>
@@ -228,11 +246,14 @@
   <data name="LogsMainWindow" xml:space="preserve">
     <value>Historique</value>
   </data>
+  <data name="maxfilsiz" xml:space="preserve">
+    <value>Taille maximale des fichiers qui peuvent etre sauvegarder simultanement en kO (0 pour aucune limite)</value>
+  </data>
   <data name="maxsave" xml:space="preserve">
     <value>Il existe déjà 5 travaux de sauvegarde.</value>
   </data>
   <data name="menu_0" xml:space="preserve">
-    <value>Liste des actions (entre 1 et 7) :</value>
+    <value>Liste des actions (entre 1 et 7) </value>
   </data>
   <data name="menu_1" xml:space="preserve">
     <value>Créer un travaux de sauvegarde.</value>
@@ -256,7 +277,7 @@
     <value>Quitter le programme.</value>
   </data>
   <data name="name" xml:space="preserve">
-    <value>Nom :</value>
+    <value>Nom </value>
   </data>
   <data name="newjob" xml:space="preserve">
     <value>Nouveau travail</value>
@@ -264,14 +285,23 @@
   <data name="open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
+  <data name="opendoc" xml:space="preserve">
+    <value>Ouvrir la documentation</value>
+  </data>
   <data name="preview" xml:space="preserve">
     <value>Aperçu</value>
+  </data>
+  <data name="prio" xml:space="preserve">
+    <value>Priorité</value>
   </data>
   <data name="progr" xml:space="preserve">
     <value>Progres </value>
   </data>
   <data name="readwhat" xml:space="preserve">
     <value>Selectionnez fichier à lire :</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Sauvegarder</value>
   </data>
   <data name="savejob" xml:space="preserve">
     <value>Sauvegarder les modifications</value>
@@ -280,7 +310,7 @@
     <value>Nom du travail de sauvegarde :</value>
   </data>
   <data name="savenum" xml:space="preserve">
-    <value>Travaux n° :</value>
+    <value>Travaux n° </value>
   </data>
   <data name="saverror" xml:space="preserve">
     <value>Erreur lors du processus de sauvegarde...</value>
@@ -289,25 +319,31 @@
     <value>Sauvegarde(s) effectuée(s) avec succès.</value>
   </data>
   <data name="savetype" xml:space="preserve">
-    <value>Type de la sauvegarde :</value>
+    <value>Type de la sauvegarde </value>
   </data>
   <data name="selectlanguage" xml:space="preserve">
-    <value>Selection language :</value>
+    <value>Selection language </value>
   </data>
   <data name="setextension" xml:space="preserve">
     <value>Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou laissez vide pour tout chiffrer)</value>
   </data>
+  <data name="SettingsMainWindow" xml:space="preserve">
+    <value>Parametres</value>
+  </data>
   <data name="showsave" xml:space="preserve">
-    <value>Liste des travaux de sauvegardes :</value>
+    <value>Liste des travaux de sauvegardes </value>
   </data>
   <data name="state" xml:space="preserve">
-    <value>Etat :</value>
+    <value>Etat </value>
   </data>
   <data name="statesave" xml:space="preserve">
     <value>Statut de la sauvegarde</value>
   </data>
+  <data name="stopjob" xml:space="preserve">
+    <value>Arret</value>
+  </data>
   <data name="todir" xml:space="preserve">
-    <value>Chemin du répertoire (Destination) :</value>
+    <value>Chemin du répertoire (Destination) </value>
   </data>
   <data name="ttlfilcop" xml:space="preserve">
     <value>Nombre total de fichers</value>

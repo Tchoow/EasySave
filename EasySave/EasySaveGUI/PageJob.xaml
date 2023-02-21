@@ -22,14 +22,14 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Source File Path" Width="*" Binding="{Binding SourceFilePath}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Destination File Path" Width="*" Binding="{Binding DestinationFilePath}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Save Type" Width="*" Binding="{Binding SaveType}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="State" Width="*" Binding="{Binding State}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Total file size" Width="*" Binding="{Binding TotalFileSize}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Number of files" Width="*" Binding="{Binding NbFilesLeftToDo}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Date" Width="*" Binding="{Binding Created}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="name" Header="Name" Width="*" Binding="{Binding Name}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="srcfile" Header="Source File Path" Width="*" Binding="{Binding SourceFilePath}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="destfile" Header="Destination File Path" Width="*" Binding="{Binding DestinationFilePath}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="savetype" Header="Save Type" Width="*" Binding="{Binding SaveType}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="state" Header="State" Width="*" Binding="{Binding State}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="ttlefilsize" Header="Total file size" Width="*" Binding="{Binding TotalFileSize}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="filenumb" Header="Number of files" Width="*" Binding="{Binding NbFilesLeftToDo}" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="date" Header="Date" Width="*" Binding="{Binding Created}" IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
             </ScrollViewer>

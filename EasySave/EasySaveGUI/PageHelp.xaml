@@ -22,7 +22,7 @@
                Lorem Impsium Lorem Impsium Lorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem Impsium
             </TextBlock>
         </Grid>
-        <Button Content="Ouvrir la documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White">
+        <Button x:Name="opendoc" Content="Open documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
                     <GradientStop Color="#74b9ff" Offset="0.99"/>

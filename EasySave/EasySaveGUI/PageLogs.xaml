@@ -37,20 +37,20 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn  IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Last modification"   Binding="{Binding LastWriteTime}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Directory"   Binding="{Binding Directory}" Width="*" />
+                    <DataGridTextColumn x:Name="name" IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
+                    <DataGridTextColumn x:Name="lastmod" IsReadOnly="True" Header="Last modification"   Binding="{Binding LastWriteTime}" Width="*" />
+                    <DataGridTextColumn x:Name="dir" IsReadOnly="True" Header="Directory"   Binding="{Binding Directory}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="30,270,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="550" Height="165" IsReadOnly="True">
+        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="30,270,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="550" Height="165" IsReadOnly="True" TextChanged="JSON_XML_TB_TextChanged">
             <TextBox.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"></Setter>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Button x:Name="Prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="348,0,0,0" VerticalAlignment="Center" Width="74"  Click="btnPreview">
+        <Button x:Name="prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="348,0,0,0" VerticalAlignment="Center" Width="74"  Click="btnPreview">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
