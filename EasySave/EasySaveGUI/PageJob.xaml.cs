@@ -53,7 +53,7 @@ namespace EasySaveGUI
         public void reloadGrid()
         {
             this.jobs = viewModel.getJobsList();
-            myDataGrid.ItemsSource = jobs;
+            jobGrid.ItemsSource = jobs;
             index = -1;
         }
 
@@ -67,9 +67,9 @@ namespace EasySaveGUI
 
         private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(myDataGrid.SelectedIndex != -1)
+            if(jobGrid.SelectedIndex != -1)
             {
-                int index = myDataGrid.SelectedIndex;
+                int index = jobGrid.SelectedIndex;
                 this.index = index;
                 NameTB.Text = jobs[index].Name;
                 SourcePathTB.Text = jobs[index].SourceFilePath;
@@ -80,7 +80,7 @@ namespace EasySaveGUI
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (myDataGrid.SelectedIndex != - 1)
+            if (jobGrid.SelectedIndex != - 1)
             {
                 this.viewModel.deleteJobWithIndex(index + 1);
                 reloadGrid();
