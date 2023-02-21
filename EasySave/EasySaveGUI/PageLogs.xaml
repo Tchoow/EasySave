@@ -33,14 +33,18 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
+<<<<<<< HEAD
         <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="0,270,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="486" Height="215" IsReadOnly="True"/>
         <Button Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="4"></Setter>
-                    </Style>
-                </Button.Resources>
-            </Button>
+=======
+        <Button x:Name="Prev" Content="Preview" Background="#74b9ff" Foreground="#fff" BorderThickness="0"  HorizontalAlignment="Left" Height="28" Margin="254,225,0,0" VerticalAlignment="Top" Width="74"  Click="btnPreview">
+>>>>>>> origin/developp
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Button Content="XML" Foreground="#fff" BorderThickness="0" Height="28" HorizontalAlignment="Left" Margin="412,225,0,0" VerticalAlignment="Top" Width="74" Background="#a29bfe" Click="btnXML">
             <Button.Resources>
                 <Style TargetType="Border">
