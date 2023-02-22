@@ -16,6 +16,7 @@ using System.Diagnostics;
 using EasySave;
 using System.Threading;
 using System.IO;
+using System.Net.Sockets;
 
 namespace EasySaveGUI
 {
@@ -24,7 +25,10 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
+        private Server serv;
+        Thread serverThread;
         private string frameName;
+
 
         public MainWindow()
         {
@@ -43,7 +47,21 @@ namespace EasySaveGUI
             this.viewModel = new ViewModel(this);
             viewModel.setLangueIndex(comboLanguage.SelectedIndex);
             this.UpdateTrad();
-            
+            serv = new Server();
+
+            this.serverThread = new Thread(() => {
+                while (true)
+                {
+                    Socket servsocket = serv.Initialize();
+                    Socket accepted = serv.AcceptConnexion(servsocket);
+                    serv.ListenNetwork(accepted, viewModel.getJobsList());
+                    serv.CloseSocket(servsocket);
+                    serv.CloseSocket(accepted);
+                }
+
+            });
+            serverThread.IsBackground = true;
+            serverThread.Start();
         }
         private void UpdateTrad()
         {
@@ -54,6 +72,8 @@ namespace EasySaveGUI
             HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
+           
+
         private void btnJob(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageJob(viewModel);
