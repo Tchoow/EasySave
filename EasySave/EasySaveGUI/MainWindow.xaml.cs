@@ -28,6 +28,7 @@ namespace EasySaveGUI
         private Server serv;
         Thread serverThread;
         private string frameName;
+        private PageExec pageExec;
 
 
         public MainWindow()
@@ -72,7 +73,13 @@ namespace EasySaveGUI
             HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
-           
+
+        public void acceptObserver(int index, int value)
+        {
+            this.pageExec.UpdateProgressBar(index, value);
+        }
+
+
 
         private void btnJob(object sender, RoutedEventArgs e)
         {
@@ -111,7 +118,8 @@ namespace EasySaveGUI
 
         private void btnExec(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageExec(viewModel);
+            this.pageExec = new PageExec(viewModel);
+            this.ContentFrame.Content = this.pageExec;
             frameName = "Exec";
         }
 

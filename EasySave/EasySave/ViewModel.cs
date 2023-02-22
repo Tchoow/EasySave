@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace EasySave
 {
@@ -59,6 +60,15 @@ namespace EasySave
         public List<Log> getLogsLst(string fileName) { return this.model.getLogsLst(fileName);  } 
         public FileInfo[] getLogsFiles() { return this.model.getLogsFiles();  }
 
+        public void sendJobProgressionChanged(int index, int value)
+        {
+            Trace.WriteLine("viewmodel");
+            var type = this.view.GetType();
+            if(type.GetMethod("acceptObserver") != null)
+            {
+                this.view.acceptObserver(index, value);
+            }
+        }
 
     }
 }

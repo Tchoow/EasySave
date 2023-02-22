@@ -249,7 +249,7 @@ namespace EasySave
 
         public bool executeJobs(List<Job> jobs, string[] extensions)
         {
-
+            Trace.WriteLine("ok ez");
             if ( !businessSoftIsRunning() )
             {
 
@@ -258,6 +258,7 @@ namespace EasySave
                     // The execution of the job works
                     for (int i = 0; i < jobs.Count; i++)
                     {
+                        Trace.WriteLine("ok");
                         Job newJob = jobs[i]; //This will be used for rewriting the jobs file
                                               //We get the type of file of the destination and the source of the job
                         FileAttributes attrDest = File.GetAttributes(jobs[i].DestinationFilePath);
@@ -350,7 +351,9 @@ namespace EasySave
                                 FileInfo fileInfos = new FileInfo(currentFile);
                                 filesSize += fileInfos.Length;
                                 newJob.NbFilesLeftToDo++;
-                                // newJob.Progression = (newJob.NbFilesLeftToDo*100 / newJob.TotalFileToCopy);
+                                newJob.Progression = (newJob.NbFilesLeftToDo * 100 / newJob.TotalFileToCopy);
+                                this.viewModel.sendJobProgressionChanged(i, newJob.Progression);
+                                Trace.WriteLine("model sended");
                                 //updateProgressBar(newJob.Progression);
 
                             }

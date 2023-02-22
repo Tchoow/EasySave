@@ -52,6 +52,7 @@ namespace EasySaveGUI
         }
         private void runJobs(List<Job> jobs)
         {
+            Trace.WriteLine("ok");
             string[] extensions;
             if (jobs != null)
             {
@@ -74,13 +75,26 @@ namespace EasySaveGUI
                 {
                     Trace.WriteLine("no chiff");
                     extensions = new string[] { ".psdfg" };
-                    viewModel.executeJobs(jobs, extensions);
+                    Trace.WriteLine("bonjour");
+                    this.viewModel.executeJobs(jobs, extensions);
                 }
             }
         }
         private void exec_selectedJobs_btn(object sender, RoutedEventArgs e)
         {
+            Trace.WriteLine("pushed");
             runJobs(jobSelected);
+        }
+
+        public void UpdateProgressBar(int index, int value)
+        {
+            Trace.WriteLine(value);
+            List<Job> jobs = this.viewModel.getJobsList();
+            jobs[index].Progression = value;
+            this.viewModel.updateJob(jobs[index], index);
+            jobdatagrid.ItemsSource = jobs;
+
+            //Change this in order to update progress value
         }
 
         private void chiffrement_Checked(object sender, RoutedEventArgs e)
