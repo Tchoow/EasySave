@@ -35,7 +35,7 @@ namespace EasySave
             // Configs
             this.lstPriorities   = new List<string>();
             this.lstBusinessSoft = new List<string>();
-            this.cryptoSoftPath  = "@CryptoSoftPath";
+            this.cryptoSoftPath = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
             this.maxFileSizeSim  = 0;
         }
 
@@ -309,7 +309,7 @@ namespace EasySave
                                 if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
                                 {
                                     Process p = new Process();
-                                    p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                    p.StartInfo.FileName = cryptoSoftPath;
                                     p.EnableRaisingEvents = true;
                                     p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
                                     p.StartInfo.CreateNoWindow = true;
@@ -359,7 +359,7 @@ namespace EasySave
                                 if (extensions.Contains(Path.GetExtension(fileInfo)) || extensions[0] == "")
                                 {
                                     Process p = new Process();
-                                    p.StartInfo.FileName = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
+                                    p.StartInfo.FileName = cryptoSoftPath;
                                     p.EnableRaisingEvents = true;
                                     p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
                                     p.StartInfo.CreateNoWindow = true;

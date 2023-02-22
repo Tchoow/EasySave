@@ -1,4 +1,5 @@
 ﻿using EasySave;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,7 @@ namespace EasySaveGUI
             this.lstPriorities      = new List<string>();
             this.lstBusinessProgram = new List<string>();
             this.viewModel          = viewModel;
-            tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
+            //tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
             tbMaxFileSize.Text      = this.viewModel.getMaxFileSizeSim().ToString();
             UpdateTrad();
 
@@ -103,17 +104,16 @@ namespace EasySaveGUI
         }
         private void chooseCryptoSoftPath(object sender, RoutedEventArgs e)
         {
-            /*
-            using (var dialog = new FolderBrowserDialog())
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Executable files (*.exe)|*.exe";
+            //openFileDialog.InitialDirectory = tbCryptoPath.Text != "" ? tbCryptoPath.Text : "C:\\";
+            bool? result = openFileDialog.ShowDialog();
+            if (result == true)
             {
-                DialogResult result = dialog.ShowDialog();
-                if (result == System.Windows.Forms.DialogResult.OK)
-                {
-                    string folderPath = dialog.SelectedPath;
-                    // Utilisez le chemin du dossier sélectionné ici
-                }
+                tbCryptoPath.Text = openFileDialog.FileName;
             }
-            */
+            
+            
         }
 
 
