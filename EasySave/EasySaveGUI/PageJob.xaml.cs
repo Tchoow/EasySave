@@ -35,19 +35,19 @@ namespace EasySaveGUI
         }
         public void UpdateTrad()
         {
-            clearInputs.Content = viewModel.getTraduction("clearinputsjob");
+            clearInputs.Content     = viewModel.getTraduction("clearinputsjob");
             updateJobButton.Content = viewModel.getTraduction("savejob");
-            deleteButton.Content = viewModel.getTraduction("deletejob");
-            newJobButton.Content = viewModel.getTraduction("newjob");
-            openDest.Content = viewModel.getTraduction("open");
-            openSrc.Content = viewModel.getTraduction("open");
-            full.Content = viewModel.getTraduction("full");
-            diff.Content = viewModel.getTraduction("diff");
-            job.Text = viewModel.getTraduction("JobMainWindow");
-            lblName.Text = viewModel.getTraduction("name");
-            SrcPath.Text = viewModel.getTraduction("fromdir");
-            DestPath.Text = viewModel.getTraduction("todir");
-            SavTyp.Text = viewModel.getTraduction("savetype");
+            deleteButton.Content    = viewModel.getTraduction("deletejob");
+            newJobButton.Content    = viewModel.getTraduction("newjob");
+            openDest.Content        = viewModel.getTraduction("open");
+            openSrc.Content         = viewModel.getTraduction("open");
+            full.Content            = viewModel.getTraduction("full");
+            diff.Content            = viewModel.getTraduction("diff");
+            job.Text                = viewModel.getTraduction("JobMainWindow");
+            lblName.Text            = viewModel.getTraduction("name");
+            SrcPath.Text            = viewModel.getTraduction("fromdir");
+            DestPath.Text           = viewModel.getTraduction("todir");
+            SavTyp.Text             = viewModel.getTraduction("savetype");
 
         }
         public void reloadGrid()
@@ -59,9 +59,9 @@ namespace EasySaveGUI
 
         public void clearGrid()
         {
-            NameTB.Text = "";
-            DestinationPathTB.Text = "";
-            SourcePathTB.Text = "";
+            NameTB.Text              = "";
+            DestinationPathTB.Text   = "";
+            SourcePathTB.Text        = "";
             SaveTypeTB.SelectedIndex = -1;
         }
 
@@ -85,6 +85,13 @@ namespace EasySaveGUI
                 this.viewModel.deleteJobWithIndex(index + 1);
                 reloadGrid();
                 clearGrid();
+                Message message = Message.CreerMessage(MessageType.Information);
+                message.Afficher("Suppression réussie.");
+            }
+            else
+            {
+                Message message = Message.CreerMessage(MessageType.Erreur);
+                message.Afficher("Veuillez sélectionner un travail à supprimer.");
             }
         }
 
@@ -99,9 +106,21 @@ namespace EasySaveGUI
 
         private void newJobButton_Click(object sender, RoutedEventArgs e)
         {
-            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
-            this.viewModel.addNewJob(job);
-            reloadGrid();
+            if (SaveTypeTB.SelectedIndex != -1 && !NameTB.Text.Equals("") && !SourcePathTB.Text.Equals("") && !DestinationPathTB.Text.Equals(""))
+            {
+                Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+                this.viewModel.addNewJob(job);
+                reloadGrid();
+
+                Message message = Message.CreerMessage(MessageType.Information);
+                message.Afficher("Création de job réussie.");
+            }
+            else
+            {
+                Message message = Message.CreerMessage(MessageType.Erreur);
+                message.Afficher("Erreur dans la saisie des informations.");
+            }
+
         }
 
         private void updateJobButton_Click(object sender, RoutedEventArgs e)

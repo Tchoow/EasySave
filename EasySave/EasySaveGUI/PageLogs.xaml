@@ -43,7 +43,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="30,270,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="550" Height="165" IsReadOnly="True" TextChanged="JSON_XML_TB_TextChanged">
+        <TextBox x:Name="JSON_XML_TB" HorizontalAlignment="Left" Margin="30,270,0,0" TextWrapping="Wrap" Text="Loading..." VerticalAlignment="Top" Width="550" Height="165" IsReadOnly="True" >
             <TextBox.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"></Setter>
