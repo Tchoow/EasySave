@@ -178,7 +178,10 @@
     <value>Directory</value>
   </data>
   <data name="docu" xml:space="preserve">
-    <value>Click here to open documentation</value>
+    <value>Documentation</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="errorpath" xml:space="preserve">
     <value>Error in path.</value>
@@ -218,6 +221,9 @@
   </data>
   <data name="ID" xml:space="preserve">
     <value>ID</value>
+  </data>
+  <data name="inputnumber" xml:space="preserve">
+    <value>Please input a number</value>
   </data>
   <data name="job" xml:space="preserve">
     <value>Job N°</value>
@@ -282,6 +288,9 @@
   <data name="newjob" xml:space="preserve">
     <value>New job</value>
   </data>
+  <data name="nofile" xml:space="preserve">
+    <value>No selected file</value>
+  </data>
   <data name="open" xml:space="preserve">
     <value>Open</value>
   </data>
@@ -315,6 +324,9 @@
   <data name="saverror" xml:space="preserve">
     <value>Error during the job process...</value>
   </data>
+  <data name="savestate" xml:space="preserve">
+    <value>Save state</value>
+  </data>
   <data name="savesucc" xml:space="preserve">
     <value>Save successfull.</value>
   </data>
@@ -323,6 +335,12 @@
   </data>
   <data name="selectlanguage" xml:space="preserve">
     <value>Select language</value>
+  </data>
+  <data name="selfile" xml:space="preserve">
+    <value>Please select a file</value>
+  </data>
+  <data name="setdesc" xml:space="preserve">
+    <value>Cryptosoft is a cripting software that uses XOR algorithm. With Cryptosoft you can crypt files to ensure data safety.</value>
   </data>
   <data name="setextension" xml:space="preserve">
     <value>Set extensions you want to encrypt (put them separated by a space or leave it empty to encrypt every file)</value>

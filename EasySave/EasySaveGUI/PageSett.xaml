@@ -11,7 +11,7 @@
     <Grid Background="White">
         <TextBlock x:Name="Sett" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Settings" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
-            <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">CryptoSoft est un logiciel de cryptage de fichiers qui utilise l'algorithme XOR pour chiffrer les données. Avec CryptoSoft, vous pouvez crypter des fichiers pour protéger leur contenu.</TextBlock>
+            <TextBlock x:Name="setdesc" TextWrapping="Wrap"  Margin="5,5,5,10"></TextBlock>
             <TextBlock x:Name="cryptopath" HorizontalAlignment="Left" Margin="5,47,0,0" Text="CryptoSoft Path:" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <TextBox x:Name="tbCryptoPath" HorizontalAlignment="Left" Margin="5,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="459">
                 <TextBox.Resources>

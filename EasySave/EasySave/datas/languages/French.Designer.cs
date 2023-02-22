@@ -205,7 +205,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Veuillez choisir le numéro de la sauvegarde que vous voulez supprimer..
+        ///   Recherche une chaîne localisée semblable à Veuillez choisir le travail que vous voulez supprimer..
         /// </summary>
         internal static string deletesave {
             get {
@@ -241,11 +241,20 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cliquez ici pour ouvrir la documentation.
+        ///   Recherche une chaîne localisée semblable à Documentation.
         /// </summary>
         internal static string docu {
             get {
                 return ResourceManager.GetString("docu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
             }
         }
         
@@ -363,6 +372,15 @@ namespace EasySave.datas.languages {
         internal static string ID {
             get {
                 return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez saisir un nombre.
+        /// </summary>
+        internal static string inputnumber {
+            get {
+                return ResourceManager.GetString("inputnumber", resourceCulture);
             }
         }
         
@@ -556,6 +574,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aucun fichier selectionné.
+        /// </summary>
+        internal static string nofile {
+            get {
+                return ResourceManager.GetString("nofile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ouvrir.
         /// </summary>
         internal static string open {
@@ -655,6 +682,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etat de la sauvegarde.
+        /// </summary>
+        internal static string savestate {
+            get {
+                return ResourceManager.GetString("savestate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Sauvegarde(s) effectuée(s) avec succès..
         /// </summary>
         internal static string savesucc {
@@ -678,6 +714,24 @@ namespace EasySave.datas.languages {
         internal static string selectlanguage {
             get {
                 return ResourceManager.GetString("selectlanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez selectionner un fichier.
+        /// </summary>
+        internal static string selfile {
+            get {
+                return ResourceManager.GetString("selfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à CryptoSoft est un logiciel de cryptage de fichiers qui utilise l&apos;algorithme XOR pour chiffrer les données. Avec CryptoSoft, vous pouvez crypter des fichiers pour protéger leur contenu..
+        /// </summary>
+        internal static string setdesc {
+            get {
+                return ResourceManager.GetString("setdesc", resourceCulture);
             }
         }
         
