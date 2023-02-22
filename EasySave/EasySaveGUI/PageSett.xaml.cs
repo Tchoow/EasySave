@@ -38,6 +38,7 @@ namespace EasySaveGUI
             this.viewModel          = viewModel;
             tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
             tbMaxFileSize.Text      = this.viewModel.getMaxFileSizeSim().ToString();
+            UpdateTrad();
 
 
             // load Comboboxes
@@ -50,8 +51,24 @@ namespace EasySaveGUI
                 cbBusinessProgram.Items.Add(software);
             }
 
-        }
 
+        }
+        public void UpdateTrad()
+        {
+
+            Sett.Text = viewModel.getTraduction("SettingsMainWindow");
+            opensrc.Content = viewModel.getTraduction("open");
+            savecrypto.Content = viewModel.getTraduction("save");
+            addprio.Content = viewModel.getTraduction("add");
+            addsoft.Content = viewModel.getTraduction("add");
+            deleteprio.Content = viewModel.getTraduction("delete");
+            deletesoft.Content = viewModel.getTraduction("delete");
+            priority.Text = viewModel.getTraduction("prio");
+            busisoft.Text = viewModel.getTraduction("busisoft");
+            maxfilesize.Text = viewModel.getTraduction("maxfilsiz");
+            cryptopath.Text = viewModel.getTraduction("cryptopath");
+            sav.Content = viewModel.getTraduction("save");
+        }
 
 
 
