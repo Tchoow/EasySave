@@ -36,7 +36,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="479,15,0,0" VerticalAlignment="Top" Background="#27ae60" HorizontalAlignment="Left" Width="121" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
+        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="457,15,0,0" VerticalAlignment="Top" Background="#27ae60" HorizontalAlignment="Left" Width="143" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>

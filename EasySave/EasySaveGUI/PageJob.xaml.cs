@@ -48,12 +48,11 @@ namespace EasySaveGUI
             SrcPath.Text            = viewModel.getTraduction("fromdir");
             DestPath.Text           = viewModel.getTraduction("todir");
             SavTyp.Text             = viewModel.getTraduction("savetype");
-
         }
         public void reloadGrid()
         {
             this.jobs = viewModel.getJobsList();
-            jobGrid.ItemsSource = jobs;
+            jobGrid.ItemsSource = this.jobs;
             index = -1;
         }
 
@@ -69,11 +68,11 @@ namespace EasySaveGUI
         {
             if(jobGrid.SelectedIndex != -1)
             {
-                int index = jobGrid.SelectedIndex;
-                this.index = index;
-                NameTB.Text = jobs[index].Name;
-                SourcePathTB.Text = jobs[index].SourceFilePath;
-                DestinationPathTB.Text = jobs[index].DestinationFilePath;
+                int index                = jobGrid.SelectedIndex;
+                this.index               = index;
+                NameTB.Text              = jobs[index].Name;
+                SourcePathTB.Text        = jobs[index].SourceFilePath;
+                DestinationPathTB.Text   = jobs[index].DestinationFilePath;
                 SaveTypeTB.SelectedIndex = jobs[index].SaveType - 1;
             }
         }
@@ -97,11 +96,11 @@ namespace EasySaveGUI
 
         private void clearInputsButton_Click(object sender, RoutedEventArgs e)
         {
-            this.index = -1;
-            SaveTypeTB.SelectedIndex = -1;
-            NameTB.Text = "";
-            SourcePathTB.Text = "";
-            DestinationPathTB.Text = "";
+            this.index                 = -1;
+            SaveTypeTB.SelectedIndex   = -1;
+            NameTB.Text                = "";
+            SourcePathTB.Text          = "";
+            DestinationPathTB.Text     = "";
         }
 
         private void newJobButton_Click(object sender, RoutedEventArgs e)
