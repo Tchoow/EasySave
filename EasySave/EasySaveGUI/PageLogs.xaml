@@ -18,11 +18,11 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn  IsReadOnly="True" Header="Id"        Binding="{Binding Id}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Name"        Binding="{Binding Names}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Source Path" Binding="{Binding SourcePath}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Dest Path" Binding="{Binding DesPath}" Width="*" />
-                    <DataGridTextColumn  IsReadOnly="True" Header="Date" Binding="{Binding Date}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" x:Name="id" Header="Id"        Binding="{Binding Id}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" x:Name="nameh" Header="Name"        Binding="{Binding Names}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" x:Name="srcpath" Header="Source Path" Binding="{Binding SourcePath}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" x:Name="destpath" Header="Dest Path" Binding="{Binding DesPath}" Width="*" />
+                    <DataGridTextColumn  IsReadOnly="True" x:Name="date" Header="Date" Binding="{Binding Date}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
