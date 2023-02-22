@@ -37,7 +37,7 @@ namespace EasySaveGUI
             this.lstPriorities      = new List<string>();
             this.lstBusinessProgram = new List<string>();
             this.viewModel          = viewModel;
-            //tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
+            tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
             tbMaxFileSize.Text      = this.viewModel.getMaxFileSizeSim().ToString();
             UpdateTrad();
 
