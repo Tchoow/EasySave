@@ -12,7 +12,9 @@
         <TextBlock x:Name="about" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
             <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">
-               Lorem Impsium Lorem Impsium Lorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem ImpsiumLorem Impsium Lorem Impsium
+Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l'école CESI. L'objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+
+Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialité et l'intégrité des données sauvegardées.
             </TextBlock>
         </Grid>
     </Grid>
