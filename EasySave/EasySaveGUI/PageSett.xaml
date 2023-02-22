@@ -14,21 +14,21 @@
             <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">Lorem Impsium Lorem ImpsiumLorem ImpsiumLorem ImpsiumLorem ImpsiumLorem ImpsiumLorem ImpsiumLorem ImpsiumLorem Impsium
             Lorem Impsium Lorem Impsium</TextBlock>
             <TextBlock x:Name="cryptopath" HorizontalAlignment="Left" Margin="5,47,0,0" Text="CryptoSoft Path:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="5,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="459">
+            <TextBox x:Name="tbCryptoPath" HorizontalAlignment="Left" Margin="5,68,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="459">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button x:Name="opensrc" Content="Open" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="476,68,0,0" VerticalAlignment="Top" Height="18" Width="48">
+            <Button Click="chooseCryptoSoftPath" x:Name="opensrc" Content="Open" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="476,68,0,0" VerticalAlignment="Top" Height="18" Width="48">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="savecrypto" Content="Save" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="18" Width="565">
+            <Button Click="updateCryptoPath" x:Name="savecrypto" Content="Save" Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="18" Width="565">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>
@@ -103,14 +103,14 @@
 
         <Grid HorizontalAlignment="Center" Height="70" Margin="0,388,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
             <TextBlock x:Name="maxfilesize" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Maximum Files Size that can be save simulatenously in ko (0 to none):" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="10,31,0,0" Height="18" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="490">
+            <TextBox  x:Name="tbMaxFileSize" HorizontalAlignment="Left" Margin="10,31,0,0" Height="18" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="490">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="3"></Setter>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button x:Name="sav" Content="Save"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
+            <Button Click="updateMaxFileSizeSim" x:Name="sav" Content="Save"  Background="#74b9ff" BorderThickness="0" Foreground="#fff" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Height="18" Width="60">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="4"></Setter>

@@ -14,7 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using EasySave;
+
+
+
+
+
 
 namespace EasySaveGUI
 {
@@ -27,25 +31,44 @@ namespace EasySaveGUI
 
         public PageSett(ViewModel viewModel)
         {
+            // Init
+            InitializeComponent();
             this.lstPriorities      = new List<string>();
             this.lstBusinessProgram = new List<string>();
             this.viewModel          = viewModel;
-            InitializeComponent();
+            tbCryptoPath.Text       = this.viewModel.getCryptoSoftPath();
+            tbMaxFileSize.Text      = this.viewModel.getMaxFileSizeSim().ToString();
+            UpdateTrad();
+
 
             // load Comboboxes
-
             foreach (string priority in this.viewModel.getLstPriorities())
             {
                 cbPriority.Items.Add(priority);
             }
-
             foreach (string software in this.viewModel.getLstBusinessSoft())
             {
                 cbBusinessProgram.Items.Add(software);
             }
 
-        }
 
+        }
+        public void UpdateTrad()
+        {
+
+            Sett.Text = viewModel.getTraduction("SettingsMainWindow");
+            opensrc.Content = viewModel.getTraduction("open");
+            savecrypto.Content = viewModel.getTraduction("save");
+            addprio.Content = viewModel.getTraduction("add");
+            addsoft.Content = viewModel.getTraduction("add");
+            deleteprio.Content = viewModel.getTraduction("delete");
+            deletesoft.Content = viewModel.getTraduction("delete");
+            priority.Text = viewModel.getTraduction("prio");
+            busisoft.Text = viewModel.getTraduction("busisoft");
+            maxfilesize.Text = viewModel.getTraduction("maxfilsiz");
+            cryptopath.Text = viewModel.getTraduction("cryptopath");
+            sav.Content = viewModel.getTraduction("save");
+        }
 
 
 
@@ -68,6 +91,45 @@ namespace EasySaveGUI
             txtBoxPriority.Text = "";
 
         }
+
+
+
+
+        private void updateCryptoPath(object sender, RoutedEventArgs e)
+        {
+            string newCryptoPath = tbCryptoPath.Text;
+            this.viewModel.updateCryptoSoftPath(newCryptoPath);
+        }
+        private void chooseCryptoSoftPath(object sender, RoutedEventArgs e)
+        {
+            /*
+            using (var dialog = new FolderBrowserDialog())
+            {
+                DialogResult result = dialog.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    string folderPath = dialog.SelectedPath;
+                    // Utilisez le chemin du dossier sélectionné ici
+                }
+            }
+            */
+        }
+
+
+        private void updateMaxFileSizeSim(object sender, RoutedEventArgs e)
+        {
+            int newFileSize;
+            try
+            {
+                newFileSize = int.Parse(tbMaxFileSize.Text);
+                this.viewModel.updateMaxFileSizeSim(newFileSize);
+
+            }
+            catch {}
+        }
+
+
+        
 
 
         private void removePriority(object sender, RoutedEventArgs e)

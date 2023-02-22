@@ -44,6 +44,11 @@ namespace EasySaveGUI
             name.Header = viewModel.getTraduction("name");
             lastmod.Header = viewModel.getTraduction("lastmod");
             dir.Header = viewModel.getTraduction("dir");
+            id.Header = viewModel.getTraduction("ID");
+            nameh.Header = viewModel.getTraduction("name");
+            srcpath.Header = viewModel.getTraduction("fromdir");
+            destpath.Header = viewModel.getTraduction("todir");
+            date.Header = viewModel.getTraduction("creadate");
         }
 
         public void btnPreview(object sender, RoutedEventArgs e)

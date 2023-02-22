@@ -20,6 +20,8 @@ namespace EasySave
 
         private List<string> lstPriorities;
         private List<string> lstBusinessSoft;
+        private string cryptoSoftPath;
+        private int maxFileSizeSim;
 
         public Model(ViewModel viewModel)
         {
@@ -33,6 +35,8 @@ namespace EasySave
             // Configs
             this.lstPriorities   = new List<string>();
             this.lstBusinessSoft = new List<string>();
+            this.cryptoSoftPath  = "@CryptoSoftPath";
+            this.maxFileSizeSim  = 0;
         }
 
         private bool businessSoftIsRunning()
@@ -58,6 +62,18 @@ namespace EasySave
         {
             get { return this.lstPriorities;  }
             set { this.lstPriorities = value; }
+        }
+
+        public string CryptoSoftPath
+        {
+            get { return this.cryptoSoftPath;  }
+            set { this.cryptoSoftPath = value; }
+        }
+
+        public int MaxFileSizeSim
+        {
+            get { return this.maxFileSizeSim; }
+            set { this.maxFileSizeSim = value; }
         }
 
         public List<string> LstBusinessSoft

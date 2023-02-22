@@ -48,14 +48,7 @@ namespace EasySaveGUI
             SrcPath.Text = viewModel.getTraduction("fromdir");
             DestPath.Text = viewModel.getTraduction("todir");
             SavTyp.Text = viewModel.getTraduction("savetype");
-            name.Header = viewModel.getTraduction("name");
-            srcfile.Header = viewModel.getTraduction("fromdir");
-            destfile.Header = viewModel.getTraduction("todir");
-            savetype.Header = viewModel.getTraduction("savetype");
-            state.Header = viewModel.getTraduction("state");
-            ttlefilsize.Header = viewModel.getTraduction("ttlfilsiz");
-            filenumb.Header = viewModel.getTraduction("ttlfilcop");
-            date.Header = viewModel.getTraduction("creadate");
+
         }
         public void reloadGrid()
         {

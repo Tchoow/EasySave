@@ -216,6 +216,9 @@
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
   <data name="job" xml:space="preserve">
     <value>Job N°</value>
   </data>
