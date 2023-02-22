@@ -31,7 +31,7 @@ namespace EasySaveGUI
             this.lstBusinessProgram = new List<string>();
             this.viewModel          = viewModel;
             InitializeComponent();
-
+            UpdateTrad();
             // load Comboboxes
 
             foreach (string priority in this.viewModel.getLstPriorities())
@@ -44,8 +44,24 @@ namespace EasySaveGUI
                 cbBusinessProgram.Items.Add(software);
             }
 
-        }
 
+        }
+        public void UpdateTrad()
+        {
+
+            Sett.Text = viewModel.getTraduction("SettingsMainWindow");
+            opensrc.Content = viewModel.getTraduction("open");
+            savecrypto.Content = viewModel.getTraduction("save");
+            addprio.Content = viewModel.getTraduction("add");
+            addsoft.Content = viewModel.getTraduction("add");
+            deleteprio.Content = viewModel.getTraduction("delete");
+            deletesoft.Content = viewModel.getTraduction("delete");
+            priority.Text = viewModel.getTraduction("prio");
+            busisoft.Text = viewModel.getTraduction("busisoft");
+            maxfilesize.Text = viewModel.getTraduction("maxfilsiz");
+            cryptopath.Text = viewModel.getTraduction("cryptopath");
+            sav.Content = viewModel.getTraduction("save");
+        }
 
 
 
