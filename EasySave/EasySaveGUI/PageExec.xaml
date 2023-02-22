@@ -43,7 +43,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White"  AlternatingRowBackground="#EFEFEF" RowBackground="#E4F3FF" FontFamily="Verdana" >
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White" FontFamily="Verdana" >
             <DataGrid.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"></Setter>

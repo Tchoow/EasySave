@@ -56,18 +56,18 @@ namespace EasySaveGUI
         public void UpdateTrad()
         {
 
-            Sett.Text = viewModel.getTraduction("SettingsMainWindow");
-            opensrc.Content = viewModel.getTraduction("open");
-            savecrypto.Content = viewModel.getTraduction("save");
-            addprio.Content = viewModel.getTraduction("add");
-            addsoft.Content = viewModel.getTraduction("add");
-            deleteprio.Content = viewModel.getTraduction("delete");
-            deletesoft.Content = viewModel.getTraduction("delete");
-            priority.Text = viewModel.getTraduction("prio");
-            busisoft.Text = viewModel.getTraduction("busisoft");
-            maxfilesize.Text = viewModel.getTraduction("maxfilsiz");
-            cryptopath.Text = viewModel.getTraduction("cryptopath");
-            sav.Content = viewModel.getTraduction("save");
+            Sett.Text             = viewModel.getTraduction("SettingsMainWindow");
+            opensrc.Content       = viewModel.getTraduction("open");
+            savecrypto.Content    = viewModel.getTraduction("save");
+            addprio.Content       = viewModel.getTraduction("add");
+            addsoft.Content       = viewModel.getTraduction("add");
+            deleteprio.Content    = viewModel.getTraduction("delete");
+            deletesoft.Content    = viewModel.getTraduction("delete");
+            priority.Text         = viewModel.getTraduction("prio");
+            busisoft.Text         = viewModel.getTraduction("busisoft");
+            maxfilesize.Text      = viewModel.getTraduction("maxfilsiz");
+            cryptopath.Text       = viewModel.getTraduction("cryptopath");
+            sav.Content           = viewModel.getTraduction("save");
         }
 
 
@@ -77,22 +77,23 @@ namespace EasySaveGUI
         {
             string newPriority = txtBoxPriority.Text;
 
-            // Ajoute la nouvelle entrée à la liste de priorités
-            this.lstPriorities.Add(newPriority);
+            if (!newPriority.Equals(""))
+            {
 
-            // Ajoute la nouvelle entrée à la ComboBox
-            cbPriority.Items.Add(newPriority);
+                // Ajoute la nouvelle entrée à la liste de priorités
+                this.lstPriorities.Add(newPriority);
 
-            // Update Priority List
-            this.viewModel.updateLstPriorities(this.lstPriorities);
+                // Ajoute la nouvelle entrée à la ComboBox
+                cbPriority.Items.Add(newPriority);
+
+                // Update Priority List
+                this.viewModel.updateLstPriorities(this.lstPriorities);
 
 
-            // Efface la TextBox
-            txtBoxPriority.Text = "";
-
+                // Efface la TextBox
+                txtBoxPriority.Text = "";
+            }
         }
-
-
 
 
         private void updateCryptoPath(object sender, RoutedEventArgs e)
@@ -123,9 +124,12 @@ namespace EasySaveGUI
             {
                 newFileSize = int.Parse(tbMaxFileSize.Text);
                 this.viewModel.updateMaxFileSizeSim(newFileSize);
-
             }
-            catch {}
+            catch
+            {
+                Message message = Message.CreerMessage(MessageType.Erreur);
+                message.Afficher("Veuillez saisir un nombre.");
+            }
         }
 
 
@@ -157,17 +161,21 @@ namespace EasySaveGUI
         {
             string newBusinessProgram = txtBoxBusinessProgram.Text;
 
-            // Ajoute la nouvelle entrée à la liste des programmes d'entreprise
-            this.lstBusinessProgram.Add(newBusinessProgram);
+            if (!newBusinessProgram.Equals(""))
+            {
 
-            // Ajoute la nouvelle entrée à la ComboBox
-            cbBusinessProgram.Items.Add(newBusinessProgram);
+                // Ajoute la nouvelle entrée à la liste des programmes d'entreprise
+                this.lstBusinessProgram.Add(newBusinessProgram);
 
-            // Update Business Soft priority
-            this.viewModel.updateLstBusinessSoft(this.lstBusinessProgram);
+                // Ajoute la nouvelle entrée à la ComboBox
+                cbBusinessProgram.Items.Add(newBusinessProgram);
 
-            // Efface la TextBox
-            txtBoxBusinessProgram.Text = "";
+                // Update Business Soft priority
+                this.viewModel.updateLstBusinessSoft(this.lstBusinessProgram);
+
+                // Efface la TextBox
+                txtBoxBusinessProgram.Text = "";
+            }
         }
 
         private void removeBusinessSoft(object sender, RoutedEventArgs e)
