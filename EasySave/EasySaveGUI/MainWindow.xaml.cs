@@ -68,7 +68,7 @@ namespace EasySaveGUI
             JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
             ExecBtn.Content  = viewModel.getTraduction("ExecutionMainWindow");
             LogBtn.Content   = viewModel.getTraduction("LogsMainWindow");
-            SettBtn.Content  = viewModel.getTraduction("LanguagesMainWindow");
+            SettBtn.Content  = viewModel.getTraduction("SettingsMainWindow");
             HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
             Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
         }
