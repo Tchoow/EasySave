@@ -77,6 +77,9 @@ namespace EasySave
 
         // Remote interface 
         public void RunServer() { this.model.RunServer(); }
-        public void ServerListen(){ this.model.ServerListen(); }
+        public (string result,List<Job> jobs) ServerListen(){
+            (string res, List<Job> jobs) = this.model.ServerListen();
+            return (res, jobs);
+        }
     }
 }

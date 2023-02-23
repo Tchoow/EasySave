@@ -52,7 +52,23 @@ namespace EasySaveGUI
                 viewModel.RunServer();
                 while (true)
                 {
-                    viewModel.ServerListen();
+                    (string result,List<Job> jobs) = viewModel.ServerListen();
+                    Trace.WriteLine(result);
+                    string[] extensions = { "" };
+                    switch (result)
+                    {
+                        case "play":
+                            viewModel.executeJobs(jobs, extensions);
+                            break;
+                        case "pause":
+                            viewModel.pauseJobs(jobs);
+                            break;
+                        case "stop":
+                            viewModel.stopJobs(jobs);
+                            break;
+                        default:
+                            break;
+                    }
                     /*Socket servsocket = serv.Initialize();
                     Socket accepted = serv.AcceptConnexion(servsocket);
                     serv.ListenNetwork(accepted, viewModel.getJobsList());
@@ -77,7 +93,7 @@ namespace EasySaveGUI
 
         public void acceptObserver(string name, string state, int progression)
         {
-            this.pageExec.updateInfos(name, state, progression);   
+            this.pageExec.updateInfos(name, state, progression);
         }
 
 

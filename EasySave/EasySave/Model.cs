@@ -451,6 +451,7 @@ namespace EasySave
                     }
                 }
             }
+            return true;
         }
         public void RunServer()
         {
@@ -458,9 +459,10 @@ namespace EasySave
             Socket accepted = server.AcceptConnexion(servsocket);
             server.serverSocket = accepted;
         }
-        public void ServerListen()
+        public (string result, List<Job> jobs) ServerListen()
         {
-            server.ListenNetwork(getJobs());
+            (string res, List<Job> jobs) = server.ListenNetwork(getJobs());
+            return (res, jobs);
         }
 
     }

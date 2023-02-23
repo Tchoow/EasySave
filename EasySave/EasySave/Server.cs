@@ -47,7 +47,7 @@ namespace EasySave
             
             return socketClient;
         }
-        public void ListenNetwork(List<Job> jobs)
+        public (string result, List<Job> jobs) ListenNetwork(List<Job> jobs)
         {
             
                 byte[] buffer = new byte[8192];
@@ -60,32 +60,37 @@ namespace EasySave
                     if (bytesRead > 0)
                     {
                         string messageRead = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    
-                        switch (messageRead)
-                        {
-                            case "getjoblist":
-                                msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
-                                break;
-                            case "playjob":
-                                break;
-                            //run job index
-                            case "pausejob":
-                                break;
-                            case "stopjob":
-                                break;
+                    string[] result = messageRead.Split("====");
+                    switch (result[0])
+                    {
+                        case "getjoblist":
+                            msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                            break;
+                        case "playjob":
+                            return ("play",JsonConvert.DeserializeObject<List<Job>>(result[1]));
+                            break;
+                        //run job index
+                        case "pausejob":
+                            return ("pause", JsonConvert.DeserializeObject<List<Job>>(result[1]));
+                            break;
+                        case "stopjob":
+                            return ("stop", JsonConvert.DeserializeObject<List<Job>>(result[1]));
+                            break;
                                 //pausejob
                             default:
-                                msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                            return (null,null);
                                 break;
                         }
-                        byte[] bufferReponse = Encoding.ASCII.GetBytes(msgtosend);
-                        Trace.WriteLine("send");
-                        this.serverSocket.Send(bufferReponse);
+                    msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                    byte[] bufferReponse = Encoding.ASCII.GetBytes(msgtosend);
+                    this.serverSocket.Send(bufferReponse);
+                    return (null, null);
                     }
+                return (null, null);
                 }
                 catch (Exception)
                 {
-                    return;
+                    return (null,null);
                 }            
         }
         public void CloseSocket()

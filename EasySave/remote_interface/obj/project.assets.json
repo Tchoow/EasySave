@@ -70,23 +70,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Théo LAVIE\\.nuget\\packages\\": {},
+    "C:\\Users\\theo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
-      "projectName": "remote_interface",
-      "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
-      "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\obj\\",
+      "projectUniqueName": "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
+      "projectName": "Remote_interface",
+      "projectPath": "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
+      "packagesPath": "C:\\Users\\theo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\remote_interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Théo LAVIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\theo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -101,8 +101,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
-              "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj"
+            "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\EasySave\\EasySave.csproj": {
+              "projectPath": "C:\\Users\\theo\\Documents\\projetEasySave\\EasySave\\EasySave\\EasySave.csproj"
             }
           }
         }
@@ -140,7 +140,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

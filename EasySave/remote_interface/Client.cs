@@ -64,9 +64,9 @@ namespace Remote_interface
             _connectedSocket.Shutdown(SocketShutdown.Both);
             _connectedSocket.Close();
         }
-        public void Request(string message)
+        public void Request(string message, List<Job> jobs)
         {
-            byte[] bufferSend = Encoding.ASCII.GetBytes(message);
+            byte[] bufferSend = Encoding.ASCII.GetBytes(message + "====" + JsonConvert.SerializeObject(jobs, Formatting.Indented));
             _connectedSocket.Send(bufferSend);
         }
     }

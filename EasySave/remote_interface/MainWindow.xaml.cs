@@ -30,6 +30,7 @@ namespace Remote_interface
         private Thread receive_thread;
         private Thread send_thread;
         private List<EasySave.Job> jobs;
+        private List<EasySave.Job> jobSelected;
 
         public MainWindow()
         {
@@ -93,28 +94,53 @@ namespace Remote_interface
             receive_thread.IsBackground = true;
             receive_thread.Start();
 
-            viewModel.SendMessage("joblist");
+            viewModel.SendMessage("getjoblist", null);
         }
 
 
         private void Button_Click_play(object sender, RoutedEventArgs e)
         {
-            
+            if(jobSelected.Count > 0)
+            {
+                viewModel.SendMessage("playjob", jobSelected);
+            }
+            else
+            {
+                MessageBox.Show("Select job");
+            }
         }
 
         private void Button_Click_pause(object sender, RoutedEventArgs e)
         {
-            
+            if (jobSelected.Count > 0)
+            {
+                viewModel.SendMessage("pausejob", jobSelected);
+            }
+            else
+            {
+                MessageBox.Show("Select job");
+            }
         }
 
         private void Button_Click_stop(object sender, RoutedEventArgs e)
         {
-            
+            if (jobSelected.Count > 0)
+            {
+                viewModel.SendMessage("stopjob", jobSelected);
+            }
+            else
+            {
+                MessageBox.Show("Select job");
+            }
         }
 
-        private void Button_Click_refresh(object sender, RoutedEventArgs e)
+        private void jobdatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //client.Request(clientSocket, "getjoblist");
+            jobSelected = new List<EasySave.Job>();
+            foreach (EasySave.Job item in jobdatagrid.SelectedItems)
+            {
+                jobSelected.Add(item);
+            }
         }
     }
 }
