@@ -115,7 +115,7 @@ namespace EasySave
 
             Parallel.ForEach(pathToFiles, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
             {
-                if (this.extensionsToEncrypt.Contains(Path.GetExtension(fileInfo)) || this.extensionsToEncrypt[0] != "")
+                if (this.extensionsToEncrypt.Contains(Path.GetExtension(fileInfo)) || this.extensionsToEncrypt[0] == "*")
                 {
                     Process p = new Process();
                     p.StartInfo.FileName = this.cryptoPath;
