@@ -107,7 +107,7 @@ namespace EasySaveGUI
         {
             if (SaveTypeTB.SelectedIndex != -1 && !NameTB.Text.Equals("") && !SourcePathTB.Text.Equals("") && !DestinationPathTB.Text.Equals(""))
             {
-                Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+                Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Not Started");
                 this.viewModel.addNewJob(job);
                 reloadGrid();
 
@@ -125,7 +125,7 @@ namespace EasySaveGUI
         private void updateJobButton_Click(object sender, RoutedEventArgs e)
         {
             if(index == -1) return;
-            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Paused");
+            Job job = new Job(NameTB.Text, SourcePathTB.Text, DestinationPathTB.Text, SaveTypeTB.SelectedIndex + 1, "Not Started");
             this.viewModel.updateJob(job, index);
             this.jobs = this.viewModel.getJobsList();
             reloadGrid();

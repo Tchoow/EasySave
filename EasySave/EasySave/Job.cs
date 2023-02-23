@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EasySave
 {
@@ -18,18 +19,20 @@ namespace EasySave
         private int saveType { get; set; }
         private string state { get; set; }
         private int totalFileToCopy { get; set; }
-        private int totalFileSize { get; set; }
+        private long totalFileSize { get; set; }
         private int nbFilesLeftToDo { get; set; }
         private int progression { get; set; }
         private DateTime created { get; set; }
         private string uuid { get; set; }
+        private string[] extensionsToEncrypt { get; set; }
 
+        // utils data
         private List<string> lstPriorities;
         private List<string> lstBusinessSoft;
         private long         bigFileLength;
+        private string       cryptoPath;
 
         private ViewModel viewModel { get; set; }
-
 
         [JsonConstructor]
         public Job(
@@ -53,6 +56,7 @@ namespace EasySave
             this.progression = progression;
             this.created = DateTime.Now;
             this.uuid = Guid.NewGuid().ToString();
+            this.extensionsToEncrypt = new string[] { "" };
         }
 
         public Job(
@@ -95,9 +99,36 @@ namespace EasySave
             this.bigFileLength = fileLength;
         }
 
-        private void encryptDecrypt(string pathToFile)
+        public void setExtensions(string[] extensions)
         {
+            this.extensionsToEncrypt = extensions;
+        }
 
+        public void setCryptoSoftPath(string path)
+        {
+            this.cryptoPath = path;
+        }
+
+        private int encryptDecrypt(List<string> pathToFiles)
+        {
+            int EncryptionTime = 0;
+
+            Parallel.ForEach(pathToFiles, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
+            {
+                if (this.extensionsToEncrypt.Contains(Path.GetExtension(fileInfo)) || this.extensionsToEncrypt[0] != "")
+                {
+                    Process p = new Process();
+                    p.StartInfo.FileName = this.cryptoPath;
+                    p.EnableRaisingEvents = true;
+                    p.StartInfo.Arguments = "\"" + fileInfo + "\"" + " " + "\"" + fileInfo + "\"";
+                    p.StartInfo.CreateNoWindow = true;
+                    p.Exited += new EventHandler((object sender, EventArgs e) => EncryptionTime += p.ExitCode);
+                    p.Start();
+                    p.WaitForExit();
+                }
+            });
+
+            return EncryptionTime;
         }
 
 
@@ -158,81 +189,129 @@ namespace EasySave
 
         public void Execute()
         {
-            this.State = "Running";
 
-            while (true)
+            try
             {
-                try
+                // Get All Files   //We get the type of file of the destination and the source of the job
+                FileAttributes attrDest = File.GetAttributes(this.destinationFilePath);
+                FileAttributes attrSrc  = File.GetAttributes(this.sourceFilePath);
+
+                string source;
+                if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We handle the case where the source is a single file
                 {
-                    if (this.State == "Running")
+                    source = this.sourceFilePath;
+                }
+                else
+                {
+                    source = Path.GetDirectoryName(this.sourceFilePath);
+                }
+
+                FileInfo[] dinfos = new DirectoryInfo(source).GetFiles();
+                // Reset job infos
+                this.NbFilesLeftToDo  = 0;
+                this.Progression      = 0;
+                this.TotalFileToCopy  = dinfos.Length;
+                this.State            = "Running";
+                int size              = 0;
+
+                // get all file size
+                foreach (FileInfo dinfo in dinfos) size += (int)dinfo.Length;
+                this.totalFileSize = size;
+
+
+                // If folder
+                if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    // Get All files
+                    string[] lstFiles  = getAllFiles(attrSrc);
+
+                    var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+                    long filesSize     = 0;
+                    DateTime startTime = DateTime.Now;
+                    int EncryptionTime = 0;
+
+                    // Sort the Files
+                    List<string> sortedFiles = sortFiles(lstFiles.ToList());
+
+                    // Check if business Soft is Running and State is running
+                    if (!businessSoftIsRunning() && this.State == "Running")
                     {
-                        // Get All Files                                              //We get the type of file of the destination and the source of the job
-                        FileAttributes attrDest = File.GetAttributes(this.destinationFilePath);
-                        FileAttributes attrSrc  = File.GetAttributes(this.sourceFilePath);
+                        // Encrypt
+                        encryptDecrypt(sortedFiles);
 
-                        string source;
-                        if ((attrSrc & FileAttributes.Directory) == FileAttributes.Directory) //We handle the case where the source is a single file
+                        // Copy Files
+                        for (int j = 0; j < sortedFiles.Count; j++)
                         {
-                            source = this.sourceFilePath;
-                        }
-                        else
-                        {
-                            source = Path.GetDirectoryName(this.sourceFilePath);
-                        }
-
-                        FileInfo[] dinfos = new DirectoryInfo(source).GetFiles();
-                        // Reset job infos
-                        this.NbFilesLeftToDo = 0;
-                        this.Progression = 0;
-                        this.TotalFileToCopy = dinfos.Length;
-                        this.State = "Running";
-                        int size   = 0;
-
-                        // get all file size
-                        foreach (FileInfo dinfo in dinfos) size += (int)dinfo.Length;
-                        this.totalFileSize = size;
-
-
-                        // If folder
-                        if ((attrDest & FileAttributes.Directory) == FileAttributes.Directory)
-                        {
-                            // Get All files
-                            string[] lstFiles  = getAllFiles(attrSrc);
-
-                            var TimestampStart = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
-                            long filesSize     = 0;
-                            DateTime startTime = DateTime.Now;
-                            int EncryptionTime = 0;
-
-                            // Sort the Files
-                            List<string> sortedFiles = sortFiles(lstFiles.ToList());
-
-                            // Check if business Soft is Running and State is running
-                            if (!businessSoftIsRunning() && this.State == "Running")
+                            // Stopped
+                            if (this.State == "Stopped")
                             {
-
-
+                                this.encryptDecrypt(sortedFiles);
+                                this.progression = 0;
+                                this.viewModel.sendJobObserver(this.name, this.state, this.progression);
+                                return;
                             }
 
-                        }
-                        else // Error
-                        {
-                            Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.WriteLine("La source ou la destination n'est pas un dossier");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            // Wait if paused
+                            while (this.State == "Paused")
+                            {
+                                Thread.Sleep(500);
+                            }
+
+
+                            string fileName = sortedFiles[j].Replace(this.SourceFilePath, "");//Path.GetFileName(files[j]);
+                            string currentFile = this.DestinationFilePath + fileName;
+                            string dipath = Path.GetDirectoryName(currentFile);
+                            Directory.CreateDirectory(dipath);
+                            int newmodif = 0;
+                            if (File.Exists(currentFile) && this.SaveType == 1) // determine the save type
+                            {
+                                File.Delete(currentFile);
+                            }
+                            if (File.Exists(currentFile) && this.SaveType == 2)
+                            {
+                                DateTime modificationFileSrc = File.GetLastWriteTime(sortedFiles[j]);
+                                DateTime modificationFileDest = File.GetLastWriteTime(currentFile);
+                                newmodif = DateTime.Compare(modificationFileSrc, modificationFileDest);
+                            }
+                            if (newmodif > 1)
+                            {
+                                File.Delete(currentFile);
+                            }
+                            var myFile = File.Create(currentFile);
+                            myFile.Close();
+                            viewModel.saveFile(sortedFiles[j], currentFile);
+
+                            FileInfo fileInfos = new FileInfo(currentFile);
+                            filesSize += fileInfos.Length;
+                            this.NbFilesLeftToDo++;
+                            this.Progression = this.NbFilesLeftToDo*100 / this.TotalFileToCopy;
+
+                            // Update
+                            this.viewModel.sendJobObserver(this.name, this.state, this.progression);
                         }
 
-                        // Actualisation
-                        //this.viewModel.sendJobObserver(this.name, this.state, this.progression);
-                        Thread.Sleep(1000);
+                        // Decrypt
+                        encryptDecrypt(sortedFiles);
                     }
 
                 }
-                catch (Exception ex)
+                else // Error
                 {
-                    Trace.WriteLine(ex);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("La source ou la destination n'est pas un dossier");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex);
+            }
+            // Finish
+            this.state = "Ended";
+            this.viewModel.sendJobObserver(this.name, this.state, this.progression);
+            Thread.Sleep(500);
+            this.Progression = 0;
+            this.viewModel.sendJobObserver(this.name, this.state, this.progression);
         }
 
         public string Name
@@ -271,7 +350,7 @@ namespace EasySave
             set { this.totalFileToCopy = value; }
         }
 
-        public int TotalFileSize
+        public long TotalFileSize
         {
             get { return this.totalFileSize; }
             set { this.totalFileSize = value; }
