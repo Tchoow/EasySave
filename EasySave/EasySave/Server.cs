@@ -12,6 +12,15 @@ namespace EasySave
     {
         private const string serverAdr = "127.0.0.1";
         private const int serverPort = 20167;
+        private Socket _serverSocket;
+
+
+        public Socket serverSocket
+        {
+            get { return _serverSocket; }
+            set { _serverSocket = value; }
+        }
+
 
         public Server()
         {
@@ -35,34 +44,54 @@ namespace EasySave
         {
             Socket socketClient = socketServ.Accept();
             Trace.WriteLine($"Nouvelle connexion : {socketClient.RemoteEndPoint.ToString()}");
-
+            
             return socketClient;
         }
-        public void ListenNetwork(Socket serv, List<Job> jobs)
+        public void ListenNetwork(List<Job> jobs)
         {
-            byte[] buffer = new byte[8192];
-            int bytesRead;
+            
+                byte[] buffer = new byte[8192];
+                int bytesRead;
+                string msgtosend = "";
                 try
                 {
-                    bytesRead = serv.Receive(buffer);
+                bytesRead = this._serverSocket.Receive(buffer);
+                
                     if (bytesRead > 0)
                     {
                         string messageRead = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                        Trace.WriteLine("Client : " + messageRead);
-                        string msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                    
+                        switch (messageRead)
+                        {
+                            case "getjoblist":
+                                msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                                break;
+                            case "playjob":
+                                break;
+                            //run job index
+                            case "pausejob":
+                                break;
+                            case "stopjob":
+                                break;
+                                //pausejob
+                            default:
+                                msgtosend = JsonConvert.SerializeObject(jobs, Formatting.Indented);
+                                break;
+                        }
                         byte[] bufferReponse = Encoding.ASCII.GetBytes(msgtosend);
-                        serv.Send(bufferReponse);
+                        Trace.WriteLine("send");
+                        this.serverSocket.Send(bufferReponse);
                     }
                 }
                 catch (Exception)
                 {
                     return;
-                }
+                }            
         }
-        public void CloseSocket(Socket serv)
+        public void CloseSocket()
         {
-            serv.Shutdown(SocketShutdown.Both);
-            serv.Close();
+            this.serverSocket.Shutdown(SocketShutdown.Both);
+            this.serverSocket.Close();
         }
     }
 }

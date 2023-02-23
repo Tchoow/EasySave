@@ -8,18 +8,27 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows;
 
-namespace remote_interface
+namespace Remote_interface
 {
     class Client
     {
         private IPAddress ipadr;
         private int servport;
+        private Socket _connectedSocket { get; set; }
+
+        public Socket connectedSocket
+        {
+            get { return _connectedSocket; }
+            set { _connectedSocket = value; }
+        }
+
         public Client(IPAddress ip, int serverport)
         {
             this.ipadr = ip;
             this.servport = serverport;
+            _connectedSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
-        public Socket SeConnecter()
+        public void SeConnecter()
         {
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -27,19 +36,15 @@ namespace remote_interface
 
             socket.Connect(serverEndPoint);
 
-            return socket;
+            this.connectedSocket = socket;
         }
-        public List<Job> ListenNetwork(Socket client)
+        public List<Job> ListenNetwork()
         {
-            string messageReponse = "les jobs en cours";
-            byte[] bufferReponse = Encoding.ASCII.GetBytes(messageReponse);
-            Trace.WriteLine(bufferReponse);
-            client.Send(bufferReponse);
             int bytesRead;
             try
             {
                 byte[] buffer = new byte[8192]; ;
-                bytesRead = client.Receive(buffer);
+                bytesRead = connectedSocket.Receive(buffer);
                 if (bytesRead > 0)
                 {
                     string messageRead = Encoding.ASCII.GetString(buffer, 0, bytesRead);
@@ -54,10 +59,15 @@ namespace remote_interface
             return new List<Job>();
             
         }
-        public void CloseSocket(Socket client)
+        public void CloseSocket()
         {
-            client.Shutdown(SocketShutdown.Both);
-            client.Close();
+            _connectedSocket.Shutdown(SocketShutdown.Both);
+            _connectedSocket.Close();
+        }
+        public void Request(string message)
+        {
+            byte[] bufferSend = Encoding.ASCII.GetBytes(message);
+            _connectedSocket.Send(bufferSend);
         }
     }
 }

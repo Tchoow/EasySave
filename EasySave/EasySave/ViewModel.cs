@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using System.Net.Sockets;
 
 namespace EasySave
 {
@@ -59,6 +60,8 @@ namespace EasySave
         public List<Log> getLogsLst(string fileName) { return this.model.getLogsLst(fileName);  } 
         public FileInfo[] getLogsFiles() { return this.model.getLogsFiles();  }
 
-
+        // Remote interface 
+        public void RunServer() { this.model.RunServer(); }
+        public void ServerListen(){ this.model.ServerListen(); }
     }
 }

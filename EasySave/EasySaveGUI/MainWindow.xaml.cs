@@ -25,7 +25,6 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
-        private Server serv;
         Thread serverThread;
         private string frameName;
 
@@ -47,16 +46,17 @@ namespace EasySaveGUI
             this.viewModel = new ViewModel(this);
             viewModel.setLangueIndex(comboLanguage.SelectedIndex);
             this.UpdateTrad();
-            serv = new Server();
 
             this.serverThread = new Thread(() => {
+                viewModel.RunServer();
                 while (true)
                 {
-                    Socket servsocket = serv.Initialize();
+                    viewModel.ServerListen();
+                    /*Socket servsocket = serv.Initialize();
                     Socket accepted = serv.AcceptConnexion(servsocket);
                     serv.ListenNetwork(accepted, viewModel.getJobsList());
                     serv.CloseSocket(servsocket);
-                    serv.CloseSocket(accepted);
+                    serv.CloseSocket(accepted);*/
                 }
 
             });

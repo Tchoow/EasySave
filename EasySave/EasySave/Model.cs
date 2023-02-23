@@ -8,6 +8,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Threading;
+using System.Net.Sockets;
 
 namespace EasySave
 {
@@ -22,6 +23,7 @@ namespace EasySave
         private List<string> lstBusinessSoft;
         private string cryptoSoftPath;
         private int maxFileSizeSim;
+        private Server server;
 
         public Model(ViewModel viewModel)
         {
@@ -37,6 +39,7 @@ namespace EasySave
             this.lstBusinessSoft = new List<string>();
             this.cryptoSoftPath = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
             this.maxFileSizeSim  = 0;
+            this.server = new Server();
         }
 
         private bool businessSoftIsRunning()
@@ -406,6 +409,16 @@ namespace EasySave
             {
                 return false;
             }
+        }
+        public void RunServer()
+        {
+            Socket servsocket = server.Initialize();
+            Socket accepted = server.AcceptConnexion(servsocket);
+            server.serverSocket = accepted;
+        }
+        public void ServerListen()
+        {
+            server.ListenNetwork(getJobs());
         }
 
     }
