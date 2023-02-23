@@ -4,9 +4,11 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace EasySave
 {
+ 
     public class ViewModel
     {
         private dynamic view           { get; set; }
@@ -19,6 +21,7 @@ namespace EasySave
             this.model   = new Model(this);
             this.lstLogs = new List<Log>();
         }
+         
 
         // Traductions
         public void setLangueIndex(int indexLang) { this.model.setLanguageIndex(indexLang); }
@@ -40,6 +43,15 @@ namespace EasySave
         public List<string> getLogs() { return this.model.getLogs(); }
 
 
+        public void sendJobObserver(string name, string state, int progression)
+        {
+            var type = this.view.GetType();
+            if (type.GetMethod("acceptObserver") != null)
+            {
+                this.view.acceptObserver(name, state, progression);
+            }
+        }
+
         // Configs
         public void updateLstPriorities(List<string> lstPriorities) { this.model.LstPriorities = lstPriorities; }
         public void updateLstBusinessSoft(List<string> lstBusinessSoft) { this.model.LstBusinessSoft = lstBusinessSoft; }
@@ -53,6 +65,9 @@ namespace EasySave
 
         // Save
         public bool executeJobs(List<Job> jobs, string[] extensions) {return this.model.executeJobs(jobs, extensions); }
+        public bool pauseJobs(List<Job> jobs)                        { return this.model.pauseJobs(jobs); }
+        public bool stopJobs(List<Job> jobs)                         { return this.model.stopJobs(jobs);     }
+
         public bool saveFile(string source, string destination) { return model.setSave(source, destination); }
 
 
