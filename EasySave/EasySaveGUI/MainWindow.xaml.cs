@@ -90,8 +90,8 @@ namespace EasySaveGUI
 
         public void acceptObserver(string name, string state, int progression)
         {
-            this.pageExec.updateInfos(name, state, progression);
-            Trace.WriteLine(name + state + progression);
+             this.pageExec.updateInfos(name, state, progression);
+             Trace.WriteLine(name + state + progression);
         }
 
 

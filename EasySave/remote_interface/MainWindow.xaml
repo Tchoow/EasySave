@@ -29,9 +29,9 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="ipinput" HorizontalAlignment="Left" Margin="16,324,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="17"/>
+        <TextBox Text="127.0.0.1" x:Name="ipinput" HorizontalAlignment="Left" Margin="16,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="17" />
         <Label Content="Ip adress" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" Margin="16,298,0,0"/>
-        <TextBox x:Name="portinput" HorizontalAlignment="Left" Margin="16,362,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="17"/>
+        <TextBox Text="20167" x:Name="portinput" HorizontalAlignment="Left" Margin="16,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="17"/>
         <Label Content="Port" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="120" Margin="16,338,0,0"/>
         <Button Content="Connect" HorizontalAlignment="Left" Height="21" Margin="30,387,0,0" VerticalAlignment="Top" Width="92" Background="#FF5BDCF9" Click="Button_Click_connect" BorderBrush="White">
             <Button.Resources>

@@ -16,7 +16,7 @@ namespace Remote_interface
         public void SetClient(IPAddress ip, int port){ client = new Client(ip, port); }
         public void connectClient() { client.SeConnecter(); }
         public Socket getClientConnectedSocket() { return client.connectedSocket; }
-        public List<Job> ListenNetwork() { return client.ListenNetwork(); }
+        public dynamic ListenNetwork() { return client.ListenNetwork(); }
         public void CloseSocket() { client.CloseSocket(); }
         public void SendMessage(string message, List<Job> jobs) { client.Request(message, jobs); }
         public bool IsConnected() { 

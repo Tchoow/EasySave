@@ -56,3 +56,32 @@ C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\obj\Debug\n
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.dll
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.pdb
 C:\Users\Théo LAVIE\source\repos\EasySave\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.genruntimeconfig.cache
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.deps.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.runtimeconfig.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.runtimeconfig.dev.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.exe
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.exe
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.deps.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.runtimeconfig.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.runtimeconfig.dev.json
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.dll
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Remote_interface.pdb
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.dll
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.pdb
+D:\apps\projet\easy\EasySave\remote_interface\bin\Debug\netcoreapp3.1\EasySave.dll.config
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.csproj.AssemblyReference.cache
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\App.g.cs
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface_MarkupCompile.cache
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface_MarkupCompile.lref
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.g.resources
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.GeneratedMSBuildEditorConfig.editorconfig
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.AssemblyInfoInputs.cache
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.AssemblyInfo.cs
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.csproj.CoreCompileInputs.cache
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.csproj.CopyComplete
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.dll
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.pdb
+D:\apps\projet\easy\EasySave\remote_interface\obj\Debug\netcoreapp3.1\Remote_interface.genruntimeconfig.cache

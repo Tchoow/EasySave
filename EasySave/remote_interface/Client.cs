@@ -48,15 +48,25 @@ namespace Remote_interface
                 if (bytesRead > 0)
                 {
                     string messageRead = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    List<Job> receivedJob = JsonConvert.DeserializeObject<List<Job>>(messageRead);// désérialisez la chaîne en un objet de la classe Job                  
-                    return receivedJob;
+                    if (messageRead.StartsWith("update"))
+                    {
+                        string[] message = messageRead.Split("====");
+                        Trace.WriteLine(message);
+                        Trace.WriteLine(message.GetType());
+                        return message;
+                    }
+                    else
+                    {
+                        List<Job> receivedJob = JsonConvert.DeserializeObject<List<Job>>(messageRead);// désérialisez la chaîne en un objet de la classe Job                  
+                        return receivedJob;
+                    }
                 }
             }
             catch (Exception)
             {
-               
+               return null;
             }
-            return new List<Job>();
+            return null;
             
         }
         public void CloseSocket()

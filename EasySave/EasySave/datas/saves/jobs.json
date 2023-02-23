@@ -22,19 +22,6 @@
     "TotalFileSize": 41706,
     "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-16T10:22:55.2810787+01:00",
-    "IsSelect": false
-  },
-  {
-    "Name": "test11",
-    "SourceFilePath": "D:\\\\test",
-    "DestinationFilePath": "D:\\\\dest\\dest2",
-    "SaveType": 1,
-    "State": "Paused",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 0,
-    "Progression": 0,
     "Created": "2023-02-16T10:30:34.6533305+01:00",
     "IsSelect": false
   },
@@ -139,46 +126,7 @@
     "TotalFileSize": 41706,
     "NbFilesLeftToDo": 0,
     "Progression": 0,
-    "Created": "2023-02-16T10:30:36.0796433+01:00",
-    "IsSelect": false
-  },
-  {
-    "Name": "test11",
-    "SourceFilePath": "D:\\\\test",
-    "DestinationFilePath": "D:\\\\dest\\dest2",
-    "SaveType": 1,
-    "State": "Paused",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 0,
-    "Progression": 0,
     "Created": "2023-02-16T10:30:36.2567115+01:00",
-    "IsSelect": false
-  },
-  {
-    "Name": "test11",
-    "SourceFilePath": "D:\\\\test",
-    "DestinationFilePath": "D:\\\\dest\\dest2",
-    "SaveType": 1,
-    "State": "Paused",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 0,
-    "Progression": 0,
-    "Created": "2023-02-16T10:30:36.4268385+01:00",
-    "IsSelect": false
-  },
-  {
-    "Name": "test11",
-    "SourceFilePath": "D:\\\\test",
-    "DestinationFilePath": "D:\\\\dest\\dest2",
-    "SaveType": 1,
-    "State": "Paused",
-    "TotalFileToCopy": 3,
-    "TotalFileSize": 41706,
-    "NbFilesLeftToDo": 0,
-    "Progression": 0,
-    "Created": "2023-02-16T10:30:36.5829296+01:00",
     "IsSelect": false
   },
   {
@@ -244,6 +192,19 @@
     "NbFilesLeftToDo": 0,
     "Progression": 0,
     "Created": "2023-02-16T10:30:37.4327004+01:00",
+    "IsSelect": false
+  },
+  {
+    "Name": "tsesesese",
+    "SourceFilePath": "D:\\test",
+    "DestinationFilePath": "D:\\test2",
+    "SaveType": 1,
+    "State": "Not started",
+    "TotalFileToCopy": 200,
+    "TotalFileSize": 20000000,
+    "NbFilesLeftToDo": 0,
+    "Progression": 0,
+    "Created": "2023-02-23T20:20:21.0281297+01:00",
     "IsSelect": false
   }
 ]

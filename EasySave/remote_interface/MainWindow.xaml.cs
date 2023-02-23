@@ -82,12 +82,34 @@ namespace Remote_interface
             {
                 while (true)
                 {
-                    List<EasySave.Job> jobs = new List<EasySave.Job>(viewModel.ListenNetwork());
-
-                    // Mettre à jour la DataGrid sur le thread de l'interface utilisateur
+                    var jobs = viewModel.ListenNetwork();
+                if (jobs is List<EasySave.Job>)
+                {
                     Dispatcher.Invoke(() => {
                         jobdatagrid.ItemsSource = new List<EasySave.Job>(jobs);
                     });
+                }
+                else if (jobs is string[] && jobs.Length <= 4)
+                {
+                        Dispatcher.Invoke(() =>
+                        {
+                            // Get jobs with item source
+                            List<EasySave.Job> tempJobs = (List<EasySave.Job>)jobdatagrid.ItemsSource;
+
+                            // Update list with new datas
+                            int index = tempJobs.FindIndex((job) => job.Name == jobs[1]);
+                            tempJobs[index].State = jobs[2];
+                            tempJobs[index].Progression = Convert.ToInt32(jobs[3]);
+
+                            // Set the List to Item Source
+                            jobdatagrid.ItemsSource = tempJobs;
+                            jobdatagrid.Items.Refresh();
+                        });
+                    }
+                      
+                    
+                    
+                    // Mettre à jour la DataGrid sur le thread de l'interface utilisateur
                 }
             });
 
@@ -100,7 +122,7 @@ namespace Remote_interface
 
         private void Button_Click_play(object sender, RoutedEventArgs e)
         {
-            if(jobSelected.Count > 0)
+            if(jobSelected != null)
             {
                 viewModel.SendMessage("playjob", jobSelected);
             }
