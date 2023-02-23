@@ -24,7 +24,6 @@ namespace EasySave
         private int maxFileSizeSim;
         private Dictionary<Thread, Job> lstThreadJobs;
 
-
         public Model(ViewModel viewModel)
         {
             // VM
@@ -41,8 +40,7 @@ namespace EasySave
             this.maxFileSizeSim  = 0;
             this.lstThreadJobs   = new Dictionary<Thread, Job>();
 
-        }
-
+        }   
 
 
         // Config

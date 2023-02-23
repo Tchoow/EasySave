@@ -59,7 +59,7 @@
                 <DataGridTemplateColumn  x:Name="Progr" Header="Progress"  Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ProgressBar Value="{Binding Progression}" Maximum="100" />
+                            <ProgressBar Foreground="{Binding State, Converter={StaticResource ColorState}}"  Value="{Binding Progression}" Maximum="100" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
