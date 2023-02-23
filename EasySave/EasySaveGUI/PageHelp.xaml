@@ -21,7 +21,7 @@ Notre équipe d'assistance est toujours prête à vous aider à résoudre vos pr
                La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin.
             </TextBlock>
         </Grid>
-        <Button x:Name="opendoc" Content="Open documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White">
+        <Button x:Name="opendoc" Content="Open documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White" Click="opendoc_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
                     <GradientStop Color="#74b9ff" Offset="0.99"/>

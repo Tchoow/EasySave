@@ -246,6 +246,7 @@ namespace EasySave
                     jobs[i].setBusinessSoft(this.lstBusinessSoft);
                     jobs[i].setBigFileLength(this.maxFileSizeSim);
                     jobs[i].setCryptoSoftPath(this.cryptoSoftPath);
+                    jobs[i].setExtensions(extensions);
 
                     // Start
                     newJob.Start();
