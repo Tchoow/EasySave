@@ -38,7 +38,7 @@ namespace Remote_interface
 
             this.connectedSocket = socket;
         }
-        public List<Job> ListenNetwork()
+        public dynamic ListenNetwork()
         {
             int bytesRead;
             try

@@ -54,6 +54,7 @@ namespace EasySaveGUI
                 {
                     (string result,List<Job> jobs) = viewModel.ServerListen();
                     Trace.WriteLine(result);
+                    
                     string[] extensions = { "" };
                     switch (result)
                     {
@@ -69,17 +70,13 @@ namespace EasySaveGUI
                         default:
                             break;
                     }
-                    /*Socket servsocket = serv.Initialize();
-                    Socket accepted = serv.AcceptConnexion(servsocket);
-                    serv.ListenNetwork(accepted, viewModel.getJobsList());
-                    serv.CloseSocket(servsocket);
-                    serv.CloseSocket(accepted);*/
                 }
 
             });
             serverThread.IsBackground = true;
             serverThread.Start();
         }
+       
         private void UpdateTrad()
         {
             JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
@@ -94,6 +91,7 @@ namespace EasySaveGUI
         public void acceptObserver(string name, string state, int progression)
         {
             this.pageExec.updateInfos(name, state, progression);
+            Trace.WriteLine(name + state + progression);
         }
 
 

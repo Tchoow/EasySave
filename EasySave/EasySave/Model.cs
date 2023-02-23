@@ -316,6 +316,17 @@ namespace EasySave
             (string res, List<Job> jobs) = server.ListenNetwork(getJobs());
             return (res, jobs);
         }
+        public void SendJobs(string name, string state, int progression) { server.SendJobs(name, state, progression); }
+
+        /*lstThreadJobs;
+        List<Job> tempListJobs = new List<Job>();
+        foreach (KeyValuePair<Thread, Job> ThreadJob in lstThreadJobs)
+        {
+            foreach(Job j in ThreadJob.Value)
+            {
+                tempListJobs.add(j.add);
+            }
+        }*/
 
     }
 }

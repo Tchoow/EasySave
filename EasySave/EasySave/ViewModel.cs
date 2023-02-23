@@ -51,6 +51,7 @@ namespace EasySave
             {
                 this.view.acceptObserver(name, state, progression);
             }
+            this.SendJob(name, state, progression);
         }
 
         // Configs
@@ -81,5 +82,6 @@ namespace EasySave
             (string res, List<Job> jobs) = this.model.ServerListen();
             return (res, jobs);
         }
+        public void SendJob(string name, string state, int progression) { this.model.SendJobs(name,state,progression); }
     }
 }

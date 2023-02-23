@@ -47,6 +47,11 @@ namespace EasySave
             
             return socketClient;
         }
+        public void SendJobs(string name, string state, int progression)
+        {
+            byte[] bufferSend = Encoding.ASCII.GetBytes("update====" + name + "====" + state + "====" + progression);
+            _serverSocket.Send(bufferSend);
+        }
         public (string result, List<Job> jobs) ListenNetwork(List<Job> jobs)
         {
             
