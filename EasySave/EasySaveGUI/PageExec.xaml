@@ -22,14 +22,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="pauseselectedjob" Content="Pause" Margin="308,17,0,0" VerticalAlignment="Top" Background="#d35400" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
+        <Button x:Name="pauseselectedjob" Content="Pause" Margin="308,17,0,0" VerticalAlignment="Top" Background="#d35400" HorizontalAlignment="Left" Width="48"  Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26" Click="pause_sekectedJobs_btn">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="stopselectedjob" Content="Stop" Margin="367,17,0,0" VerticalAlignment="Top" Background="#c0392b" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
+        <Button x:Name="stopselectedjob" Content="Stop" Margin="367,17,0,0" VerticalAlignment="Top" Background="#c0392b" HorizontalAlignment="Left" Width="48"  Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26" Click="stop_sekectedJobs_btn">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="4"></Setter>
