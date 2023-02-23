@@ -59,13 +59,11 @@ namespace EasySaveGUI
                 {
                     if (extension_text.Text != "")
                     {
-                        Trace.WriteLine("chiffre extens");
                         extensions = extension_text.Text.Split(",");
                         this.viewModel.executeJobs(jobs, extensions);
                     }
                     else
                     {
-                        Trace.WriteLine("chiffre tout");
                         this.viewModel.executeJobs(jobs, new string[] { "" });
                     }
 
