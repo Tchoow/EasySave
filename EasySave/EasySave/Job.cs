@@ -289,9 +289,15 @@ namespace EasySave
                             // Update
                             this.viewModel.sendJobObserver(this.name, this.state, this.progression);
                         }
-
                         // Decrypt
                         encryptDecrypt(sortedFiles);
+
+                        // Logs
+                        DateTime endTime  = DateTime.Now;
+                        TimeSpan execTime = endTime - startTime;
+                        // Logs
+                        Log log = new Log("copy - " + this.Name, this.SourceFilePath + "\\", this.DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
+                        log.saveLogInFile();
                     }
 
                 }
