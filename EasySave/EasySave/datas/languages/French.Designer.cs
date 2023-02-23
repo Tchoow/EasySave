@@ -70,6 +70,16 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l&apos;école CESI. L&apos;objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+        ///Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialit [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string aboutdesc {
+            get {
+                return ResourceManager.GetString("aboutdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à À propos.
         /// </summary>
         internal static string AboutMainWindow {
@@ -250,6 +260,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin..
+        /// </summary>
+        internal static string docudesc {
+            get {
+                return ResourceManager.GetString("docudesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur.
         /// </summary>
         internal static string error {
@@ -354,6 +373,15 @@ namespace EasySave.datas.languages {
         internal static string help {
             get {
                 return ResourceManager.GetString("help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Notre équipe d&apos;assistance est toujours prête à vous aider à résoudre vos problèmes et répondre à vos questions. Si vous avez besoin d&apos;aide pour utiliser notre application, n&apos;hésitez pas à nous contacter par mail ou par téléphone..
+        /// </summary>
+        internal static string helpdesc {
+            get {
+                return ResourceManager.GetString("helpdesc", resourceCulture);
             }
         }
         

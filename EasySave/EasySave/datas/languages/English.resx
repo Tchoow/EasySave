@@ -120,6 +120,12 @@
   <data name="about" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="aboutdesc" xml:space="preserve">
+    <value>Easy Save (group 7) is a university project developed by 3rd year computer science students at CESI. The goal of this project is to create a simple and efficient data backup application.
+Our team worked hard to develop an application that offers an intuitive and easy-to-use user experience while providing advanced data backup features. We have implemented advanced security mechanisms to ensure the confidentiality and integrity of the backed up data.
+
+</value>
+  </data>
   <data name="AboutMainWindow" xml:space="preserve">
     <value>About us</value>
   </data>
@@ -180,6 +186,9 @@
   <data name="docu" xml:space="preserve">
     <value>Documentation</value>
   </data>
+  <data name="docudesc" xml:space="preserve">
+    <value>The documentation is available online and you can access it at any time to get answers to your questions or to discover new features. It is organized in a clear and structured manner so you can easily find the information you need.</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -215,6 +224,9 @@
   </data>
   <data name="help" xml:space="preserve">
     <value>Help</value>
+  </data>
+  <data name="helpdesc" xml:space="preserve">
+    <value>Our support team is always ready to help you solve your problems and answer your questions. If you need help using our application, please feel free to contact us by email or phone.</value>
   </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Help</value>

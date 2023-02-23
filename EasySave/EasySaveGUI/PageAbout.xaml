@@ -11,10 +11,11 @@
     <Grid Background="White">
         <TextBlock x:Name="about" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="About" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
-            <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">
-Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l'école CESI. L'objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+            <TextBlock x:Name="aboutusdesc" Text="Easy Save (group 7) is a university project developed by 3rd year computer science students at CESI. The goal of this project is to create a simple and efficient data backup application.
+Our team worked hard to develop an application that offers an intuitive and easy-to-use user experience while providing advanced data backup features. We have implemented advanced security mechanisms to ensure the confidentiality and integrity of the backed up data.
 
-Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialité et l'intégrité des données sauvegardées.
+Translated with www.DeepL.com/Translator (free version)" TextWrapping="Wrap"  Margin="5,5,5,10">
+ 
             </TextBlock>
         </Grid>
     </Grid>

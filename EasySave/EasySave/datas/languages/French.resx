@@ -120,6 +120,10 @@
   <data name="about" xml:space="preserve">
     <value>À propos</value>
   </data>
+  <data name="aboutdesc" xml:space="preserve">
+    <value>Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l'école CESI. L'objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialité et l'intégrité des données sauvegardées.</value>
+  </data>
   <data name="AboutMainWindow" xml:space="preserve">
     <value>À propos</value>
   </data>
@@ -180,6 +184,9 @@
   <data name="docu" xml:space="preserve">
     <value>Documentation</value>
   </data>
+  <data name="docudesc" xml:space="preserve">
+    <value>La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin.</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
@@ -215,6 +222,9 @@
   </data>
   <data name="help" xml:space="preserve">
     <value>Aide</value>
+  </data>
+  <data name="helpdesc" xml:space="preserve">
+    <value>Notre équipe d'assistance est toujours prête à vous aider à résoudre vos problèmes et répondre à vos questions. Si vous avez besoin d'aide pour utiliser notre application, n'hésitez pas à nous contacter par mail ou par téléphone.</value>
   </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Aide</value>

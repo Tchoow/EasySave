@@ -34,6 +34,8 @@ namespace EasySaveGUI
             doc.Text = viewModel.getTraduction("docu");
             help.Text = viewModel.getTraduction("help");
             opendoc.Content = viewModel.getTraduction("opendoc");
+            helpdesc.Text = viewModel.getTraduction("helpdesc");
+            docudesc.Text = viewModel.getTraduction("docudesc");
         }
         public void btnPreview()
         {

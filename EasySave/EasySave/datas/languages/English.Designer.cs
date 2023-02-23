@@ -70,6 +70,18 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Easy Save (group 7) is a university project developed by 3rd year computer science students at CESI. The goal of this project is to create a simple and efficient data backup application.
+        ///Our team worked hard to develop an application that offers an intuitive and easy-to-use user experience while providing advanced data backup features. We have implemented advanced security mechanisms to ensure the confidentiality and integrity of the backed up data.
+        ///
+        ///.
+        /// </summary>
+        internal static string aboutdesc {
+            get {
+                return ResourceManager.GetString("aboutdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à About us.
         /// </summary>
         internal static string AboutMainWindow {
@@ -250,6 +262,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à The documentation is available online and you can access it at any time to get answers to your questions or to discover new features. It is organized in a clear and structured manner so you can easily find the information you need..
+        /// </summary>
+        internal static string docudesc {
+            get {
+                return ResourceManager.GetString("docudesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Error.
         /// </summary>
         internal static string error {
@@ -354,6 +375,15 @@ namespace EasySave.datas.languages {
         internal static string help {
             get {
                 return ResourceManager.GetString("help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Our support team is always ready to help you solve your problems and answer your questions. If you need help using our application, please feel free to contact us by email or phone..
+        /// </summary>
+        internal static string helpdesc {
+            get {
+                return ResourceManager.GetString("helpdesc", resourceCulture);
             }
         }
         
