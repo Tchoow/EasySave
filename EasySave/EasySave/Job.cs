@@ -154,16 +154,23 @@ namespace EasySave
             sortedList = files.OrderBy(x => this.lstPriorities.IndexOf(Path.GetExtension(x))).ToList();
             sortedList.Reverse();
 
-            // Sort With files size (big files)
-            foreach (string file in files)
+
+            if (this.bigFileLength != 0)
             {
-                long fileLength = new FileInfo(file).Length;
-                if (fileLength >= this.bigFileLength)
+                
+                // Sort With files size (big files)
+                foreach (string file in files)
                 {
-                    sortedList.Remove(file);
-                    sortedList.Add   (file);
+                    long fileLength = new FileInfo(file).Length;
+                    if (fileLength >= this.bigFileLength)
+                    {
+                        sortedList.Remove(file);
+                        sortedList.Add(file);
+                    }
                 }
             }
+
+
             return sortedList;
         }
 
