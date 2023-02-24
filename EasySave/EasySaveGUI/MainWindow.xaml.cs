@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using EasySave;
+using System.Threading;
+using System.IO;
+using System.Net.Sockets;
 
 namespace EasySaveGUI
 {
@@ -22,44 +25,150 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
+        Thread serverThread;
+        private string frameName;
+        private PageExec pageExec;
+
 
         public MainWindow()
         {
+            Mutex myMutex;
+            bool aIsNewInstance = false;
+            myMutex = new Mutex(true, "MyWPFApplication", out aIsNewInstance);
+            if (!aIsNewInstance)
+            {
+                MessageBox.Show("Already an instance is running...");
+                App.Current.Shutdown();
+            }
             viewModel = new ViewModel(this);
             InitializeComponent();
             this.ContentFrame = (Frame)FindName("CFrame");
             this.ContentFrame.Content = new PageHome();
             this.viewModel = new ViewModel(this);
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            this.UpdateTrad();
+
+            this.serverThread = new Thread(() => {
+                viewModel.RunServer();
+                while (true)
+                {
+                    (string result,List<Job> jobs) = viewModel.ServerListen();
+                    Trace.WriteLine(result);
+                    
+                    string[] extensions = { "" };
+                    switch (result)
+                    {
+                        case "play":
+                            viewModel.executeJobs(jobs, extensions);
+                            break;
+                        case "pause":
+                            viewModel.pauseJobs(jobs);
+                            break;
+                        case "stop":
+                            viewModel.stopJobs(jobs);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            });
+            serverThread.IsBackground = true;
+            serverThread.Start();
         }
+       
+        private void UpdateTrad()
+        {
+            JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
+            ExecBtn.Content  = viewModel.getTraduction("ExecutionMainWindow");
+            LogBtn.Content   = viewModel.getTraduction("LogsMainWindow");
+            SettBtn.Content  = viewModel.getTraduction("SettingsMainWindow");
+            HelpBtn.Content  = viewModel.getTraduction("HelpMainWindow");
+            Aboutbtn.Content = viewModel.getTraduction("AboutMainWindow");
+        }
+
+
+        public void acceptObserver(string name, string state, int progression)
+        {
+             this.pageExec.updateInfos(name, state, progression);
+             Trace.WriteLine(name + state + progression);
+        }
+
+
 
         private void btnJob(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageJob(viewModel);
+            frameName = "Jobs";
         }
 
-        private void btnLang(object sender, RoutedEventArgs e)
+        private void btnHome(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageLang();
+            this.ContentFrame.Content = new PageHome();
+        }
+
+        private void btnSett(object sender, RoutedEventArgs e)
+        {
+            this.ContentFrame.Content = new PageSett(this.viewModel);
+            frameName = "Sett";
         }
 
         private void btnAbout(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageAbout();
+            this.ContentFrame.Content = new PageAbout(this.viewModel);
+            frameName = "About";
         }
 
         private void btnHelp(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageHelp();
+            this.ContentFrame.Content = new PageHelp(this.viewModel);
+            frameName = "Help";
         }
 
         private void btnLogs(object sender, RoutedEventArgs e)
         {
             this.ContentFrame.Content = new PageLogs(this.viewModel);
+            frameName = "Logs";
         }
 
         private void btnExec(object sender, RoutedEventArgs e)
         {
-            this.ContentFrame.Content = new PageExec(viewModel);
+            this.pageExec = new PageExec(viewModel);
+            this.ContentFrame.Content = this.pageExec;
+            frameName = "Exec";
+        }
+
+        private void comboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            viewModel.setLangueIndex(comboLanguage.SelectedIndex);
+            UpdateTrad();
+            if (this.ContentFrame != null)
+            {
+                switch (frameName)
+                {
+                    case "Jobs":
+                        this.ContentFrame.Content = new PageJob(viewModel);
+                        break;
+                    case "Sett":
+                        this.ContentFrame.Content = new PageSett(this.viewModel);
+                        break;
+                    case "About":
+                        this.ContentFrame.Content = new PageAbout(this.viewModel);
+                        break;
+                    case "Help":
+                        this.ContentFrame.Content = new PageHelp(this.viewModel);
+                        break;
+                    case "Logs":
+                        this.ContentFrame.Content = new PageLogs(this.viewModel);
+                        break;
+                    case "Exec":
+                        this.pageExec = new PageExec(viewModel);
+                        this.ContentFrame.Content = this.pageExec;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

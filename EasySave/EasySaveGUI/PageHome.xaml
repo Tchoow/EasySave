@@ -5,23 +5,49 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageHome">
 
     <Grid Background="White">
-        <Border BorderThickness="1" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="23,184,0,0" VerticalAlignment="Top" Width="111">
+        <Border BorderThickness="1" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="45,184,0,0" VerticalAlignment="Top" Width="111">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFF6602"/>
-                    <GradientStop Color="#FFFF4949" Offset="1"/>
+                    <GradientStop Color="#74b9ff"/>
+                    <GradientStop Color="#3498db" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Image Source="assets/img/fast.png"/>
+
         </Border>
-        <Label Content="Welcome on Easy Save" FontSize="30" HorizontalAlignment="Left" Margin="144,51,0,0" VerticalAlignment="Top"/>
-        <Label Content="Made by Cesi_" FontSize="30" HorizontalAlignment="Left" Margin="199,101,0,0" VerticalAlignment="Top"/>
-        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="160,184,0,0" VerticalAlignment="Top" Width="111"/>
-        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="289,184,0,0" VerticalAlignment="Top" Width="111"/>
-        <Border BorderThickness="1" Background="#1abc9c" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="425,184,0,0" VerticalAlignment="Top" Width="111"/>
+        <Image Source="assets/img/ES_Main_Logo.png" Height="150" VerticalAlignment="Top" />
+
+        <Border BorderThickness="1" CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="196,184,0,0" VerticalAlignment="Top" Width="111">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#74b9ff"/>
+                    <GradientStop Color="#3498db" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Image Source="assets/img/security.png" />
+        </Border>
+        <Border BorderThickness="1"  CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="355,184,0,0" VerticalAlignment="Top" Width="111">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#74b9ff"/>
+                    <GradientStop Color="#3498db" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Image Source="assets/img/improvable.png" />
+        </Border>
+        <Border BorderThickness="1"  CornerRadius="10" HorizontalAlignment="Left" Height="111" Margin="504,184,0,0" VerticalAlignment="Top" Width="111">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#74b9ff"/>
+                    <GradientStop Color="#3498db" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Image Source="assets/img/community.png" />
+        </Border>
 
     </Grid>
 </Page>

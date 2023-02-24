@@ -5,36 +5,83 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageExec">
+
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="159*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Margin="10,16,0,0" Text="List of jobs" TextWrapping="Wrap" VerticalAlignment="Top" Width="123"  BorderBrush="Transparent"/>
-        <Button Content="Exec selected jobs" Margin="373,16,0,0" VerticalAlignment="Top" Background="#FF0068FF" HorizontalAlignment="Left" Width="111" Click="exec_selectedJobs_btn" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.487,0.406"/>
-        <Button Content="Exec all jobs"  Margin="489,15,0,0" VerticalAlignment="Top" Background="#FF7558C3" HorizontalAlignment="Left" Width="111" Foreground="White" FontWeight="Normal" Click="execAll_btn">
-
+        <TextBlock HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Executions" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="execselectedjob" Content="Start" Margin="247,17,0,0" VerticalAlignment="Top" Background="#27ae60" HorizontalAlignment="Left" Width="48" Click="exec_selectedJobs_btn" Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
         </Button>
-        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" SelectionChanged="jobdatagrid_SelectionChanged">
+        <Button x:Name="pauseselectedjob" Content="Pause" Margin="308,17,0,0" VerticalAlignment="Top" Background="#d35400" HorizontalAlignment="Left" Width="48"  Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26" Click="pause_sekectedJobs_btn">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="stopselectedjob" Content="Stop" Margin="367,17,0,0" VerticalAlignment="Top" Background="#c0392b" HorizontalAlignment="Left" Width="48"  Foreground="White" RenderTransformOrigin="0.487,0.406" FontStyle="Normal" BorderThickness="0" Height="26" Click="stop_sekectedJobs_btn">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="execalljob" Content="Exec all jobs"  Margin="457,15,0,0" VerticalAlignment="Top" Background="#27ae60" HorizontalAlignment="Left" Width="143" Foreground="White" FontWeight="Normal" Click="execAll_btn" BorderThickness="0" Height="28">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <DataGrid x:Name="jobdatagrid" AutoGenerateColumns="False" Margin="28,62,57,200" CanUserReorderColumns="False" SelectionChanged="jobdatagrid_SelectionChanged" BorderBrush="White" FontFamily="Verdana" >
+            <DataGrid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="DestinationFilePath" Binding="{Binding DestinationFilePath}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="SaveType" Binding="{Binding SaveType}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="State" Binding="{Binding State}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="TotalFileToCopy" Binding="{Binding TotalFileToCopy}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="TotalFileSize" Binding="{Binding TotalFileSize}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="NbFilesLeftToDo" Binding="{Binding NbFilesLeftToDo}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Progression" Binding="{Binding Progression}" Width="*" />
-                <DataGridTextColumn IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
+                <DataGridTextColumn x:Name="name" IsReadOnly="True" Header="Name"   Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn x:Name="srcfile" IsReadOnly="True" Header="SourceFilePath" Binding="{Binding SourceFilePath}" Width="*" />
+                <DataGridTextColumn x:Name="destfile" IsReadOnly="True" Header="DestinationFilePath" Binding="{Binding DestinationFilePath}" Width="*" />
+                <DataGridTextColumn x:Name="state" IsReadOnly="True" Header="State" Binding="{Binding State}" Width="*" />
+                <DataGridTextColumn x:Name="ttlfilecop" IsReadOnly="True" Header="TotalFileToCopy" Binding="{Binding TotalFileToCopy}" Width="*" />
+                <DataGridTextColumn x:Name="created" IsReadOnly="True" Header="Created" Binding="{Binding Created}" Width="*" />
+                <DataGridTemplateColumn  x:Name="Progr" Header="Progress"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ProgressBar Foreground="{Binding State, Converter={StaticResource ColorState}}"  Value="{Binding Progression}" Maximum="100" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="%" Binding="{Binding Progression}" Width="25"/>
+
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="28,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="fr-fr" Text="Activer le chiffrement"/></TextBlock>
-        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="282,316,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Height="57" Margin="28,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
-        <CheckBox x:Name="chiff_check" Content="CheckBox" HorizontalAlignment="Left" Height="16" Margin="154,268,0,0" VerticalAlignment="Top" Width="13" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked"/>
+        <TextBlock x:Name="cryptbtn" HorizontalAlignment="Left" Height="17" Margin="50,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"><Run Language="" Text="Activer le chiffrement"/></TextBlock>
+        <TextBox x:Name="extension_text" HorizontalAlignment="Left" Height="20" Margin="29,358,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" IsEnabled="False">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock x:Name="extensionslabel" HorizontalAlignment="Left" Height="20" Margin="28,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="572"><Run Text="Extentions de fichier à prendre en compte"/><Run Text=", chaque extension doit être séparée par une virgule "/><Run Text="(* pour tous)"/></TextBlock>
+        <CheckBox x:Name="chiff_check" Content="CheckBox" Background="#f1f1f1" Foreground="#74b9ff"  HorizontalAlignment="Left" Height="16" Margin="28,300,0,0" BorderBrush="#74b9ff"   VerticalAlignment="Top" Width="17" Unchecked="chiffrement_Checked" Checked="chiffrement_Checked" >
+            <CheckBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"></Setter>
+                </Style>
+            </CheckBox.Resources>
+        </CheckBox>
     </Grid>
 </Page>

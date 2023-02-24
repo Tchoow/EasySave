@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,28 +13,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasySave;
 
 namespace EasySaveGUI
 {
+
     public partial class PageHelp : Page
     {
-        public PageHelp()
+        ViewModel viewModel;
+
+
+        public PageHelp(ViewModel viewModel)
         {
             InitializeComponent();
-        }
-        public void btnPreview()
-        {
-
+            this.viewModel = viewModel;
+            UpdateTrad();
         }
 
-        public void btnJSON()
+        public void UpdateTrad()
         {
-
+            doc.Text = viewModel.getTraduction("docu");
+            help.Text = viewModel.getTraduction("help");
+            opendoc.Content = viewModel.getTraduction("opendoc");
+            helpdesc.Text = viewModel.getTraduction("helpdesc");
+            docudesc.Text = viewModel.getTraduction("docudesc");
         }
 
-        public void btnXML()
+        private void opendoc_Click(object sender, RoutedEventArgs e)
         {
-
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://pdfhost.io/v/OrWoLh~kZ_Microsoft_Word_EasySave_User_Manual_GUIdocx",
+                UseShellExecute = true
+            });
         }
     }
 }

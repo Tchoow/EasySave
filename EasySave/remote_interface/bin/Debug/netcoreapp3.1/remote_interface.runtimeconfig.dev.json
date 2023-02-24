@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\theot\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\theot\\.nuget\\packages",
+      "D:\\apps\\visualstudio\\other\\NuGetPackages"
+    ]
+  }
+}

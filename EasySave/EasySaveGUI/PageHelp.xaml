@@ -5,23 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveGUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="485" d:DesignWidth="660"
       Title="PageHelp">
 
     <Grid Background="White">
-        <TextBlock HorizontalAlignment="Left" Text="Need Help ?" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Height="122" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" Text="Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;Lorem Impsium Lorem Impsium &#xD;&#xA;" Background="#FFF1F1F1" Margin="27,43,0,0">
+        <TextBlock x:Name="help" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Help" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Text="Documentation" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,185,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Height="80" TextWrapping="Wrap" VerticalAlignment="Top" Width="460" Text="Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;Lorem Impsium Lorem Impsium &#xA;" Background="#FFF1F1F1" Margin="27,225,0,0"/>
-        <Button Content="Ouvrir la documentation" HorizontalAlignment="Left" Height="31" Margin="27,319,0,0" VerticalAlignment="Top" Width="460" Foreground="White" BorderBrush="White">
+        <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
+            <TextBlock x:Name="helpdesc" Text="Our support team is always ready to help you solve your problems and answer your questions. If you need help using our application, please feel free to contact us by email or phone." TextWrapping="Wrap"  Margin="5,5,5,10">
+            </TextBlock>
+        </Grid>
+        <TextBlock x:Name="doc" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,197,0,0" Text="Documentation" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Center" Height="138" Margin="0,240,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
+            <TextBlock x:Name="docudesc" Text="The documentation is available online and you can access it at any time to get answers to your questions or to discover new features. It is organized in a clear and structured manner so you can easily find the information you need." TextWrapping="Wrap"  Margin="5,5,5,10">
+               
+            </TextBlock>
+        </Grid>
+        <Button x:Name="opendoc" Content="Open documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White" Click="opendoc_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.2,0">
-                    <GradientStop Color="#FF24A9F9" Offset="0.99"/>
-                    <GradientStop Color="#FF1A6DA0" Offset="0"/>
+                    <GradientStop Color="#74b9ff" Offset="0.99"/>
+                    <GradientStop Color="#0984e3" Offset="0"/>
                 </LinearGradientBrush>
             </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="4"></Setter>
+                </Style>
+            </Button.Resources>
         </Button>
 
     </Grid>
