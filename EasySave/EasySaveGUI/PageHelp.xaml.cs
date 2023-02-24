@@ -38,20 +38,6 @@ namespace EasySaveGUI
             helpdesc.Text = viewModel.getTraduction("helpdesc");
             docudesc.Text = viewModel.getTraduction("docudesc");
         }
-        public void btnPreview()
-        {
-
-        }
-
-        public void btnJSON()
-        {
-
-        }
-
-        public void btnXML()
-        {
-
-        }
 
         private void opendoc_Click(object sender, RoutedEventArgs e)
         {
