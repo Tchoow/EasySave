@@ -206,7 +206,7 @@ Notre équipe a travaillé dur pour développer une application qui offre une ex
     <value>Executions</value>
   </data>
   <data name="extensionscrypt" xml:space="preserve">
-    <value>Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (laisser vide pour tous)</value>
+    <value>Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule ("*" pour tous)</value>
   </data>
   <data name="faillang" xml:space="preserve">
     <value>Langue non trouvée</value>
@@ -353,7 +353,7 @@ Notre équipe a travaillé dur pour développer une application qui offre une ex
     <value>CryptoSoft est un logiciel de cryptage de fichiers qui utilise l'algorithme XOR pour chiffrer les données. Avec CryptoSoft, vous pouvez crypter des fichiers pour protéger leur contenu.</value>
   </data>
   <data name="setextension" xml:space="preserve">
-    <value>Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou laissez vide pour tout chiffrer)</value>
+    <value>Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou "*" pour tout chiffrer)</value>
   </data>
   <data name="SettingsMainWindow" xml:space="preserve">
     <value>Parametres</value>

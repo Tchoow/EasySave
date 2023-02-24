@@ -234,7 +234,7 @@ namespace EasySave
                     List<string> sortedFiles = sortFiles(lstFiles.ToList());
 
                     // Check if business Soft is Running and State is running
-                    if (!businessSoftIsRunning() && this.State == "Running")
+                    if (this.State == "Running")
                     {
                         // Encrypt
                         encryptDecrypt(sortedFiles);
@@ -250,6 +250,13 @@ namespace EasySave
                                 this.viewModel.sendJobObserver(this.name, this.state, this.progression);
                                 return;
                             }
+
+                            // If business software we paused
+                            if (businessSoftIsRunning())
+                            {
+                                this.State = "Paused";
+                            }
+                            
 
                             // Wait if paused
                             while (this.State == "Paused")
