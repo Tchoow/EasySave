@@ -53,7 +53,7 @@ namespace EasySaveGUI
 
         public void AfficherErreur(string message)
         {
-            MessageBox.Show(message, "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show(message, (this.viewModel.getTraduction("error")), MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public void btnPreview(object sender, RoutedEventArgs e)
@@ -61,7 +61,7 @@ namespace EasySaveGUI
 
             if (this.logIndex == -1)
             {
-                AfficherErreur("Aucun fichier selectionné");
+                AfficherErreur(this.viewModel.getTraduction("nofile"));
             }
             else
             {
@@ -87,7 +87,7 @@ namespace EasySaveGUI
             if (this.logIndex == -1)
             {
                 Message message = Message.CreerMessage(MessageType.Erreur);
-                message.Afficher("Veuillez selectionner un fichier");
+                message.Afficher(this.viewModel.getTraduction("selfile"));
             }
             else
             {
@@ -108,7 +108,7 @@ namespace EasySaveGUI
             if (this.logIndex == -1)
             {
                 Message message = Message.CreerMessage(MessageType.Erreur);
-                message.Afficher("Veuillez selectionner un fichier");
+                message.Afficher(this.viewModel.getTraduction("selfile"));
             }
             else
             {

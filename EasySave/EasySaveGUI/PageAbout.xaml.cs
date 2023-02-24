@@ -40,6 +40,7 @@ namespace EasySaveGUI
         public void UpdateTrad()
         {
             about.Text = viewModel.getTraduction("about");
+            aboutusdesc.Text = viewModel.getTraduction("aboutdesc");
         }
     }
 }

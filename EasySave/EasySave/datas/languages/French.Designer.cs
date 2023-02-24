@@ -70,6 +70,16 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l&apos;école CESI. L&apos;objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+        ///Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialit [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string aboutdesc {
+            get {
+                return ResourceManager.GetString("aboutdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à À propos.
         /// </summary>
         internal static string AboutMainWindow {
@@ -205,7 +215,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Veuillez choisir le numéro de la sauvegarde que vous voulez supprimer..
+        ///   Recherche une chaîne localisée semblable à Veuillez choisir le travail que vous voulez supprimer..
         /// </summary>
         internal static string deletesave {
             get {
@@ -241,11 +251,29 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cliquez ici pour ouvrir la documentation.
+        ///   Recherche une chaîne localisée semblable à Documentation.
         /// </summary>
         internal static string docu {
             get {
                 return ResourceManager.GetString("docu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin..
+        /// </summary>
+        internal static string docudesc {
+            get {
+                return ResourceManager.GetString("docudesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
             }
         }
         
@@ -349,6 +377,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Notre équipe d&apos;assistance est toujours prête à vous aider à résoudre vos problèmes et répondre à vos questions. Si vous avez besoin d&apos;aide pour utiliser notre application, n&apos;hésitez pas à nous contacter par mail ou par téléphone..
+        /// </summary>
+        internal static string helpdesc {
+            get {
+                return ResourceManager.GetString("helpdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Aide.
         /// </summary>
         internal static string HelpMainWindow {
@@ -363,6 +400,15 @@ namespace EasySave.datas.languages {
         internal static string ID {
             get {
                 return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez saisir un nombre.
+        /// </summary>
+        internal static string inputnumber {
+            get {
+                return ResourceManager.GetString("inputnumber", resourceCulture);
             }
         }
         
@@ -556,6 +602,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aucun fichier selectionné.
+        /// </summary>
+        internal static string nofile {
+            get {
+                return ResourceManager.GetString("nofile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ouvrir.
         /// </summary>
         internal static string open {
@@ -655,6 +710,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etat de la sauvegarde.
+        /// </summary>
+        internal static string savestate {
+            get {
+                return ResourceManager.GetString("savestate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Sauvegarde(s) effectuée(s) avec succès..
         /// </summary>
         internal static string savesucc {
@@ -678,6 +742,24 @@ namespace EasySave.datas.languages {
         internal static string selectlanguage {
             get {
                 return ResourceManager.GetString("selectlanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Veuillez selectionner un fichier.
+        /// </summary>
+        internal static string selfile {
+            get {
+                return ResourceManager.GetString("selfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à CryptoSoft est un logiciel de cryptage de fichiers qui utilise l&apos;algorithme XOR pour chiffrer les données. Avec CryptoSoft, vous pouvez crypter des fichiers pour protéger leur contenu..
+        /// </summary>
+        internal static string setdesc {
+            get {
+                return ResourceManager.GetString("setdesc", resourceCulture);
             }
         }
         

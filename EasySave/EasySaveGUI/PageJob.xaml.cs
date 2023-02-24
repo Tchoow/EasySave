@@ -48,6 +48,15 @@ namespace EasySaveGUI
             SrcPath.Text            = viewModel.getTraduction("fromdir");
             DestPath.Text           = viewModel.getTraduction("todir");
             SavTyp.Text             = viewModel.getTraduction("savetype");
+            name.Header             = viewModel.getTraduction("name");
+            srcfile.Header          = viewModel.getTraduction("fromdir");
+            destfile.Header         = viewModel.getTraduction("todir");
+            savestate.Header        = viewModel.getTraduction("savestate");
+            state.Header            = viewModel.getTraduction("state");
+            ttlefilsize.Header      = viewModel.getTraduction("ttlfilsiz");
+            filenumb.Header         = viewModel.getTraduction("ttlfilcop");
+            date.Header             = viewModel.getTraduction("creadate");
+
         }
         public void reloadGrid()
         {
@@ -85,12 +94,12 @@ namespace EasySaveGUI
                 reloadGrid();
                 clearGrid();
                 Message message = Message.CreerMessage(MessageType.Information);
-                message.Afficher("Suppression réussie.");
+                message.Afficher(this.viewModel.getTraduction("deletesucces"));
             }
             else
             {
                 Message message = Message.CreerMessage(MessageType.Erreur);
-                message.Afficher("Veuillez sélectionner un travail à supprimer.");
+                message.Afficher(this.viewModel.getTraduction("deletesave"));
             }
         }
 
@@ -112,12 +121,12 @@ namespace EasySaveGUI
                 reloadGrid();
 
                 Message message = Message.CreerMessage(MessageType.Information);
-                message.Afficher("Création de job réussie.");
+                message.Afficher(this.viewModel.getTraduction("createsucc"));
             }
             else
             {
                 Message message = Message.CreerMessage(MessageType.Erreur);
-                message.Afficher("Erreur dans la saisie des informations.");
+                message.Afficher(this.viewModel.getTraduction("wronginput"));
             }
 
         }

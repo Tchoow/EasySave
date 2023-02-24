@@ -69,6 +69,7 @@ namespace EasySaveGUI
             maxfilesize.Text      = viewModel.getTraduction("maxfilsiz");
             cryptopath.Text       = viewModel.getTraduction("cryptopath");
             sav.Content           = viewModel.getTraduction("save");
+            setdesc.Text          = viewModel.getTraduction("setdesc");
         }
 
 
@@ -128,7 +129,7 @@ namespace EasySaveGUI
             catch
             {
                 Message message = Message.CreerMessage(MessageType.Erreur);
-                message.Afficher("Veuillez saisir un nombre.");
+                message.Afficher(this.viewModel.getTraduction("inputnumber"));
             }
         }
 

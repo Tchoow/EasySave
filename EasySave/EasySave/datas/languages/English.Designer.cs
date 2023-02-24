@@ -70,6 +70,18 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Easy Save (group 7) is a university project developed by 3rd year computer science students at CESI. The goal of this project is to create a simple and efficient data backup application.
+        ///Our team worked hard to develop an application that offers an intuitive and easy-to-use user experience while providing advanced data backup features. We have implemented advanced security mechanisms to ensure the confidentiality and integrity of the backed up data.
+        ///
+        ///.
+        /// </summary>
+        internal static string aboutdesc {
+            get {
+                return ResourceManager.GetString("aboutdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à About us.
         /// </summary>
         internal static string AboutMainWindow {
@@ -241,11 +253,29 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Click here to open documentation.
+        ///   Recherche une chaîne localisée semblable à Documentation.
         /// </summary>
         internal static string docu {
             get {
                 return ResourceManager.GetString("docu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The documentation is available online and you can access it at any time to get answers to your questions or to discover new features. It is organized in a clear and structured manner so you can easily find the information you need..
+        /// </summary>
+        internal static string docudesc {
+            get {
+                return ResourceManager.GetString("docudesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Error.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
             }
         }
         
@@ -349,6 +379,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Our support team is always ready to help you solve your problems and answer your questions. If you need help using our application, please feel free to contact us by email or phone..
+        /// </summary>
+        internal static string helpdesc {
+            get {
+                return ResourceManager.GetString("helpdesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Help.
         /// </summary>
         internal static string HelpMainWindow {
@@ -363,6 +402,15 @@ namespace EasySave.datas.languages {
         internal static string ID {
             get {
                 return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please input a number.
+        /// </summary>
+        internal static string inputnumber {
+            get {
+                return ResourceManager.GetString("inputnumber", resourceCulture);
             }
         }
         
@@ -556,6 +604,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à No selected file.
+        /// </summary>
+        internal static string nofile {
+            get {
+                return ResourceManager.GetString("nofile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Open.
         /// </summary>
         internal static string open {
@@ -655,6 +712,15 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Save state.
+        /// </summary>
+        internal static string savestate {
+            get {
+                return ResourceManager.GetString("savestate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Save successfull..
         /// </summary>
         internal static string savesucc {
@@ -678,6 +744,24 @@ namespace EasySave.datas.languages {
         internal static string selectlanguage {
             get {
                 return ResourceManager.GetString("selectlanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please select a file.
+        /// </summary>
+        internal static string selfile {
+            get {
+                return ResourceManager.GetString("selfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cryptosoft is a cripting software that uses XOR algorithm. With Cryptosoft you can crypt files to ensure data safety..
+        /// </summary>
+        internal static string setdesc {
+            get {
+                return ResourceManager.GetString("setdesc", resourceCulture);
             }
         }
         

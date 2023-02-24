@@ -12,13 +12,13 @@
         <TextBlock x:Name="help" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,10,0,0" Text="Help" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <Grid HorizontalAlignment="Center" Height="138" Margin="0,53,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
-            <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">
-Notre équipe d'assistance est toujours prête à vous aider à résoudre vos problèmes et répondre à vos questions. Si vous avez besoin d'aide pour utiliser notre application, n'hésitez pas à nous contacter par mail ou par téléphone.            </TextBlock>
+            <TextBlock x:Name="helpdesc" Text="Our support team is always ready to help you solve your problems and answer your questions. If you need help using our application, please feel free to contact us by email or phone." TextWrapping="Wrap"  Margin="5,5,5,10">
+            </TextBlock>
         </Grid>
         <TextBlock x:Name="doc" HorizontalAlignment="Left" Foreground="#74b9ff" FontSize="17" FontWeight="DemiBold" Margin="10,197,0,0" Text="Documentation" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Center" Height="138" Margin="0,240,0,0" VerticalAlignment="Top" Width="584" Background="#FFF1F1F1">
-            <TextBlock TextWrapping="Wrap"  Margin="5,5,5,10">
-               La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin.
+            <TextBlock x:Name="docudesc" Text="The documentation is available online and you can access it at any time to get answers to your questions or to discover new features. It is organized in a clear and structured manner so you can easily find the information you need." TextWrapping="Wrap"  Margin="5,5,5,10">
+               
             </TextBlock>
         </Grid>
         <Button x:Name="opendoc" Content="Open documentation" HorizontalAlignment="Center" Height="31" Margin="0,403,0,0" VerticalAlignment="Top" Width="584" Foreground="White" BorderBrush="White" Click="opendoc_Click">

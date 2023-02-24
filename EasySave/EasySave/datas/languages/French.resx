@@ -120,6 +120,10 @@
   <data name="about" xml:space="preserve">
     <value>À propos</value>
   </data>
+  <data name="aboutdesc" xml:space="preserve">
+    <value>Easy Save (groupe 7) est un projet universitaire développé par des étudiants en informatique de 3ème année à l'école CESI. L'objectif de ce projet est de créer une application de sauvegarde de données simple et efficace.
+Notre équipe a travaillé dur pour développer une application qui offre une expérience utilisateur intuitive et facile à utiliser tout en offrant des fonctionnalités avancées de sauvegarde de données. Nous avons mis en place des mécanismes de sécurité avancés pour garantir la confidentialité et l'intégrité des données sauvegardées.</value>
+  </data>
   <data name="AboutMainWindow" xml:space="preserve">
     <value>À propos</value>
   </data>
@@ -166,7 +170,7 @@
     <value>Supprimer le travail</value>
   </data>
   <data name="deletesave" xml:space="preserve">
-    <value>Veuillez choisir le numéro de la sauvegarde que vous voulez supprimer.</value>
+    <value>Veuillez choisir le travail que vous voulez supprimer.</value>
   </data>
   <data name="deletesucces" xml:space="preserve">
     <value>Suppression effectuée.</value>
@@ -178,7 +182,13 @@
     <value>Repertoire</value>
   </data>
   <data name="docu" xml:space="preserve">
-    <value>Cliquez ici pour ouvrir la documentation</value>
+    <value>Documentation</value>
+  </data>
+  <data name="docudesc" xml:space="preserve">
+    <value>La documentation est consultable en ligne et vous pouvez y accéder à tout moment pour obtenir des réponses à vos questions ou pour découvrir de nouvelles fonctionnalités. Elle est organisée de manière claire et structurée pour vous permettre de trouver facilement les informations dont vous avez besoin.</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Erreur</value>
   </data>
   <data name="errorpath" xml:space="preserve">
     <value>Erreur dans la saisie des chemins.</value>
@@ -213,11 +223,17 @@
   <data name="help" xml:space="preserve">
     <value>Aide</value>
   </data>
+  <data name="helpdesc" xml:space="preserve">
+    <value>Notre équipe d'assistance est toujours prête à vous aider à résoudre vos problèmes et répondre à vos questions. Si vous avez besoin d'aide pour utiliser notre application, n'hésitez pas à nous contacter par mail ou par téléphone.</value>
+  </data>
   <data name="HelpMainWindow" xml:space="preserve">
     <value>Aide</value>
   </data>
   <data name="ID" xml:space="preserve">
     <value>ID</value>
+  </data>
+  <data name="inputnumber" xml:space="preserve">
+    <value>Veuillez saisir un nombre</value>
   </data>
   <data name="job" xml:space="preserve">
     <value>Travaux N° </value>
@@ -282,6 +298,9 @@
   <data name="newjob" xml:space="preserve">
     <value>Nouveau travail</value>
   </data>
+  <data name="nofile" xml:space="preserve">
+    <value>Aucun fichier selectionné</value>
+  </data>
   <data name="open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
@@ -315,6 +334,9 @@
   <data name="saverror" xml:space="preserve">
     <value>Erreur lors du processus de sauvegarde...</value>
   </data>
+  <data name="savestate" xml:space="preserve">
+    <value>Etat de la sauvegarde</value>
+  </data>
   <data name="savesucc" xml:space="preserve">
     <value>Sauvegarde(s) effectuée(s) avec succès.</value>
   </data>
@@ -323,6 +345,12 @@
   </data>
   <data name="selectlanguage" xml:space="preserve">
     <value>Selection language </value>
+  </data>
+  <data name="selfile" xml:space="preserve">
+    <value>Veuillez selectionner un fichier</value>
+  </data>
+  <data name="setdesc" xml:space="preserve">
+    <value>CryptoSoft est un logiciel de cryptage de fichiers qui utilise l'algorithme XOR pour chiffrer les données. Avec CryptoSoft, vous pouvez crypter des fichiers pour protéger leur contenu.</value>
   </data>
   <data name="setextension" xml:space="preserve">
     <value>Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou laissez vide pour tout chiffrer)</value>
