@@ -82,6 +82,7 @@ namespace EasySave
             (string res, List<Job> jobs) = this.model.ServerListen();
             return (res, jobs);
         }
+        public void CloseSocket() { this.model.CloseSocket(); }
         public void SendJob(string name, string state, int progression) { this.model.SendJobs(name,state,progression); }
     }
 }

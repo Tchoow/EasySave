@@ -317,15 +317,6 @@ namespace EasySave
         }
         public void SendJobs(string name, string state, int progression) { server.SendJobs(name, state, progression); }
 
-        /*lstThreadJobs;
-        List<Job> tempListJobs = new List<Job>();
-        foreach (KeyValuePair<Thread, Job> ThreadJob in lstThreadJobs)
-        {
-            foreach(Job j in ThreadJob.Value)
-            {
-                tempListJobs.add(j.add);
-            }
-        }*/
-
+       public void CloseSocket() { server.CloseSocket(); }
     }
 }
