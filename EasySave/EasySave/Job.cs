@@ -115,7 +115,7 @@ namespace EasySave
 
             Parallel.ForEach(pathToFiles, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, fileInfo =>
             {
-                if (this.extensionsToEncrypt.Contains(Path.GetExtension(fileInfo)) || this.extensionsToEncrypt[0] != "")
+                if (this.extensionsToEncrypt.Contains(Path.GetExtension(fileInfo)) || this.extensionsToEncrypt[0] == "*")
                 {
                     Process p = new Process();
                     p.StartInfo.FileName = this.cryptoPath;
@@ -289,9 +289,15 @@ namespace EasySave
                             // Update
                             this.viewModel.sendJobObserver(this.name, this.state, this.progression);
                         }
-
                         // Decrypt
                         encryptDecrypt(sortedFiles);
+
+                        // Logs
+                        DateTime endTime  = DateTime.Now;
+                        TimeSpan execTime = endTime - startTime;
+                        // Logs
+                        Log log = new Log("copy - " + this.Name, this.SourceFilePath + "\\", this.DestinationFilePath + "\\", "", filesSize, (long)execTime.TotalMilliseconds, EncryptionTime);
+                        log.saveLogInFile();
                     }
 
                 }

@@ -26,7 +26,6 @@ namespace EasySave
         private Dictionary<Thread, Job> lstThreadJobs;
         private Server server;
 
-
         public Model(ViewModel viewModel)
         {
             // VM
@@ -44,8 +43,7 @@ namespace EasySave
             this.server = new Server();
             this.lstThreadJobs   = new Dictionary<Thread, Job>();
 
-        }
-
+        }   
 
 
         // Config
@@ -251,6 +249,7 @@ namespace EasySave
                     jobs[i].setBusinessSoft(this.lstBusinessSoft);
                     jobs[i].setBigFileLength(this.maxFileSizeSim);
                     jobs[i].setCryptoSoftPath(this.cryptoSoftPath);
+                    jobs[i].setExtensions(extensions);
 
                     // Start
                     newJob.Start();
