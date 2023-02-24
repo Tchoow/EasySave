@@ -325,7 +325,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à File extensions to consider, each extension must be separated by a comma (leave blank for all).
+        ///   Recherche une chaîne localisée semblable à File extensions to consider, each extension must be separated by a comma (&quot;*&quot; for all).
         /// </summary>
         internal static string extensionscrypt {
             get {
@@ -766,7 +766,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Set extensions you want to encrypt (put them separated by a space or leave it empty to encrypt every file).
+        ///   Recherche une chaîne localisée semblable à Set extensions you want to encrypt (put them separated by a space or &quot;*&quot; to encrypt every file).
         /// </summary>
         internal static string setextension {
             get {

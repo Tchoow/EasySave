@@ -57,7 +57,7 @@ namespace EasySaveGUI
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://www.google.com",
+                FileName = "https://pdfhost.io/v/OrWoLh~kZ_Microsoft_Word_EasySave_User_Manual_GUIdocx",
                 UseShellExecute = true
             });
         }

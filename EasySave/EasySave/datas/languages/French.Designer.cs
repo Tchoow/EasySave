@@ -323,7 +323,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (laisser vide pour tous).
+        ///   Recherche une chaîne localisée semblable à Extentions de fichier à prendre en compte, chaque extension doit être séparée par une virgule (&quot;*&quot; pour tous).
         /// </summary>
         internal static string extensionscrypt {
             get {
@@ -764,7 +764,7 @@ namespace EasySave.datas.languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou laissez vide pour tout chiffrer).
+        ///   Recherche une chaîne localisée semblable à Saisissez les extensions que vous voulez chiffrer (rentrez les en les séparant par des espaces ou &quot;*&quot; pour tout chiffrer).
         /// </summary>
         internal static string setextension {
             get {

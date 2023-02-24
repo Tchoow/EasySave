@@ -208,7 +208,7 @@ Our team worked hard to develop an application that offers an intuitive and easy
     <value>Launch job</value>
   </data>
   <data name="extensionscrypt" xml:space="preserve">
-    <value>File extensions to consider, each extension must be separated by a comma (leave blank for all)</value>
+    <value>File extensions to consider, each extension must be separated by a comma ("*" for all)</value>
   </data>
   <data name="faillang" xml:space="preserve">
     <value>Language unknow.</value>
@@ -355,7 +355,7 @@ Our team worked hard to develop an application that offers an intuitive and easy
     <value>Cryptosoft is a cripting software that uses XOR algorithm. With Cryptosoft you can crypt files to ensure data safety.</value>
   </data>
   <data name="setextension" xml:space="preserve">
-    <value>Set extensions you want to encrypt (put them separated by a space or leave it empty to encrypt every file)</value>
+    <value>Set extensions you want to encrypt (put them separated by a space or "*" to encrypt every file)</value>
   </data>
   <data name="SettingsMainWindow" xml:space="preserve">
     <value>Settings</value>
