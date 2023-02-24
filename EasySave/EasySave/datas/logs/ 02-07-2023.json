@@ -1,0 +1,42 @@
+[
+  {
+    "encrpytionTime": 0,
+    "Time": "2023-02-20T11:23:00.1149564+01:00",
+    "Name": "copy - bob2",
+    "FileSource": "C:\\Users\\vboxuser\\Documents\\test1\\",
+    "FileTarget": "C:\\Users\\vboxuser\\Documents\\test1\\",
+    "DestPath": "",
+    "FileSize": 0,
+    "FileTransferTime": 67
+  },
+  {
+    "encrpytionTime": 0,
+    "Time": "2023-02-20T12:58:37.3618077+01:00",
+    "Name": "copy - test",
+    "FileSource": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp2\\",
+    "FileTarget": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp1\\",
+    "DestPath": "",
+    "FileSize": 811282,
+    "FileTransferTime": 826
+  },
+  {
+    "encrpytionTime": 23220,
+    "Time": "2023-02-20T13:41:51.4945532+01:00",
+    "Name": "copy - test",
+    "FileSource": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp2\\",
+    "FileTarget": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp1\\",
+    "DestPath": "",
+    "FileSize": 811282,
+    "FileTransferTime": 12404
+  },
+  {
+    "encrpytionTime": 26369,
+    "Time": "2023-02-20T14:02:16.2534644+01:00",
+    "Name": "copy - test",
+    "FileSource": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp2\\",
+    "FileTarget": "C:\\Users\\vboxuser\\source\\repos\\ConsoleApp1\\",
+    "DestPath": "",
+    "FileSize": 811282,
+    "FileTransferTime": 14204
+  }
+]
