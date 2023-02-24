@@ -5,6 +5,7 @@ using System.Collections;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
+using System.Net.Sockets;
 
 namespace EasySave
 {
@@ -50,6 +51,7 @@ namespace EasySave
             {
                 this.view.acceptObserver(name, state, progression);
             }
+            this.SendJob(name, state, progression);
         }
 
         // Configs
@@ -74,6 +76,12 @@ namespace EasySave
         public List<Log> getLogsLst(string fileName) { return this.model.getLogsLst(fileName);  } 
         public FileInfo[] getLogsFiles() { return this.model.getLogsFiles();  }
 
-
+        // Remote interface 
+        public void RunServer() { this.model.RunServer(); }
+        public (string result,List<Job> jobs) ServerListen(){
+            (string res, List<Job> jobs) = this.model.ServerListen();
+            return (res, jobs);
+        }
+        public void SendJob(string name, string state, int progression) { this.model.SendJobs(name,state,progression); }
     }
 }

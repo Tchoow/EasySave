@@ -8,6 +8,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Threading;
+using System.Net.Sockets;
 
 namespace EasySave
 {
@@ -23,6 +24,7 @@ namespace EasySave
         private string cryptoSoftPath;
         private int maxFileSizeSim;
         private Dictionary<Thread, Job> lstThreadJobs;
+        private Server server;
 
         public Model(ViewModel viewModel)
         {
@@ -38,6 +40,7 @@ namespace EasySave
             this.lstBusinessSoft = new List<string>();
             this.cryptoSoftPath  = "../../../../EasySave/CryptoSoft/CryptoSoft.exe";
             this.maxFileSizeSim  = 0;
+            this.server = new Server();
             this.lstThreadJobs   = new Dictionary<Thread, Job>();
 
         }   
@@ -299,9 +302,30 @@ namespace EasySave
                     }
                 }
             }
-
             return true;
         }
+        public void RunServer()
+        {
+            Socket servsocket = server.Initialize();
+            Socket accepted = server.AcceptConnexion(servsocket);
+            server.serverSocket = accepted;
+        }
+        public (string result, List<Job> jobs) ServerListen()
+        {
+            (string res, List<Job> jobs) = server.ListenNetwork(getJobs());
+            return (res, jobs);
+        }
+        public void SendJobs(string name, string state, int progression) { server.SendJobs(name, state, progression); }
+
+        /*lstThreadJobs;
+        List<Job> tempListJobs = new List<Job>();
+        foreach (KeyValuePair<Thread, Job> ThreadJob in lstThreadJobs)
+        {
+            foreach(Job j in ThreadJob.Value)
+            {
+                tempListJobs.add(j.add);
+            }
+        }*/
 
     }
 }

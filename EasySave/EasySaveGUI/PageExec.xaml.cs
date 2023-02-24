@@ -109,8 +109,6 @@ namespace EasySaveGUI
         private void exec_selectedJobs_btn(object sender, RoutedEventArgs e)
         {
             runJobs(jobSelected);
-
-            
         }
 
         private void pause_sekectedJobs_btn(object sender, RoutedEventArgs e)

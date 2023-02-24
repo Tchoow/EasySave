@@ -25,7 +25,6 @@ namespace EasySaveGUI
     {
         private Frame ContentFrame;
         private ViewModel viewModel;
-        private Server serv;
         Thread serverThread;
         private string frameName;
         private PageExec pageExec;
@@ -48,22 +47,36 @@ namespace EasySaveGUI
             this.viewModel = new ViewModel(this);
             viewModel.setLangueIndex(comboLanguage.SelectedIndex);
             this.UpdateTrad();
-            serv = new Server();
 
             this.serverThread = new Thread(() => {
+                viewModel.RunServer();
                 while (true)
                 {
-                    Socket servsocket = serv.Initialize();
-                    Socket accepted = serv.AcceptConnexion(servsocket);
-                    serv.ListenNetwork(accepted, viewModel.getJobsList());
-                    serv.CloseSocket(servsocket);
-                    serv.CloseSocket(accepted);
+                    (string result,List<Job> jobs) = viewModel.ServerListen();
+                    Trace.WriteLine(result);
+                    
+                    string[] extensions = { "" };
+                    switch (result)
+                    {
+                        case "play":
+                            viewModel.executeJobs(jobs, extensions);
+                            break;
+                        case "pause":
+                            viewModel.pauseJobs(jobs);
+                            break;
+                        case "stop":
+                            viewModel.stopJobs(jobs);
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
             });
             serverThread.IsBackground = true;
             serverThread.Start();
         }
+       
         private void UpdateTrad()
         {
             JobBtn.Content   = viewModel.getTraduction("JobMainWindow");
@@ -77,7 +90,8 @@ namespace EasySaveGUI
 
         public void acceptObserver(string name, string state, int progression)
         {
-            this.pageExec.updateInfos(name, state, progression);   
+             this.pageExec.updateInfos(name, state, progression);
+             Trace.WriteLine(name + state + progression);
         }
 
 

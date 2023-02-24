@@ -70,23 +70,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Théo LAVIE\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\theot\\.nuget\\packages\\": {},
+    "D:\\apps\\visualstudio\\other\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
-      "projectName": "remote_interface",
-      "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\remote_interface.csproj",
-      "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\obj\\",
+      "projectUniqueName": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj",
+      "projectName": "Remote_interface",
+      "projectPath": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj",
+      "packagesPath": "C:\\Users\\theot\\.nuget\\packages\\",
+      "outputPath": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\apps\\visualstudio\\other\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Théo LAVIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\theot\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -101,8 +101,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
-              "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj"
+            "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj": {
+              "projectPath": "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj"
             }
           }
         }

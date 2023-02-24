@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj": {}
+    "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
+    "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
+        "projectUniqueName": "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj",
         "projectName": "EasySave",
-        "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj",
-        "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\obj\\",
+        "projectPath": "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj",
+        "packagesPath": "C:\\Users\\theot\\.nuget\\packages\\",
+        "outputPath": "D:\\apps\\projet\\easy\\EasySave\\EasySave\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\apps\\visualstudio\\other\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Théo LAVIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\theot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,20 +68,20 @@
         }
       }
     },
-    "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj": {
+    "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
+        "projectUniqueName": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj",
         "projectName": "Remote_interface",
-        "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\Remote_interface.csproj",
-        "packagesPath": "C:\\Users\\Théo LAVIE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\remote_interface\\obj\\",
+        "projectPath": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\Remote_interface.csproj",
+        "packagesPath": "C:\\Users\\theot\\.nuget\\packages\\",
+        "outputPath": "D:\\apps\\projet\\easy\\EasySave\\remote_interface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\apps\\visualstudio\\other\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Théo LAVIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\theot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -96,8 +96,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj": {
-                "projectPath": "C:\\Users\\Théo LAVIE\\source\\repos\\EasySave\\EasySave\\EasySave\\EasySave.csproj"
+              "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj": {
+                "projectPath": "D:\\apps\\projet\\easy\\EasySave\\EasySave\\EasySave.csproj"
               }
             }
           }
