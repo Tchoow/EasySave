@@ -1,3 +1,4 @@
+📘 School Project
 ⚠️ Check the manual before using the application.
 
 # EasySave
